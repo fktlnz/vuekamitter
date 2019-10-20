@@ -156,6 +156,8 @@ export default {
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
         controller.getFollowedListSession_ajax()
         controller.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', ($event) => {
+            console.log('フォローリスト取得がかえててきた')
+            console.dir($event.response.rst)
             if($event.response.res === 'OK'){
                 console.log('DEBUG -- Home.vue --> フォローリストを更新します')
                 console.dir($event.response.rst)
@@ -181,7 +183,7 @@ export default {
                 //次のフォロー開始時間を15分後に設定する
                 const now = new Date()
                 const now_ms = now.getTime();
-                store.setNextFollowTime(now_ms + 905000)//15分後に設定　5秒は気持ち
+                store.setNextFollowTime(now_ms + 905000, now_ms)//15分後に設定　5秒は気持ち
 
                 console.log('自動フォロー再開ジョブをスタートします')
                 //自動フォローを再開関数を開始する
@@ -334,14 +336,13 @@ export default {
             //親コンポーネントにアクティブユーザーを渡す 
             controller.getTwitterProfile_ajax(screen_name)
             controller.$once('AJAX_COMPLETE_GETTWITTERPROFILE', ($event) => {
-                console.log('フロントに帰ってきたデータ↓')
-                const body = JSON.parse($event.response.rst.body)
-                console.dir(body.description)
-                this.follower = body.followers_count //フォロワー数
-                this.friends = body.friends_count    //フォロー数
-                this.account_name = body.name        //アカウント名
-                this.description = body.description  //プロフィール文   
-                this.img_url = body.profile_image_url_https //画像URL
+                console.log('フロントに帰ってきたデータ↓ プロフィール')
+                console.dir($event.response.rst)
+                this.follower = $event.response.rst.followers_count //フォロワー数
+                this.friends = $event.response.rst.friends_count    //フォロー数
+                this.account_name = $event.response.rst.name        //アカウント名
+                this.description = $event.response.rst.description  //プロフィール文   
+                this.img_url = $event.response.rst.profile_image_url_https //画像URL
             })
         },
         changeLikeCronStatus() {            

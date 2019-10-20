@@ -80,10 +80,12 @@ function reStartAutoFollow() {
     let now_ms = now.getTime();
 
     //storeから次のフォロー開始時間を取得する
-    let nextFollowTime = store.getNextFollowTime()
+    const reFollowTime = store.getNextFollowTime()
+    const nextFollowTime = reFollowTime.next
     
-    let dif_time = nextFollowTime - now_ms    
-    console.log('次のツイートまでー＞'+dif_time)
+    let dif_time = nextFollowTime - now_ms
+    // store.setNextFollowTime(dif_time, now_ms)    
+    console.log('次の自動フォローまで=>'+dif_time)
 
     if(nextFollowTime < now_ms) {
     

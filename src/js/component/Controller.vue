@@ -252,6 +252,7 @@ module.exports = new Vue({
 
     //フォローしたリストをセッションから取得する
     getFollowedListSession_ajax() {
+      console.log('セッションからフォローリストを取得します')
       return axios.get(URL_BASE + 'getfollowedlistsession')
       .then((res) => {
           //HOME画面のフォロー済リストを更新する

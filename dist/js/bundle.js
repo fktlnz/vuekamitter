@@ -36314,10 +36314,12 @@ function reStartAutoFollow() {
     var now_ms = now.getTime();
 
     //storeから次のフォロー開始時間を取得する
-    var nextFollowTime = _Store2.default.getNextFollowTime();
+    var reFollowTime = _Store2.default.getNextFollowTime();
+    var nextFollowTime = reFollowTime.next;
 
     var dif_time = nextFollowTime - now_ms;
-    console.log('次のツイートまでー＞' + dif_time);
+    // store.setNextFollowTime(dif_time, now_ms)    
+    console.log('次の自動フォローまで=>' + dif_time);
 
     if (nextFollowTime < now_ms) {
 
@@ -36406,7 +36408,10 @@ module.exports = new _vue2.default({
       reserveTime: null,
       text: null
     },
-    nextFollowTime: null
+    reFollowTime: {
+      now: null,
+      next: null
+    }
   },
   methods: {
     // Ajax通信でJsonを取得し、特定のプロパティに格納する
@@ -36488,12 +36493,13 @@ module.exports = new _vue2.default({
       console.log('予約情報　reserveTime：' + this.reserveItem.reserveTime);
       console.log('予約情報　text：' + this.reserveItem.text);
     },
-    setNextFollowTime: function setNextFollowTime(time) {
-      this.nextFollowTime = time;
-      console.log('次のフォロー開始時間：' + this.nextFollowTime);
+    setNextFollowTime: function setNextFollowTime(nexttime, now) {
+      this.reFollowTime.next = nexttime;
+      this.reFollowTime.now = now;
+      console.log('次のフォロー開始時間：' + this.reFollowTime);
     },
     getNextFollowTime: function getNextFollowTime() {
-      return this.nextFollowTime;
+      return this.reFollowTime;
     }
   }
 });
@@ -36781,6 +36787,7 @@ module.exports = new _vue2.default({
     getFollowedListSession_ajax: function getFollowedListSession_ajax() {
       var _this14 = this;
 
+      console.log('セッションからフォローリストを取得します');
       return _axios2.default.get(URL_BASE + 'getfollowedlistsession').then(function (res) {
         //HOME画面のフォロー済リストを更新する
         _this14.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
@@ -38027,6 +38034,8 @@ exports.default = {
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
         _Controller2.default.getFollowedListSession_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', function ($event) {
+            console.log('フォローリスト取得がかえててきた');
+            console.dir($event.response.rst);
             if ($event.response.res === 'OK') {
                 console.log('DEBUG -- Home.vue --> フォローリストを更新します');
                 console.dir($event.response.rst);
@@ -38051,7 +38060,7 @@ exports.default = {
                 //次のフォロー開始時間を15分後に設定する
                 var now = new Date();
                 var now_ms = now.getTime();
-                _Store2.default.setNextFollowTime(now_ms + 905000); //15分後に設定　5秒は気持ち
+                _Store2.default.setNextFollowTime(now_ms + 905000, now_ms); //15分後に設定　5秒は気持ち
 
                 console.log('自動フォロー再開ジョブをスタートします');
                 //自動フォローを再開関数を開始する
@@ -38196,14 +38205,13 @@ exports.default = {
             //親コンポーネントにアクティブユーザーを渡す 
             _Controller2.default.getTwitterProfile_ajax(screen_name);
             _Controller2.default.$once('AJAX_COMPLETE_GETTWITTERPROFILE', function ($event) {
-                console.log('フロントに帰ってきたデータ↓');
-                var body = JSON.parse($event.response.rst.body);
-                console.dir(body.description);
-                _this2.follower = body.followers_count; //フォロワー数
-                _this2.friends = body.friends_count; //フォロー数
-                _this2.account_name = body.name; //アカウント名
-                _this2.description = body.description; //プロフィール文   
-                _this2.img_url = body.profile_image_url_https; //画像URL
+                console.log('フロントに帰ってきたデータ↓ プロフィール');
+                console.dir($event.response.rst);
+                _this2.follower = $event.response.rst.followers_count; //フォロワー数
+                _this2.friends = $event.response.rst.friends_count; //フォロー数
+                _this2.account_name = $event.response.rst.name; //アカウント名
+                _this2.description = $event.response.rst.description; //プロフィール文   
+                _this2.img_url = $event.response.rst.profile_image_url_https; //画像URL
             });
         },
         changeLikeCronStatus: function changeLikeCronStatus() {
@@ -38265,35 +38273,6 @@ var _InputForm2 = _interopRequireDefault(_InputForm);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var URL_BASE = 'http://localhost:8888/KamitterAPI/public/'; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 exports.default = {
     props: ['follower', 'friends', 'account_name', 'description', 'img_url'],
     components: {
@@ -38312,7 +38291,34 @@ exports.default = {
         }
     }
 
-};
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 31 */
@@ -50285,58 +50291,62 @@ exports.default = {
 
                 if ($event.response.res === 'OK') {
                     console.log('リクエストに成功しました. AJAX_COMPLETE_CHECKUSERACCOUNTEXIST');
+                    console.log('取得に成功：アカウント存在or存在しない');
                     console.dir($event.response.rst);
                     _this2.IsExist = true;
                     if (!$event.response.rst) {
+                        console.log('存在しないルートに来ているよ');
                         //rstがfalseのとき（アカウントが存在しないとき）
                         _Store2.default.setMessage('存在しないユーザーです', false);
                         var _message4 = _Store2.default.getMessage();
                         if (_message4.msg !== '') {
                             _Controller2.default.emit_message(_message4);
                         }
-                        console.log('存在しないルートに来ているよ');
                         _this2.IsExist = false;
+                    } else {
+                        console.log('アカウント存在します');
+                        console.log('this.IsExist：' + _this2.IsExist);
+                        if (_this2.IsExist) {
+                            var word_id = _this2.getId();
+                            _Controller2.default.saveUserAccount_ajax(word_id, _this2.screen_name, 0); //引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
+                            _Controller2.default.$once('AJAX_COMPLETE_SAVETARGETACCOUNT', function ($event) {
+
+                                if ($event.response.res === 'OK') {
+                                    console.log('リクエストに成功しました. AJAX_COMPLETE_SAVETARGETACCOUNT');
+                                    console.dir($event.response.rst);
+
+                                    //Listに追加する
+                                    _this2.datas.push({ id: word_id, text: _this2.screen_name });
+
+                                    //メッセージ表示
+                                    _Store2.default.setMessage($event.response.msg, true);
+                                    var _message5 = _Store2.default.getMessage();
+                                    if (_message5.msg !== '') {
+                                        _Controller2.default.emit_message(_message5);
+                                    }
+                                } else {
+
+                                    //メッセージ表示
+                                    _Store2.default.setMessage($event.response.msg, false);
+                                    var _message6 = _Store2.default.getMessage();
+                                    if (_message6.msg !== '') {
+                                        _Controller2.default.emit_message(_message6);
+                                    }
+                                }
+                            });
+                        }
                     }
                 } else {
+                    console.log('非公開のアカウントですよ');
                     _this2.IsExist = false;
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
-                    var _message5 = _Store2.default.getMessage();
-                    if (_message5.msg !== '') {
-                        _Controller2.default.emit_message(_message5);
+                    var _message7 = _Store2.default.getMessage();
+                    if (_message7.msg !== '') {
+                        _Controller2.default.emit_message(_message7);
                     }
                 }
             });
-
-            if (this.IsExist) {
-                var word_id = this.getId();
-                _Controller2.default.saveUserAccount_ajax(word_id, this.screen_name, 0); //引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
-                _Controller2.default.$once('AJAX_COMPLETE_SAVETARGETACCOUNT', function ($event) {
-
-                    if ($event.response.res === 'OK') {
-                        console.log('リクエストに成功しました. AJAX_COMPLETE_SAVETARGETACCOUNT');
-                        console.dir($event.response.rst);
-
-                        //Listに追加する
-                        _this2.datas.push({ id: word_id, text: _this2.screen_name });
-
-                        //メッセージ表示
-                        _Store2.default.setMessage($event.response.msg, true);
-                        var _message6 = _Store2.default.getMessage();
-                        if (_message6.msg !== '') {
-                            _Controller2.default.emit_message(_message6);
-                        }
-                    } else {
-
-                        //メッセージ表示
-                        _Store2.default.setMessage($event.response.msg, false);
-                        var _message7 = _Store2.default.getMessage();
-                        if (_message7.msg !== '') {
-                            _Controller2.default.emit_message(_message7);
-                        }
-                    }
-                });
-            }
         },
         updateDatas: function updateDatas() {
             var _this3 = this;

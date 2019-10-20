@@ -26,7 +26,10 @@ module.exports = new Vue({
         reserveTime: null,
         text: null
       },
-      nextFollowTime: null,
+      reFollowTime: {
+        now:null,
+        next:null
+      },
   },
   methods: {
     // Ajax通信でJsonを取得し、特定のプロパティに格納する
@@ -102,12 +105,13 @@ module.exports = new Vue({
       console.log('予約情報　reserveTime：'+this.reserveItem.reserveTime)
       console.log('予約情報　text：'+this.reserveItem.text)
     },
-    setNextFollowTime(time) {
-      this.nextFollowTime = time;
-      console.log('次のフォロー開始時間：'+this.nextFollowTime)
+    setNextFollowTime(nexttime, now) {
+      this.reFollowTime.next = nexttime;
+      this.reFollowTime.now = now;
+      console.log('次のフォロー開始時間：'+this.reFollowTime)
     },
     getNextFollowTime() {
-      return this.nextFollowTime;
+      return this.reFollowTime;
     }
     
   }

@@ -31,8 +31,6 @@ import Vue from 'vue'
 import axios from 'axios'
 import inputform from './InputForm.vue'
 
-const URL_BASE = 'http://localhost:8888/KamitterAPI/public/'
-
 export default {
     props:['follower', 'friends', 'account_name', 'description', 'img_url'],
     components: {

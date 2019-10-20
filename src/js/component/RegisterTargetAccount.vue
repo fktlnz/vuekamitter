@@ -96,20 +96,58 @@ export default {
 
                 if($event.response.res === 'OK'){
                     console.log('リクエストに成功しました. AJAX_COMPLETE_CHECKUSERACCOUNTEXIST')
+                    console.log('取得に成功：アカウント存在or存在しない')
                     console.dir($event.response.rst)  
                     this.IsExist=true
                     if(!$event.response.rst){
+                        console.log('存在しないルートに来ているよ')
                         //rstがfalseのとき（アカウントが存在しないとき）
                         store.setMessage('存在しないユーザーです', false)
                         const message = store.getMessage();
                         if(message.msg !== ''){
                             controller.emit_message(message)  
-                        }
-                        console.log('存在しないルートに来ているよ')
+                        }                        
                         this.IsExist=false
+                    }else{
+                        console.log('アカウント存在します')
+                        console.log('this.IsExist：'+this.IsExist)
+                        if(this.IsExist){
+                            const word_id = this.getId()
+                            controller.saveUserAccount_ajax(word_id, this.screen_name, 0)//引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
+                            controller.$once('AJAX_COMPLETE_SAVETARGETACCOUNT', ($event) => {
+                
+                                if($event.response.res === 'OK'){
+                                    console.log('リクエストに成功しました. AJAX_COMPLETE_SAVETARGETACCOUNT')
+                                    console.dir($event.response.rst)                   
+                                    
+                                    //Listに追加する
+                                    this.datas.push({id: word_id, text:this.screen_name}) 
+                
+                
+                                    //メッセージ表示
+                                    store.setMessage($event.response.msg, true)
+                                    const message = store.getMessage();
+                                    if(message.msg !== ''){
+                                        controller.emit_message(message)  
+                                    }
+                
+                                }else {
+                
+                                    //メッセージ表示
+                                    store.setMessage($event.response.msg, false)
+                                    const message = store.getMessage();
+                                    if(message.msg !== ''){
+                                        controller.emit_message(message)  
+                                    }
+                                }
+                
+                                
+                            })      
+                        }
                     }
                     
                 }else {
+                    console.log('非公開のアカウントですよ')
                     this.IsExist=false
                     //メッセージ表示
                     store.setMessage($event.response.msg, false)
@@ -120,40 +158,6 @@ export default {
                 }
                 
             })  
-
-            if(this.IsExist){
-                const word_id = this.getId()
-                controller.saveUserAccount_ajax(word_id, this.screen_name, 0)//引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
-                controller.$once('AJAX_COMPLETE_SAVETARGETACCOUNT', ($event) => {
-    
-                    if($event.response.res === 'OK'){
-                        console.log('リクエストに成功しました. AJAX_COMPLETE_SAVETARGETACCOUNT')
-                        console.dir($event.response.rst)                   
-                        
-                        //Listに追加する
-                        this.datas.push({id: word_id, text:this.screen_name}) 
-    
-    
-                        //メッセージ表示
-                        store.setMessage($event.response.msg, true)
-                        const message = store.getMessage();
-                        if(message.msg !== ''){
-                            controller.emit_message(message)  
-                        }
-    
-                    }else {
-    
-                        //メッセージ表示
-                        store.setMessage($event.response.msg, false)
-                        const message = store.getMessage();
-                        if(message.msg !== ''){
-                            controller.emit_message(message)  
-                        }
-                    }
-    
-                    
-                })      
-            }
         },
         updateDatas() {
             let that = this      
