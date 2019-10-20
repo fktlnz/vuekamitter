@@ -1,0 +1,22 @@
+$color_gray: #dcdcdc;
+$color_txt: #262626;
+$color_bg: #3f3f3f;
+/* ================================
+# 四角ボタン コンポーネント
+=================================*/
+.c-btn {
+    border: none;  
+    padding: 10px 20px;
+    background-color: $color_gray;
+    text-align: center;
+    width: 160px;
+    margin: 0 auto 30px;
+    border-radius: 4px;
+    color: $color_bg;
+    &:hover {
+    opacity: .85;
+    -webkit-transition: .3s;
+    transition: .3s;
+    cursor: pointer;
+  }
+}

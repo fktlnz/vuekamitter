@@ -1,0 +1,141 @@
+// 色の定義
+$color_garbage:#B56060;
+$color_txt: #262626;
+$color_gray: #dcdcdc;
+$color_gray_border: #3f3f3f;
+
+//homeに戻る
+.c-moveTop {
+    width: 80px !important;
+    // height: 60px;
+    padding: 10px 0 !important;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+//ホームアイコンのcss
+.c-icon-home {
+    display: block !important;
+    margin-bottom: 5px;
+}
+
+
+// 楕円のタイトル
+.c-heading {
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 8px 20px;
+    cursor: pointer;
+    &:hover {
+        opacity: .85;
+        -webkit-transition: .3s;
+        transition: .3s;
+    }
+}
+
+.c-title {
+    display: inline-block;
+    font-size: 25px;
+    border-radius: 10px;
+    padding: 5px 20px;
+    background-color: $color_gray;
+    margin-bottom: 50px;
+    color: rgba(38, 38, 38, 0.5);
+}
+
+
+
+// ゴミ箱
+// 親には.c-listItemを指定（position:relativeが指定される）
+.c-garbage {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    color: $color_garbage;
+    font-size: 15px !important;
+    &:hover {
+        cursor: pointer;
+        opacity: .85;
+    }
+}
+
+// input type=text要素
+.c-form-wrap {
+    width: 600px;
+    max-width: 95%;
+    margin: 0 auto;
+}
+.c-input {
+    width: 100%;
+    margin-bottom: 30px;
+}
+.c-input__label {
+    display: inline-block;
+    width: 160px;
+    text-align: right;
+    margin-right: 10px;
+
+}
+
+.c-input__txt {
+    width: calc((100% - 180px));
+    border: 1px solid rgba(0,0,0,.2);
+    height: 42px;
+    padding: 0 5px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+//リストアイテム
+.c-listItem {
+    position: relative;
+    overflow: hidden;
+    padding: 15px 15px;
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    transition: .5s transform;
+    border-radius: 4px;
+}
+.c-listItem--done {
+    background: #e5e5e5;
+    color: #888;
+}
+.c-icon--checked {
+    font-size: 25px !important;
+    color: rgba(89, 158, 175, 0.29);
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+/* ===エディットボックス=== */
+.c-form {
+    // margin-bottom: 30px;
+}
+.c-inputArea{
+  margin-bottom: 15px;
+}
+.c-inputText{
+  padding: 5px;
+  border-radius: 4px;
+  height: 42px;
+  font-size: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #e8e8e8;
+}
+
+/* ===keyword入力エディットボックス=== */
+.c-editKeyword {
+    width: calc((100% - 100px));
+    display: inline-block;
+}
+
+/* ===AND OR NOT 選択ラジオ=== */
+.c-logicOption {
+    width: 90px;
+    display: inline-block;
+    padding: 7px 7px;
+    font-size: 18px;
+}
