@@ -64,6 +64,7 @@
   width: 600px;
   max-width: 95%;
   margin: 0 auto;
+  position: relative;
 }
 
 .p-userInfo__img {
@@ -99,6 +100,19 @@
 
 .p-userInfo__profile {
   text-align: left;
+}
+
+.p-userInfo__logout {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.p-userInfo__logout:hover {
+  opacity: .50;
+  -webkit-transition: .3s;
+  transition: .3s;
+  cursor: pointer;
 }
 
 /* ================================

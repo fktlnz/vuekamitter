@@ -32,6 +32,22 @@ module.exports = new Vue({
     get_data(name) {
       return this.$data[name];
     },
+    checkLogin_ajax(){
+      console.log('checkLoginUser')
+      return axios.get(URL_BASE + 'checkLogin')
+      .then((res) => {
+        console.log('checkLoginUser FINISH')
+          this.$emit('AJAX_COMPLETE_CHECKLOGIN', {response: res.data});
+      })
+      .catch((res) => {
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        console.log(res)
+        this.$emit('AJAX_COMPLETE_CHECKLOGIN', {response: json});
+      })
+    },
     //ユーザー登録処理
     signUp_ajax(form_data) {
         let params = new URLSearchParams();
@@ -51,9 +67,7 @@ module.exports = new Vue({
             'res' : 'NG',
             'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
           }    
-          console.log('ここに入る？')
-          console.log(res)
-            this.$emit('AJAX_COMPLETE_SIGNUP', {response: json});
+          this.$emit('AJAX_COMPLETE_SIGNUP', {response: json});
         })
     },
     //ログイン処理
@@ -118,6 +132,7 @@ module.exports = new Vue({
       return axios.get(URL_BASE + 'getaccount')
       .then((res) => {
           console.log('getaccount終了')
+          console.log('getaccount返ってきた：'+res.data.res)          
           this.$emit('AJAX_COMPLETE_GETACCOUNT', {response: res.data});
       })
       .catch((res) => {
@@ -145,6 +160,7 @@ module.exports = new Vue({
     getUserInfo_ajax(screen_name) {
       return axios.get(URL_BASE + 'getuserinfo?screen_name=' + screen_name)
       .then((res) => {
+          console.log('getuserInfo返ってきた：'+res.data.res)
           console.log('getuserinfo終了')
           this.$emit('AJAX_COMPLETE_GETUSERINFO', {response: res.data});
       })
@@ -174,6 +190,7 @@ module.exports = new Vue({
       return axios.get(URL_BASE + 'gettwitterprofile?screen_name='+screen_name)
       .then((res) => {
           console.log('gettwitterprofile')
+          console.log(res.data.res)          
           this.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', {response: res.data});
       })
       .catch((res) => {
@@ -529,6 +546,24 @@ module.exports = new Vue({
       })
     },
 
+    /* =========================================================
+    # ログアウト
+    ============================================================*/ 
+    logout_ajax() {      
+      return axios.get(URL_BASE + 'logout')
+      .then((res) => {
+          //HOME画面にログアウトを知らせる
+          console.log('返ってきた')
+          this.$emit('AJAX_FINISH_LOGOUT_RESULT', {response: res.data});
+      })
+      .catch((res) => {
+        const json = {
+          'res' : 'NG',
+          'msg' : 'ログアウトに失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        this.$emit('AJAX_FINISH_LOGOUT_RESULT', {response: json});
+      })
+    },
 
     emit_message(msg) {
       console.log('メッセージを受信しました！'+msg)

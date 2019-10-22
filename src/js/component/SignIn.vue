@@ -1,8 +1,6 @@
 <template>
     <div class="l-subPage">
-    <div class="txt_center">
-    <span class="c-heading p-heading__title">ログイン</span>
-    </div>
+    <Message></Message>    
     <div class="c-form-wrap">
         <div class="p-error-area">
             <ul>
@@ -30,11 +28,13 @@ import Vue from 'vue'
 import inputform from './InputForm.vue'
 import controller from './Controller.vue'
 import store from './Store.vue'
+import message from './message.vue'
 
 
 export default {
     components: {
-        InputForm: inputform
+        InputForm: inputform,
+        Message: message,
     },
     data: function(){
         return { 
@@ -46,6 +46,13 @@ export default {
         }
 
         
+    },
+    mounted: function(){
+        //メッセージがセットされていれば表示する
+        const message = store.getMessage();
+        if(message.msg !== ''){
+            controller.emit_message(message)  
+        }  
     },
     methods: {
         onChange($event){

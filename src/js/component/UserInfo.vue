@@ -22,6 +22,7 @@
                 </li>
             </ul>
         </div>
+        <span class="p-userInfo__logout" v-on:click="logout"><i class="fas fa-sign-out-alt"></i></span>
     </div>
 </template>
 
@@ -30,6 +31,8 @@
 import Vue from 'vue'
 import axios from 'axios'
 import inputform from './InputForm.vue'
+import controller from './Controller.vue'
+import store from './Store.vue'
 
 export default {
     props:['follower', 'friends', 'account_name', 'description', 'img_url'],
@@ -37,16 +40,31 @@ export default {
         InputForm: inputform
     },
     data: function(){
-        return {
-            img_path: './src/img/morimoto.jpg'
+        return {            
         }
     },
     methods: {
-        onChangeTxt($event){
-            axios
-                .get('http://localhost:8888/KamitterAPI/public/ip/ip?foo=test')
-                .then(res => (console.log(res)))
-        },
+        logout(){
+            console.log('clicked')
+            controller.logout_ajax()
+            controller.$once('AJAX_FINISH_LOGOUT_RESULT', ($event) => {
+                console.log('ログアウトします')
+                console.log($event.response)
+                if($event.response.res === true){
+                     //メッセージ表示
+                    store.setMessage('ログアウトしました', true)
+                    this.$router.push('/')
+                }else{
+                    //メッセージ表示
+                    store.setMessage('ログアウトに失敗しました', false)
+                    const message = store.getMessage();
+                    if(message.msg !== ''){
+                        controller.emit_message(message)  
+                    }
+                }                
+            })
+
+        }
         
     }
 

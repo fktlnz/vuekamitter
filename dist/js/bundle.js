@@ -4670,7 +4670,7 @@
 
 })));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(30)(module)))
 
 /***/ }),
 /* 1 */
@@ -16764,6 +16764,61 @@ Vue.compile = compileToFunctions;
 
 /***/ }),
 /* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue__ = __webpack_require__(16);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue__);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
+var disposed = false
+/* script */
+
+
+/* template */
+var __vue_render__, __vue_static_render_fns__
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue___default.a,
+  __vue_render__,
+  __vue_static_render_fns__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\js\\component\\Controller.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-60e548d0", Component.options)
+  } else {
+    hotAPI.reload("data-v-60e548d0", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17101,61 +17156,6 @@ module.exports = {
   extend: extend,
   trim: trim
 };
-
-
-/***/ }),
-/* 4 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue__);
-/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
-var disposed = false
-/* script */
-
-
-/* template */
-var __vue_render__, __vue_static_render_fns__
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-
-var Component = Object(__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Controller_vue___default.a,
-  __vue_render__,
-  __vue_static_render_fns__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\js\\component\\Controller.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-60e548d0", Component.options)
-  } else {
-    hotAPI.reload("data-v-60e548d0", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
@@ -34331,7 +34331,7 @@ if (false) {(function () {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10), __webpack_require__(33)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10), __webpack_require__(30)(module)))
 
 /***/ }),
 /* 7 */
@@ -34585,10 +34585,10 @@ process.umask = function() { return 0; };
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__ = __webpack_require__(39);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55de965b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_message_vue__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55de965b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_message_vue__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -34668,10 +34668,10 @@ module.exports = g;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_641b334a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_KeywordList_vue__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_641b334a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_KeywordList_vue__ = __webpack_require__(209);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -36226,7 +36226,7 @@ var _Store = __webpack_require__(5);
 
 var _Store2 = _interopRequireDefault(_Store);
 
-var _Controller = __webpack_require__(4);
+var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
@@ -36630,10 +36630,26 @@ module.exports = new _vue2.default({
     get_data: function get_data(name) {
       return this.$data[name];
     },
+    checkLogin_ajax: function checkLogin_ajax() {
+      var _this2 = this;
+
+      console.log('checkLoginUser');
+      return _axios2.default.get(URL_BASE + 'checkLogin').then(function (res) {
+        console.log('checkLoginUser FINISH');
+        _this2.$emit('AJAX_COMPLETE_CHECKLOGIN', { response: res.data });
+      }).catch(function (res) {
+        var json = {
+          'res': 'NG',
+          'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
+        };
+        console.log(res);
+        _this2.$emit('AJAX_COMPLETE_CHECKLOGIN', { response: json });
+      });
+    },
 
     //ユーザー登録処理
     signUp_ajax: function signUp_ajax(form_data) {
-      var _this2 = this;
+      var _this3 = this;
 
       var params = new URLSearchParams();
       params.append('username', form_data.username);
@@ -36644,21 +36660,19 @@ module.exports = new _vue2.default({
       console.log('サーバーにユーザー情報を送信します@controller');
       console.dir(params);
       return _axios2.default.post(URL_BASE + 'signup', params).then(function (res) {
-        _this2.$emit('AJAX_COMPLETE_SIGNUP', { response: res.data });
+        _this3.$emit('AJAX_COMPLETE_SIGNUP', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        console.log('ここに入る？');
-        console.log(res);
-        _this2.$emit('AJAX_COMPLETE_SIGNUP', { response: json });
+        _this3.$emit('AJAX_COMPLETE_SIGNUP', { response: json });
       });
     },
 
     //ログイン処理
     signIn_ajax: function signIn_ajax(form_data) {
-      var _this3 = this;
+      var _this4 = this;
 
       var params = new URLSearchParams();
       params.append('username', form_data.username);
@@ -36667,7 +36681,7 @@ module.exports = new _vue2.default({
       console.dir(params);
 
       _axios2.default.post(URL_BASE + 'signin', params).then(function (res) {
-        _this3.$emit('AJAX_COMPLETE_SIGNIN', { response: res.data });
+        _this4.$emit('AJAX_COMPLETE_SIGNIN', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
@@ -36675,16 +36689,16 @@ module.exports = new _vue2.default({
         };
         console.log('ここに入る？');
         console.log(res);
-        _this3.$emit('AJAX_COMPLETE_SIGNIN', { response: json });
+        _this4.$emit('AJAX_COMPLETE_SIGNIN', { response: json });
       });
     },
 
     //Twitterアカウントの認証処理(auth_tokenとoauth_verifierの取得)
     certify_ajax: function certify_ajax() {
-      var _this4 = this;
+      var _this5 = this;
 
       return _axios2.default.get(URL_BASE + 'certify').then(function (res) {
-        _this4.$emit('AJAX_COMPLETE_GETREQUEST', { response: res.data });
+        _this5.$emit('AJAX_COMPLETE_GETREQUEST', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
@@ -36692,17 +36706,17 @@ module.exports = new _vue2.default({
         };
         console.log('ここに入る？');
         console.log(res);
-        _this4.$emit('AJAX_COMPLETE_GETREQUEST', { response: json });
+        _this5.$emit('AJAX_COMPLETE_GETREQUEST', { response: json });
       });
     },
 
     //取得したoauth_tokenとoauth_verifierを使ってアクセストークンを取得。サーバー側でDB保存
     saveToken_ajax: function saveToken_ajax(oauth_token, oauth_verifier) {
-      var _this5 = this;
+      var _this6 = this;
 
       return _axios2.default.get(URL_BASE + 'certify?oauth_token=' + oauth_token + '&oauth_verifier=' + oauth_verifier).then(function (res) {
         console.log('saveToken終了');
-        _this5.$emit('AJAX_COMPLETE_CERTIFY', { response: res.data });
+        _this6.$emit('AJAX_COMPLETE_CERTIFY', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
@@ -36710,95 +36724,98 @@ module.exports = new _vue2.default({
         };
         console.log('ここに入る？');
         console.log(res);
-        _this5.$emit('AJAX_COMPLETE_CERTIFY', { response: json });
+        _this6.$emit('AJAX_COMPLETE_CERTIFY', { response: json });
       });
     },
 
     //ログインユーザーが認証しているアカウントをサーバーから取得する
     updateAccount_ajax: function updateAccount_ajax() {
-      var _this6 = this;
+      var _this7 = this;
 
       return _axios2.default.get(URL_BASE + 'getaccount').then(function (res) {
         console.log('getaccount終了');
-        _this6.$emit('AJAX_COMPLETE_GETACCOUNT', { response: res.data });
+        console.log('getaccount返ってきた：' + res.data.res);
+        _this7.$emit('AJAX_COMPLETE_GETACCOUNT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this6.$emit('AJAX_COMPLETE_GETACCOUNT', { response: json });
+        _this7.$emit('AJAX_COMPLETE_GETACCOUNT', { response: json });
       });
     },
     deleteAccount_ajax: function deleteAccount_ajax(screen_name) {
-      var _this7 = this;
+      var _this8 = this;
 
       return _axios2.default.get(URL_BASE + 'deleteaccount?screen_name=' + screen_name).then(function (res) {
         console.log('deleteaccount終了');
-        _this7.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: res.data });
+        _this8.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this7.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: json });
+        _this8.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: json });
       });
     },
     getUserInfo_ajax: function getUserInfo_ajax(screen_name) {
-      var _this8 = this;
+      var _this9 = this;
 
       return _axios2.default.get(URL_BASE + 'getuserinfo?screen_name=' + screen_name).then(function (res) {
+        console.log('getuserInfo返ってきた：' + res.data.res);
         console.log('getuserinfo終了');
-        _this8.$emit('AJAX_COMPLETE_GETUSERINFO', { response: res.data });
+        _this9.$emit('AJAX_COMPLETE_GETUSERINFO', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this8.$emit('AJAX_COMPLETE_GETUSERINFO', { response: json });
+        _this9.$emit('AJAX_COMPLETE_GETUSERINFO', { response: json });
       });
     },
     getActiveUser_ajax: function getActiveUser_ajax(screen_name) {
-      var _this9 = this;
+      var _this10 = this;
 
       return _axios2.default.get(URL_BASE + 'getactiveuser').then(function (res) {
         console.log('getactiveuser');
-        _this9.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: res.data });
+        _this10.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this9.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: json });
+        _this10.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: json });
       });
     },
     getTwitterProfile_ajax: function getTwitterProfile_ajax(screen_name) {
-      var _this10 = this;
+      var _this11 = this;
 
       return _axios2.default.get(URL_BASE + 'gettwitterprofile?screen_name=' + screen_name).then(function (res) {
         console.log('gettwitterprofile');
-        _this10.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: res.data });
+        console.log(res.data.res);
+        _this11.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this10.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: json });
+        _this11.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: json });
       });
     },
 
     //ツイートを投稿する
     tweet_ajax: function tweet_ajax(id, text) {
-      var _this11 = this;
+      var _this12 = this;
 
       return _axios2.default.get(URL_BASE + 'tweet?text=' + text + '&id=' + id).then(function (res) {
         console.log('tweet');
-        _this11.$emit('AJAX_COMPLETE_TWEET', { response: res.data });
+        _this12.$emit('AJAX_COMPLETE_TWEET', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this11.$emit('AJAX_COMPLETE_TWEET', { response: json });
+        _this12.$emit('AJAX_COMPLETE_TWEET', { response: json });
       });
     },
 
@@ -36820,53 +36837,53 @@ module.exports = new _vue2.default({
 
     //予約日時、ツイート内容をデータベースから取得する
     getTweetSchedule_ajax: function getTweetSchedule_ajax() {
-      var _this12 = this;
+      var _this13 = this;
 
       return _axios2.default.get(URL_BASE + 'gettweetschedule').then(function (res) {
-        _this12.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', { response: res.data });
-        _this12.$emit('AJAX_DISPLAY_SCHEDULE_RESULT', { response: res.data });
+        _this13.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', { response: res.data });
+        _this13.$emit('AJAX_DISPLAY_SCHEDULE_RESULT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this12.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', { response: json });
+        _this13.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', { response: json });
       });
     },
 
     //いいねしたリストをセッションから取得する
     getLikedListSession_ajax: function getLikedListSession_ajax() {
-      var _this13 = this;
+      var _this14 = this;
 
       return _axios2.default.get(URL_BASE + 'getlikedlistsession').then(function (res) {
         //HOME画面のイイネリストを更新する
-        _this13.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: res.data });
+        _this14.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。',
           'rst': false
           //HOME画面のイイネリストを更新する
-        };_this13.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: json });
+        };_this14.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: json });
       });
     },
 
 
     //フォローしたリストをセッションから取得する
     getFollowedListSession_ajax: function getFollowedListSession_ajax() {
-      var _this14 = this;
+      var _this15 = this;
 
       console.log('セッションからフォローリストを取得します');
       return _axios2.default.get(URL_BASE + 'getfollowedlistsession').then(function (res) {
         //HOME画面のフォロー済リストを更新する
-        _this14.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
+        _this15.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。',
           'rst': false
           //HOME画面のフォロー済リストを更新する
-        };_this14.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: json });
+        };_this15.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: json });
       });
     },
     emit_message: function emit_message(msg) {
@@ -36880,47 +36897,47 @@ module.exports = new _vue2.default({
     =================================*/
     //自動いいねを開始する
     startAutoLike_ajax: function startAutoLike_ajax() {
-      var _this15 = this;
+      var _this16 = this;
 
       //HOME画面の自動イイネステータスを実行中に変更する
       this.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '2' });
       return _axios2.default.get(URL_BASE + 'startautolike').then(function (res) {
         //HOME画面の自動イイネステータスを待機中に変更する
-        _this15.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '1' });
+        _this16.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '1' });
 
         //HOME画面のイイネリストを更新する
-        _this15.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: res.data });
+        _this16.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: res.data });
       }).catch(function (res) {
         //HOME画面の自動イイネステータスを待機中に変更する
-        _this15.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '1' });
+        _this16.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '1' });
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this15.$emit('AJAX_COMPLETE_AUTOLIKE', { response: json });
+        _this16.$emit('AJAX_COMPLETE_AUTOLIKE', { response: json });
       });
     },
 
     //自動フォローを開始
     startAutoFollow_ajax: function startAutoFollow_ajax() {
-      var _this16 = this;
+      var _this17 = this;
 
       //HOME画面の自動イイネステータスを実行中に変更する
       this.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '2' });
       return _axios2.default.get(URL_BASE + 'startautofollow').then(function (res) {
         //HOME画面のフォローステータスを待機中に変更する
-        _this16.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '1' });
+        _this17.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '1' });
 
         //HOME画面のフォローリストを更新する
-        _this16.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
+        _this17.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
       }).catch(function (res) {
         //HOME画面の自動イイネステータスを待機中に変更する
-        _this16.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '1' });
+        _this17.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '1' });
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this16.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: json });
+        _this17.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: json });
       });
     },
 
@@ -36930,7 +36947,7 @@ module.exports = new _vue2.default({
     ============================================================*/
     //キーワードをDBに保存する
     saveKeyword_ajax: function saveKeyword_ajax(id, likeword, option, type) {
-      var _this17 = this;
+      var _this18 = this;
 
       var params = new URLSearchParams();
       params.append('id', id);
@@ -36941,10 +36958,10 @@ module.exports = new _vue2.default({
       return _axios2.default.post(URL_BASE + 'savekeyword', params).then(function (res) {
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this17.$emit('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', { response: res.data });
+          _this18.$emit('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', { response: res.data });
         } else if (type === 1) {
           //イイネキーワード}
-          _this17.$emit('AJAX_COMPLETE_SAVELIKEWORD', { response: res.data });
+          _this18.$emit('AJAX_COMPLETE_SAVELIKEWORD', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -36953,25 +36970,25 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this17.$emit('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', { response: json });
+          _this18.$emit('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', { response: json });
         } else if (type === 1) {
           //イイネキーワード}
-          _this17.$emit('AJAX_COMPLETE_SAVELIKEWORD', { response: json });
+          _this18.$emit('AJAX_COMPLETE_SAVELIKEWORD', { response: json });
         }
       });
     },
 
     //DBからキーワードを取得する
     getKeyword_ajax: function getKeyword_ajax(type) {
-      var _this18 = this;
+      var _this19 = this;
 
       return _axios2.default.get(URL_BASE + 'getkeyword?type=' + type).then(function (res) {
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this18.$emit('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', { response: res.data });
+          _this19.$emit('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', { response: res.data });
         } else if (type === 1) {
           //イイネキーワード}
-          _this18.$emit('AJAX_COMPLETE_GETLIKEWORD', { response: res.data });
+          _this19.$emit('AJAX_COMPLETE_GETLIKEWORD', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -36980,25 +36997,25 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this18.$emit('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', { response: json });
+          _this19.$emit('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', { response: json });
         } else if (type === 1) {
           //イイネキーワード}
-          _this18.$emit('AJAX_COMPLETE_GETLIKEWORD', { response: json });
+          _this19.$emit('AJAX_COMPLETE_GETLIKEWORD', { response: json });
         }
       });
     },
 
     //DBからキーワードを論理削除する
     deleteKeyword_ajax: function deleteKeyword_ajax(word_id, type) {
-      var _this19 = this;
+      var _this20 = this;
 
       return _axios2.default.get(URL_BASE + 'deletekeyword?word_id=' + word_id).then(function (res) {
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this19.$emit('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', { response: res.data });
+          _this20.$emit('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', { response: res.data });
         } else if (type === 1) {
           //イイネキーワード}
-          _this19.$emit('AJAX_COMPLETE_DELETELIKEWORD', { response: res.data });
+          _this20.$emit('AJAX_COMPLETE_DELETELIKEWORD', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -37007,10 +37024,10 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this19.$emit('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', { response: json });
+          _this20.$emit('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', { response: json });
         } else if (type === 1) {
           //イイネキーワード}
-          _this19.$emit('AJAX_COMPLETE_DELETELIKEWORD', { response: json });
+          _this20.$emit('AJAX_COMPLETE_DELETELIKEWORD', { response: json });
         }
       });
     },
@@ -37021,7 +37038,7 @@ module.exports = new _vue2.default({
     =================================*/
     //ユーザーアカウントをDBに保存する　type: 0:ターゲットアカウント 1:フォロー済アカウント 2:アンフォローアカウント
     saveUserAccount_ajax: function saveUserAccount_ajax(id, screen_name, type) {
-      var _this20 = this;
+      var _this21 = this;
 
       var params = new URLSearchParams();
       params.append('id', id);
@@ -37031,13 +37048,13 @@ module.exports = new _vue2.default({
       return _axios2.default.post(URL_BASE + 'saveuseraccount', params).then(function (res) {
         if (type === 0) {
           //ターゲットアカウント
-          _this20.$emit('AJAX_COMPLETE_SAVETARGETACCOUNT', { response: res.data });
+          _this21.$emit('AJAX_COMPLETE_SAVETARGETACCOUNT', { response: res.data });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this20.$emit('AJAX_COMPLETE_SAVEFOLLOWDONEACCOUNT', { response: res.data });
+          _this21.$emit('AJAX_COMPLETE_SAVEFOLLOWDONEACCOUNT', { response: res.data });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this20.$emit('AJAX_COMPLETE_SAVEUNFOLLOWACCOUNT', { response: res.data });
+          _this21.$emit('AJAX_COMPLETE_SAVEUNFOLLOWACCOUNT', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -37046,31 +37063,31 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //ターゲットアカウント
-          _this20.$emit('AJAX_COMPLETE_SAVETARGETACCOUNT', { response: json });
+          _this21.$emit('AJAX_COMPLETE_SAVETARGETACCOUNT', { response: json });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this20.$emit('AJAX_COMPLETE_SAVEFOLLOWDONEACCOUNT', { response: json });
+          _this21.$emit('AJAX_COMPLETE_SAVEFOLLOWDONEACCOUNT', { response: json });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this20.$emit('AJAX_COMPLETE_SAVEUNFOLLOWACCOUNT', { response: json });
+          _this21.$emit('AJAX_COMPLETE_SAVEUNFOLLOWACCOUNT', { response: json });
         }
       });
     },
 
     //DBからユーザーアカウントを取得する
     getUserAccount_ajax: function getUserAccount_ajax(type) {
-      var _this21 = this;
+      var _this22 = this;
 
       return _axios2.default.get(URL_BASE + 'getuseraccount?type=' + type).then(function (res) {
         if (type === 0) {
           //ターゲットアカウント
-          _this21.$emit('AJAX_COMPLETE_GETTARGETACCOUNT', { response: res.data });
+          _this22.$emit('AJAX_COMPLETE_GETTARGETACCOUNT', { response: res.data });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this21.$emit('AJAX_COMPLETE_GETFOLLOWDONEACCOUNT', { response: res.data });
+          _this22.$emit('AJAX_COMPLETE_GETFOLLOWDONEACCOUNT', { response: res.data });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this21.$emit('AJAX_COMPLETE_GETUNFOLLOWACCOUNT', { response: res.data });
+          _this22.$emit('AJAX_COMPLETE_GETUNFOLLOWACCOUNT', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -37079,31 +37096,31 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //ターゲットアカウント
-          _this21.$emit('AJAX_COMPLETE_GETTARGETACCOUNT', { response: json });
+          _this22.$emit('AJAX_COMPLETE_GETTARGETACCOUNT', { response: json });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this21.$emit('AJAX_COMPLETE_GETFOLLOWDONEACCOUNT', { response: json });
+          _this22.$emit('AJAX_COMPLETE_GETFOLLOWDONEACCOUNT', { response: json });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this21.$emit('AJAX_COMPLETE_GETUNFOLLOWACCOUNT', { response: json });
+          _this22.$emit('AJAX_COMPLETE_GETUNFOLLOWACCOUNT', { response: json });
         }
       });
     },
 
     //DBからユーザーアカウントを論理削除する
     deleteUserAccount_ajax: function deleteUserAccount_ajax(word_id, type) {
-      var _this22 = this;
+      var _this23 = this;
 
       return _axios2.default.get(URL_BASE + 'deleteuseraccount?word_id=' + word_id).then(function (res) {
         if (type === 0) {
           //ターゲットアカウント
-          _this22.$emit('AJAX_COMPLETE_DELETETARGETACCOUNT', { response: res.data });
+          _this23.$emit('AJAX_COMPLETE_DELETETARGETACCOUNT', { response: res.data });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this22.$emit('AJAX_COMPLETE_DELETEFOLLOWDONEACCOUNT', { response: res.data });
+          _this23.$emit('AJAX_COMPLETE_DELETEFOLLOWDONEACCOUNT', { response: res.data });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this22.$emit('AJAX_COMPLETE_DELETEUNFOLLOWACCOUNT', { response: res.data });
+          _this23.$emit('AJAX_COMPLETE_DELETEUNFOLLOWACCOUNT', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -37112,29 +37129,29 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //ターゲットアカウント
-          _this22.$emit('AJAX_COMPLETE_DELETETARGETACCOUNT', { response: json });
+          _this23.$emit('AJAX_COMPLETE_DELETETARGETACCOUNT', { response: json });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this22.$emit('AJAX_COMPLETE_DELETEFOLLOWDONEACCOUNT', { response: json });
+          _this23.$emit('AJAX_COMPLETE_DELETEFOLLOWDONEACCOUNT', { response: json });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this22.$emit('AJAX_COMPLETE_DELETEUNFOLLOWACCOUNT', { response: json });
+          _this23.$emit('AJAX_COMPLETE_DELETEUNFOLLOWACCOUNT', { response: json });
         }
       });
     },
 
     //Twitterのアカウントが存在するか確認する
     CheckUserAccountExist_ajax: function CheckUserAccountExist_ajax(screen_name) {
-      var _this23 = this;
+      var _this24 = this;
 
       return _axios2.default.get(URL_BASE + 'checkuseraccountexist?screen_name=' + screen_name).then(function (res) {
-        _this23.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: res.data });
+        _this24.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this23.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: json });
+        _this24.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: json });
       });
     },
 
@@ -37144,24 +37161,44 @@ module.exports = new _vue2.default({
     ============================================================*/
     //自動フォローを開始
     startAutoUnFollow_ajax: function startAutoUnFollow_ajax() {
-      var _this24 = this;
+      var _this25 = this;
 
       //HOME画面の自動イイネステータスを実行中に変更する
       this.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '2' });
       return _axios2.default.get(URL_BASE + 'startautounfollow').then(function (res) {
         //HOME画面のフォローステータスを待機中に変更する
-        _this24.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
+        _this25.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
 
         //HOME画面のフォローリストを更新する
-        _this24.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: res.data });
+        _this25.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: res.data });
       }).catch(function (res) {
         //HOME画面の自動イイネステータスを待機中に変更する
-        _this24.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
+        _this25.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this24.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: json });
+        _this25.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: json });
+      });
+    },
+
+
+    /* =========================================================
+    # ログアウト
+    ============================================================*/
+    logout_ajax: function logout_ajax() {
+      var _this26 = this;
+
+      return _axios2.default.get(URL_BASE + 'logout').then(function (res) {
+        //HOME画面にログアウトを知らせる
+        console.log('返ってきた');
+        _this26.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: res.data });
+      }).catch(function (res) {
+        var json = {
+          'res': 'NG',
+          'msg': 'ログアウトに失敗しました。ネットワーク管理者に問い合わせてください。'
+        };
+        _this26.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: json });
       });
     }
   }, 'emit_message', function emit_message(msg) {
@@ -37201,7 +37238,7 @@ module.exports = function bind(fn, thisArg) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -37291,7 +37328,7 @@ module.exports = function isCancel(value) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var normalizeHeaderName = __webpack_require__(186);
 
 var DEFAULT_CONTENT_TYPE = {
@@ -37397,7 +37434,7 @@ module.exports = defaults;
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var settle = __webpack_require__(187);
 var buildURL = __webpack_require__(19);
 var parseHeaders = __webpack_require__(189);
@@ -37603,7 +37640,7 @@ module.exports = function createError(message, config, code, request, response) 
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 /**
  * Config-specific merge-function which creates a new config-object
@@ -37703,7 +37740,7 @@ var _InputForm = __webpack_require__(7);
 
 var _InputForm2 = _interopRequireDefault(_InputForm);
 
-var _Controller = __webpack_require__(4);
+var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
@@ -37850,7 +37887,7 @@ var _InputForm = __webpack_require__(7);
 
 var _InputForm2 = _interopRequireDefault(_InputForm);
 
-var _Controller = __webpack_require__(4);
+var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
@@ -37858,11 +37895,41 @@ var _Store = __webpack_require__(5);
 
 var _Store2 = _interopRequireDefault(_Store);
 
+var _message = __webpack_require__(9);
+
+var _message2 = _interopRequireDefault(_message);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     components: {
-        InputForm: _InputForm2.default
+        InputForm: _InputForm2.default,
+        Message: _message2.default
     },
     data: function data() {
         return {
@@ -37872,6 +37939,13 @@ exports.default = {
                 password: ''
             }
         };
+    },
+    mounted: function mounted() {
+        //メッセージがセットされていれば表示する
+        var message = _Store2.default.getMessage();
+        if (message.msg !== '') {
+            _Controller2.default.emit_message(message);
+        }
     },
     methods: {
         onChange: function onChange($event) {
@@ -37904,32 +37978,7 @@ exports.default = {
         }
     }
 
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
 
 /***/ }),
 /* 29 */
@@ -37942,1402 +37991,15 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _path = __webpack_require__(13);
+var _lodash = __webpack_require__(6);
 
-var _path2 = _interopRequireDefault(_path);
+var _lodash2 = _interopRequireDefault(_lodash);
 
-var _UserInfo = __webpack_require__(204);
-
-var _UserInfo2 = _interopRequireDefault(_UserInfo);
-
-var _KeywordList = __webpack_require__(11);
-
-var _KeywordList2 = _interopRequireDefault(_KeywordList);
-
-var _Listitem = __webpack_require__(209);
-
-var _Listitem2 = _interopRequireDefault(_Listitem);
-
-var _AuthAccount = __webpack_require__(213);
-
-var _AuthAccount2 = _interopRequireDefault(_AuthAccount);
-
-var _message10 = __webpack_require__(9);
-
-var _message11 = _interopRequireDefault(_message10);
-
-var _Controller = __webpack_require__(4);
-
-var _Controller2 = _interopRequireDefault(_Controller);
-
-var _Store = __webpack_require__(5);
-
-var _Store2 = _interopRequireDefault(_Store);
-
-var _jquery = __webpack_require__(40);
+var _jquery = __webpack_require__(31);
 
 var _jquery2 = _interopRequireDefault(_jquery);
 
-var _lodash = __webpack_require__(6);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-    components: {
-        UserInfo: _UserInfo2.default,
-        ListItem: _Listitem2.default,
-        AuthAccount: _AuthAccount2.default,
-        Message: _message11.default
-    },
-    data: function data() {
-        return {
-            follower: 0,
-            friends: 0,
-            account_name: '',
-            description: '',
-            img_url: '',
-            listItems_like: [],
-            listItems_schedule: [],
-            listItems_follow: [],
-            listItems_unfollow: [],
-            AutoLikeCronStatus: '0', //自動イイネ機能の動作状態　0:停止中　1:待機中　2:実行中
-            AutoFollowCronStatus: '0', //自動フォロー機能の動作状態　0:停止中　1:待機中　2:実行中
-            AutoUnFollowCronStatus: '0', //自動アンフォロー機能の動作状態　0:停止中　1:待機中　2:実行中
-            p_status_toggle: {
-                'p-btn_home-like--exec': false,
-                'p-btn_home-like--stay': false
-            },
-            p_follow_status_toggle: {
-                'p-btn_home-follow--exec': false,
-                'p-btn_home-follow--stay': false
-            },
-            p_unfollow_status_toggle: {
-                'p-btn_home-unfollow--exec': false,
-                'p-btn_home-unfollow--stay': false
-            }
-        };
-    },
-
-    mounted: function mounted() {
-        var _this = this;
-
-        var that = this;
-
-        //jquery設置
-        (0, _jquery2.default)('.js-toggle-window').on('click', function () {
-            if ((0, _jquery2.default)('.p-sidebar').hasClass('open')) {
-                (0, _jquery2.default)('.p-sidebar').removeClass('open');
-                // $('.p-sidebar').css('left','-300px');
-            } else {
-                (0, _jquery2.default)('.p-sidebar').addClass('open');
-                // $('.p-sidebar').css('left','0');
-            }
-        });
-
-        //メッセージがセットされていれば表示する
-        var message = _Store2.default.getMessage();
-        if (message.msg !== '') {
-            _Controller2.default.emit_message(message);
-        }
-
-        //いいねの処理が完了したときにここにくる
-        //いいねしたツイートの一覧を表示する
-        _Controller2.default.getLikedListSession_ajax();
-        _Controller2.default.$on('AJAX_DISPLAY_AUTOLIKE_RESULT', function ($event) {
-            console.log('DEBUG -- Home.vue --> いいね！をしたリストを更新します');
-            console.dir($event.response.rst);
-            if ($event.response.rst) {
-
-                console.dir($event.response.rst.length);
-                var result = $event.response.rst;
-                var length = $event.response.rst.length;
-                that.listItems_like = []; //listを初期化
-                for (var i = 0; i < length; i++) {
-                    //DBから取得したList情報をdatasに格納する
-                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                    //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_like.unshift({ id: result[i]['id'], name: result[i]['name'], text: result[i]['text'], created_at: result[i]['created_at'] });
-                }
-            } else if ($event.response.rst == null) {
-                //いいねのリクエストがすべて失敗した場合はnullが返る。リクエスト上限の可能性が高い
-                //レスポンスがnullの場合はAPIのリクエスト上限と判断する
-                //自動イイネを一時停止状態にして、メッセージで表示する
-                console.log('DEBUG -- Home.vue --> APIのリクエスト上限に達した可能性があります');
-
-                //自動いいねを停止状態にする
-                _this.AutoLikeCronStatus = '0';
-                _Store2.default.setAutoLikeCronStatus('0');
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', false);
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', false);
-
-                //メッセージ表示
-                _Store2.default.setMessage('いいね制限、あるいは通信環境に問題がある可能性あります。いいねを一時停止します。', false);
-                var _message = _Store2.default.getMessage();
-                if (_message.msg !== '') {
-                    _Controller2.default.emit_message(_message);
-                }
-            } else {
-                //通常のエラーフロー
-                //メッセージ表示
-                _Store2.default.setMessage($event.response.msg, false);
-                var _message2 = _Store2.default.getMessage();
-                if (_message2.msg !== '') {
-                    _Controller2.default.emit_message(_message2);
-                }
-            }
-        });
-
-        //自動フォローが完了したときにここにくる
-        //正常にすべてのフォローが完了した⇒フォローしたアカウントのリストを更新する
-        //制限にかかった⇒15分後にもう一度自動フォローを再開する
-        _Controller2.default.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', function ($event) {
-            console.log('フォローリスト取得がかえててきた');
-            console.dir($event.response.rst);
-            if ($event.response.res === 'OK') {
-                console.log('DEBUG -- Home.vue --> フォローリストを更新します');
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
-                var result = $event.response.rst;
-                var length = $event.response.rst.length;
-                that.listItems_follow = []; //listを初期化
-                for (var i = 0; i < length; i++) {
-                    //DBから取得したList情報をdatasに格納する
-                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                    //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: result[i]['id'], name: result[i]['name'], text: rst[i]['text'], created_at: result[i]['created_at'] });
-                }
-
-                //自動フォローを停止中にする
-                // store.setAutoFollowCronStatus('0')
-                // this.AutoFollowCronStatus = '0'
-                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false)
-                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false)
-
-
-                //次のフォロー開始時間を15分後に設定する
-                var _now = new Date();
-                var _now_ms = _now.getTime();
-                _Store2.default.setNextFollowTime(_now_ms + 905000, _now_ms); //15分後に設定　5秒は気持ち
-
-                //自動フォローを再開関数を開始する
-                that.$crontab.enableJob('reStartAutoFollow');
-
-                //メッセージ表示
-                _Store2.default.setMessage($event.response.msg, false);
-                var _message3 = _Store2.default.getMessage();
-                if (_message3.msg !== '') {
-                    _Controller2.default.emit_message(_message3);
-                }
-            } else if ($event.response.res === 'LIMIT' || $event.response.res === 'FOLLOWLIMIT') {
-                //'LIMIT':       ターゲットアカウントからのフォロワー取得制限に引っかかった場合
-                //'FOLLOWLIMIT': フォロー上限に引っかかった場合
-                //crontabで15分後にフォローを再開する
-                //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
-
-                //次のフォロー開始時間を15分後に設定する
-                var _now2 = new Date();
-                var _now_ms2 = _now2.getTime();
-                _Store2.default.setNextFollowTime(_now_ms2 + 905000, _now_ms2); //15分後に設定　5秒は気持ち
-
-                console.log('自動フォロー再開ジョブをスタートします');
-                //自動フォローを再開関数を開始する
-                var _result = that.$crontab.enableJob('reStartAutoFollow');
-                console.log("enableJob('reStartAutoFollow'):" + _result);
-
-                //リストを更新する
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
-                var _rst = $event.response.rst;
-                var _length = $event.response.rst.length;
-                that.listItems_follow = []; //listを初期化
-                for (var _i = 0; _i < _length; _i++) {
-                    //DBから取得したList情報をdatasに格納する
-                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                    //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: _rst[_i]['id'], name: _rst[_i]['name'], text: _rst[_i]['text'], created_at: _rst[_i]['created_at'] });
-                }
-
-                //メッセージ表示
-                _Store2.default.setMessage($event.response.msg, false);
-                var _message4 = _Store2.default.getMessage();
-                if (_message4.msg !== '') {
-                    _Controller2.default.emit_message(_message4);
-                }
-            } else if ($event.response.res === 'UPDATE') {
-                //画面更新の場合に、すでにフォロー済リストを表示する
-                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
-                var _result2 = $event.response.rst;
-                var _length2 = $event.response.rst.length;
-                that.listItems_follow = []; //listを初期化
-                for (var _i2 = 0; _i2 < _length2; _i2++) {
-                    //DBから取得したList情報をdatasに格納する
-                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                    //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: _result2[_i2]['id'], name: _result2[_i2]['name'], text: '', created_at: _result2[_i2]['created_at'] });
-                }
-            } else {
-                //メッセージ表示
-                _Store2.default.setMessage($event.response.msg, false);
-                var _message5 = _Store2.default.getMessage();
-                if (_message5.msg !== '') {
-                    _Controller2.default.emit_message(_message5);
-                }
-
-                //自動フォローを停止中にする
-                _Store2.default.setAutoFollowCronStatus('0');
-                _this.AutoFollowCronStatus = '0';
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
-
-                //自動フォローが実行中の場合は実行する
-                that.$crontab.enableJob('startAutoFollow');
-            }
-        });
-
-        //次のアンフォロー開始時間を1分後に設定する
-        //最初は1分あける
-        var now = new Date();
-        var now_ms = now.getTime();
-        _Store2.default.setNextUnFollowTime(now_ms + 60000); //1分後に設定
-
-        //自動アンフォローが完了したときにここにくる
-        //正常にすべてのアンフォローが完了した⇒フォローしたアカウントのリストを更新する
-        //制限にかかった⇒15分後にもう一度自動フォローを再開する
-        //controller.startAutoUnFollow_ajax()
-        _Controller2.default.$on('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', function ($event) {
-            console.log('アンフォロー完了しました');
-            console.dir($event.response.rst);
-            if ($event.response.res === 'OK') {
-                console.log('DEBUG -- Home.vue --> アンフォローリストを更新します');
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
-                var result = $event.response.rst;
-                var length = $event.response.rst.length;
-                that.listItems_unfollow = []; //listを初期化
-                for (var i = 0; i < length; i++) {
-                    //DBから取得したList情報をdatasに格納する
-                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                    //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_unfollow.unshift({ id: result[i]['id'], name: result[i]['name'], text: result[i]['text'], created_at: result[i]['created_at'] });
-                }
-
-                //メッセージ表示
-                _Store2.default.setMessage($event.response.msg, false);
-                var _message6 = _Store2.default.getMessage();
-                if (_message6.msg !== '') {
-                    _Controller2.default.emit_message(_message6);
-                }
-
-                //アンフォローを15分後に再開する
-                var _now3 = new Date();
-                var _now_ms3 = _now3.getTime();
-                _Store2.default.setNextUnFollowTime(_now_ms3 + 900000); //15分後に設定
-
-                //自動アンフォローを再開関数を開始する
-                that.$crontab.enableJob('startAutoUnFollow');
-            } else if ($event.response.res === 'LIMIT' || $event.response.res === 'FOLLOWLIMIT') {
-                //'LIMIT':       ターゲットアカウントからのフォロワー取得制限に引っかかった場合
-                //'FOLLOWLIMIT': フォロー上限に引っかかった場合
-                //crontabで15分後にフォローを再開する
-                //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
-
-                //次のフォロー開始時間を15分後に設定する
-                var _now4 = new Date();
-                var _now_ms4 = _now4.getTime();
-                _Store2.default.setNextFollowTime(_now_ms4 + 905000, _now_ms4); //15分後に設定　5秒は気持ち
-
-                // console.log('自動フォロー再開ジョブをスタートします')
-                //自動フォローを再開関数を開始する
-                // const result = that.$crontab.enableJob('reStartAutoFollow')
-                // console.log("enableJob('reStartAutoFollow'):"+result)
-
-                //リストを更新する
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
-                var _rst2 = $event.response.rst;
-                var _length3 = $event.response.rst.length;
-                that.listItems_unfollow = []; //listを初期化
-                for (var _i3 = 0; _i3 < _length3; _i3++) {
-                    //DBから取得したList情報をdatasに格納する
-                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                    //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_unfollow.unshift({ id: _rst2[_i3]['id'], name: _rst2[_i3]['name'], text: _rst2[_i3]['text'], created_at: _rst2[_i3]['created_at'] });
-                }
-
-                //メッセージ表示
-                _Store2.default.setMessage($event.response.msg, false);
-                var _message7 = _Store2.default.getMessage();
-                if (_message7.msg !== '') {
-                    _Controller2.default.emit_message(_message7);
-                }
-
-                //自動アンフォローを再開関数を開始する
-                that.$crontab.enableJob('startAutoUnFollow');
-            } else {
-                //メッセージ表示
-                _Store2.default.setMessage($event.response.msg, false);
-                var _message8 = _Store2.default.getMessage();
-                if (_message8.msg !== '') {
-                    _Controller2.default.emit_message(_message8);
-                }
-
-                //自動アンフォローを停止中にする
-                _Store2.default.setAutoUnFollowCronStatus('0');
-                _this.AutoUnFollowCronStatus = '0';
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
-
-                //自動アンフォローが実行中の場合は実行する
-                that.$crontab.enableJob('startAutoUnFollow');
-            }
-        });
-
-        //自動フォローが実行中の場合は実行する
-        // if(store.getAutoFollowCronStatus() !== '0') that.$crontab.enableJob('startAutoFollow')
-        // if(store.getRestartAutoFollowCronStatus()) that.$crontab.enableJob('reStartAutoFollow')
-
-
-        //予約ツイートを更新する
-        _Controller2.default.getTweetSchedule_ajax();
-        _Controller2.default.$on('AJAX_DISPLAY_SCHEDULE_RESULT', function ($event) {
-            console.log('DEBUG -- Home.vue --> ツイートスケジュールリストを更新します');
-            console.dir($event.response.rst);
-            console.dir($event.response.rst.length);
-            var result = $event.response.rst;
-            var length = $event.response.rst.length;
-            that.listItems_schedule = []; //listを初期化
-            for (var i = 0; i < length; i++) {
-                //DBから取得したList情報をdatasに格納する
-                //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                //HOME画面で上から時系列順に並ぶようにする
-                that.listItems_schedule.unshift({ id: result[i]['id'], name: 'Schedule', text: result[i]['text'], created_at: result[i]['date'] });
-            }
-        });
-
-        //自動いいねのステータスを変更する
-        _Controller2.default.$on('AJAX_CHANGE_AUTOLIKESTATUS', function ($event) {
-            console.log('DEBUG -- Home.vue --> 自動いいねステータスを変更します');
-            _this.AutoLikeCronStatus = $event.response;
-            _Store2.default.setAutoLikeCronStatus($event.response);
-            if ($event.response === '1') {
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', false);
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', true);
-            } else {
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', true);
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', false);
-            }
-        });
-
-        //自動フォローのステータスを変更する
-        _Controller2.default.$on('AJAX_CHANGE_AUTOFOLLOWSTATUS', function ($event) {
-            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
-            _this.AutoFollowCronStatus = $event.response;
-            _Store2.default.setAutoFollowCronStatus($event.response);
-            if ($event.response === '1') {
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
-            } else {
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', true);
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
-            }
-        });
-
-        //自動アンフォローのステータスを変更する
-        _Controller2.default.$on('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', function ($event) {
-            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
-            _this.AutoUnFollowCronStatus = $event.response;
-            _Store2.default.setAutoUnFollowCronStatus($event.response);
-            if ($event.response === '1') {
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
-            } else {
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
-            }
-        });
-
-        //Home画面に来た時、リストが初期化されているから、1sでいいね動作を開始する
-        //1sでリスト更新される
-        // const result = this.$crontab.enableJob('startAutoLike1')
-        // console.log("enableJob('startAutoLike1'):"+result)
-
-        //♡likeステータスをセットする
-        console.log('likeステータスは：' + _Store2.default.getAutoLikeCronStatus());
-        this.AutoLikeCronStatus = _Store2.default.getAutoLikeCronStatus();
-        if (this.AutoLikeCronStatus === '0') {
-            this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
-            this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false);
-        } else if (this.AutoLikeCronStatus === '1') {
-            this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
-            this.$set(this.p_status_toggle, 'p-btn_home-like--stay', true);
-        } else {
-            this.$set(this.p_status_toggle, 'p-btn_home-like--exec', true);
-            this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false);
-        }
-        //followステータスをセットする
-        console.log('followステータスは：' + _Store2.default.getAutoFollowCronStatus());
-        this.AutoFollowCronStatus = _Store2.default.getAutoFollowCronStatus();
-        if (this.AutoFollowCronStatus === '0') {
-            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
-            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
-        } else if (this.AutoFollowCronStatus === '1') {
-            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
-            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
-        } else {
-            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', true);
-            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
-        }
-        //unfollowステータスをセットする
-        console.log('Unfollowステータスは：' + _Store2.default.getAutoUnFollowCronStatus());
-        this.AutoUnFollowCronStatus = _Store2.default.getAutoUnFollowCronStatus();
-        if (this.AutoUnFollowCronStatus === '0') {
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
-        } else if (this.AutoUnFollowCronStatus === '1') {
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
-        } else {
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
-        }
-    },
-    methods: {
-        changeActiveUser: function changeActiveUser($event) {
-            var _this2 = this;
-
-            console.log($event.active_user);
-            var screen_name = $event.active_user;
-            //親コンポーネントにアクティブユーザーを渡す 
-            _Controller2.default.getTwitterProfile_ajax(screen_name);
-            _Controller2.default.$once('AJAX_COMPLETE_GETTWITTERPROFILE', function ($event) {
-                console.log('フロントに帰ってきたデータ↓ プロフィール');
-                console.dir($event.response.rst);
-                if ($event.response.res === 'OK') {
-                    //取得成功時はUser領域更新
-                    _this2.follower = $event.response.rst.followers_count; //フォロワー数
-                    _this2.friends = $event.response.rst.friends_count; //フォロー数
-                    _this2.account_name = $event.response.rst.name; //アカウント名
-                    _this2.description = $event.response.rst.description; //プロフィール文   
-                    _this2.img_url = $event.response.rst.profile_image_url_https; //画像URL
-
-                    //フォロー数をstoreに格納
-                    _Store2.default.setFriendsCount($event.response.rst.friends_count);
-                } else {
-                    //失敗したときはメッセージ表示
-                    //メッセージ表示
-
-                    _Store2.default.setMessage('プロフィールの取得に失敗。アクセス制限orネット環境が悪い可能性があります', false);
-                    var _message9 = _Store2.default.getMessage();
-                    if (_message9.msg !== '') {
-                        _Controller2.default.emit_message(_message9);
-                    }
-                }
-            });
-        },
-        changeLikeCronStatus: function changeLikeCronStatus() {
-            if (this.AutoLikeCronStatus === '0') {
-                _Store2.default.setAutoLikeCronStatus('1');
-                this.AutoLikeCronStatus = '1';
-                this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
-                this.$set(this.p_status_toggle, 'p-btn_home-like--stay', true);
-            } else if (this.AutoLikeCronStatus === '1') {
-                _Store2.default.setAutoLikeCronStatus('0');
-                this.AutoLikeCronStatus = '0';
-                this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false);
-                this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
-            } else if (this.AutoLikeCronStatus === '2') {
-                //実行中の場合はステータスを変更できないようにする
-            }
-        },
-        changeFollowCronStatus: function changeFollowCronStatus() {
-            if (this.AutoFollowCronStatus === '0') {
-                _Store2.default.setAutoFollowCronStatus('1');
-                this.AutoFollowCronStatus = '1';
-                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
-                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
-            } else if (this.AutoFollowCronStatus === '1') {
-                _Store2.default.setAutoFollowCronStatus('0');
-                this.AutoFollowCronStatus = '0';
-                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
-                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
-            } else if (this.AutoFollowCronStatus === '2') {
-                //実行中の場合はステータスを変更できないようにする
-            }
-        },
-        changeUnFollowCronStatus: function changeUnFollowCronStatus() {
-            if (this.AutoUnFollowCronStatus === '0') {
-                _Store2.default.setAutoUnFollowCronStatus('1');
-                this.AutoUnFollowCronStatus = '1';
-                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
-                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
-            } else if (this.AutoUnFollowCronStatus === '1') {
-                _Store2.default.setAutoUnFollowCronStatus('0');
-                this.AutoUnFollowCronStatus = '0';
-                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
-                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
-            } else if (this.AutoUnFollowCronStatus === '2') {
-                //実行中の場合はステータスを変更できないようにする
-            }
-        }
-    }
-
-};
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _vue = __webpack_require__(2);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _axios = __webpack_require__(17);
-
-var _axios2 = _interopRequireDefault(_axios);
-
-var _InputForm = __webpack_require__(7);
-
-var _InputForm2 = _interopRequireDefault(_InputForm);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    props: ['follower', 'friends', 'account_name', 'description', 'img_url'],
-    components: {
-        InputForm: _InputForm2.default
-    },
-    data: function data() {
-        return {
-            img_path: './src/img/morimoto.jpg'
-        };
-    },
-    methods: {
-        onChangeTxt: function onChangeTxt($event) {
-            _axios2.default.get('http://localhost:8888/KamitterAPI/public/ip/ip?foo=test').then(function (res) {
-                return console.log(res);
-            });
-        }
-    }
-
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _KeywordItem = __webpack_require__(206);
-
-var _KeywordItem2 = _interopRequireDefault(_KeywordItem);
-
-var _lodash = __webpack_require__(6);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-    props: ['listItems', 'type'],
-    components: {
-        KeywordComponent: _KeywordItem2.default
-    },
-    data: function data() {
-        return {};
-    },
-    methods: {
-        deleteItem: function deleteItem(id) {
-            console.log('delete-btn clicked!!' + id.item_id);
-            this.$emit('delete-item', { listId: id.item_id });
-            this.datas = _lodash2.default.reject(this.datas, { 'id': id.item_id });
-        }
-    }
-
-};
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _vue = __webpack_require__(2);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _Controller = __webpack_require__(4);
-
-var _Controller2 = _interopRequireDefault(_Controller);
-
-var _Store = __webpack_require__(5);
-
-var _Store2 = _interopRequireDefault(_Store);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    props: ['data', 'type'], //propsで受け取ったデータは関数内でthis.dataで使える
-    data: function data() {
-        return {
-            classNameLi: {
-                'c-listItem': true
-            },
-            HeartIcon: {
-                'fas': true,
-                'fa-heart': true
-            },
-            SearchIcon: {
-                'fas': true,
-                'fa-search': true
-            },
-            TargetIcon: {
-                'fas': true,
-                'fa-bullseye': true
-            }
-        };
-    },
-    mounted: function mounted() {},
-
-    watch: {},
-    methods: {
-        OnMoveTwitterPage: function OnMoveTwitterPage() {
-            window.open("https://twitter.com/" + this.data.text); // 新しいタブを開き、ページを表示
-        }
-    }
-
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports) {
-
-module.exports = function(module) {
-	if(!module.webpackPolyfill) {
-		module.deprecate = function() {};
-		module.paths = [];
-		// module.parent = undefined by default
-		if(!module.children) module.children = [];
-		Object.defineProperty(module, "loaded", {
-			enumerable: true,
-			get: function() {
-				return module.l;
-			}
-		});
-		Object.defineProperty(module, "id", {
-			enumerable: true,
-			get: function() {
-				return module.i;
-			}
-		});
-		module.webpackPolyfill = 1;
-	}
-	return module;
-};
-
-
-/***/ }),
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _props$data$component;
-
-var _vue = __webpack_require__(2);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _ListRecord = __webpack_require__(210);
-
-var _ListRecord2 = _interopRequireDefault(_ListRecord);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = (_props$data$component = {
-    props: ['listItems', 'heading', 'classname'],
-    data: {
-        class: ''
-    },
-    components: {
-        Record: _ListRecord2.default
-    }
-}, _defineProperty(_props$data$component, 'data', function data() {
-    return {};
-}), _defineProperty(_props$data$component, 'methods', {
-    onChangeTxt: function onChangeTxt($event) {},
-    onClick: function onClick() {
-        var route = this.heading;
-        if (route === 'unFollow') return;
-        if (route === 'follow') route = 'target';
-        console.log('route:' + route);
-        this.$router.push('/' + route);
-    },
-    onClickKeyword: function onClickKeyword() {
-        this.$router.push('/keywords');
-    }
-}), _props$data$component);
-
-/***/ }),
-/* 35 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _vue = __webpack_require__(2);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// import inputform from './InputForm.vue'
-
-exports.default = {
-    props: ['data', 'heading'],
-    data: function data() {
-        return {};
-    },
-    methods: {
-        onMoveTwitter: function onMoveTwitter() {
-            if (this.heading === 'follow') {
-                //ユーザーのページを表示
-                window.open("https://twitter.com/" + this.data.name, '_blank'); // 新しいタブを開き、ページを表示
-            } else {
-                //ツイートを表示
-                window.open("https://twitter.com/" + this.data.name + "/status/" + this.data.id, '_blank'); // 新しいタブを開き、ページを表示
-            }
-        }
-    }
-
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _AccountList = __webpack_require__(214);
-
-var _AccountList2 = _interopRequireDefault(_AccountList);
-
-var _lodash = __webpack_require__(6);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _Controller = __webpack_require__(4);
-
-var _Controller2 = _interopRequireDefault(_Controller);
-
-var _Store = __webpack_require__(5);
-
-var _Store2 = _interopRequireDefault(_Store);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-    components: {
-        AccountListComponent: _AccountList2.default
-    },
-    data: function data() {
-        return {
-            datas: [], //
-            searchText: '', //
-            loading: false, //
-            post: null, //
-            error: null, //
-            activeUser: '' //現在選択しているアカウント
-        };
-    },
-    created: function created() {
-        // view が作られた時にデータを取得し、
-        // そのデータは既に監視されている
-        this.fetchData();
-        this.updateAccount();
-    },
-
-    watch: {
-        // ルートが変更されたらこのメソッドを再び呼び出します
-        '$route': 'fetchData'
-    },
-    methods: {
-        makeDatas: function makeDatas() {
-            // 今のリスト項目を退避
-            var datas_ = Object.assign([], this.datas);
-            console.dir(datas_);
-            return this.searchText == '' ? this.datas : '';
-        },
-        deleteItem: function deleteItem(id) {
-            var _this = this;
-
-            console.log('delete-btn clicked!!' + id.listId);
-
-            //データベース上のアカウント情報を削除する            
-            var delete_data = _lodash2.default.filter(this.datas, { 'id': id.listId });
-
-            this.datas = _lodash2.default.reject(this.datas, { 'id': id.listId });
-
-            console.dir(delete_data[0].account);
-
-            _Controller2.default.deleteAccount_ajax(delete_data[0].account);
-            _Controller2.default.$on('AJAX_COMPLETE_DELETEACCOUNT', function ($event) {
-
-                if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました');
-                    console.dir($event.response);
-                    _Store2.default.setMessage($event.response.msg, true);
-
-                    var message = _Store2.default.getMessage();
-                    if (message.msg !== '') {
-                        _Controller2.default.emit_message(message);
-                    }
-                } else {
-                    _this.loading = false;
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
-                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
-
-                    var _message = _Store2.default.getMessage();
-                    if (_message.msg !== '') {
-                        _Controller2.default.emit_message(_message);
-                    }
-                }
-            });
-        },
-        addItem: function addItem(account_list) {
-            var that = this;
-            console.log('addItem');
-            console.log('length:' + Object.keys(account_list).length);
-            Object.keys(account_list).forEach(function (key) {
-                // val => {screen_name: 'xxxxxxxxx'}
-                console.log('index:' + key);
-                console.log('val:' + this['screen_name']);
-                that.datas.push({ id: that.getId(), account: this['screen_name'], isActive: false });
-            }, account_list);
-            this.makeDatas();
-        },
-        filterCollection: function filterCollection(elm) {
-            console.log('filterCollection');
-            var regexp = new RegExp('^' + this.searchText, 'i');
-            return elm.text.match(regexp);
-        },
-        CertifyAccount: function CertifyAccount() {
-            var _this2 = this;
-
-            this.loading = true;
-            console.log('certify-btn clicked!');
-            _Controller2.default.certify_ajax();
-            _Controller2.default.$on('AJAX_COMPLETE_GETREQUEST', function ($event) {
-
-                if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました');
-                    console.dir($event.response);
-                    var url = $event.response.url;
-                    console.log('リダイレクトします->' + url);
-                    // this.$router.push(url)
-                    window.open(url, "_blank");
-                } else {
-                    _this2.loading = false;
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
-                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
-
-                    var message = _Store2.default.getMessage();
-                    if (message.msg !== '') {
-                        _Controller2.default.emit_message(message);
-                    }
-                }
-            });
-        },
-        fetchData: function fetchData() {
-            this.loading = false;
-            this.error = this.post = null;
-
-            var denied = this.getParam('denied');
-            var oauth_token = this.getParam('oauth_token');
-            var oauth_verifier = this.getParam('oauth_verifier');
-
-            if (!_lodash2.default.isNil(denied)) {
-                //認証をキャンセルした場合
-                this.loading = false;
-                _Store2.default.setMessage('認証に失敗しました', false);
-            } else if (!_lodash2.default.isNil(oauth_token) && !_lodash2.default.isNil(oauth_verifier)) {
-                //認証処理に成功した場合
-                this.loading = false;
-                _Controller2.default.saveToken_ajax(oauth_token, oauth_verifier);
-                _Controller2.default.$once('AJAX_COMPLETE_CERTIFY', function ($event) {
-                    console.log('フロントに帰ってきたデータ↓');
-                    console.dir($event.response);
-
-                    // メッセージ表示
-                    _Store2.default.setMessage('認証に成功しました', true);
-
-                    var message = _Store2.default.getMessage();
-                    if (message.msg !== '') {
-                        _Controller2.default.emit_message(message);
-                    }
-                });
-            }
-        },
-        updateAccount: function updateAccount() {
-            var _this3 = this;
-
-            //thisを退避
-            var that = this;
-            //認証処理に成功した場合
-            this.loading = false;
-            _Controller2.default.updateAccount_ajax();
-            _Controller2.default.$once('AJAX_COMPLETE_GETACCOUNT', function ($event) {
-                console.log('フロントに帰ってきたデータ↓');
-                console.dir($event.response);
-
-                if ($event.response.res === 'OK') {
-                    // メッセージ表示
-                    console.log('アカウントのアップデート処理完了');
-                    console.log('取得したスクリーンネーム');
-
-                    for (var i = 0; i < $event.response.screen_name.length; i++) {
-                        _this3.addItem($event.response.screen_name[i]);
-                    }
-                } else {}
-            });
-        },
-        changeActiveUser: function changeActiveUser($event) {
-            console.log($event.active_user);
-            this.activeUser = $event.active_user;
-            //親コンポーネントにアクティブユーザーを渡す
-            this.$emit('change-active-user', { active_user: $event.active_user });
-        },
-
-        //GETパラメータの値を取得する
-        getParam: function getParam(name, url) {
-            if (!url) url = window.location.href;
-            name = name.replace(/[\[\]]/g, "\\$&");
-            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-                results = regex.exec(url);
-            if (!results) return null;
-            if (!results[2]) return '';
-            return decodeURIComponent(results[2].replace(/\+/g, " "));
-        },
-        getId: function getId() {
-            var strong = 1000;
-            return new Date().getTime().toString(16) + Math.floor(strong * Math.random()).toString(16);
-        }
-    }
-
-};
-
-/***/ }),
-/* 37 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _Task = __webpack_require__(215);
-
-var _Task2 = _interopRequireDefault(_Task);
-
-var _lodash = __webpack_require__(6);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-exports.default = {
-    props: ['listItems'],
-    components: {
-        ItemsComponent: _Task2.default
-    },
-    data: function data() {
-        return {
-            activeUser: ''
-        };
-    },
-    methods: {
-        toggleDone: function toggleDone() {
-            console.log('clicked');
-            this.isDone = !this.isDone;
-            this.$set(this.classNameLi, 'list__item-done', this.isDone);
-            this.$set(this.classNameIcon, 'fa-circle', !this.isDone);
-            this.$set(this.classNameIcon, 'fa-check-circle', this.isDone);
-        },
-        deleteItem: function deleteItem(id) {
-            console.log('delete-btn clicked!!' + id.item_id);
-            this.$emit('delete-item', { listId: id.item_id });
-            this.datas = _lodash2.default.reject(this.datas, { 'id': id.item_id });
-        },
-        changeActiveUser: function changeActiveUser($event) {
-            console.log('changeactiveuser');
-            console.log($event.active_user);
-            this.activeUser = $event.active_user;
-            //親コンポーネントにアクティブユーザーを渡す
-            this.$emit('change-active-user', { active_user: $event.active_user });
-        }
-    }
-
-};
-
-/***/ }),
-/* 38 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _vue = __webpack_require__(2);
-
-var _vue2 = _interopRequireDefault(_vue);
-
-var _Controller = __webpack_require__(4);
-
-var _Controller2 = _interopRequireDefault(_Controller);
-
-var _Store = __webpack_require__(5);
-
-var _Store2 = _interopRequireDefault(_Store);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-exports.default = {
-    props: ['data', 'listStyle', 'active_user'], //propsで受け取ったデータは関数内でthis.dataで使える
-    data: function data() {
-        return {
-            classNameLi: {
-                'c-listItem': true,
-                'c-listItem--done': this.data.isDone
-            },
-            classNameIcon: {
-                'far': true,
-                'fa-calendar-check': !this.data.isDone
-                // 'fa-check-circle': this.data.isDone,
-                // 'c-icon--checked': true
-            },
-            classNameIconPerson: {
-                'fas': true,
-                'fa-user': true,
-                'p-user-selected': this.active_user === this.data.account
-                // 'fa-check-circle': this.data.isDone,
-                // 'c-icon--checked': true
-            }
-        };
-    },
-    mounted: function mounted() {
-        //アクティブユーザーを選択状態にする
-        this.setActiveUser();
-    },
-
-    watch: {
-        active_user: function active_user() {
-            this.$set(this.classNameIconPerson, 'p-user-selected', this.data.account === this.active_user);
-        }
-    },
-    methods: {
-        toggleDone: function toggleDone() {
-            console.log('clicked チェック');
-            this.data.isDone = !this.data.isDone;
-            var status = this.data.isDone;
-            this.$set(this.classNameLi, 'c-listItem--done', status);
-            this.$set(this.classNameIcon, 'fa-circle-thin', !status);
-            this.$set(this.classNameIcon, 'fa-check-circle', status);
-            // this.$emit('toggleDone', {item_id: data_.id})
-        },
-
-        //ユーザーのアカウント情報を取得してhome画面に返す
-        changeUser: function changeUser() {
-            var _this = this;
-
-            var that = this; //thisを退避
-            console.log('changeUser clicked!');
-            console.log('アカウント：' + that.data.account);
-
-            _Controller2.default.getUserInfo_ajax(this.data.account);
-            _Controller2.default.$on('AJAX_COMPLETE_GETUSERINFO', function ($event) {
-
-                if ($event.response.res === 'OK') {
-                    console.log('getuserinfoが帰ってきたよ');
-                    console.dir($event.response);
-                    _this.$set(_this.classNameIconPerson, 'p-user-selected', that.data.account === $event.response.active_user);
-                    // this.active_user = $event.response.active_user
-                    console.log('アクティブユーザーはこれです：' + $event.response.active_user);
-                    //親コンポーネントにアクティブユーザーを渡す
-                    _this.$emit('change-active-user', { active_user: $event.response.active_user });
-                    //メッセージを表示する
-                    //リロードの場合(引数false)は切り替え完了メッセージを表示しない                   
-                    _Store2.default.setMessage($event.response.msg, true);
-                    var message = _Store2.default.getMessage();
-                    if (message.msg !== '') {
-                        _Controller2.default.emit_message(message);
-                    }
-                } else {
-                    _this.loading = false;
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
-                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
-
-                    var _message = _Store2.default.getMessage();
-                    if (_message.msg !== '') {
-                        _Controller2.default.emit_message(_message);
-                    }
-                }
-            });
-        },
-        setActiveUser: function setActiveUser() {
-            var _this2 = this;
-
-            _Controller2.default.getActiveUser_ajax(this.data.account);
-            _Controller2.default.$on('AJAX_COMPLETE_GETACTIVEUSER', function ($event) {
-
-                if ($event.response.res === 'OK') {
-                    console.log('getactiveuserが帰ってきたよ');
-                    console.dir($event.response);
-                    _this2.$set(_this2.classNameIconPerson, 'p-user-selected', _this2.data.account === $event.response.active_user);
-                    // this.active_user = $event.response.active_user
-                    console.log('アクティブユーザーはこれです：' + $event.response.active_user);
-                    //親コンポーネントにアクティブユーザーを渡す
-                    _this2.$emit('change-active-user', { active_user: $event.response.active_user });
-                } else {
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
-                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
-
-                    var message = _Store2.default.getMessage();
-                    if (message.msg !== '') {
-                        _Controller2.default.emit_message(message);
-                    }
-                }
-            });
-        }
-    }
-
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/***/ }),
-/* 39 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _lodash = __webpack_require__(6);
-
-var _lodash2 = _interopRequireDefault(_lodash);
-
-var _jquery = __webpack_require__(40);
-
-var _jquery2 = _interopRequireDefault(_jquery);
-
-var _Controller = __webpack_require__(4);
+var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
@@ -39419,7 +38081,35 @@ exports.default = {
 //
 
 /***/ }),
-/* 40 */
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = function(module) {
+	if(!module.webpackPolyfill) {
+		module.deprecate = function() {};
+		module.paths = [];
+		// module.parent = undefined by default
+		if(!module.children) module.children = [];
+		Object.defineProperty(module, "loaded", {
+			enumerable: true,
+			get: function() {
+				return module.l;
+			}
+		});
+		Object.defineProperty(module, "id", {
+			enumerable: true,
+			get: function() {
+				return module.i;
+			}
+		});
+		module.webpackPolyfill = 1;
+	}
+	return module;
+};
+
+
+/***/ }),
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -50024,6 +48714,1399 @@ return jQuery;
 
 
 /***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _path = __webpack_require__(13);
+
+var _path2 = _interopRequireDefault(_path);
+
+var _UserInfo = __webpack_require__(205);
+
+var _UserInfo2 = _interopRequireDefault(_UserInfo);
+
+var _KeywordList = __webpack_require__(11);
+
+var _KeywordList2 = _interopRequireDefault(_KeywordList);
+
+var _Listitem = __webpack_require__(210);
+
+var _Listitem2 = _interopRequireDefault(_Listitem);
+
+var _AuthAccount = __webpack_require__(214);
+
+var _AuthAccount2 = _interopRequireDefault(_AuthAccount);
+
+var _message10 = __webpack_require__(9);
+
+var _message11 = _interopRequireDefault(_message10);
+
+var _Controller = __webpack_require__(3);
+
+var _Controller2 = _interopRequireDefault(_Controller);
+
+var _Store = __webpack_require__(5);
+
+var _Store2 = _interopRequireDefault(_Store);
+
+var _jquery = __webpack_require__(31);
+
+var _jquery2 = _interopRequireDefault(_jquery);
+
+var _lodash = __webpack_require__(6);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    components: {
+        UserInfo: _UserInfo2.default,
+        ListItem: _Listitem2.default,
+        AuthAccount: _AuthAccount2.default,
+        Message: _message11.default
+    },
+    data: function data() {
+        return {
+            follower: 0,
+            friends: 0,
+            account_name: '',
+            description: '',
+            img_url: '',
+            listItems_like: [],
+            listItems_schedule: [],
+            listItems_follow: [],
+            listItems_unfollow: [],
+            AutoLikeCronStatus: '0', //自動イイネ機能の動作状態　0:停止中　1:待機中　2:実行中
+            AutoFollowCronStatus: '0', //自動フォロー機能の動作状態　0:停止中　1:待機中　2:実行中
+            AutoUnFollowCronStatus: '0', //自動アンフォロー機能の動作状態　0:停止中　1:待機中　2:実行中
+            p_status_toggle: {
+                'p-btn_home-like--exec': false,
+                'p-btn_home-like--stay': false
+            },
+            p_follow_status_toggle: {
+                'p-btn_home-follow--exec': false,
+                'p-btn_home-follow--stay': false
+            },
+            p_unfollow_status_toggle: {
+                'p-btn_home-unfollow--exec': false,
+                'p-btn_home-unfollow--stay': false
+            }
+        };
+    },
+
+    mounted: function mounted() {
+        var _this = this;
+
+        var that = this;
+
+        //jquery設置
+        (0, _jquery2.default)('.js-toggle-window').on('click', function () {
+            if ((0, _jquery2.default)('.p-sidebar').hasClass('open')) {
+                (0, _jquery2.default)('.p-sidebar').removeClass('open');
+                // $('.p-sidebar').css('left','-300px');
+            } else {
+                (0, _jquery2.default)('.p-sidebar').addClass('open');
+                // $('.p-sidebar').css('left','0');
+            }
+        });
+
+        //メッセージがセットされていれば表示する
+        var message = _Store2.default.getMessage();
+        if (message.msg !== '') {
+            _Controller2.default.emit_message(message);
+        }
+
+        //ログインチェック結果
+        _Controller2.default.checkLogin_ajax();
+        _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
+            console.log($event.response.res);
+            if ($event.response.res === 'NOTLOGIN') {
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。');
+                _this.$router.push('/');
+            }
+        });
+
+        //いいねの処理が完了したときにここにくる
+        //いいねしたツイートの一覧を表示する
+        _Controller2.default.getLikedListSession_ajax();
+        _Controller2.default.$on('AJAX_DISPLAY_AUTOLIKE_RESULT', function ($event) {
+            console.log('DEBUG -- Home.vue --> いいね！をしたリストを更新します');
+            console.dir($event.response.rst);
+            if ($event.response.rst) {
+
+                console.dir($event.response.rst.length);
+                var result = $event.response.rst;
+                var length = $event.response.rst.length;
+                that.listItems_like = []; //listを初期化
+                for (var i = 0; i < length; i++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_like.unshift({ id: result[i]['id'], name: result[i]['name'], text: result[i]['text'], created_at: result[i]['created_at'] });
+                }
+            } else if ($event.response.rst == null) {
+                //いいねのリクエストがすべて失敗した場合はnullが返る。リクエスト上限の可能性が高い
+                //レスポンスがnullの場合はAPIのリクエスト上限と判断する
+                //自動イイネを一時停止状態にして、メッセージで表示する
+                console.log('DEBUG -- Home.vue --> APIのリクエスト上限に達した可能性があります');
+
+                //自動いいねを停止状態にする
+                _this.AutoLikeCronStatus = '0';
+                _Store2.default.setAutoLikeCronStatus('0');
+                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', false);
+                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', false);
+
+                //メッセージ表示
+                _Store2.default.setMessage('いいね制限、あるいは通信環境に問題がある可能性あります。いいねを一時停止します。', false);
+                var _message = _Store2.default.getMessage();
+                if (_message.msg !== '') {
+                    _Controller2.default.emit_message(_message);
+                }
+            } else {
+                //通常のエラーフロー
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message2 = _Store2.default.getMessage();
+                if (_message2.msg !== '') {
+                    _Controller2.default.emit_message(_message2);
+                }
+            }
+        });
+
+        //自動フォローが完了したときにここにくる
+        //正常にすべてのフォローが完了した⇒フォローしたアカウントのリストを更新する
+        //制限にかかった⇒15分後にもう一度自動フォローを再開する
+        _Controller2.default.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', function ($event) {
+            console.log('フォローリスト取得がかえててきた');
+            console.dir($event.response.rst);
+            if ($event.response.res === 'OK') {
+                console.log('DEBUG -- Home.vue --> フォローリストを更新します');
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var result = $event.response.rst;
+                var length = $event.response.rst.length;
+                that.listItems_follow = []; //listを初期化
+                for (var i = 0; i < length; i++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_follow.unshift({ id: result[i]['id'], name: result[i]['name'], text: rst[i]['text'], created_at: result[i]['created_at'] });
+                }
+
+                //自動フォローを停止中にする
+                // store.setAutoFollowCronStatus('0')
+                // this.AutoFollowCronStatus = '0'
+                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false)
+                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false)
+
+
+                //次のフォロー開始時間を15分後に設定する
+                var _now = new Date();
+                var _now_ms = _now.getTime();
+                _Store2.default.setNextFollowTime(_now_ms + 905000, _now_ms); //15分後に設定　5秒は気持ち
+
+                //自動フォローを再開関数を開始する
+                that.$crontab.enableJob('reStartAutoFollow');
+
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message3 = _Store2.default.getMessage();
+                if (_message3.msg !== '') {
+                    _Controller2.default.emit_message(_message3);
+                }
+            } else if ($event.response.res === 'LIMIT' || $event.response.res === 'FOLLOWLIMIT') {
+                //'LIMIT':       ターゲットアカウントからのフォロワー取得制限に引っかかった場合
+                //'FOLLOWLIMIT': フォロー上限に引っかかった場合
+                //crontabで15分後にフォローを再開する
+                //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
+
+                //次のフォロー開始時間を15分後に設定する
+                var _now2 = new Date();
+                var _now_ms2 = _now2.getTime();
+                _Store2.default.setNextFollowTime(_now_ms2 + 905000, _now_ms2); //15分後に設定　5秒は気持ち
+
+                console.log('自動フォロー再開ジョブをスタートします');
+                //自動フォローを再開関数を開始する
+                var _result = that.$crontab.enableJob('reStartAutoFollow');
+                console.log("enableJob('reStartAutoFollow'):" + _result);
+
+                //リストを更新する
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var _rst = $event.response.rst;
+                var _length = $event.response.rst.length;
+                that.listItems_follow = []; //listを初期化
+                for (var _i = 0; _i < _length; _i++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_follow.unshift({ id: _rst[_i]['id'], name: _rst[_i]['name'], text: _rst[_i]['text'], created_at: _rst[_i]['created_at'] });
+                }
+
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message4 = _Store2.default.getMessage();
+                if (_message4.msg !== '') {
+                    _Controller2.default.emit_message(_message4);
+                }
+            } else if ($event.response.res === 'UPDATE') {
+                //画面更新の場合に、すでにフォロー済リストを表示する
+                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var _result2 = $event.response.rst;
+                var _length2 = $event.response.rst.length;
+                that.listItems_follow = []; //listを初期化
+                for (var _i2 = 0; _i2 < _length2; _i2++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_follow.unshift({ id: _result2[_i2]['id'], name: _result2[_i2]['name'], text: '', created_at: _result2[_i2]['created_at'] });
+                }
+            } else {
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message5 = _Store2.default.getMessage();
+                if (_message5.msg !== '') {
+                    _Controller2.default.emit_message(_message5);
+                }
+
+                //自動フォローを停止中にする
+                _Store2.default.setAutoFollowCronStatus('0');
+                _this.AutoFollowCronStatus = '0';
+                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+
+                //自動フォローが実行中の場合は実行する
+                that.$crontab.enableJob('startAutoFollow');
+            }
+        });
+
+        //次のアンフォロー開始時間を1分後に設定する
+        //最初は1分あける
+        var now = new Date();
+        var now_ms = now.getTime();
+        _Store2.default.setNextUnFollowTime(now_ms + 60000); //1分後に設定
+
+        //自動アンフォローが完了したときにここにくる
+        //正常にすべてのアンフォローが完了した⇒フォローしたアカウントのリストを更新する
+        //制限にかかった⇒15分後にもう一度自動フォローを再開する
+        //controller.startAutoUnFollow_ajax()
+        _Controller2.default.$on('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', function ($event) {
+            console.log('アンフォロー完了しました');
+            console.dir($event.response.rst);
+            if ($event.response.res === 'OK') {
+                console.log('DEBUG -- Home.vue --> アンフォローリストを更新します');
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var result = $event.response.rst;
+                var length = $event.response.rst.length;
+                that.listItems_unfollow = []; //listを初期化
+                for (var i = 0; i < length; i++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_unfollow.unshift({ id: result[i]['id'], name: result[i]['name'], text: result[i]['text'], created_at: result[i]['created_at'] });
+                }
+
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message6 = _Store2.default.getMessage();
+                if (_message6.msg !== '') {
+                    _Controller2.default.emit_message(_message6);
+                }
+
+                //アンフォローを15分後に再開する
+                var _now3 = new Date();
+                var _now_ms3 = _now3.getTime();
+                _Store2.default.setNextUnFollowTime(_now_ms3 + 900000); //15分後に設定
+
+                //自動アンフォローを再開関数を開始する
+                that.$crontab.enableJob('startAutoUnFollow');
+            } else if ($event.response.res === 'LIMIT' || $event.response.res === 'FOLLOWLIMIT') {
+                //'LIMIT':       ターゲットアカウントからのフォロワー取得制限に引っかかった場合
+                //'FOLLOWLIMIT': フォロー上限に引っかかった場合
+                //crontabで15分後にフォローを再開する
+                //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
+
+                //次のフォロー開始時間を15分後に設定する
+                var _now4 = new Date();
+                var _now_ms4 = _now4.getTime();
+                _Store2.default.setNextFollowTime(_now_ms4 + 905000, _now_ms4); //15分後に設定　5秒は気持ち
+
+                // console.log('自動フォロー再開ジョブをスタートします')
+                //自動フォローを再開関数を開始する
+                // const result = that.$crontab.enableJob('reStartAutoFollow')
+                // console.log("enableJob('reStartAutoFollow'):"+result)
+
+                //リストを更新する
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var _rst2 = $event.response.rst;
+                var _length3 = $event.response.rst.length;
+                that.listItems_unfollow = []; //listを初期化
+                for (var _i3 = 0; _i3 < _length3; _i3++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_unfollow.unshift({ id: _rst2[_i3]['id'], name: _rst2[_i3]['name'], text: _rst2[_i3]['text'], created_at: _rst2[_i3]['created_at'] });
+                }
+
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message7 = _Store2.default.getMessage();
+                if (_message7.msg !== '') {
+                    _Controller2.default.emit_message(_message7);
+                }
+
+                //自動アンフォローを再開関数を開始する
+                that.$crontab.enableJob('startAutoUnFollow');
+            } else {
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message8 = _Store2.default.getMessage();
+                if (_message8.msg !== '') {
+                    _Controller2.default.emit_message(_message8);
+                }
+
+                //自動アンフォローを停止中にする
+                _Store2.default.setAutoUnFollowCronStatus('0');
+                _this.AutoUnFollowCronStatus = '0';
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+
+                //自動アンフォローが実行中の場合は実行する
+                that.$crontab.enableJob('startAutoUnFollow');
+            }
+        });
+
+        //自動フォローが実行中の場合は実行する
+        // if(store.getAutoFollowCronStatus() !== '0') that.$crontab.enableJob('startAutoFollow')
+        // if(store.getRestartAutoFollowCronStatus()) that.$crontab.enableJob('reStartAutoFollow')
+
+
+        //予約ツイートを更新する
+        _Controller2.default.getTweetSchedule_ajax();
+        _Controller2.default.$on('AJAX_DISPLAY_SCHEDULE_RESULT', function ($event) {
+            console.log('DEBUG -- Home.vue --> ツイートスケジュールリストを更新します');
+            console.dir($event.response.rst);
+            console.dir($event.response.rst.length);
+            var result = $event.response.rst;
+            var length = $event.response.rst.length;
+            that.listItems_schedule = []; //listを初期化
+            for (var i = 0; i < length; i++) {
+                //DBから取得したList情報をdatasに格納する
+                //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                //HOME画面で上から時系列順に並ぶようにする
+                that.listItems_schedule.unshift({ id: result[i]['id'], name: 'Schedule', text: result[i]['text'], created_at: result[i]['date'] });
+            }
+        });
+
+        //自動いいねのステータスを変更する
+        _Controller2.default.$on('AJAX_CHANGE_AUTOLIKESTATUS', function ($event) {
+            console.log('DEBUG -- Home.vue --> 自動いいねステータスを変更します');
+            _this.AutoLikeCronStatus = $event.response;
+            _Store2.default.setAutoLikeCronStatus($event.response);
+            if ($event.response === '1') {
+                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', false);
+                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', true);
+            } else {
+                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', true);
+                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', false);
+            }
+        });
+
+        //自動フォローのステータスを変更する
+        _Controller2.default.$on('AJAX_CHANGE_AUTOFOLLOWSTATUS', function ($event) {
+            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
+            _this.AutoFollowCronStatus = $event.response;
+            _Store2.default.setAutoFollowCronStatus($event.response);
+            if ($event.response === '1') {
+                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
+            } else {
+                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', true);
+                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+            }
+        });
+
+        //自動アンフォローのステータスを変更する
+        _Controller2.default.$on('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', function ($event) {
+            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
+            _this.AutoUnFollowCronStatus = $event.response;
+            _Store2.default.setAutoUnFollowCronStatus($event.response);
+            if ($event.response === '1') {
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
+            } else {
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+            }
+        });
+
+        //♡likeステータスをセットする
+        console.log('likeステータスは：' + _Store2.default.getAutoLikeCronStatus());
+        this.AutoLikeCronStatus = _Store2.default.getAutoLikeCronStatus();
+        if (this.AutoLikeCronStatus === '0') {
+            this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
+            this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false);
+        } else if (this.AutoLikeCronStatus === '1') {
+            this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
+            this.$set(this.p_status_toggle, 'p-btn_home-like--stay', true);
+        } else {
+            this.$set(this.p_status_toggle, 'p-btn_home-like--exec', true);
+            this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false);
+        }
+        //followステータスをセットする
+        console.log('followステータスは：' + _Store2.default.getAutoFollowCronStatus());
+        this.AutoFollowCronStatus = _Store2.default.getAutoFollowCronStatus();
+        if (this.AutoFollowCronStatus === '0') {
+            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+        } else if (this.AutoFollowCronStatus === '1') {
+            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
+        } else {
+            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', true);
+            this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+        }
+        //unfollowステータスをセットする
+        console.log('Unfollowステータスは：' + _Store2.default.getAutoUnFollowCronStatus());
+        this.AutoUnFollowCronStatus = _Store2.default.getAutoUnFollowCronStatus();
+        if (this.AutoUnFollowCronStatus === '0') {
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+        } else if (this.AutoUnFollowCronStatus === '1') {
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
+        } else {
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+        }
+    },
+    methods: {
+        changeActiveUser: function changeActiveUser($event) {
+            var _this2 = this;
+
+            console.log($event.active_user);
+            var screen_name = $event.active_user;
+            //親コンポーネントにアクティブユーザーを渡す 
+            _Controller2.default.getTwitterProfile_ajax(screen_name);
+            _Controller2.default.$once('AJAX_COMPLETE_GETTWITTERPROFILE', function ($event) {
+                console.log('フロントに帰ってきたデータ↓ プロフィール');
+                console.dir($event.response.rst);
+                if ($event.response.res === 'OK') {
+                    //取得成功時はUser領域更新
+                    _this2.follower = $event.response.rst.followers_count; //フォロワー数
+                    _this2.friends = $event.response.rst.friends_count; //フォロー数
+                    _this2.account_name = $event.response.rst.name; //アカウント名
+                    _this2.description = $event.response.rst.description; //プロフィール文   
+                    _this2.img_url = $event.response.rst.profile_image_url_https; //画像URL
+
+                    //フォロー数をstoreに格納
+                    _Store2.default.setFriendsCount($event.response.rst.friends_count);
+                } else if ($event.response.res === 'NOTLOGIN') {
+                    console.log('ログインユーザーでないためログイン画面に飛ばします');
+                    _this2.$router.push('/');
+                } else {
+                    //失敗したときはメッセージ表示
+                    //メッセージ表示
+
+                    _Store2.default.setMessage('プロフィールの取得に失敗。アクセス制限orネット環境が悪い可能性があります', false);
+                    var _message9 = _Store2.default.getMessage();
+                    if (_message9.msg !== '') {
+                        _Controller2.default.emit_message(_message9);
+                    }
+                }
+            });
+        },
+        changeLikeCronStatus: function changeLikeCronStatus() {
+            if (this.AutoLikeCronStatus === '0') {
+                _Store2.default.setAutoLikeCronStatus('1');
+                this.AutoLikeCronStatus = '1';
+                this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
+                this.$set(this.p_status_toggle, 'p-btn_home-like--stay', true);
+            } else if (this.AutoLikeCronStatus === '1') {
+                _Store2.default.setAutoLikeCronStatus('0');
+                this.AutoLikeCronStatus = '0';
+                this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false);
+                this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
+            } else if (this.AutoLikeCronStatus === '2') {
+                //実行中の場合はステータスを変更できないようにする
+            }
+        },
+        changeFollowCronStatus: function changeFollowCronStatus() {
+            if (this.AutoFollowCronStatus === '0') {
+                _Store2.default.setAutoFollowCronStatus('1');
+                this.AutoFollowCronStatus = '1';
+                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
+            } else if (this.AutoFollowCronStatus === '1') {
+                _Store2.default.setAutoFollowCronStatus('0');
+                this.AutoFollowCronStatus = '0';
+                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+            } else if (this.AutoFollowCronStatus === '2') {
+                //実行中の場合はステータスを変更できないようにする
+            }
+        },
+        changeUnFollowCronStatus: function changeUnFollowCronStatus() {
+            if (this.AutoUnFollowCronStatus === '0') {
+                _Store2.default.setAutoUnFollowCronStatus('1');
+                this.AutoUnFollowCronStatus = '1';
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
+            } else if (this.AutoUnFollowCronStatus === '1') {
+                _Store2.default.setAutoUnFollowCronStatus('0');
+                this.AutoUnFollowCronStatus = '0';
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+            } else if (this.AutoUnFollowCronStatus === '2') {
+                //実行中の場合はステータスを変更できないようにする
+            }
+        }
+    }
+
+};
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vue = __webpack_require__(2);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _axios = __webpack_require__(17);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _InputForm = __webpack_require__(7);
+
+var _InputForm2 = _interopRequireDefault(_InputForm);
+
+var _Controller = __webpack_require__(3);
+
+var _Controller2 = _interopRequireDefault(_Controller);
+
+var _Store = __webpack_require__(5);
+
+var _Store2 = _interopRequireDefault(_Store);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    props: ['follower', 'friends', 'account_name', 'description', 'img_url'],
+    components: {
+        InputForm: _InputForm2.default
+    },
+    data: function data() {
+        return {};
+    },
+    methods: {
+        logout: function logout() {
+            var _this = this;
+
+            console.log('clicked');
+            _Controller2.default.logout_ajax();
+            _Controller2.default.$once('AJAX_FINISH_LOGOUT_RESULT', function ($event) {
+                console.log('ログアウトします');
+                console.log($event.response);
+                if ($event.response.res === true) {
+                    //メッセージ表示
+                    _Store2.default.setMessage('ログアウトしました', true);
+                    _this.$router.push('/');
+                } else {
+                    //メッセージ表示
+                    _Store2.default.setMessage('ログアウトに失敗しました', false);
+                    var message = _Store2.default.getMessage();
+                    if (message.msg !== '') {
+                        _Controller2.default.emit_message(message);
+                    }
+                }
+            });
+        }
+    }
+
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _KeywordItem = __webpack_require__(207);
+
+var _KeywordItem2 = _interopRequireDefault(_KeywordItem);
+
+var _lodash = __webpack_require__(6);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    props: ['listItems', 'type'],
+    components: {
+        KeywordComponent: _KeywordItem2.default
+    },
+    data: function data() {
+        return {};
+    },
+    methods: {
+        deleteItem: function deleteItem(id) {
+            console.log('delete-btn clicked!!' + id.item_id);
+            this.$emit('delete-item', { listId: id.item_id });
+            this.datas = _lodash2.default.reject(this.datas, { 'id': id.item_id });
+        }
+    }
+
+};
+
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vue = __webpack_require__(2);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _Controller = __webpack_require__(3);
+
+var _Controller2 = _interopRequireDefault(_Controller);
+
+var _Store = __webpack_require__(5);
+
+var _Store2 = _interopRequireDefault(_Store);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    props: ['data', 'type'], //propsで受け取ったデータは関数内でthis.dataで使える
+    data: function data() {
+        return {
+            classNameLi: {
+                'c-listItem': true
+            },
+            HeartIcon: {
+                'fas': true,
+                'fa-heart': true
+            },
+            SearchIcon: {
+                'fas': true,
+                'fa-search': true
+            },
+            TargetIcon: {
+                'fas': true,
+                'fa-bullseye': true
+            }
+        };
+    },
+    mounted: function mounted() {},
+
+    watch: {},
+    methods: {
+        OnMoveTwitterPage: function OnMoveTwitterPage() {
+            window.open("https://twitter.com/" + this.data.text); // 新しいタブを開き、ページを表示
+        }
+    }
+
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _props$data$component;
+
+var _vue = __webpack_require__(2);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _ListRecord = __webpack_require__(211);
+
+var _ListRecord2 = _interopRequireDefault(_ListRecord);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; } //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = (_props$data$component = {
+    props: ['listItems', 'heading', 'classname'],
+    data: {
+        class: ''
+    },
+    components: {
+        Record: _ListRecord2.default
+    }
+}, _defineProperty(_props$data$component, 'data', function data() {
+    return {};
+}), _defineProperty(_props$data$component, 'methods', {
+    onChangeTxt: function onChangeTxt($event) {},
+    onClick: function onClick() {
+        var route = this.heading;
+        if (route === 'unFollow') return;
+        if (route === 'follow') route = 'target';
+        console.log('route:' + route);
+        this.$router.push('/' + route);
+    },
+    onClickKeyword: function onClickKeyword() {
+        this.$router.push('/keywords');
+    }
+}), _props$data$component);
+
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vue = __webpack_require__(2);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import inputform from './InputForm.vue'
+
+exports.default = {
+    props: ['data', 'heading'],
+    data: function data() {
+        return {};
+    },
+    methods: {
+        onMoveTwitter: function onMoveTwitter() {
+            if (this.heading === 'follow') {
+                //ユーザーのページを表示
+                window.open("https://twitter.com/" + this.data.name, '_blank'); // 新しいタブを開き、ページを表示
+            } else {
+                //ツイートを表示
+                window.open("https://twitter.com/" + this.data.name + "/status/" + this.data.id, '_blank'); // 新しいタブを開き、ページを表示
+            }
+        }
+    }
+
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _AccountList = __webpack_require__(215);
+
+var _AccountList2 = _interopRequireDefault(_AccountList);
+
+var _lodash = __webpack_require__(6);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+var _Controller = __webpack_require__(3);
+
+var _Controller2 = _interopRequireDefault(_Controller);
+
+var _Store = __webpack_require__(5);
+
+var _Store2 = _interopRequireDefault(_Store);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    components: {
+        AccountListComponent: _AccountList2.default
+    },
+    data: function data() {
+        return {
+            datas: [], //
+            searchText: '', //
+            loading: false, //
+            post: null, //
+            error: null, //
+            activeUser: '' //現在選択しているアカウント
+        };
+    },
+    created: function created() {
+        // view が作られた時にデータを取得し、
+        // そのデータは既に監視されている
+        this.fetchData();
+        this.updateAccount();
+    },
+
+    watch: {
+        // ルートが変更されたらこのメソッドを再び呼び出します
+        '$route': 'fetchData'
+    },
+    methods: {
+        makeDatas: function makeDatas() {
+            // 今のリスト項目を退避
+            var datas_ = Object.assign([], this.datas);
+            console.dir(datas_);
+            return this.searchText == '' ? this.datas : '';
+        },
+        deleteItem: function deleteItem(id) {
+            var _this = this;
+
+            console.log('delete-btn clicked!!' + id.listId);
+
+            //データベース上のアカウント情報を削除する            
+            var delete_data = _lodash2.default.filter(this.datas, { 'id': id.listId });
+
+            this.datas = _lodash2.default.reject(this.datas, { 'id': id.listId });
+
+            console.dir(delete_data[0].account);
+
+            _Controller2.default.deleteAccount_ajax(delete_data[0].account);
+            _Controller2.default.$on('AJAX_COMPLETE_DELETEACCOUNT', function ($event) {
+
+                if ($event.response.res === 'OK') {
+                    console.log('リクエストに成功しました');
+                    console.dir($event.response);
+                    _Store2.default.setMessage($event.response.msg, true);
+
+                    var message = _Store2.default.getMessage();
+                    if (message.msg !== '') {
+                        _Controller2.default.emit_message(message);
+                    }
+                } else {
+                    _this.loading = false;
+                    console.log('リクエストに失敗しました');
+                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
+
+                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
+
+                    var _message = _Store2.default.getMessage();
+                    if (_message.msg !== '') {
+                        _Controller2.default.emit_message(_message);
+                    }
+                }
+            });
+        },
+        addItem: function addItem(account_list) {
+            var that = this;
+            console.log('addItem');
+            console.log('length:' + Object.keys(account_list).length);
+            Object.keys(account_list).forEach(function (key) {
+                // val => {screen_name: 'xxxxxxxxx'}
+                console.log('index:' + key);
+                console.log('val:' + this['screen_name']);
+                that.datas.push({ id: that.getId(), account: this['screen_name'], isActive: false });
+            }, account_list);
+            this.makeDatas();
+        },
+        filterCollection: function filterCollection(elm) {
+            console.log('filterCollection');
+            var regexp = new RegExp('^' + this.searchText, 'i');
+            return elm.text.match(regexp);
+        },
+        CertifyAccount: function CertifyAccount() {
+            var _this2 = this;
+
+            this.loading = true;
+            console.log('certify-btn clicked!');
+            _Controller2.default.certify_ajax();
+            _Controller2.default.$on('AJAX_COMPLETE_GETREQUEST', function ($event) {
+
+                if ($event.response.res === 'OK') {
+                    console.log('リクエストに成功しました');
+                    console.dir($event.response);
+                    var url = $event.response.url;
+                    console.log('リダイレクトします->' + url);
+                    // this.$router.push(url)
+                    window.open(url, "_blank");
+                } else {
+                    _this2.loading = false;
+                    console.log('リクエストに失敗しました');
+                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
+
+                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
+
+                    var message = _Store2.default.getMessage();
+                    if (message.msg !== '') {
+                        _Controller2.default.emit_message(message);
+                    }
+                }
+            });
+        },
+        fetchData: function fetchData() {
+            this.loading = false;
+            this.error = this.post = null;
+
+            var denied = this.getParam('denied');
+            var oauth_token = this.getParam('oauth_token');
+            var oauth_verifier = this.getParam('oauth_verifier');
+
+            if (!_lodash2.default.isNil(denied)) {
+                //認証をキャンセルした場合
+                this.loading = false;
+                _Store2.default.setMessage('認証に失敗しました', false);
+            } else if (!_lodash2.default.isNil(oauth_token) && !_lodash2.default.isNil(oauth_verifier)) {
+                //認証処理に成功した場合
+                this.loading = false;
+                _Controller2.default.saveToken_ajax(oauth_token, oauth_verifier);
+                _Controller2.default.$once('AJAX_COMPLETE_CERTIFY', function ($event) {
+                    console.log('フロントに帰ってきたデータ↓');
+                    console.dir($event.response);
+
+                    // メッセージ表示
+                    _Store2.default.setMessage('認証に成功しました', true);
+
+                    var message = _Store2.default.getMessage();
+                    if (message.msg !== '') {
+                        _Controller2.default.emit_message(message);
+                    }
+                });
+            }
+        },
+        updateAccount: function updateAccount() {
+            var _this3 = this;
+
+            //thisを退避
+            var that = this;
+            //認証処理に成功した場合
+            this.loading = false;
+            _Controller2.default.updateAccount_ajax();
+            _Controller2.default.$once('AJAX_COMPLETE_GETACCOUNT', function ($event) {
+                console.log('フロントに帰ってきたデータ↓');
+                console.dir($event.response);
+
+                if ($event.response.res === 'OK') {
+                    // メッセージ表示
+                    console.log('アカウントのアップデート処理完了');
+                    console.log('取得したスクリーンネーム');
+
+                    for (var i = 0; i < $event.response.screen_name.length; i++) {
+                        _this3.addItem($event.response.screen_name[i]);
+                    }
+                } else {}
+            });
+        },
+        changeActiveUser: function changeActiveUser($event) {
+            console.log($event.active_user);
+            this.activeUser = $event.active_user;
+            //親コンポーネントにアクティブユーザーを渡す
+            this.$emit('change-active-user', { active_user: $event.active_user });
+        },
+
+        //GETパラメータの値を取得する
+        getParam: function getParam(name, url) {
+            if (!url) url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        },
+        getId: function getId() {
+            var strong = 1000;
+            return new Date().getTime().toString(16) + Math.floor(strong * Math.random()).toString(16);
+        }
+    }
+
+};
+
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _Task = __webpack_require__(216);
+
+var _Task2 = _interopRequireDefault(_Task);
+
+var _lodash = __webpack_require__(6);
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    props: ['listItems'],
+    components: {
+        ItemsComponent: _Task2.default
+    },
+    data: function data() {
+        return {
+            activeUser: ''
+        };
+    },
+    methods: {
+        toggleDone: function toggleDone() {
+            console.log('clicked');
+            this.isDone = !this.isDone;
+            this.$set(this.classNameLi, 'list__item-done', this.isDone);
+            this.$set(this.classNameIcon, 'fa-circle', !this.isDone);
+            this.$set(this.classNameIcon, 'fa-check-circle', this.isDone);
+        },
+        deleteItem: function deleteItem(id) {
+            console.log('delete-btn clicked!!' + id.item_id);
+            this.$emit('delete-item', { listId: id.item_id });
+            this.datas = _lodash2.default.reject(this.datas, { 'id': id.item_id });
+        },
+        changeActiveUser: function changeActiveUser($event) {
+            console.log('changeactiveuser');
+            console.log($event.active_user);
+            this.activeUser = $event.active_user;
+            //親コンポーネントにアクティブユーザーを渡す
+            this.$emit('change-active-user', { active_user: $event.active_user });
+        }
+    }
+
+};
+
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _vue = __webpack_require__(2);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _Controller = __webpack_require__(3);
+
+var _Controller2 = _interopRequireDefault(_Controller);
+
+var _Store = __webpack_require__(5);
+
+var _Store2 = _interopRequireDefault(_Store);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.default = {
+    props: ['data', 'listStyle', 'active_user'], //propsで受け取ったデータは関数内でthis.dataで使える
+    data: function data() {
+        return {
+            classNameLi: {
+                'c-listItem': true,
+                'c-listItem--done': this.data.isDone
+            },
+            classNameIcon: {
+                'far': true,
+                'fa-calendar-check': !this.data.isDone
+                // 'fa-check-circle': this.data.isDone,
+                // 'c-icon--checked': true
+            },
+            classNameIconPerson: {
+                'fas': true,
+                'fa-user': true,
+                'p-user-selected': this.active_user === this.data.account
+                // 'fa-check-circle': this.data.isDone,
+                // 'c-icon--checked': true
+            }
+        };
+    },
+    mounted: function mounted() {
+        //アクティブユーザーを選択状態にする
+        this.setActiveUser();
+    },
+
+    watch: {
+        active_user: function active_user() {
+            this.$set(this.classNameIconPerson, 'p-user-selected', this.data.account === this.active_user);
+        }
+    },
+    methods: {
+        toggleDone: function toggleDone() {
+            console.log('clicked チェック');
+            this.data.isDone = !this.data.isDone;
+            var status = this.data.isDone;
+            this.$set(this.classNameLi, 'c-listItem--done', status);
+            this.$set(this.classNameIcon, 'fa-circle-thin', !status);
+            this.$set(this.classNameIcon, 'fa-check-circle', status);
+            // this.$emit('toggleDone', {item_id: data_.id})
+        },
+
+        //ユーザーのアカウント情報を取得してhome画面に返す
+        changeUser: function changeUser() {
+            var _this = this;
+
+            var that = this; //thisを退避
+            console.log('changeUser clicked!');
+            console.log('アカウント：' + that.data.account);
+
+            _Controller2.default.getUserInfo_ajax(this.data.account);
+            _Controller2.default.$on('AJAX_COMPLETE_GETUSERINFO', function ($event) {
+
+                if ($event.response.res === 'OK') {
+                    console.log('getuserinfoが帰ってきたよ');
+                    console.dir($event.response);
+                    _this.$set(_this.classNameIconPerson, 'p-user-selected', that.data.account === $event.response.active_user);
+                    // this.active_user = $event.response.active_user
+                    console.log('アクティブユーザーはこれです：' + $event.response.active_user);
+                    //親コンポーネントにアクティブユーザーを渡す
+                    _this.$emit('change-active-user', { active_user: $event.response.active_user });
+                    //メッセージを表示する
+                    //リロードの場合(引数false)は切り替え完了メッセージを表示しない                   
+                    _Store2.default.setMessage($event.response.msg, true);
+                    var message = _Store2.default.getMessage();
+                    if (message.msg !== '') {
+                        _Controller2.default.emit_message(message);
+                    }
+                } else {
+                    _this.loading = false;
+                    console.log('リクエストに失敗しました');
+                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
+
+                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
+
+                    var _message = _Store2.default.getMessage();
+                    if (_message.msg !== '') {
+                        _Controller2.default.emit_message(_message);
+                    }
+                }
+            });
+        },
+        setActiveUser: function setActiveUser() {
+            var _this2 = this;
+
+            _Controller2.default.getActiveUser_ajax(this.data.account);
+            _Controller2.default.$on('AJAX_COMPLETE_GETACTIVEUSER', function ($event) {
+
+                if ($event.response.res === 'OK') {
+                    console.log('getactiveuserが帰ってきたよ');
+                    console.dir($event.response);
+                    _this2.$set(_this2.classNameIconPerson, 'p-user-selected', _this2.data.account === $event.response.active_user);
+                    // this.active_user = $event.response.active_user
+                    console.log('アクティブユーザーはこれです：' + $event.response.active_user);
+                    //親コンポーネントにアクティブユーザーを渡す
+                    _this2.$emit('change-active-user', { active_user: $event.response.active_user });
+                } else {
+                    console.log('リクエストに失敗しました');
+                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
+
+                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
+
+                    var message = _Store2.default.getMessage();
+                    if (message.msg !== '') {
+                        _Controller2.default.emit_message(message);
+                    }
+                }
+            });
+        }
+    }
+
+}; //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/***/ }),
 /* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -50046,7 +50129,7 @@ var _Store = __webpack_require__(5);
 
 var _Store2 = _interopRequireDefault(_Store);
 
-var _Controller = __webpack_require__(4);
+var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
@@ -50268,7 +50351,7 @@ var _Store = __webpack_require__(5);
 
 var _Store2 = _interopRequireDefault(_Store);
 
-var _Controller = __webpack_require__(4);
+var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
@@ -50484,7 +50567,7 @@ var _Store = __webpack_require__(5);
 
 var _Store2 = _interopRequireDefault(_Store);
 
-var _Controller = __webpack_require__(4);
+var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
@@ -50722,7 +50805,7 @@ var _message6 = __webpack_require__(9);
 
 var _message7 = _interopRequireDefault(_message6);
 
-var _Controller = __webpack_require__(4);
+var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
@@ -63752,7 +63835,7 @@ if (false) {(function () {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var bind = __webpack_require__(18);
 var Axios = __webpack_require__(182);
 var mergeConfig = __webpack_require__(24);
@@ -63829,7 +63912,7 @@ module.exports = function isBuffer (obj) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var buildURL = __webpack_require__(19);
 var InterceptorManager = __webpack_require__(183);
 var dispatchRequest = __webpack_require__(184);
@@ -63922,7 +64005,7 @@ module.exports = Axios;
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -63981,7 +64064,7 @@ module.exports = InterceptorManager;
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 var transformData = __webpack_require__(185);
 var isCancel = __webpack_require__(20);
 var defaults = __webpack_require__(21);
@@ -64074,7 +64157,7 @@ module.exports = function dispatchRequest(config) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 /**
  * Transform the data for a request or a response
@@ -64101,7 +64184,7 @@ module.exports = function transformData(data, headers, fns) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -64201,7 +64284,7 @@ module.exports = function enhanceError(error, config, code, request, response) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -64261,7 +64344,7 @@ module.exports = function parseHeaders(headers) {
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -64336,7 +64419,7 @@ module.exports = (
 "use strict";
 
 
-var utils = __webpack_require__(3);
+var utils = __webpack_require__(4);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -64556,7 +64639,7 @@ var _SignIn = __webpack_require__(201);
 
 var _SignIn2 = _interopRequireDefault(_SignIn);
 
-var _Home = __webpack_require__(203);
+var _Home = __webpack_require__(204);
 
 var _Home2 = _interopRequireDefault(_Home);
 
@@ -67737,7 +67820,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_60fd9a84_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SignIn_vue__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_60fd9a84_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SignIn_vue__ = __webpack_require__(203);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -67795,84 +67878,131 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "l-subPage" }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "c-form-wrap" },
-      [
-        _c("div", { staticClass: "p-error-area" }, [
-          _c(
-            "ul",
-            [
-              _c(
-                "transition-group",
-                { attrs: { name: "flip" } },
-                [
-                  _vm._l(_vm.errors.error, function(error) {
-                    return [
-                      _c("li", { key: error }, [_vm._v("・" + _vm._s(error))])
-                    ]
-                  })
-                ],
-                2
-              )
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("InputForm", {
-          attrs: {
-            type: "text",
-            label: "ユーザー名*",
-            name: "username",
-            placeholder: "example"
-          },
-          on: {
-            onChange: function($event) {
-              return _vm.onChange($event)
-            }
-          }
-        }),
-        _vm._v(" "),
-        _c("InputForm", {
-          attrs: {
-            type: "password",
-            label: "パスワード*",
-            name: "password",
-            placeholder: ""
-          },
-          on: {
-            onChange: function($event) {
-              return _vm.onChange($event)
-            }
-          }
-        })
-      ],
-      1
-    ),
-    _vm._v(" "),
-    _c("div", { staticClass: "txt_center" }, [
-      _c("button", { staticClass: "c-btn", on: { click: _vm.signIn } }, [
-        _vm._v("ログイン")
+  return _c(
+    "div",
+    [
+      _c("transition", { attrs: { name: "flip" } }, [
+        _vm.visible === true
+          ? _c("div", { staticClass: "p-message-area" }, [
+              _c("ul", [
+                _vm.status === true
+                  ? _c("li", { staticClass: "p-message-area__status" }, [
+                      _c("i", { staticClass: "fas fa-info-circle" })
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.status === false
+                  ? _c("li", { staticClass: "p-message-area__status" }, [
+                      _c("i", { staticClass: "fas fa-times-circle" })
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _c("li", { staticClass: "p-message-area__msg" }, [
+                  _c("p", { staticClass: "p-message-area_msg-val" }, [
+                    _vm._v(_vm._s(_vm.msg))
+                  ])
+                ])
+              ])
+            ])
+          : _vm._e()
       ])
-    ])
-  ])
+    ],
+    1
+  )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "txt_center" }, [
-      _c("span", { staticClass: "c-heading p-heading__title" }, [
-        _vm._v("ログイン")
-      ])
-    ])
+var staticRenderFns = []
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-55de965b", { render: render, staticRenderFns: staticRenderFns })
   }
-]
+}
+
+/***/ }),
+/* 203 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "l-subPage" },
+    [
+      _c("Message"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "c-form-wrap" },
+        [
+          _c("div", { staticClass: "p-error-area" }, [
+            _c(
+              "ul",
+              [
+                _c(
+                  "transition-group",
+                  { attrs: { name: "flip" } },
+                  [
+                    _vm._l(_vm.errors.error, function(error) {
+                      return [
+                        _c("li", { key: error }, [_vm._v("・" + _vm._s(error))])
+                      ]
+                    })
+                  ],
+                  2
+                )
+              ],
+              1
+            )
+          ]),
+          _vm._v(" "),
+          _c("InputForm", {
+            attrs: {
+              type: "text",
+              label: "ユーザー名*",
+              name: "username",
+              placeholder: "example"
+            },
+            on: {
+              onChange: function($event) {
+                return _vm.onChange($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("InputForm", {
+            attrs: {
+              type: "password",
+              label: "パスワード*",
+              name: "password",
+              placeholder: ""
+            },
+            on: {
+              onChange: function($event) {
+                return _vm.onChange($event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "txt_center" }, [
+        _c("button", { staticClass: "c-btn", on: { click: _vm.signIn } }, [
+          _vm._v("ログイン")
+        ])
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {
@@ -67883,12 +68013,12 @@ if (false) {
 }
 
 /***/ }),
-/* 203 */
+/* 204 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_66ba234a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(220);
@@ -67939,15 +68069,15 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 204 */
+/* 205 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c8453cd6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_UserInfo_vue__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c8453cd6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_UserInfo_vue__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -67995,7 +68125,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 205 */
+/* 206 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68045,7 +68175,13 @@ var render = function() {
           ])
         ])
       ])
-    ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "span",
+      { staticClass: "p-userInfo__logout", on: { click: _vm.logout } },
+      [_c("i", { staticClass: "fas fa-sign-out-alt" })]
+    )
   ])
 }
 var staticRenderFns = []
@@ -68059,15 +68195,15 @@ if (false) {
 }
 
 /***/ }),
-/* 206 */
+/* 207 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78262360_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_KeywordItem_vue__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78262360_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_KeywordItem_vue__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68115,7 +68251,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 207 */
+/* 208 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68168,7 +68304,7 @@ if (false) {
 }
 
 /***/ }),
-/* 208 */
+/* 209 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68205,15 +68341,15 @@ if (false) {
 }
 
 /***/ }),
-/* 209 */
+/* 210 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41f69b2d_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Listitem_vue__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41f69b2d_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Listitem_vue__ = __webpack_require__(213);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68261,15 +68397,15 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 210 */
+/* 211 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__ = __webpack_require__(35);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0916e10b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ListRecord_vue__ = __webpack_require__(211);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0916e10b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ListRecord_vue__ = __webpack_require__(212);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68317,7 +68453,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 211 */
+/* 212 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68352,7 +68488,7 @@ if (false) {
 }
 
 /***/ }),
-/* 212 */
+/* 213 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68414,15 +68550,15 @@ if (false) {
 }
 
 /***/ }),
-/* 213 */
+/* 214 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__ = __webpack_require__(36);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4da68899_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AuthAccount_vue__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4da68899_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AuthAccount_vue__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68470,15 +68606,15 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__ = __webpack_require__(37);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_895b62c2_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AccountList_vue__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_895b62c2_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AccountList_vue__ = __webpack_require__(218);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68526,15 +68662,15 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__ = __webpack_require__(38);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5da927fe_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Task_vue__ = __webpack_require__(216);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5da927fe_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Task_vue__ = __webpack_require__(217);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68582,7 +68718,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68626,7 +68762,7 @@ if (false) {
 }
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68672,7 +68808,7 @@ if (false) {
 }
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68724,59 +68860,6 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-4da68899", { render: render, staticRenderFns: staticRenderFns })
-  }
-}
-
-/***/ }),
-/* 219 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("transition", { attrs: { name: "flip" } }, [
-        _vm.visible === true
-          ? _c("div", { staticClass: "p-message-area" }, [
-              _c("ul", [
-                _vm.status === true
-                  ? _c("li", { staticClass: "p-message-area__status" }, [
-                      _c("i", { staticClass: "fas fa-info-circle" })
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.status === false
-                  ? _c("li", { staticClass: "p-message-area__status" }, [
-                      _c("i", { staticClass: "fas fa-times-circle" })
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _c("li", { staticClass: "p-message-area__msg" }, [
-                  _c("p", { staticClass: "p-message-area_msg-val" }, [
-                    _vm._v(_vm._s(_vm.msg))
-                  ])
-                ])
-              ])
-            ])
-          : _vm._e()
-      ])
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-if (false) {
-  module.hot.accept()
-  if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-55de965b", { render: render, staticRenderFns: staticRenderFns })
   }
 }
 

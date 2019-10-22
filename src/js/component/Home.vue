@@ -116,6 +116,19 @@ export default {
             controller.emit_message(message)  
         }
 
+        //ログインチェック結果
+        controller.checkLogin_ajax()
+        controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            console.log($event.response.res)
+            if($event.response.res === 'NOTLOGIN' ){
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。')
+                this.$router.push('/')
+            }
+
+        })
+
         //いいねの処理が完了したときにここにくる
         //いいねしたツイートの一覧を表示する
         controller.getLikedListSession_ajax()
@@ -447,11 +460,7 @@ export default {
                 this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false)
             }
         })
-
-        //Home画面に来た時、リストが初期化されているから、1sでいいね動作を開始する
-        //1sでリスト更新される
-        // const result = this.$crontab.enableJob('startAutoLike1')
-        // console.log("enableJob('startAutoLike1'):"+result)
+        
 
         //♡likeステータスをセットする
         console.log('likeステータスは：'+store.getAutoLikeCronStatus())
@@ -517,6 +526,9 @@ export default {
                     //フォロー数をstoreに格納
                     store.setFriendsCount($event.response.rst.friends_count)
 
+                }else if($event.response.res ==='NOTLOGIN'){
+                        console.log('ログインユーザーでないためログイン画面に飛ばします')          
+                        this.$router.push('/')  
                 }else{
                     //失敗したときはメッセージ表示
                     //メッセージ表示
