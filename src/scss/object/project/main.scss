@@ -1,3 +1,18 @@
+//ブレークポイント定義
+$breakpoints: (
+    'sm': 'screen and (max-width: 576px)',
+    'md': 'screen and (max-width: 768px)',
+    'lg': 'screen and (max-width: 1000px)',
+    'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+//メディアクエリ関数
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
 // 色の定義
 $color_garbage:#B56060;
 $color_txt: #262626;
@@ -5,10 +20,10 @@ $color_gray: #dcdcdc;
 $color_gray_border: #3f3f3f;
 $color_link: #4DBFFF;
 
-$color_heading_follow: #BEFBFF;
-$color_heading_like: #FF7081;
-$color_heading_unfollow: #BFBFBF;
-$color_heading_twtschedule: #70FF75;
+$color_heading_follow: rgb(188, 211, 253);
+$color_heading_like: rgb(253, 188, 195);
+$color_heading_unfollow: rgb(235, 188, 253);
+$color_heading_twtschedule: rgb(188, 253, 197);
 
 /* ================================
 # タイトル　
@@ -21,7 +36,7 @@ $color_heading_twtschedule: #70FF75;
 }
 //Follow, Like, unFollow
 .p-heading-area {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
 }
 /* ================================
 #楕円のタイトル
@@ -36,7 +51,7 @@ $color_heading_twtschedule: #70FF75;
     background-color: $color_heading_unfollow;
 }
 .p-heading__twtschedule {
-    background-color: rgba(209, 209, 209, 0.15);
+    background-color: $color_heading_twtschedule;
     // background-color: transparent;
 }
 .p-heading__title {
@@ -234,6 +249,15 @@ $color_heading_twtschedule: #70FF75;
     background-color: rgb(188, 211, 253);
 }
 
+.p-status-wrap .p-btn_home-unfollow--exec {
+    color: white;
+    background-color: rgb(167, 112, 255);
+}
+.p-status-wrap .p-btn_home-unfollow--stay {
+    color: white;
+    background-color: rgb(235, 188, 253);
+}
+
 .p-status-wrap {
     text-align: center;
 }
@@ -241,6 +265,11 @@ $color_heading_twtschedule: #70FF75;
 .p-status__item {
     display: inline-block;  
     margin: 20px 20px; 
+    @include mq() {
+        display:block;
+        margin: 10px 10px;
+        width: 95%;
+    }
 
 }
 
@@ -262,11 +291,15 @@ $color_heading_twtschedule: #70FF75;
         margin: 10px 10px 30px;
     }
 
+    @include mq() {
+        width: 95%;
+    }
+
 }
 .p-list-wrap {
     // border-radius: 15px;
     padding: 15px;
-    border: 1px solid $color_gray_border;
+    // border: 1px solid $color_gray_border;
     background-color: #fff;
     height: 250px;
     overflow-y: scroll;

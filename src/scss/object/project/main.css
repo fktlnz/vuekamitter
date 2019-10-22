@@ -9,26 +9,26 @@
 }
 
 .p-heading-area {
-  margin-bottom: 10px;
+  margin-bottom: 0px;
 }
 
 /* ================================
 #楕円のタイトル
 =================================*/
 .p-heading__follow {
-  background-color: #BEFBFF;
+  background-color: #bcd3fd;
 }
 
 .p-heading__like {
-  background-color: #FF7081;
+  background-color: #fdbcc3;
 }
 
 .p-heading__unfollow {
-  background-color: #BFBFBF;
+  background-color: #ebbcfd;
 }
 
 .p-heading__twtschedule {
-  background-color: rgba(209, 209, 209, 0.15);
+  background-color: #bcfdc5;
 }
 
 .p-heading__title {
@@ -228,6 +228,16 @@
   background-color: #bcd3fd;
 }
 
+.p-status-wrap .p-btn_home-unfollow--exec {
+  color: white;
+  background-color: #a770ff;
+}
+
+.p-status-wrap .p-btn_home-unfollow--stay {
+  color: white;
+  background-color: #ebbcfd;
+}
+
 .p-status-wrap {
   text-align: center;
 }
@@ -235,6 +245,14 @@
 .p-status__item {
   display: inline-block;
   margin: 20px 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .p-status__item {
+    display: block;
+    margin: 10px 10px;
+    width: 95%;
+  }
 }
 
 .p-main-area {
@@ -255,9 +273,14 @@
   margin: 10px 10px 30px;
 }
 
+@media screen and (max-width: 768px) {
+  .p-list-area {
+    width: 95%;
+  }
+}
+
 .p-list-wrap {
   padding: 15px;
-  border: 1px solid #3f3f3f;
   background-color: #fff;
   height: 250px;
   overflow-y: scroll;
