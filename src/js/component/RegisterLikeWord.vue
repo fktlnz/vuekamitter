@@ -1,7 +1,7 @@
 <template>    
     <div class="l-subPage l-likePage">
         <Message></Message>
-        <div class="txt_center"><span class="c-title p-heading__like">自動いいねキーワード登録</span></div>
+        <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__like">自動いいねキーワード登録</span></div>
         
         <div>
             <select v-on:change="onChangeOption($event)" class="select-init c-logicOption">
@@ -49,6 +49,9 @@ export default {
         this.updateDatas()
     },
     methods: {
+        moveTop() {
+            this.$router.push('/home')
+        },
         onChangeOption(event) {     
             console.log(event.target.value+':'+event.target.selectedIndex);            
             this.option_num = event.target.selectedIndex  

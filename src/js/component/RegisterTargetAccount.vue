@@ -1,7 +1,7 @@
 <template>    
     <div class="l-subPage p-targetacnt-wrap">
         <Message></Message>
-        <div class="txt_center"><span class="c-title p-heading__follow">ターゲットアカウント登録</span></div>
+        <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__follow">ターゲットアカウント登録</span></div>
         <InputForm v-on:onChange="onChange($event)" type="text" label="" name="text" placeholder="@のあとのアカウントIDを入力(例. kazukichi3110)"></InputForm>
         <div class="txt_right">
             <button v-on:click="addItem"  class="c-btn">追加</button>
@@ -29,12 +29,7 @@ export default {
     },
     data: function(){
         return {
-            datas: [
-                {
-                    id: 1,
-                    text: 'a',
-                }
-            ],
+            datas: [],
             screen_name: '',
             IsExist:false,//アカウントが存在しているかどうか
             
@@ -44,6 +39,9 @@ export default {
         this.updateDatas()
     },
     methods: {
+        moveTop() {
+            this.$router.push('/home')
+        },
         onChange(event) {            
             console.log(event.input.value);            
             this.screen_name = event.input.value
