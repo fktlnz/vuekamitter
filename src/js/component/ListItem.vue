@@ -2,7 +2,7 @@
     <div class="p-list-area">
 
         <div class="p-heading-area">
-            <span class="c-heading" :class="classname" @click="onClick" >{{heading}}</span>
+            <p class="c-heading" :class="classname" @click="onClick" >{{heading}}</p>
         </div>
 
         <div class="p-list-wrap">
@@ -41,7 +41,8 @@ export default {
            
         },
         onClick(){
-            let route = this.heading;
+            let route = this.heading
+            if(route==='unFollow') return
             if(route==='follow') route = 'target'
             console.log('route:'+route)
             this.$router.push('/'+route)

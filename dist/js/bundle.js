@@ -36220,7 +36220,7 @@ var substr = 'ab'.substr(-1) === 'b'
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.reStartAutoFollow = exports.startAutoFollow = exports.startAutoLike = exports.tweetWatch = undefined;
+exports.startAutoUnFollow = exports.reStartAutoFollow = exports.startAutoFollow = exports.startAutoLike = exports.tweetWatch = undefined;
 
 var _Store = __webpack_require__(5);
 
@@ -36240,6 +36240,7 @@ exports.tweetWatch = tweetWatch;
 exports.startAutoLike = startAutoLike;
 exports.startAutoFollow = startAutoFollow;
 exports.reStartAutoFollow = reStartAutoFollow;
+exports.startAutoUnFollow = startAutoUnFollow;
 
 
 function tweetWatch() {
@@ -36291,8 +36292,10 @@ function tweetWatch() {
 
 //自動フォローを開始する
 function startAutoFollow() {
-
-    if (_Store2.default.getAutoFollowCronStatus() === '1') {
+    //自動フォロー動作条件
+    //１．自動フォローが「待機中」である
+    //２．自動いいねが動作中でない
+    if (_Store2.default.getAutoFollowCronStatus() === '1' && _Store2.default.getAutoLikeCronStatus() !== '2') {
 
         //自動フォローを再開する
         _Controller2.default.startAutoFollow_ajax();
@@ -36322,8 +36325,12 @@ function reStartAutoFollow() {
     console.log('次の自動フォローまで=>' + dif_time);
 
     if (nextFollowTime < now_ms) {
+        console.log('reStartAutoFollow 始まったよ');
 
-        if (_Store2.default.getAutoFollowCronStatus() === '1') {
+        //自動フォロー動作条件
+        //１．自動フォローが「待機中」である
+        //２．自動いいねが動作中でない
+        if (_Store2.default.getAutoFollowCronStatus() === '1' && _Store2.default.getAutoLikeCronStatus() !== '2') {
 
             //自動フォローを再開する
             _Controller2.default.startAutoFollow_ajax();
@@ -36340,7 +36347,11 @@ function reStartAutoFollow() {
 
 function startAutoLike() {
 
-    if (_Store2.default.getAutoLikeCronStatus() === '1') {
+    //自動いいね動作条件
+    //１．自動フォローが動作していない
+    //２．自動アンフォローが動作していない
+    //３．自動いいねが「待機中」である
+    if (_Store2.default.getAutoLikeCronStatus() === '1' && _Store2.default.getAutoFollowCronStatus() !== '2' && _Store2.default.getAutoUnFollowCronStatus() !== '2') {
         console.log('startAutoLike動作中');
         _Controller2.default.startAutoLike_ajax();
 
@@ -36372,8 +36383,29 @@ function startAutoLike() {
     }
 }
 
-function setCondition() {
-    // return this.toggle === '1' ? true : false
+//自動アンフォローを開始する
+function startAutoUnFollow() {
+
+    var now = new Date();
+    var now_ms = now.getTime();
+
+    //storeから次のフォロー開始時間を取得する
+    var UnFollowTime = _Store2.default.getNextUnFollowTime();
+
+    var dif_time = UnFollowTime - now_ms;
+
+    //5000人以上になったらアンフォローする
+    //アンフォローは15分は最低あける（アンフォローをしても5000人をした回らない場合にアンフォローが何度も繰り返されてしまうため）
+    if (_Store2.default.getFriendsCount() > 340 && UnFollowTime < now_ms && _Store2.default.getAutoUnFollowCronStatus() === '1') {
+
+        //自動アンフォローを開始する
+        _Controller2.default.startAutoUnFollow_ajax();
+
+        //自動アンフォロー実行中は停止する
+        _vueCrontab2.default.disableJob('startAutoUnFollow');
+    } else {
+        console.log('自動アンフォロー監視中です =>dif_time:' + dif_time);
+    }
 }
 
 /***/ }),
@@ -36398,10 +36430,11 @@ module.exports = new _vue2.default({
       status: false
     },
     IstweetwatchJobExec: false, //cronが動作中かどうか（true: 自動ツイートのwatchが動作中　false:動作していない）
-    IsrestartAutoFollowJobExec: false, //cronが動作中かどうか（true: 自動ツイートのwatchが動作中　false:動作していない）
-    IsStartAutoFollowJobExec: false, //cronが動作中かどうか（true: 自動ツイートのwatchが動作中　false:動作していない）
+    IsrestartAutoFollowJobExec: false, //cronが動作中かどうか
+    IsStartAutoFollowJobExec: false, //cronが動作中かどうか
     IsAutoLikeExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
     IsAutoFollowExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
+    IsAutoUnFollowExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
     reservedTime: null,
     reserveItem: {
       id: null,
@@ -36411,7 +36444,9 @@ module.exports = new _vue2.default({
     reFollowTime: {
       now: null,
       next: null
-    }
+    },
+    friends_count: 0,
+    UnFollowTime: null
   },
   methods: {
     // Ajax通信でJsonを取得し、特定のプロパティに格納する
@@ -36435,6 +36470,7 @@ module.exports = new _vue2.default({
       this.message.status = status;
     },
 
+
     //自動いいね機能のcron状態を取得
     getAutoLikeCronStatus: function getAutoLikeCronStatus() {
       return this.IsAutoLikeExec;
@@ -36444,6 +36480,7 @@ module.exports = new _vue2.default({
     setAutoLikeCronStatus: function setAutoLikeCronStatus(status) {
       this.IsAutoLikeExec = status;
     },
+
 
     //自動フォロー機能のcron状態を取得
     getAutoFollowCronStatus: function getAutoFollowCronStatus() {
@@ -36455,14 +36492,37 @@ module.exports = new _vue2.default({
       this.IsAutoFollowExec = status;
     },
 
+
     //自動フォロー再開関数の状態を取得（true false）    
-    gettRestartAutoFollowCronStatus: function gettRestartAutoFollowCronStatus() {
+    getRestartAutoFollowCronStatus: function getRestartAutoFollowCronStatus() {
       return this.IsrestartAutoFollowJobExec;
     },
 
     //自動フォロー再開関数の状態をセット（true false） 
     setRestartAutoFollowCronStatus: function setRestartAutoFollowCronStatus(status) {
       this.IsrestartAutoFollowJobExec = status;
+    },
+
+
+    //自動アンフォロー機能のcron状態を取得
+    getAutoUnFollowCronStatus: function getAutoUnFollowCronStatus() {
+      return this.IsAutoUnFollowExec;
+    },
+
+    //自動アンフォロー機能のcron状態をセット
+    setAutoUnFollowCronStatus: function setAutoUnFollowCronStatus(status) {
+      this.IsAutoUnFollowExec = status;
+    },
+
+
+    //アクティブユーザーのフォロー数をセットする
+    setFriendsCount: function setFriendsCount(count) {
+      this.friends_count = count;
+    },
+
+    //アクティブユーザーのフォロー数を取得する
+    getFriendsCount: function getFriendsCount() {
+      return this.friends_count;
     },
     getCronStatus: function getCronStatus() {
       return this.IstweetwatchJobExec;
@@ -36496,10 +36556,19 @@ module.exports = new _vue2.default({
     setNextFollowTime: function setNextFollowTime(nexttime, now) {
       this.reFollowTime.next = nexttime;
       this.reFollowTime.now = now;
-      console.log('次のフォロー開始時間：' + this.reFollowTime);
+      console.log('次のフォロー開始時間：');
+      console.dir(this.reFollowTime);
     },
     getNextFollowTime: function getNextFollowTime() {
       return this.reFollowTime;
+    },
+    setNextUnFollowTime: function setNextUnFollowTime(nexttime) {
+      this.UnFollowTime = nexttime;
+      console.log('次のアンフォロー開始時間：');
+      console.dir(this.UnFollowTime);
+    },
+    getNextUnFollowTime: function getNextUnFollowTime() {
+      return this.UnFollowTime;
     }
   }
 });
@@ -37066,6 +37135,33 @@ module.exports = new _vue2.default({
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
         _this23.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: json });
+      });
+    },
+
+
+    /* =========================================================
+    # 自動アンフォロー
+    ============================================================*/
+    //自動フォローを開始
+    startAutoUnFollow_ajax: function startAutoUnFollow_ajax() {
+      var _this24 = this;
+
+      //HOME画面の自動イイネステータスを実行中に変更する
+      this.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '2' });
+      return _axios2.default.get(URL_BASE + 'startautounfollow').then(function (res) {
+        //HOME画面のフォローステータスを待機中に変更する
+        _this24.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
+
+        //HOME画面のフォローリストを更新する
+        _this24.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: res.data });
+      }).catch(function (res) {
+        //HOME画面の自動イイネステータスを待機中に変更する
+        _this24.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
+        var json = {
+          'res': 'NG',
+          'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
+        };
+        _this24.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: json });
       });
     }
   }, 'emit_message', function emit_message(msg) {
@@ -37866,9 +37962,9 @@ var _AuthAccount = __webpack_require__(213);
 
 var _AuthAccount2 = _interopRequireDefault(_AuthAccount);
 
-var _message5 = __webpack_require__(9);
+var _message10 = __webpack_require__(9);
 
-var _message6 = _interopRequireDefault(_message5);
+var _message11 = _interopRequireDefault(_message10);
 
 var _Controller = __webpack_require__(4);
 
@@ -37929,13 +38025,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     components: {
         UserInfo: _UserInfo2.default,
         ListItem: _Listitem2.default,
         AuthAccount: _AuthAccount2.default,
-        Message: _message6.default
+        Message: _message11.default
     },
     data: function data() {
         return {
@@ -37947,8 +38051,10 @@ exports.default = {
             listItems_like: [],
             listItems_schedule: [],
             listItems_follow: [],
+            listItems_unfollow: [],
             AutoLikeCronStatus: '0', //自動イイネ機能の動作状態　0:停止中　1:待機中　2:実行中
             AutoFollowCronStatus: '0', //自動フォロー機能の動作状態　0:停止中　1:待機中　2:実行中
+            AutoUnFollowCronStatus: '0', //自動アンフォロー機能の動作状態　0:停止中　1:待機中　2:実行中
             p_status_toggle: {
                 'p-btn_home-like--exec': false,
                 'p-btn_home-like--stay': false
@@ -37956,6 +38062,10 @@ exports.default = {
             p_follow_status_toggle: {
                 'p-btn_home-follow--exec': false,
                 'p-btn_home-follow--stay': false
+            },
+            p_unfollow_status_toggle: {
+                'p-btn_home-unfollow--exec': false,
+                'p-btn_home-unfollow--stay': false
             }
         };
     },
@@ -38032,7 +38142,6 @@ exports.default = {
         //自動フォローが完了したときにここにくる
         //正常にすべてのフォローが完了した⇒フォローしたアカウントのリストを更新する
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
-        _Controller2.default.getFollowedListSession_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', function ($event) {
             console.log('フォローリスト取得がかえててきた');
             console.dir($event.response.rst);
@@ -38047,10 +38156,30 @@ exports.default = {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: result[i]['id'], name: result[i]['screen_name'], text: '', created_at: result[i]['created_at'] });
+                    that.listItems_follow.unshift({ id: result[i]['id'], name: result[i]['name'], text: rst[i]['text'], created_at: result[i]['created_at'] });
                 }
+
+                //自動フォローを停止中にする
+                // store.setAutoFollowCronStatus('0')
+                // this.AutoFollowCronStatus = '0'
+                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false)
+                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false)
+
+
+                //次のフォロー開始時間を15分後に設定する
+                var _now = new Date();
+                var _now_ms = _now.getTime();
+                _Store2.default.setNextFollowTime(_now_ms + 905000, _now_ms); //15分後に設定　5秒は気持ち
+
                 //自動フォローを再開関数を開始する
                 that.$crontab.enableJob('reStartAutoFollow');
+
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message3 = _Store2.default.getMessage();
+                if (_message3.msg !== '') {
+                    _Controller2.default.emit_message(_message3);
+                }
             } else if ($event.response.res === 'LIMIT' || $event.response.res === 'FOLLOWLIMIT') {
                 //'LIMIT':       ターゲットアカウントからのフォロワー取得制限に引っかかった場合
                 //'FOLLOWLIMIT': フォロー上限に引っかかった場合
@@ -38058,9 +38187,9 @@ exports.default = {
                 //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
 
                 //次のフォロー開始時間を15分後に設定する
-                var now = new Date();
-                var now_ms = now.getTime();
-                _Store2.default.setNextFollowTime(now_ms + 905000, now_ms); //15分後に設定　5秒は気持ち
+                var _now2 = new Date();
+                var _now_ms2 = _now2.getTime();
+                _Store2.default.setNextFollowTime(_now_ms2 + 905000, _now_ms2); //15分後に設定　5秒は気持ち
 
                 console.log('自動フォロー再開ジョブをスタートします');
                 //自動フォローを再開関数を開始する
@@ -38070,21 +38199,21 @@ exports.default = {
                 //リストを更新する
                 console.dir($event.response.rst);
                 console.dir($event.response.rst.length);
-                var rst = $event.response.rst;
+                var _rst = $event.response.rst;
                 var _length = $event.response.rst.length;
                 that.listItems_follow = []; //listを初期化
                 for (var _i = 0; _i < _length; _i++) {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: rst[_i]['id'], name: rst[_i]['name'], text: rst[_i]['text'], created_at: rst[_i]['created_at'] });
+                    that.listItems_follow.unshift({ id: _rst[_i]['id'], name: _rst[_i]['name'], text: _rst[_i]['text'], created_at: _rst[_i]['created_at'] });
                 }
 
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, false);
-                var _message3 = _Store2.default.getMessage();
-                if (_message3.msg !== '') {
-                    _Controller2.default.emit_message(_message3);
+                var _message4 = _Store2.default.getMessage();
+                if (_message4.msg !== '') {
+                    _Controller2.default.emit_message(_message4);
                 }
             } else if ($event.response.res === 'UPDATE') {
                 //画面更新の場合に、すでにフォロー済リストを表示する
@@ -38098,14 +38227,14 @@ exports.default = {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: _result2[_i2]['id'], name: _result2[_i2]['screen_name'], text: '', created_at: _result2[_i2]['created_at'] });
+                    that.listItems_follow.unshift({ id: _result2[_i2]['id'], name: _result2[_i2]['name'], text: '', created_at: _result2[_i2]['created_at'] });
                 }
             } else {
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, false);
-                var _message4 = _Store2.default.getMessage();
-                if (_message4.msg !== '') {
-                    _Controller2.default.emit_message(_message4);
+                var _message5 = _Store2.default.getMessage();
+                if (_message5.msg !== '') {
+                    _Controller2.default.emit_message(_message5);
                 }
 
                 //自動フォローを停止中にする
@@ -38119,9 +38248,108 @@ exports.default = {
             }
         });
 
+        //次のアンフォロー開始時間を1分後に設定する
+        //最初は1分あける
+        var now = new Date();
+        var now_ms = now.getTime();
+        _Store2.default.setNextUnFollowTime(now_ms + 60000); //1分後に設定
+
+        //自動アンフォローが完了したときにここにくる
+        //正常にすべてのアンフォローが完了した⇒フォローしたアカウントのリストを更新する
+        //制限にかかった⇒15分後にもう一度自動フォローを再開する
+        //controller.startAutoUnFollow_ajax()
+        _Controller2.default.$on('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', function ($event) {
+            console.log('アンフォロー完了しました');
+            console.dir($event.response.rst);
+            if ($event.response.res === 'OK') {
+                console.log('DEBUG -- Home.vue --> アンフォローリストを更新します');
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var result = $event.response.rst;
+                var length = $event.response.rst.length;
+                that.listItems_unfollow = []; //listを初期化
+                for (var i = 0; i < length; i++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_unfollow.unshift({ id: result[i]['id'], name: result[i]['name'], text: result[i]['text'], created_at: result[i]['created_at'] });
+                }
+
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message6 = _Store2.default.getMessage();
+                if (_message6.msg !== '') {
+                    _Controller2.default.emit_message(_message6);
+                }
+
+                //アンフォローを15分後に再開する
+                var _now3 = new Date();
+                var _now_ms3 = _now3.getTime();
+                _Store2.default.setNextUnFollowTime(_now_ms3 + 900000); //15分後に設定
+
+                //自動アンフォローを再開関数を開始する
+                that.$crontab.enableJob('startAutoUnFollow');
+            } else if ($event.response.res === 'LIMIT' || $event.response.res === 'FOLLOWLIMIT') {
+                //'LIMIT':       ターゲットアカウントからのフォロワー取得制限に引っかかった場合
+                //'FOLLOWLIMIT': フォロー上限に引っかかった場合
+                //crontabで15分後にフォローを再開する
+                //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
+
+                //次のフォロー開始時間を15分後に設定する
+                var _now4 = new Date();
+                var _now_ms4 = _now4.getTime();
+                _Store2.default.setNextFollowTime(_now_ms4 + 905000, _now_ms4); //15分後に設定　5秒は気持ち
+
+                // console.log('自動フォロー再開ジョブをスタートします')
+                //自動フォローを再開関数を開始する
+                // const result = that.$crontab.enableJob('reStartAutoFollow')
+                // console.log("enableJob('reStartAutoFollow'):"+result)
+
+                //リストを更新する
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var _rst2 = $event.response.rst;
+                var _length3 = $event.response.rst.length;
+                that.listItems_unfollow = []; //listを初期化
+                for (var _i3 = 0; _i3 < _length3; _i3++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_unfollow.unshift({ id: _rst2[_i3]['id'], name: _rst2[_i3]['name'], text: _rst2[_i3]['text'], created_at: _rst2[_i3]['created_at'] });
+                }
+
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message7 = _Store2.default.getMessage();
+                if (_message7.msg !== '') {
+                    _Controller2.default.emit_message(_message7);
+                }
+
+                //自動アンフォローを再開関数を開始する
+                that.$crontab.enableJob('startAutoUnFollow');
+            } else {
+                //メッセージ表示
+                _Store2.default.setMessage($event.response.msg, false);
+                var _message8 = _Store2.default.getMessage();
+                if (_message8.msg !== '') {
+                    _Controller2.default.emit_message(_message8);
+                }
+
+                //自動アンフォローを停止中にする
+                _Store2.default.setAutoUnFollowCronStatus('0');
+                _this.AutoUnFollowCronStatus = '0';
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+
+                //自動アンフォローが実行中の場合は実行する
+                that.$crontab.enableJob('startAutoUnFollow');
+            }
+        });
+
         //自動フォローが実行中の場合は実行する
-        if (_Store2.default.getAutoFollowCronStatus() !== '0') that.$crontab.enableJob('startAutoFollow');
-        if (_Store2.default.gettRestartAutoFollowCronStatus()) that.$crontab.enableJob('reStartAutoFollow');
+        // if(store.getAutoFollowCronStatus() !== '0') that.$crontab.enableJob('startAutoFollow')
+        // if(store.getRestartAutoFollowCronStatus()) that.$crontab.enableJob('reStartAutoFollow')
+
 
         //予約ツイートを更新する
         _Controller2.default.getTweetSchedule_ajax();
@@ -38144,6 +38372,7 @@ exports.default = {
         _Controller2.default.$on('AJAX_CHANGE_AUTOLIKESTATUS', function ($event) {
             console.log('DEBUG -- Home.vue --> 自動いいねステータスを変更します');
             _this.AutoLikeCronStatus = $event.response;
+            _Store2.default.setAutoLikeCronStatus($event.response);
             if ($event.response === '1') {
                 _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', false);
                 _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', true);
@@ -38157,6 +38386,7 @@ exports.default = {
         _Controller2.default.$on('AJAX_CHANGE_AUTOFOLLOWSTATUS', function ($event) {
             console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
             _this.AutoFollowCronStatus = $event.response;
+            _Store2.default.setAutoFollowCronStatus($event.response);
             if ($event.response === '1') {
                 _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
                 _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
@@ -38166,12 +38396,27 @@ exports.default = {
             }
         });
 
+        //自動アンフォローのステータスを変更する
+        _Controller2.default.$on('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', function ($event) {
+            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
+            _this.AutoUnFollowCronStatus = $event.response;
+            _Store2.default.setAutoUnFollowCronStatus($event.response);
+            if ($event.response === '1') {
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
+            } else {
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
+                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+            }
+        });
+
         //Home画面に来た時、リストが初期化されているから、1sでいいね動作を開始する
         //1sでリスト更新される
         // const result = this.$crontab.enableJob('startAutoLike1')
         // console.log("enableJob('startAutoLike1'):"+result)
 
         //♡likeステータスをセットする
+        console.log('likeステータスは：' + _Store2.default.getAutoLikeCronStatus());
         this.AutoLikeCronStatus = _Store2.default.getAutoLikeCronStatus();
         if (this.AutoLikeCronStatus === '0') {
             this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
@@ -38184,6 +38429,7 @@ exports.default = {
             this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false);
         }
         //followステータスをセットする
+        console.log('followステータスは：' + _Store2.default.getAutoFollowCronStatus());
         this.AutoFollowCronStatus = _Store2.default.getAutoFollowCronStatus();
         if (this.AutoFollowCronStatus === '0') {
             this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
@@ -38194,6 +38440,19 @@ exports.default = {
         } else {
             this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', true);
             this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+        }
+        //unfollowステータスをセットする
+        console.log('Unfollowステータスは：' + _Store2.default.getAutoUnFollowCronStatus());
+        this.AutoUnFollowCronStatus = _Store2.default.getAutoUnFollowCronStatus();
+        if (this.AutoUnFollowCronStatus === '0') {
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+        } else if (this.AutoUnFollowCronStatus === '1') {
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
+        } else {
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
         }
     },
     methods: {
@@ -38207,11 +38466,26 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_GETTWITTERPROFILE', function ($event) {
                 console.log('フロントに帰ってきたデータ↓ プロフィール');
                 console.dir($event.response.rst);
-                _this2.follower = $event.response.rst.followers_count; //フォロワー数
-                _this2.friends = $event.response.rst.friends_count; //フォロー数
-                _this2.account_name = $event.response.rst.name; //アカウント名
-                _this2.description = $event.response.rst.description; //プロフィール文   
-                _this2.img_url = $event.response.rst.profile_image_url_https; //画像URL
+                if ($event.response.res === 'OK') {
+                    //取得成功時はUser領域更新
+                    _this2.follower = $event.response.rst.followers_count; //フォロワー数
+                    _this2.friends = $event.response.rst.friends_count; //フォロー数
+                    _this2.account_name = $event.response.rst.name; //アカウント名
+                    _this2.description = $event.response.rst.description; //プロフィール文   
+                    _this2.img_url = $event.response.rst.profile_image_url_https; //画像URL
+
+                    //フォロー数をstoreに格納
+                    _Store2.default.setFriendsCount($event.response.rst.friends_count);
+                } else {
+                    //失敗したときはメッセージ表示
+                    //メッセージ表示
+
+                    _Store2.default.setMessage('プロフィールの取得に失敗。アクセス制限orネット環境が悪い可能性があります', false);
+                    var _message9 = _Store2.default.getMessage();
+                    if (_message9.msg !== '') {
+                        _Controller2.default.emit_message(_message9);
+                    }
+                }
             });
         },
         changeLikeCronStatus: function changeLikeCronStatus() {
@@ -38241,6 +38515,21 @@ exports.default = {
                 this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
                 this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
             } else if (this.AutoFollowCronStatus === '2') {
+                //実行中の場合はステータスを変更できないようにする
+            }
+        },
+        changeUnFollowCronStatus: function changeUnFollowCronStatus() {
+            if (this.AutoUnFollowCronStatus === '0') {
+                _Store2.default.setAutoUnFollowCronStatus('1');
+                this.AutoUnFollowCronStatus = '1';
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
+            } else if (this.AutoUnFollowCronStatus === '1') {
+                _Store2.default.setAutoUnFollowCronStatus('0');
+                this.AutoUnFollowCronStatus = '0';
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+            } else if (this.AutoUnFollowCronStatus === '2') {
                 //実行中の場合はステータスを変更できないようにする
             }
         }
@@ -38521,6 +38810,7 @@ exports.default = (_props$data$component = {
     onChangeTxt: function onChangeTxt($event) {},
     onClick: function onClick() {
         var route = this.heading;
+        if (route === 'unFollow') return;
         if (route === 'follow') route = 'target';
         console.log('route:' + route);
         this.$router.push('/' + route);
@@ -49813,6 +50103,9 @@ exports.default = {
     },
 
     methods: {
+        moveTop: function moveTop() {
+            this.$router.push('/home');
+        },
         onChangeOption: function onChangeOption(event) {
             console.log(event.target.value + ':' + event.target.selectedIndex);
             this.option_num = event.target.selectedIndex;
@@ -50029,6 +50322,9 @@ exports.default = {
     },
 
     methods: {
+        moveTop: function moveTop() {
+            this.$router.push('/home');
+        },
         onChangeOption: function onChangeOption(event) {
             console.log(event.target.value + ':' + event.target.selectedIndex);
             this.option_num = event.target.selectedIndex;
@@ -50224,10 +50520,7 @@ exports.default = {
     },
     data: function data() {
         return {
-            datas: [{
-                id: 1,
-                text: 'a'
-            }],
+            datas: [],
             screen_name: '',
             IsExist: false //アカウントが存在しているかどうか
 
@@ -50238,6 +50531,9 @@ exports.default = {
     },
 
     methods: {
+        moveTop: function moveTop() {
+            this.$router.push('/home');
+        },
         onChange: function onChange(event) {
             console.log(event.input.value);
             this.screen_name = event.input.value;
@@ -63325,7 +63621,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _vue = __webpack_require__(2);
@@ -63341,48 +63637,57 @@ var _crontabfunc = __webpack_require__(179);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = function () {
-  /* change the value of setInterval inside VueCrontab. */
-  // VueCrontab.setOption({
-  //   interval: 100,
-  //   auto_start : false
-  // })
+    /* change the value of setInterval inside VueCrontab. */
+    // VueCrontab.setOption({
+    //   interval: 100,
+    //   auto_start : false
+    // })
 
-  var result = _vueCrontab2.default.addJob([{
-    name: 'tweetwatch',
-    interval: {
-      seconds: '/1'
-    },
-    job: _crontabfunc.tweetWatch
-  }]);
-  var result2 = _vueCrontab2.default.addJob([{
-    name: 'startAutoLike',
-    interval: {
-      seconds: '/60'
-    },
-    job: _crontabfunc.startAutoLike
-  }]);
+    var result = _vueCrontab2.default.addJob([{
+        name: 'tweetwatch',
+        interval: {
+            seconds: '/1'
+        },
+        job: _crontabfunc.tweetWatch
+    }]);
+    var result2 = _vueCrontab2.default.addJob([{
+        name: 'startAutoLike',
+        interval: {
+            seconds: '/60'
+        },
+        job: _crontabfunc.startAutoLike
+    }]);
 
-  var result3 = _vueCrontab2.default.addJob([{
-    name: 'startAutoFollow',
-    interval: {
-      seconds: '/1' //1s毎とするが、初めの一回実行されたあとすぐにdisableJobする      
-    },
-    job: _crontabfunc.startAutoFollow
-  }]);
+    var result3 = _vueCrontab2.default.addJob([{
+        name: 'startAutoFollow',
+        interval: {
+            seconds: '/1' //1s毎とするが、初めの一回実行されたあとすぐにdisableJobする      
+        },
+        job: _crontabfunc.startAutoFollow
+    }]);
 
-  var result4 = _vueCrontab2.default.addJob([{
-    name: 'reStartAutoFollow',
-    interval: {
-      minutes: '/1' //15分後に開始する
-    },
-    job: _crontabfunc.reStartAutoFollow
-  }]);
-  _vueCrontab2.default.disableJob('tweetwatch');
-  _vueCrontab2.default.disableJob('reStartAutoFollow');
-  console.log(result);
-  console.log(result2);
-  console.log(result3);
-  console.log(result4);
+    var result4 = _vueCrontab2.default.addJob([{
+        name: 'reStartAutoFollow',
+        interval: {
+            minutes: '/1' //15分後に開始する
+        },
+        job: _crontabfunc.reStartAutoFollow
+    }]);
+
+    var result5 = _vueCrontab2.default.addJob([{
+        name: 'startAutoUnFollow',
+        interval: {
+            seconds: '/1'
+        },
+        job: _crontabfunc.startAutoUnFollow
+    }]);
+    _vueCrontab2.default.disableJob('tweetwatch');
+    _vueCrontab2.default.disableJob('reStartAutoFollow');
+    console.log(result);
+    console.log(result2);
+    console.log(result3);
+    console.log(result4);
+    console.log(result5);
 };
 
 /***/ }),
@@ -68060,7 +68365,7 @@ var render = function() {
   return _c("div", { staticClass: "p-list-area" }, [
     _c("div", { staticClass: "p-heading-area" }, [
       _c(
-        "span",
+        "p",
         {
           staticClass: "c-heading",
           class: _vm.classname,
@@ -68563,6 +68868,28 @@ var render = function() {
                   : _vm._e()
               ])
             ]
+          ),
+          _vm._v(" "),
+          _c(
+            "li",
+            {
+              staticClass: "c-btn p-status__item",
+              class: _vm.p_unfollow_status_toggle,
+              on: { click: _vm.changeUnFollowCronStatus }
+            },
+            [
+              _vm._m(3),
+              _vm._v(" "),
+              _c("p", [
+                _vm.AutoUnFollowCronStatus === "0"
+                  ? _c("span", [_vm._v("一時停止中...")])
+                  : _vm.AutoUnFollowCronStatus === "1"
+                  ? _c("span", [_vm._v("待機中...")])
+                  : _vm.AutoUnFollowCronStatus === "2"
+                  ? _c("span", [_vm._v("実行中...")])
+                  : _vm._e()
+              ])
+            ]
           )
         ])
       ]),
@@ -68588,7 +68915,11 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("ListItem", {
-            attrs: { heading: "unFollow", classname: "p-heading__unfollow" }
+            attrs: {
+              heading: "unFollow",
+              classname: "p-heading__unfollow",
+              listItems: _vm.listItems_unfollow
+            }
           }),
           _vm._v(" "),
           _c("ListItem", {
@@ -68630,6 +68961,15 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("p", [_c("i", { staticClass: "fas fa-heart" }), _vm._v(" like")])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fas fa-heart-broken" }),
+      _vm._v(" Unfollow")
+    ])
   }
 ]
 render._withStripped = true
@@ -68714,7 +69054,16 @@ var render = function() {
     [
       _c("Message"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "txt_center" }, [
+        _c(
+          "button",
+          { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
+          [_c("i", { staticClass: "fas fa-home c-icon-home" }), _vm._v("HOME")]
+        ),
+        _c("span", { staticClass: "c-title p-heading__like" }, [
+          _vm._v("自動いいねキーワード登録")
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -68773,18 +69122,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "txt_center" }, [
-      _c("span", { staticClass: "c-title p-heading__like" }, [
-        _vm._v("自動いいねキーワード登録")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {
@@ -68867,7 +69205,16 @@ var render = function() {
     [
       _c("Message"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "txt_center" }, [
+        _c(
+          "button",
+          { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
+          [_c("i", { staticClass: "fas fa-home c-icon-home" }), _vm._v("HOME")]
+        ),
+        _c("span", { staticClass: "c-title p-heading__follow" }, [
+          _vm._v("フォロワーサーチキーワード登録")
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -68926,18 +69273,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "txt_center" }, [
-      _c("span", { staticClass: "c-title p-heading__follow" }, [
-        _vm._v("フォロワーサーチキーワード登録")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {
@@ -69020,7 +69356,16 @@ var render = function() {
     [
       _c("Message"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "txt_center" }, [
+        _c(
+          "button",
+          { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
+          [_c("i", { staticClass: "fas fa-home c-icon-home" }), _vm._v("HOME")]
+        ),
+        _c("span", { staticClass: "c-title p-heading__follow" }, [
+          _vm._v("ターゲットアカウント登録")
+        ])
+      ]),
       _vm._v(" "),
       _c("InputForm", {
         attrs: {
@@ -69054,18 +69399,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "txt_center" }, [
-      _c("span", { staticClass: "c-title p-heading__follow" }, [
-        _vm._v("ターゲットアカウント登録")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 if (false) {

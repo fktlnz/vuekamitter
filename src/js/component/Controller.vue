@@ -503,6 +503,31 @@ module.exports = new Vue({
       })
     },
 
+    /* =========================================================
+    # 自動アンフォロー
+    ============================================================*/  
+    //自動フォローを開始
+    startAutoUnFollow_ajax() {
+      //HOME画面の自動イイネステータスを実行中に変更する
+      this.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', {response: '2'});
+      return axios.get(URL_BASE + 'startautounfollow')
+      .then((res) => {
+          //HOME画面のフォローステータスを待機中に変更する
+          this.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', {response: '1'});
+
+          //HOME画面のフォローリストを更新する
+          this.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', {response: res.data});
+      })
+      .catch((res) => {
+        //HOME画面の自動イイネステータスを待機中に変更する
+        this.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', {response: '1'});
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        this.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', {response: json});
+      })
+    },
 
 
     emit_message(msg) {

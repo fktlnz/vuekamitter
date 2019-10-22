@@ -1,7 +1,7 @@
 
 import Vue from 'vue'
 import VueCrontab from 'vue-crontab'
-import { tweetWatch, startAutoLike, startAutoFollow, reStartAutoFollow} from './crontabfunc.vue'
+import { tweetWatch, startAutoLike, startAutoFollow, reStartAutoFollow, startAutoUnFollow} from './crontabfunc.vue'
 
 export default () => {
   /* change the value of setInterval inside VueCrontab. */
@@ -48,10 +48,21 @@ export default () => {
         job: reStartAutoFollow,
     },    
   ])
+
+  let result5 = VueCrontab.addJob([
+    {        
+        name: 'startAutoUnFollow',
+        interval: {
+            seconds: '/1', 
+        },
+        job: startAutoUnFollow,
+    },    
+  ])
   VueCrontab.disableJob('tweetwatch')
   VueCrontab.disableJob('reStartAutoFollow')
   console.log(result)
   console.log(result2)
   console.log(result3)
   console.log(result4)
+  console.log(result5)
 }

@@ -1,6 +1,6 @@
 <script>
 
-export {tweetWatch, startAutoLike, startAutoFollow, reStartAutoFollow}
+export {tweetWatch, startAutoLike, startAutoFollow, reStartAutoFollow, startAutoUnFollow}
 
 import store from './Store.vue'
 import controller from './Controller.vue'
@@ -53,8 +53,10 @@ function tweetWatch() {
 
 //自動フォローを開始する
 function startAutoFollow() {   
-
-    if(store.getAutoFollowCronStatus() === '1'){
+    //自動フォロー動作条件
+    //１．自動フォローが「待機中」である
+    //２．自動いいねが動作中でない
+    if(store.getAutoFollowCronStatus() === '1' && store.getAutoLikeCronStatus() !== '2'){
 
         //自動フォローを再開する
         controller.startAutoFollow_ajax() 
@@ -88,8 +90,12 @@ function reStartAutoFollow() {
     console.log('次の自動フォローまで=>'+dif_time)
 
     if(nextFollowTime < now_ms) {
-    
-        if(store.getAutoFollowCronStatus() === '1'){
+        console.log('reStartAutoFollow 始まったよ')
+
+        //自動フォロー動作条件
+        //１．自動フォローが「待機中」である
+        //２．自動いいねが動作中でない
+        if(store.getAutoFollowCronStatus() === '1' && store.getAutoLikeCronStatus() !== '2'){
     
             //自動フォローを再開する
             controller.startAutoFollow_ajax() 
@@ -113,7 +119,11 @@ function reStartAutoFollow() {
 
 function startAutoLike() {
     
-    if(store.getAutoLikeCronStatus() === '1'){        
+    //自動いいね動作条件
+    //１．自動フォローが動作していない
+    //２．自動アンフォローが動作していない
+    //３．自動いいねが「待機中」である
+    if(store.getAutoLikeCronStatus() === '1' && store.getAutoFollowCronStatus() !== '2' && store.getAutoUnFollowCronStatus() !== '2'){        
         console.log('startAutoLike動作中')
         controller.startAutoLike_ajax()
 
@@ -149,10 +159,32 @@ function startAutoLike() {
 
 }
 
-function setCondition (){
-    // return this.toggle === '1' ? true : false
-}
+//自動アンフォローを開始する
+function startAutoUnFollow() {   
 
+    let now = new Date()
+    let now_ms = now.getTime();
+
+    //storeから次のフォロー開始時間を取得する
+    const UnFollowTime = store.getNextUnFollowTime()
+    
+    let dif_time = UnFollowTime - now_ms    
+    
+    //5000人以上になったらアンフォローする
+    //アンフォローは15分は最低あける（アンフォローをしても5000人をした回らない場合にアンフォローが何度も繰り返されてしまうため）
+    if(store.getFriendsCount() > 340 && (UnFollowTime < now_ms) && store.getAutoUnFollowCronStatus() === '1'){
+
+        //自動アンフォローを開始する
+        controller.startAutoUnFollow_ajax() 
+        
+        //自動アンフォロー実行中は停止する
+        VueCrontab.disableJob('startAutoUnFollow')  
+        
+    }else{
+        console.log('自動アンフォロー監視中です =>dif_time:'+dif_time)
+    }
+
+}
 
 
 </script>

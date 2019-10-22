@@ -16,10 +16,11 @@ module.exports = new Vue({
         status: false,
     },
       IstweetwatchJobExec: false, //cronが動作中かどうか（true: 自動ツイートのwatchが動作中　false:動作していない）
-      IsrestartAutoFollowJobExec: false, //cronが動作中かどうか（true: 自動ツイートのwatchが動作中　false:動作していない）
-      IsStartAutoFollowJobExec: false, //cronが動作中かどうか（true: 自動ツイートのwatchが動作中　false:動作していない）
+      IsrestartAutoFollowJobExec: false, //cronが動作中かどうか
+      IsStartAutoFollowJobExec: false, //cronが動作中かどうか
       IsAutoLikeExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
       IsAutoFollowExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
+      IsAutoUnFollowExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
       reservedTime: null,
       reserveItem: {
         id: null,
@@ -30,6 +31,8 @@ module.exports = new Vue({
         now:null,
         next:null
       },
+      friends_count:0,
+      UnFollowTime:null,
   },
   methods: {
     // Ajax通信でJsonを取得し、特定のプロパティに格納する
@@ -51,6 +54,7 @@ module.exports = new Vue({
         this.message.msg = msg
         this.message.status = status
     },
+
     //自動いいね機能のcron状態を取得
     getAutoLikeCronStatus() {
       return this.IsAutoLikeExec
@@ -59,6 +63,7 @@ module.exports = new Vue({
     setAutoLikeCronStatus(status) {
       this.IsAutoLikeExec = status
     },
+
     //自動フォロー機能のcron状態を取得
     getAutoFollowCronStatus() {
       return this.IsAutoFollowExec
@@ -67,14 +72,34 @@ module.exports = new Vue({
     setAutoFollowCronStatus(status) {
       this.IsAutoFollowExec = status
     },
+
     //自動フォロー再開関数の状態を取得（true false）    
-    gettRestartAutoFollowCronStatus() {
+    getRestartAutoFollowCronStatus() {
       return this.IsrestartAutoFollowJobExec
     },
     //自動フォロー再開関数の状態をセット（true false） 
     setRestartAutoFollowCronStatus(status) {
       this.IsrestartAutoFollowJobExec = status
     },
+
+    //自動アンフォロー機能のcron状態を取得
+    getAutoUnFollowCronStatus() {
+      return this.IsAutoUnFollowExec
+    },
+    //自動アンフォロー機能のcron状態をセット
+    setAutoUnFollowCronStatus(status) {
+      this.IsAutoUnFollowExec = status
+    },
+
+    //アクティブユーザーのフォロー数をセットする
+    setFriendsCount(count){
+      this.friends_count = count
+    },
+    //アクティブユーザーのフォロー数を取得する
+    getFriendsCount(){
+      return this.friends_count
+    },
+    
     getCronStatus() {
       return this.IstweetwatchJobExec
     },
@@ -108,11 +133,21 @@ module.exports = new Vue({
     setNextFollowTime(nexttime, now) {
       this.reFollowTime.next = nexttime;
       this.reFollowTime.now = now;
-      console.log('次のフォロー開始時間：'+this.reFollowTime)
+      console.log('次のフォロー開始時間：')
+      console.dir(this.reFollowTime)
     },
     getNextFollowTime() {
       return this.reFollowTime;
-    }
+    },
+    setNextUnFollowTime(nexttime) {
+      this.UnFollowTime = nexttime;
+      console.log('次のアンフォロー開始時間：')
+      console.dir(this.UnFollowTime)
+    },
+    getNextUnFollowTime() {
+      return this.UnFollowTime;
+    },
+    
     
   }
 });
