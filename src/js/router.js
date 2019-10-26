@@ -7,6 +7,8 @@ import Like from './component/RegisterLikeWord.vue'
 import Keywords from './component/RegisterFollowerSearchKeyword.vue'
 import Target from './component/RegisterTargetAccount.vue'
 import Twtschedule from './component/RegisterTweetSchedule.vue'
+import PassRemindSend from './component/passRemindSend.vue'
+import PassRemindRecieve from './component/passRemindRecieve.vue'
 
 Vue.use(Router)
 
@@ -49,6 +51,20 @@ export default new Router({
             name: 'target',
             component: Target
         },
+        {
+            path: '/remindsend',
+            name: 'remindsend',
+            component: PassRemindSend
+        },
+        {
+            path: '/remindrecieve',
+            name: 'remindrecieve',
+            component: PassRemindRecieve
+        },
+        {
+            path: '*',
+            component:SignIn
+        }
         
     ]
 })

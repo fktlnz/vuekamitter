@@ -30,16 +30,16 @@ export default {
             error:null,     //
             activeUser: '', //現在選択しているアカウント
         }
-    },   
+    },      
     created () {
         // view が作られた時にデータを取得し、
         // そのデータは既に監視されている
         this.fetchData()
-        this.updateAccount()
+        //this.updateAccount()
     },
     watch: {
         // ルートが変更されたらこのメソッドを再び呼び出します
-        '$route': 'fetchData'
+        //'$route': 'fetchData'
     },
     methods: {
         makeDatas() {
@@ -116,7 +116,7 @@ export default {
                     const url = $event.response.url
                     console.log('リダイレクトします->'+url)
                     // this.$router.push(url)
-                    window.open(url, "_blank");
+                    window.location.href = url;
                 }else {
                     this.loading = false
                     console.log('リクエストに失敗しました')
@@ -134,6 +134,7 @@ export default {
             })
         },
         fetchData () {
+            console.log('fetchdataに来たよ！')
             this.loading = false
             this.error = this.post = null           
 
@@ -152,6 +153,9 @@ export default {
                 controller.$once('AJAX_COMPLETE_CERTIFY', ($event) => {
                     console.log('フロントに帰ってきたデータ↓')
                     console.dir($event.response)
+
+                    //認証したアカウントのリストを更新する
+                    this.updateAccount();
                     
                     // メッセージ表示
                     store.setMessage('認証に成功しました',true)
@@ -161,6 +165,10 @@ export default {
                         controller.emit_message(message)  
                     }
                 })
+            }else{
+                //HOME画面に遷移したとき、HOME画面を更新したときにここにはいる
+                //このときはupdateAccountをする
+                this.updateAccount()
             }
 
         },

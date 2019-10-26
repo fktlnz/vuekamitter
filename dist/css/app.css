@@ -677,6 +677,7 @@ td input {
   background-color: white;
   padding: 20px 10px;
   transition: 300ms ease-in;
+  z-index: 99;
 }
 
 .p-sidebar.open {

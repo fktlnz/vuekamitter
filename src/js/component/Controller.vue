@@ -93,6 +93,47 @@ module.exports = new Vue({
         })
 
     },
+    /* =========================================================
+    # パスワードリマインダー
+    ============================================================*/ 
+    //認証コードを送信する
+    passRemindSend_ajax(username, email){
+      let params = new URLSearchParams();
+      params.append('email',email);
+      params.append('username',username);
+
+      return axios.post(URL_BASE + 'passremindsend', params)
+        .then((res) => {
+            this.$emit('AJAX_COMPLETE_PASSREMINDSEND', {response: res.data});
+        })
+        .catch((res) => {
+          const json = {
+            'res' : 'NG',
+            'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+          }    
+          this.$emit('AJAX_COMPLETE_PASSREMINDSEND', {response: json});
+        })
+    },
+    //認証コードを確認して新しいパスワードを送信する
+    passRemindRecieve_ajax(code){
+      let params = new URLSearchParams();
+      params.append('code',code);
+
+      return axios.post(URL_BASE + 'passremindrecieve', params)
+        .then((res) => {
+            this.$emit('AJAX_COMPLETE_PASSREMINDRECIEVE', {response: res.data});
+        })
+        .catch((res) => {
+          const json = {
+            'res' : 'NG',
+            'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+          }    
+          this.$emit('AJAX_COMPLETE_PASSREMINDRECIEVE', {response: json});
+        })
+    },
+
+
+
     //Twitterアカウントの認証処理(auth_tokenとoauth_verifierの取得)
     certify_ajax() {        
         return axios.get(URL_BASE + 'certify')
@@ -104,8 +145,6 @@ module.exports = new Vue({
             'res' : 'NG',
             'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
           }    
-          console.log('ここに入る？')
-          console.log(res)
           this.$emit('AJAX_COMPLETE_GETREQUEST', {response: json});
         })
     },
@@ -248,6 +287,20 @@ module.exports = new Vue({
         this.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', {response: json});
       })
     },
+    //予約日時、ツイート内容をデータベースから論理削除する
+    deleteTweetSchedule_ajax(word_id) {
+      return axios.get(URL_BASE + 'deletetweetschedule?word_id='+word_id)
+      .then((res) => {
+          this.$emit('AJAX_COMPLETE_DELETETWEETSCHEDULE', {response: res.data});
+      })
+      .catch((res) => {
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        this.$emit('AJAX_COMPLETE_DELETETWEETSCHEDULE', {response: json});
+      })
+    },
     //いいねしたリストをセッションから取得する
     getLikedListSession_ajax() {
       return axios.get(URL_BASE + 'getlikedlistsession')
@@ -267,10 +320,10 @@ module.exports = new Vue({
     },
 
 
-    //フォローしたリストをセッションから取得する
-    getFollowedListSession_ajax() {
-      console.log('セッションからフォローリストを取得します')
-      return axios.get(URL_BASE + 'getfollowedlistsession')
+    //フォローしたリストをDBから取得する
+    getFollowedList_ajax() {
+      console.log('フォロー済リストを取得します')
+      return axios.get(URL_BASE + 'getfollowedlist')
       .then((res) => {
           //HOME画面のフォロー済リストを更新する
           this.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', {response: res.data});
@@ -283,6 +336,25 @@ module.exports = new Vue({
         }    
         //HOME画面のフォロー済リストを更新する
           this.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', {response: json});
+      })
+    },
+
+    //アンフォローしたリストをDBから取得する
+    getUnFollowedList_ajax() {
+      console.log('アンフォロー済リストを取得します')
+      return axios.get(URL_BASE + 'getunfollowedlist')
+      .then((res) => {
+          //HOME画面のフォロー済リストを更新する
+          this.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', {response: res.data});
+      })
+      .catch((res) => {
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。',
+          'rst' : false
+        }    
+        //HOME画面のフォロー済リストを更新する
+          this.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', {response: json});
       })
     },
     emit_message(msg) {
@@ -523,7 +595,7 @@ module.exports = new Vue({
     /* =========================================================
     # 自動アンフォロー
     ============================================================*/  
-    //自動フォローを開始
+    //自動アンフォローを開始
     startAutoUnFollow_ajax() {
       //HOME画面の自動イイネステータスを実行中に変更する
       this.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', {response: '2'});
@@ -564,6 +636,8 @@ module.exports = new Vue({
         this.$emit('AJAX_FINISH_LOGOUT_RESULT', {response: json});
       })
     },
+
+       
 
     emit_message(msg) {
       console.log('メッセージを受信しました！'+msg)

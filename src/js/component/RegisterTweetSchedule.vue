@@ -1,6 +1,6 @@
 <template>    
 
-    <div class="l-subPage p-autotwt-wrap">
+    <div v-if=" show===true " class="l-subPage p-autotwt-wrap">
         <Message></Message>
         <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__twtschedule">自動ツイート設定</span></div>  
         <VueCtkDateTimePicker
@@ -26,7 +26,7 @@ import inputform from './InputForm.vue'
 import message from './message.vue'
 import controller from './Controller.vue'
 import store from './Store.vue'
-import _ from 'lodash';
+import _ from 'lodash'
 import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
 
 export default {
@@ -43,14 +43,32 @@ export default {
             text: '',
             yourValue: null,
             toggle: '1',
-            registernum: 0,            
+            registernum: 0,  
+            show:false          
         }
     }, 
+    created() {
+        //ログインチェック結果
+        controller.checkLogin_ajax()
+        controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            console.log($event.response.res)
+            if($event.response.res === 'NOTLOGIN' ){
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。')
+                this.$router.push('/')
+            }else{
+                console.log('ログインユーザーです。')
+                this.show = true
+            }
 
-
+        })
+    },
     mounted() {        
         //Listの表示を更新
         this.updateDatas()
+
+        
 
     },
     computed: {
@@ -129,7 +147,34 @@ export default {
         },
         deleteItem(id) {
             console.log('delete-btn clicked!!'+id.listId)
-            this.datas = _.reject(this.datas, { 'id': id.listId });        
+
+            controller.deleteTweetSchedule_ajax(id.listId)
+            controller.$once('AJAX_COMPLETE_DELETETWEETSCHEDULE', ($event) => {
+
+                if($event.response.res === 'OK'){
+                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETWEETSCHEDULE') 
+                     //メッセージ表示
+                    store.setMessage($event.response.msg, true)
+                    const message = store.getMessage();
+                    if(message.msg !== ''){
+                        controller.emit_message(message)  
+                    }
+
+                    this.datas = _.reject(this.datas, { 'id': id.listId });
+
+                }else {
+                    console.log('リクエストに失敗しました')
+
+                    //メッセージ表示
+                    store.setMessage($event.response.msg, false)
+                    const message = store.getMessage();
+                    if(message.msg !== ''){
+                        controller.emit_message(message)  
+                    }
+
+                }
+                
+            })
         },
         addItem(event) {
             let that = this

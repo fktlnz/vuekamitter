@@ -1,5 +1,5 @@
 <template>    
-    <div class="l-subPage l-searchKeyPage">
+    <div v-if=" show===true " class="l-subPage l-searchKeyPage">
         <Message></Message>
         <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__follow">フォロワーサーチキーワード登録</span></div>        
         <div>            
@@ -39,8 +39,26 @@ export default {
             datas: [],
             searchText: '',
             option_num: '0',
-            option_text: 'AND'
+            option_text: 'AND',
+            show:false
         }
+    },
+    created() {
+        //ログインチェック結果
+        controller.checkLogin_ajax()
+        controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            console.log($event.response.res)
+            if($event.response.res === 'NOTLOGIN' ){
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。')
+                this.$router.push('/')
+            }else{
+                console.log('ログインユーザーです。')
+                this.show = true
+            }
+
+        })
     },
     mounted() {
         this.updateDatas()

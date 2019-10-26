@@ -172,7 +172,7 @@ function startAutoUnFollow() {
     
     //5000人以上になったらアンフォローする
     //アンフォローは15分は最低あける（アンフォローをしても5000人をした回らない場合にアンフォローが何度も繰り返されてしまうため）
-    if(store.getFriendsCount() > 340 && (UnFollowTime < now_ms) && store.getAutoUnFollowCronStatus() === '1'){
+    if(store.getFriendsCount() > 600 && (UnFollowTime < now_ms) && store.getAutoUnFollowCronStatus() === '1'){
 
         //自動アンフォローを開始する
         controller.startAutoUnFollow_ajax() 

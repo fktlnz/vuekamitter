@@ -42,7 +42,7 @@ export default {
     data: function(){
         return {            
         }
-    },
+    },    
     methods: {
         logout(){
             console.log('clicked')

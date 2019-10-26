@@ -6,8 +6,8 @@
             <button class="c-btn p-sidebar__btn js-toggle-window"><i class="fas fa-key"></i></button>
         </div>
         
-        <UserInfo :follower="follower" :friends="friends" :account_name="account_name" :description="description" :img_url="img_url"></UserInfo>
-       
+        <UserInfo v-if="show===true" :follower="follower" :friends="friends" :account_name="account_name" :description="description" :img_url="img_url"></UserInfo>
+    <div v-if=" show===true ">
        <div class="p-status-wrap">
            <ul>
                <li class="c-btn p-status__item" :class="p_follow_status_toggle" v-on:click="changeFollowCronStatus">
@@ -42,6 +42,7 @@
         <ListItem heading="unFollow"  classname="p-heading__unfollow" v-bind:listItems="listItems_unfollow"></ListItem>
         <ListItem heading="tweetschedule"  classname="p-heading__twtschedule" v-bind:listItems="listItems_schedule"></ListItem>
        </div>
+    </div>
 
     </div>
     
@@ -65,10 +66,11 @@ export default {
         UserInfo: userinfo,
         ListItem: listitem,
         AuthAccount: authaccount,
-        Message: message,
+        Message: message,        
     },
     data: function(){
-        return {            
+        return {    
+            show:false,        
             follower: 0,
             friends: 0,
             account_name: '',
@@ -95,7 +97,23 @@ export default {
             },
         }
     }, 
-    
+    created() {
+        //ログインチェック結果
+        controller.checkLogin_ajax()
+        controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            console.log($event.response.res)
+            if($event.response.res === 'NOTLOGIN' ){
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。')
+                this.$router.push('/')
+            }else{
+                console.log('ログインユーザーです。')
+                this.show = true
+            }
+
+        })
+    },
     mounted: function(){
         let that=this
 
@@ -110,12 +128,6 @@ export default {
             }
         })
 
-        //メッセージがセットされていれば表示する
-        const message = store.getMessage();
-        if(message.msg !== ''){
-            controller.emit_message(message)  
-        }
-
         //ログインチェック結果
         controller.checkLogin_ajax()
         controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
@@ -125,9 +137,20 @@ export default {
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
                 this.$router.push('/')
+            }else{
+                console.log('ログインユーザーです。')
+                this.show = true
             }
 
         })
+
+        //メッセージがセットされていれば表示する
+        const message = store.getMessage();
+        if(message.msg !== ''){
+            controller.emit_message(message)  
+        }
+
+        
 
         //いいねの処理が完了したときにここにくる
         //いいねしたツイートの一覧を表示する
@@ -135,7 +158,7 @@ export default {
         controller.$on('AJAX_DISPLAY_AUTOLIKE_RESULT', ($event) => {
             console.log('DEBUG -- Home.vue --> いいね！をしたリストを更新します')
             console.dir($event.response.rst)
-            if($event.response.rst){
+            if($event.response.res === 'OK'){
 
                 console.dir($event.response.rst.length)
                 const result = $event.response.rst
@@ -180,6 +203,7 @@ export default {
         //自動フォローが完了したときにここにくる
         //正常にすべてのフォローが完了した⇒フォローしたアカウントのリストを更新する
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
+        controller.getFollowedList_ajax()
         controller.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', ($event) => {
             console.log('フォローリスト取得がかえててきた')
             console.dir($event.response.rst)
@@ -194,10 +218,8 @@ export default {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({id: result[i]['id'], name:result[i]['name'], text:rst[i]['text'], created_at:result[i]['created_at']})                          
+                    that.listItems_follow.unshift({id: result[i]['id'], name:result[i]['name'], text:result[i]['text'], created_at:result[i]['created_at']})                          
                 }
-
-
 
                 //自動フォローを停止中にする
                 // store.setAutoFollowCronStatus('0')
@@ -213,6 +235,9 @@ export default {
 
                 //自動フォローを再開関数を開始する
                 that.$crontab.enableJob('reStartAutoFollow')
+
+                //フォロー数を更新する
+                this.updateUserInfo()
 
                 //メッセージ表示
                 store.setMessage($event.response.msg, false)
@@ -250,6 +275,8 @@ export default {
                     that.listItems_follow.unshift({id: rst[i]['id'], name:rst[i]['name'], text:rst[i]['text'], created_at:rst[i]['created_at']})                          
                 }
 
+                //フォロー数を更新する
+                this.updateUserInfo()
 
                 //メッセージ表示
                 store.setMessage($event.response.msg, false)
@@ -258,7 +285,7 @@ export default {
                     controller.emit_message(message)  
                 }
 
-            }else if($event.response.res === 'UPDATE'){ //画面更新の場合に、すでにフォロー済リストを表示する
+            }else if($event.response.res === 'UPDATED'){ //画面更新の場合に、すでにフォロー済リストを表示する
                 console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
                 console.dir($event.response.rst)
                 console.dir($event.response.rst.length)
@@ -269,7 +296,7 @@ export default {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({id: result[i]['id'], name:result[i]['name'], text:'', created_at:result[i]['created_at']})                          
+                    that.listItems_follow.push({id: result[i]['id'], name:result[i]['name'], text:result[i]['text'], created_at:result[i]['created_at']})                          
                 }
             }else{
                 //メッセージ表示
@@ -303,6 +330,7 @@ export default {
         //正常にすべてのアンフォローが完了した⇒フォローしたアカウントのリストを更新する
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
         //controller.startAutoUnFollow_ajax()
+        controller.getUnFollowedList_ajax()
         controller.$on('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', ($event) => {
             console.log('アンフォロー完了しました')
             console.dir($event.response.rst)
@@ -320,6 +348,9 @@ export default {
                     that.listItems_unfollow.unshift({id: result[i]['id'], name:result[i]['name'], text:result[i]['text'], created_at:result[i]['created_at']})                          
                 }
 
+                //フォロワー数を更新する
+                this.updateUserInfo()
+
                 //メッセージ表示
                 store.setMessage($event.response.msg, false)
                 const message = store.getMessage();
@@ -335,21 +366,11 @@ export default {
                 //自動アンフォローを再開関数を開始する
                 that.$crontab.enableJob('startAutoUnFollow')
 
-            }else if($event.response.res === 'LIMIT' || $event.response.res === 'FOLLOWLIMIT') {
+            }else if($event.response.res === 'LIMIT' || $event.response.res === 'UNFOLLOWLIMIT') {
                 //'LIMIT':       ターゲットアカウントからのフォロワー取得制限に引っかかった場合
                 //'FOLLOWLIMIT': フォロー上限に引っかかった場合
                 //crontabで15分後にフォローを再開する
                 //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
-                
-                //次のフォロー開始時間を15分後に設定する
-                const now = new Date()
-                const now_ms = now.getTime();
-                store.setNextFollowTime(now_ms + 905000, now_ms)//15分後に設定　5秒は気持ち
-
-                // console.log('自動フォロー再開ジョブをスタートします')
-                //自動フォローを再開関数を開始する
-                // const result = that.$crontab.enableJob('reStartAutoFollow')
-                // console.log("enableJob('reStartAutoFollow'):"+result)
 
                 //リストを更新する
                 console.dir($event.response.rst)
@@ -364,6 +385,8 @@ export default {
                     that.listItems_unfollow.unshift({id: rst[i]['id'], name:rst[i]['name'], text:rst[i]['text'], created_at:rst[i]['created_at']})                          
                 }
 
+                //フォロワー数を更新する
+                this.updateUserInfo()
 
                 //メッセージ表示
                 store.setMessage($event.response.msg, false)
@@ -372,10 +395,27 @@ export default {
                     controller.emit_message(message)  
                 }
                 
+                //次のフォロー開始時間を15分後に設定する
+                const now = new Date()
+                const now_ms = now.getTime();
+                store.setNextUnFollowTime(now_ms + 905000, now_ms)//15分後に設定　5秒は気持ち
 
                 //自動アンフォローを再開関数を開始する
                 that.$crontab.enableJob('startAutoUnFollow')
 
+            }else if($event.response.res === 'UPDATED'){ //画面更新の場合に、すでにフォロー済リストを表示する
+                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
+                console.dir($event.response.rst)
+                console.dir($event.response.rst.length)
+                const result = $event.response.rst
+                const length = $event.response.rst.length
+                that.listItems_unfollow=[] //listを初期化
+                for(let i=0; i<length; i++){
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_unfollow.push({id: result[i]['id'], name:result[i]['name'], text:result[i]['text'], created_at:result[i]['created_at']})                          
+                }
             }else{
                 //メッセージ表示
                 store.setMessage($event.response.msg, false)
@@ -390,6 +430,10 @@ export default {
                 this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false)
                 this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false)
 
+                //次のフォロー開始時間を15分後に設定する
+                const now = new Date()
+                const now_ms = now.getTime();
+                store.setNextUnFollowTime(now_ms + 905000, now_ms)//15分後に設定　5秒は気持ち
                 //自動アンフォローが実行中の場合は実行する
                 that.$crontab.enableJob('startAutoUnFollow')
                 
@@ -526,6 +570,15 @@ export default {
                     //フォロー数をstoreに格納
                     store.setFriendsCount($event.response.rst.friends_count)
 
+                    //followList更新
+                    controller.getFollowedList_ajax()
+                    //unfollowList更新
+                    controller.getUnFollowedList_ajax()
+                    //予約ツイートを更新する
+                    controller.getTweetSchedule_ajax()
+                    //いいねリストを更新する
+                    controller.getLikedListSession_ajax()
+
                 }else if($event.response.res ==='NOTLOGIN'){
                         console.log('ログインユーザーでないためログイン画面に飛ばします')          
                         this.$router.push('/')  
@@ -589,6 +642,37 @@ export default {
             }
             
         },
+        updateUserInfo() {
+            controller.getTwitterProfile_ajax('screen_name')
+            controller.$once('AJAX_COMPLETE_GETTWITTERPROFILE', ($event) => {
+                console.log('フロントに帰ってきたデータ↓ プロフィール')
+                console.dir($event.response.rst)
+                if($event.response.res === 'OK'){
+                    //取得成功時はUser領域更新
+                    this.follower = $event.response.rst.followers_count //フォロワー数
+                    this.friends = $event.response.rst.friends_count    //フォロー数
+                    this.account_name = $event.response.rst.name        //アカウント名
+                    this.description = $event.response.rst.description  //プロフィール文   
+                    this.img_url = $event.response.rst.profile_image_url_https //画像URL
+
+                    //フォロー数をstoreに格納
+                    store.setFriendsCount($event.response.rst.friends_count)
+
+                }else if($event.response.res ==='NOTLOGIN'){
+                        console.log('ログインユーザーでないためログイン画面に飛ばします')          
+                        this.$router.push('/')  
+                }else{
+                    //失敗したときはメッセージ表示
+                    //メッセージ表示
+
+                    store.setMessage('プロフィールの取得に失敗。アクセス制限orネット環境が悪い可能性があります', false)
+                    const message = store.getMessage();
+                    if(message.msg !== ''){
+                        controller.emit_message(message)  
+                    }
+                }
+            })
+        }
     }
 
 }

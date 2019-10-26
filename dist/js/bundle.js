@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 175);
+/******/ 	return __webpack_require__(__webpack_require__.s = 177);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -1919,7 +1919,7 @@
             try {
                 oldLocale = globalLocale._abbr;
                 var aliasedRequire = require;
-                __webpack_require__(228)("./" + name);
+                __webpack_require__(230)("./" + name);
                 getSetGlobalLocale(oldLocale);
             } catch (e) {}
         }
@@ -16760,7 +16760,7 @@ Vue.compile = compileToFunctions;
 
 /* harmony default export */ __webpack_exports__["default"] = (Vue);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(8), __webpack_require__(10), __webpack_require__(176).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(9), __webpack_require__(11), __webpack_require__(178).setImmediate))
 
 /***/ }),
 /* 3 */
@@ -16819,13 +16819,68 @@ if (false) {(function () {
 
 /***/ }),
 /* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue__);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
+var disposed = false
+/* script */
+
+
+/* template */
+var __vue_render__, __vue_static_render_fns__
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue___default.a,
+  __vue_render__,
+  __vue_static_render_fns__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\js\\component\\Store.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9e195dd6", Component.options)
+  } else {
+    hotAPI.reload("data-v-9e195dd6", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
 var bind = __webpack_require__(18);
-var isBuffer = __webpack_require__(181);
+var isBuffer = __webpack_require__(183);
 
 /*global toString:true*/
 
@@ -17156,61 +17211,6 @@ module.exports = {
   extend: extend,
   trim: trim
 };
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue__);
-/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
-var disposed = false
-/* script */
-
-
-/* template */
-var __vue_render__, __vue_static_render_fns__
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-
-var Component = Object(__WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Store_vue___default.a,
-  __vue_render__,
-  __vue_static_render_fns__,
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\js\\component\\Store.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-9e195dd6", Component.options)
-  } else {
-    hotAPI.reload("data-v-9e195dd6", Component.options)
-  }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
-
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
 
 
 /***/ }),
@@ -34331,7 +34331,7 @@ if (false) {(function () {
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10), __webpack_require__(30)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(30)(module)))
 
 /***/ }),
 /* 7 */
@@ -34342,7 +34342,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_InputForm_vue__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_InputForm_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_InputForm_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_InputForm_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_InputForm_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ebf9f62_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_InputForm_vue__ = __webpack_require__(199);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ebf9f62_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_InputForm_vue__ = __webpack_require__(201);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -34391,6 +34391,62 @@ if (false) {(function () {
 
 /***/ }),
 /* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__ = __webpack_require__(29);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55de965b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_message_vue__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
+var disposed = false
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55de965b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_message_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55de965b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_message_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\js\\component\\message.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-55de965b", Component.options)
+  } else {
+    hotAPI.reload("data-v-55de965b", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -34580,63 +34636,316 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 9 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__ = __webpack_require__(29);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__);
-/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55de965b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_message_vue__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
-var disposed = false
-/* script */
+/* WEBPACK VAR INJECTION */(function(process) {// .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
+// backported and transplited with Babel, with backwards-compat fixes
 
+// Copyright Joyent, Inc. and other Node contributors.
+//
+// Permission is hereby granted, free of charge, to any person obtaining a
+// copy of this software and associated documentation files (the
+// "Software"), to deal in the Software without restriction, including
+// without limitation the rights to use, copy, modify, merge, publish,
+// distribute, sublicense, and/or sell copies of the Software, and to permit
+// persons to whom the Software is furnished to do so, subject to the
+// following conditions:
+//
+// The above copyright notice and this permission notice shall be included
+// in all copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+// USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-/* template */
-
-/* template functional */
-var __vue_template_functional__ = false
-/* styles */
-var __vue_styles__ = null
-/* scopeId */
-var __vue_scopeId__ = null
-/* moduleIdentifier (server only) */
-var __vue_module_identifier__ = null
-
-var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
-  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_message_vue___default.a,
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55de965b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_message_vue__["a" /* render */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_55de965b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_message_vue__["b" /* staticRenderFns */],
-  __vue_template_functional__,
-  __vue_styles__,
-  __vue_scopeId__,
-  __vue_module_identifier__
-)
-Component.options.__file = "src\\js\\component\\message.vue"
-
-/* hot reload */
-if (false) {(function () {
-  var hotAPI = require("vue-hot-reload-api")
-  hotAPI.install(require("vue"), false)
-  if (!hotAPI.compatible) return
-  module.hot.accept()
-  if (!module.hot.data) {
-    hotAPI.createRecord("data-v-55de965b", Component.options)
-  } else {
-    hotAPI.reload("data-v-55de965b", Component.options)
+// resolves . and .. elements in a path array with directory names there
+// must be no slashes, empty elements, or device names (c:\) in the array
+// (so also no leading and trailing slashes - it does not distinguish
+// relative and absolute paths)
+function normalizeArray(parts, allowAboveRoot) {
+  // if the path tries to go above the root, `up` ends up > 0
+  var up = 0;
+  for (var i = parts.length - 1; i >= 0; i--) {
+    var last = parts[i];
+    if (last === '.') {
+      parts.splice(i, 1);
+    } else if (last === '..') {
+      parts.splice(i, 1);
+      up++;
+    } else if (up) {
+      parts.splice(i, 1);
+      up--;
+    }
   }
-  module.hot.dispose(function (data) {
-    disposed = true
-  })
-})()}
 
-/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+  // if the path is allowed to go above the root, restore leading ..s
+  if (allowAboveRoot) {
+    for (; up--; up) {
+      parts.unshift('..');
+    }
+  }
 
+  return parts;
+}
+
+// path.resolve([from ...], to)
+// posix version
+exports.resolve = function() {
+  var resolvedPath = '',
+      resolvedAbsolute = false;
+
+  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
+    var path = (i >= 0) ? arguments[i] : process.cwd();
+
+    // Skip empty and invalid entries
+    if (typeof path !== 'string') {
+      throw new TypeError('Arguments to path.resolve must be strings');
+    } else if (!path) {
+      continue;
+    }
+
+    resolvedPath = path + '/' + resolvedPath;
+    resolvedAbsolute = path.charAt(0) === '/';
+  }
+
+  // At this point the path should be resolved to a full absolute path, but
+  // handle relative paths to be safe (might happen when process.cwd() fails)
+
+  // Normalize the path
+  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
+    return !!p;
+  }), !resolvedAbsolute).join('/');
+
+  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
+};
+
+// path.normalize(path)
+// posix version
+exports.normalize = function(path) {
+  var isAbsolute = exports.isAbsolute(path),
+      trailingSlash = substr(path, -1) === '/';
+
+  // Normalize the path
+  path = normalizeArray(filter(path.split('/'), function(p) {
+    return !!p;
+  }), !isAbsolute).join('/');
+
+  if (!path && !isAbsolute) {
+    path = '.';
+  }
+  if (path && trailingSlash) {
+    path += '/';
+  }
+
+  return (isAbsolute ? '/' : '') + path;
+};
+
+// posix version
+exports.isAbsolute = function(path) {
+  return path.charAt(0) === '/';
+};
+
+// posix version
+exports.join = function() {
+  var paths = Array.prototype.slice.call(arguments, 0);
+  return exports.normalize(filter(paths, function(p, index) {
+    if (typeof p !== 'string') {
+      throw new TypeError('Arguments to path.join must be strings');
+    }
+    return p;
+  }).join('/'));
+};
+
+
+// path.relative(from, to)
+// posix version
+exports.relative = function(from, to) {
+  from = exports.resolve(from).substr(1);
+  to = exports.resolve(to).substr(1);
+
+  function trim(arr) {
+    var start = 0;
+    for (; start < arr.length; start++) {
+      if (arr[start] !== '') break;
+    }
+
+    var end = arr.length - 1;
+    for (; end >= 0; end--) {
+      if (arr[end] !== '') break;
+    }
+
+    if (start > end) return [];
+    return arr.slice(start, end - start + 1);
+  }
+
+  var fromParts = trim(from.split('/'));
+  var toParts = trim(to.split('/'));
+
+  var length = Math.min(fromParts.length, toParts.length);
+  var samePartsLength = length;
+  for (var i = 0; i < length; i++) {
+    if (fromParts[i] !== toParts[i]) {
+      samePartsLength = i;
+      break;
+    }
+  }
+
+  var outputParts = [];
+  for (var i = samePartsLength; i < fromParts.length; i++) {
+    outputParts.push('..');
+  }
+
+  outputParts = outputParts.concat(toParts.slice(samePartsLength));
+
+  return outputParts.join('/');
+};
+
+exports.sep = '/';
+exports.delimiter = ':';
+
+exports.dirname = function (path) {
+  if (typeof path !== 'string') path = path + '';
+  if (path.length === 0) return '.';
+  var code = path.charCodeAt(0);
+  var hasRoot = code === 47 /*/*/;
+  var end = -1;
+  var matchedSlash = true;
+  for (var i = path.length - 1; i >= 1; --i) {
+    code = path.charCodeAt(i);
+    if (code === 47 /*/*/) {
+        if (!matchedSlash) {
+          end = i;
+          break;
+        }
+      } else {
+      // We saw the first non-path separator
+      matchedSlash = false;
+    }
+  }
+
+  if (end === -1) return hasRoot ? '/' : '.';
+  if (hasRoot && end === 1) {
+    // return '//';
+    // Backwards-compat fix:
+    return '/';
+  }
+  return path.slice(0, end);
+};
+
+function basename(path) {
+  if (typeof path !== 'string') path = path + '';
+
+  var start = 0;
+  var end = -1;
+  var matchedSlash = true;
+  var i;
+
+  for (i = path.length - 1; i >= 0; --i) {
+    if (path.charCodeAt(i) === 47 /*/*/) {
+        // If we reached a path separator that was not part of a set of path
+        // separators at the end of the string, stop now
+        if (!matchedSlash) {
+          start = i + 1;
+          break;
+        }
+      } else if (end === -1) {
+      // We saw the first non-path separator, mark this as the end of our
+      // path component
+      matchedSlash = false;
+      end = i + 1;
+    }
+  }
+
+  if (end === -1) return '';
+  return path.slice(start, end);
+}
+
+// Uses a mixed approach for backwards-compatibility, as ext behavior changed
+// in new Node.js versions, so only basename() above is backported here
+exports.basename = function (path, ext) {
+  var f = basename(path);
+  if (ext && f.substr(-1 * ext.length) === ext) {
+    f = f.substr(0, f.length - ext.length);
+  }
+  return f;
+};
+
+exports.extname = function (path) {
+  if (typeof path !== 'string') path = path + '';
+  var startDot = -1;
+  var startPart = 0;
+  var end = -1;
+  var matchedSlash = true;
+  // Track the state of characters (if any) we see before our first dot and
+  // after any path separator we find
+  var preDotState = 0;
+  for (var i = path.length - 1; i >= 0; --i) {
+    var code = path.charCodeAt(i);
+    if (code === 47 /*/*/) {
+        // If we reached a path separator that was not part of a set of path
+        // separators at the end of the string, stop now
+        if (!matchedSlash) {
+          startPart = i + 1;
+          break;
+        }
+        continue;
+      }
+    if (end === -1) {
+      // We saw the first non-path separator, mark this as the end of our
+      // extension
+      matchedSlash = false;
+      end = i + 1;
+    }
+    if (code === 46 /*.*/) {
+        // If this is our first dot, mark it as the start of our extension
+        if (startDot === -1)
+          startDot = i;
+        else if (preDotState !== 1)
+          preDotState = 1;
+    } else if (startDot !== -1) {
+      // We saw a non-dot and non-path separator before our dot, so we should
+      // have a good chance at having a non-empty extension
+      preDotState = -1;
+    }
+  }
+
+  if (startDot === -1 || end === -1 ||
+      // We saw a non-dot character immediately before the dot
+      preDotState === 0 ||
+      // The (right-most) trimmed path component is exactly '..'
+      preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
+    return '';
+  }
+  return path.slice(startDot, end);
+};
+
+function filter (xs, f) {
+    if (xs.filter) return xs.filter(f);
+    var res = [];
+    for (var i = 0; i < xs.length; i++) {
+        if (f(xs[i], i, xs)) res.push(xs[i]);
+    }
+    return res;
+}
+
+// String.prototype.substr - negative index don't work in IE8
+var substr = 'ab'.substr(-1) === 'b'
+    ? function (str, start, len) { return str.substr(start, len) }
+    : function (str, start, len) {
+        if (start < 0) start = str.length + start;
+        return str.substr(start, len);
+    }
+;
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 var g;
@@ -34663,7 +34972,7 @@ module.exports = g;
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -34671,7 +34980,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordList_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_641b334a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_KeywordList_vue__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_641b334a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_KeywordList_vue__ = __webpack_require__(211);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -34719,7 +35028,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -35902,315 +36211,6 @@ var index = VueCrontab.getInstance();
 
 
 /***/ }),
-/* 13 */
-/***/ (function(module, exports, __webpack_require__) {
-
-/* WEBPACK VAR INJECTION */(function(process) {// .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
-// backported and transplited with Babel, with backwards-compat fixes
-
-// Copyright Joyent, Inc. and other Node contributors.
-//
-// Permission is hereby granted, free of charge, to any person obtaining a
-// copy of this software and associated documentation files (the
-// "Software"), to deal in the Software without restriction, including
-// without limitation the rights to use, copy, modify, merge, publish,
-// distribute, sublicense, and/or sell copies of the Software, and to permit
-// persons to whom the Software is furnished to do so, subject to the
-// following conditions:
-//
-// The above copyright notice and this permission notice shall be included
-// in all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
-// OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
-// NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
-// DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
-// OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
-// USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-// resolves . and .. elements in a path array with directory names there
-// must be no slashes, empty elements, or device names (c:\) in the array
-// (so also no leading and trailing slashes - it does not distinguish
-// relative and absolute paths)
-function normalizeArray(parts, allowAboveRoot) {
-  // if the path tries to go above the root, `up` ends up > 0
-  var up = 0;
-  for (var i = parts.length - 1; i >= 0; i--) {
-    var last = parts[i];
-    if (last === '.') {
-      parts.splice(i, 1);
-    } else if (last === '..') {
-      parts.splice(i, 1);
-      up++;
-    } else if (up) {
-      parts.splice(i, 1);
-      up--;
-    }
-  }
-
-  // if the path is allowed to go above the root, restore leading ..s
-  if (allowAboveRoot) {
-    for (; up--; up) {
-      parts.unshift('..');
-    }
-  }
-
-  return parts;
-}
-
-// path.resolve([from ...], to)
-// posix version
-exports.resolve = function() {
-  var resolvedPath = '',
-      resolvedAbsolute = false;
-
-  for (var i = arguments.length - 1; i >= -1 && !resolvedAbsolute; i--) {
-    var path = (i >= 0) ? arguments[i] : process.cwd();
-
-    // Skip empty and invalid entries
-    if (typeof path !== 'string') {
-      throw new TypeError('Arguments to path.resolve must be strings');
-    } else if (!path) {
-      continue;
-    }
-
-    resolvedPath = path + '/' + resolvedPath;
-    resolvedAbsolute = path.charAt(0) === '/';
-  }
-
-  // At this point the path should be resolved to a full absolute path, but
-  // handle relative paths to be safe (might happen when process.cwd() fails)
-
-  // Normalize the path
-  resolvedPath = normalizeArray(filter(resolvedPath.split('/'), function(p) {
-    return !!p;
-  }), !resolvedAbsolute).join('/');
-
-  return ((resolvedAbsolute ? '/' : '') + resolvedPath) || '.';
-};
-
-// path.normalize(path)
-// posix version
-exports.normalize = function(path) {
-  var isAbsolute = exports.isAbsolute(path),
-      trailingSlash = substr(path, -1) === '/';
-
-  // Normalize the path
-  path = normalizeArray(filter(path.split('/'), function(p) {
-    return !!p;
-  }), !isAbsolute).join('/');
-
-  if (!path && !isAbsolute) {
-    path = '.';
-  }
-  if (path && trailingSlash) {
-    path += '/';
-  }
-
-  return (isAbsolute ? '/' : '') + path;
-};
-
-// posix version
-exports.isAbsolute = function(path) {
-  return path.charAt(0) === '/';
-};
-
-// posix version
-exports.join = function() {
-  var paths = Array.prototype.slice.call(arguments, 0);
-  return exports.normalize(filter(paths, function(p, index) {
-    if (typeof p !== 'string') {
-      throw new TypeError('Arguments to path.join must be strings');
-    }
-    return p;
-  }).join('/'));
-};
-
-
-// path.relative(from, to)
-// posix version
-exports.relative = function(from, to) {
-  from = exports.resolve(from).substr(1);
-  to = exports.resolve(to).substr(1);
-
-  function trim(arr) {
-    var start = 0;
-    for (; start < arr.length; start++) {
-      if (arr[start] !== '') break;
-    }
-
-    var end = arr.length - 1;
-    for (; end >= 0; end--) {
-      if (arr[end] !== '') break;
-    }
-
-    if (start > end) return [];
-    return arr.slice(start, end - start + 1);
-  }
-
-  var fromParts = trim(from.split('/'));
-  var toParts = trim(to.split('/'));
-
-  var length = Math.min(fromParts.length, toParts.length);
-  var samePartsLength = length;
-  for (var i = 0; i < length; i++) {
-    if (fromParts[i] !== toParts[i]) {
-      samePartsLength = i;
-      break;
-    }
-  }
-
-  var outputParts = [];
-  for (var i = samePartsLength; i < fromParts.length; i++) {
-    outputParts.push('..');
-  }
-
-  outputParts = outputParts.concat(toParts.slice(samePartsLength));
-
-  return outputParts.join('/');
-};
-
-exports.sep = '/';
-exports.delimiter = ':';
-
-exports.dirname = function (path) {
-  if (typeof path !== 'string') path = path + '';
-  if (path.length === 0) return '.';
-  var code = path.charCodeAt(0);
-  var hasRoot = code === 47 /*/*/;
-  var end = -1;
-  var matchedSlash = true;
-  for (var i = path.length - 1; i >= 1; --i) {
-    code = path.charCodeAt(i);
-    if (code === 47 /*/*/) {
-        if (!matchedSlash) {
-          end = i;
-          break;
-        }
-      } else {
-      // We saw the first non-path separator
-      matchedSlash = false;
-    }
-  }
-
-  if (end === -1) return hasRoot ? '/' : '.';
-  if (hasRoot && end === 1) {
-    // return '//';
-    // Backwards-compat fix:
-    return '/';
-  }
-  return path.slice(0, end);
-};
-
-function basename(path) {
-  if (typeof path !== 'string') path = path + '';
-
-  var start = 0;
-  var end = -1;
-  var matchedSlash = true;
-  var i;
-
-  for (i = path.length - 1; i >= 0; --i) {
-    if (path.charCodeAt(i) === 47 /*/*/) {
-        // If we reached a path separator that was not part of a set of path
-        // separators at the end of the string, stop now
-        if (!matchedSlash) {
-          start = i + 1;
-          break;
-        }
-      } else if (end === -1) {
-      // We saw the first non-path separator, mark this as the end of our
-      // path component
-      matchedSlash = false;
-      end = i + 1;
-    }
-  }
-
-  if (end === -1) return '';
-  return path.slice(start, end);
-}
-
-// Uses a mixed approach for backwards-compatibility, as ext behavior changed
-// in new Node.js versions, so only basename() above is backported here
-exports.basename = function (path, ext) {
-  var f = basename(path);
-  if (ext && f.substr(-1 * ext.length) === ext) {
-    f = f.substr(0, f.length - ext.length);
-  }
-  return f;
-};
-
-exports.extname = function (path) {
-  if (typeof path !== 'string') path = path + '';
-  var startDot = -1;
-  var startPart = 0;
-  var end = -1;
-  var matchedSlash = true;
-  // Track the state of characters (if any) we see before our first dot and
-  // after any path separator we find
-  var preDotState = 0;
-  for (var i = path.length - 1; i >= 0; --i) {
-    var code = path.charCodeAt(i);
-    if (code === 47 /*/*/) {
-        // If we reached a path separator that was not part of a set of path
-        // separators at the end of the string, stop now
-        if (!matchedSlash) {
-          startPart = i + 1;
-          break;
-        }
-        continue;
-      }
-    if (end === -1) {
-      // We saw the first non-path separator, mark this as the end of our
-      // extension
-      matchedSlash = false;
-      end = i + 1;
-    }
-    if (code === 46 /*.*/) {
-        // If this is our first dot, mark it as the start of our extension
-        if (startDot === -1)
-          startDot = i;
-        else if (preDotState !== 1)
-          preDotState = 1;
-    } else if (startDot !== -1) {
-      // We saw a non-dot and non-path separator before our dot, so we should
-      // have a good chance at having a non-empty extension
-      preDotState = -1;
-    }
-  }
-
-  if (startDot === -1 || end === -1 ||
-      // We saw a non-dot character immediately before the dot
-      preDotState === 0 ||
-      // The (right-most) trimmed path component is exactly '..'
-      preDotState === 1 && startDot === end - 1 && startDot === startPart + 1) {
-    return '';
-  }
-  return path.slice(startDot, end);
-};
-
-function filter (xs, f) {
-    if (xs.filter) return xs.filter(f);
-    var res = [];
-    for (var i = 0; i < xs.length; i++) {
-        if (f(xs[i], i, xs)) res.push(xs[i]);
-    }
-    return res;
-}
-
-// String.prototype.substr - negative index don't work in IE8
-var substr = 'ab'.substr(-1) === 'b'
-    ? function (str, start, len) { return str.substr(start, len) }
-    : function (str, start, len) {
-        if (start < 0) start = str.length + start;
-        return str.substr(start, len);
-    }
-;
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
-
-/***/ }),
 /* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36222,7 +36222,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.startAutoUnFollow = exports.reStartAutoFollow = exports.startAutoFollow = exports.startAutoLike = exports.tweetWatch = undefined;
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -36230,7 +36230,7 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _vueCrontab = __webpack_require__(12);
+var _vueCrontab = __webpack_require__(13);
 
 var _vueCrontab2 = _interopRequireDefault(_vueCrontab);
 
@@ -36396,7 +36396,7 @@ function startAutoUnFollow() {
 
     //5000人以上になったらアンフォローする
     //アンフォローは15分は最低あける（アンフォローをしても5000人をした回らない場合にアンフォローが何度も繰り返されてしまうため）
-    if (_Store2.default.getFriendsCount() > 340 && UnFollowTime < now_ms && _Store2.default.getAutoUnFollowCronStatus() === '1') {
+    if (_Store2.default.getFriendsCount() > 600 && UnFollowTime < now_ms && _Store2.default.getAutoUnFollowCronStatus() === '1') {
 
         //自動アンフォローを開始する
         _Controller2.default.startAutoUnFollow_ajax();
@@ -36693,30 +36693,69 @@ module.exports = new _vue2.default({
       });
     },
 
-    //Twitterアカウントの認証処理(auth_tokenとoauth_verifierの取得)
-    certify_ajax: function certify_ajax() {
+    /* =========================================================
+    # パスワードリマインダー
+    ============================================================*/
+    //認証コードを送信する
+    passRemindSend_ajax: function passRemindSend_ajax(username, email) {
       var _this5 = this;
 
-      return _axios2.default.get(URL_BASE + 'certify').then(function (res) {
-        _this5.$emit('AJAX_COMPLETE_GETREQUEST', { response: res.data });
+      var params = new URLSearchParams();
+      params.append('email', email);
+      params.append('username', username);
+
+      return _axios2.default.post(URL_BASE + 'passremindsend', params).then(function (res) {
+        _this5.$emit('AJAX_COMPLETE_PASSREMINDSEND', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        console.log('ここに入る？');
-        console.log(res);
-        _this5.$emit('AJAX_COMPLETE_GETREQUEST', { response: json });
+        _this5.$emit('AJAX_COMPLETE_PASSREMINDSEND', { response: json });
+      });
+    },
+
+    //認証コードを確認して新しいパスワードを送信する
+    passRemindRecieve_ajax: function passRemindRecieve_ajax(code) {
+      var _this6 = this;
+
+      var params = new URLSearchParams();
+      params.append('code', code);
+
+      return _axios2.default.post(URL_BASE + 'passremindrecieve', params).then(function (res) {
+        _this6.$emit('AJAX_COMPLETE_PASSREMINDRECIEVE', { response: res.data });
+      }).catch(function (res) {
+        var json = {
+          'res': 'NG',
+          'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
+        };
+        _this6.$emit('AJAX_COMPLETE_PASSREMINDRECIEVE', { response: json });
+      });
+    },
+
+
+    //Twitterアカウントの認証処理(auth_tokenとoauth_verifierの取得)
+    certify_ajax: function certify_ajax() {
+      var _this7 = this;
+
+      return _axios2.default.get(URL_BASE + 'certify').then(function (res) {
+        _this7.$emit('AJAX_COMPLETE_GETREQUEST', { response: res.data });
+      }).catch(function (res) {
+        var json = {
+          'res': 'NG',
+          'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
+        };
+        _this7.$emit('AJAX_COMPLETE_GETREQUEST', { response: json });
       });
     },
 
     //取得したoauth_tokenとoauth_verifierを使ってアクセストークンを取得。サーバー側でDB保存
     saveToken_ajax: function saveToken_ajax(oauth_token, oauth_verifier) {
-      var _this6 = this;
+      var _this8 = this;
 
       return _axios2.default.get(URL_BASE + 'certify?oauth_token=' + oauth_token + '&oauth_verifier=' + oauth_verifier).then(function (res) {
         console.log('saveToken終了');
-        _this6.$emit('AJAX_COMPLETE_CERTIFY', { response: res.data });
+        _this8.$emit('AJAX_COMPLETE_CERTIFY', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
@@ -36724,98 +36763,98 @@ module.exports = new _vue2.default({
         };
         console.log('ここに入る？');
         console.log(res);
-        _this6.$emit('AJAX_COMPLETE_CERTIFY', { response: json });
+        _this8.$emit('AJAX_COMPLETE_CERTIFY', { response: json });
       });
     },
 
     //ログインユーザーが認証しているアカウントをサーバーから取得する
     updateAccount_ajax: function updateAccount_ajax() {
-      var _this7 = this;
+      var _this9 = this;
 
       return _axios2.default.get(URL_BASE + 'getaccount').then(function (res) {
         console.log('getaccount終了');
         console.log('getaccount返ってきた：' + res.data.res);
-        _this7.$emit('AJAX_COMPLETE_GETACCOUNT', { response: res.data });
+        _this9.$emit('AJAX_COMPLETE_GETACCOUNT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this7.$emit('AJAX_COMPLETE_GETACCOUNT', { response: json });
+        _this9.$emit('AJAX_COMPLETE_GETACCOUNT', { response: json });
       });
     },
     deleteAccount_ajax: function deleteAccount_ajax(screen_name) {
-      var _this8 = this;
+      var _this10 = this;
 
       return _axios2.default.get(URL_BASE + 'deleteaccount?screen_name=' + screen_name).then(function (res) {
         console.log('deleteaccount終了');
-        _this8.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: res.data });
+        _this10.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this8.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: json });
+        _this10.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: json });
       });
     },
     getUserInfo_ajax: function getUserInfo_ajax(screen_name) {
-      var _this9 = this;
+      var _this11 = this;
 
       return _axios2.default.get(URL_BASE + 'getuserinfo?screen_name=' + screen_name).then(function (res) {
         console.log('getuserInfo返ってきた：' + res.data.res);
         console.log('getuserinfo終了');
-        _this9.$emit('AJAX_COMPLETE_GETUSERINFO', { response: res.data });
+        _this11.$emit('AJAX_COMPLETE_GETUSERINFO', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this9.$emit('AJAX_COMPLETE_GETUSERINFO', { response: json });
+        _this11.$emit('AJAX_COMPLETE_GETUSERINFO', { response: json });
       });
     },
     getActiveUser_ajax: function getActiveUser_ajax(screen_name) {
-      var _this10 = this;
+      var _this12 = this;
 
       return _axios2.default.get(URL_BASE + 'getactiveuser').then(function (res) {
         console.log('getactiveuser');
-        _this10.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: res.data });
+        _this12.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this10.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: json });
+        _this12.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: json });
       });
     },
     getTwitterProfile_ajax: function getTwitterProfile_ajax(screen_name) {
-      var _this11 = this;
+      var _this13 = this;
 
       return _axios2.default.get(URL_BASE + 'gettwitterprofile?screen_name=' + screen_name).then(function (res) {
         console.log('gettwitterprofile');
         console.log(res.data.res);
-        _this11.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: res.data });
+        _this13.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this11.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: json });
+        _this13.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: json });
       });
     },
 
     //ツイートを投稿する
     tweet_ajax: function tweet_ajax(id, text) {
-      var _this12 = this;
+      var _this14 = this;
 
       return _axios2.default.get(URL_BASE + 'tweet?text=' + text + '&id=' + id).then(function (res) {
         console.log('tweet');
-        _this12.$emit('AJAX_COMPLETE_TWEET', { response: res.data });
+        _this14.$emit('AJAX_COMPLETE_TWEET', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this12.$emit('AJAX_COMPLETE_TWEET', { response: json });
+        _this14.$emit('AJAX_COMPLETE_TWEET', { response: json });
       });
     },
 
@@ -36837,53 +36876,87 @@ module.exports = new _vue2.default({
 
     //予約日時、ツイート内容をデータベースから取得する
     getTweetSchedule_ajax: function getTweetSchedule_ajax() {
-      var _this13 = this;
+      var _this15 = this;
 
       return _axios2.default.get(URL_BASE + 'gettweetschedule').then(function (res) {
-        _this13.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', { response: res.data });
-        _this13.$emit('AJAX_DISPLAY_SCHEDULE_RESULT', { response: res.data });
+        _this15.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', { response: res.data });
+        _this15.$emit('AJAX_DISPLAY_SCHEDULE_RESULT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this13.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', { response: json });
+        _this15.$emit('AJAX_COMPLETE_GETTWEETSCHEDULE', { response: json });
+      });
+    },
+
+    //予約日時、ツイート内容をデータベースから論理削除する
+    deleteTweetSchedule_ajax: function deleteTweetSchedule_ajax(word_id) {
+      var _this16 = this;
+
+      return _axios2.default.get(URL_BASE + 'deletetweetschedule?word_id=' + word_id).then(function (res) {
+        _this16.$emit('AJAX_COMPLETE_DELETETWEETSCHEDULE', { response: res.data });
+      }).catch(function (res) {
+        var json = {
+          'res': 'NG',
+          'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
+        };
+        _this16.$emit('AJAX_COMPLETE_DELETETWEETSCHEDULE', { response: json });
       });
     },
 
     //いいねしたリストをセッションから取得する
     getLikedListSession_ajax: function getLikedListSession_ajax() {
-      var _this14 = this;
+      var _this17 = this;
 
       return _axios2.default.get(URL_BASE + 'getlikedlistsession').then(function (res) {
         //HOME画面のイイネリストを更新する
-        _this14.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: res.data });
+        _this17.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。',
           'rst': false
           //HOME画面のイイネリストを更新する
-        };_this14.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: json });
+        };_this17.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: json });
       });
     },
 
 
-    //フォローしたリストをセッションから取得する
-    getFollowedListSession_ajax: function getFollowedListSession_ajax() {
-      var _this15 = this;
+    //フォローしたリストをDBから取得する
+    getFollowedList_ajax: function getFollowedList_ajax() {
+      var _this18 = this;
 
-      console.log('セッションからフォローリストを取得します');
-      return _axios2.default.get(URL_BASE + 'getfollowedlistsession').then(function (res) {
+      console.log('フォロー済リストを取得します');
+      return _axios2.default.get(URL_BASE + 'getfollowedlist').then(function (res) {
         //HOME画面のフォロー済リストを更新する
-        _this15.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
+        _this18.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。',
           'rst': false
           //HOME画面のフォロー済リストを更新する
-        };_this15.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: json });
+        };_this18.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: json });
+      });
+    },
+
+
+    //アンフォローしたリストをDBから取得する
+    getUnFollowedList_ajax: function getUnFollowedList_ajax() {
+      var _this19 = this;
+
+      console.log('アンフォロー済リストを取得します');
+      return _axios2.default.get(URL_BASE + 'getunfollowedlist').then(function (res) {
+        //HOME画面のフォロー済リストを更新する
+        _this19.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: res.data });
+      }).catch(function (res) {
+        var json = {
+          'res': 'NG',
+          'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。',
+          'rst': false
+          //HOME画面のフォロー済リストを更新する
+        };_this19.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: json });
       });
     },
     emit_message: function emit_message(msg) {
@@ -36897,47 +36970,47 @@ module.exports = new _vue2.default({
     =================================*/
     //自動いいねを開始する
     startAutoLike_ajax: function startAutoLike_ajax() {
-      var _this16 = this;
+      var _this20 = this;
 
       //HOME画面の自動イイネステータスを実行中に変更する
       this.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '2' });
       return _axios2.default.get(URL_BASE + 'startautolike').then(function (res) {
         //HOME画面の自動イイネステータスを待機中に変更する
-        _this16.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '1' });
+        _this20.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '1' });
 
         //HOME画面のイイネリストを更新する
-        _this16.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: res.data });
+        _this20.$emit('AJAX_DISPLAY_AUTOLIKE_RESULT', { response: res.data });
       }).catch(function (res) {
         //HOME画面の自動イイネステータスを待機中に変更する
-        _this16.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '1' });
+        _this20.$emit('AJAX_CHANGE_AUTOLIKESTATUS', { response: '1' });
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this16.$emit('AJAX_COMPLETE_AUTOLIKE', { response: json });
+        _this20.$emit('AJAX_COMPLETE_AUTOLIKE', { response: json });
       });
     },
 
     //自動フォローを開始
     startAutoFollow_ajax: function startAutoFollow_ajax() {
-      var _this17 = this;
+      var _this21 = this;
 
       //HOME画面の自動イイネステータスを実行中に変更する
       this.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '2' });
       return _axios2.default.get(URL_BASE + 'startautofollow').then(function (res) {
         //HOME画面のフォローステータスを待機中に変更する
-        _this17.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '1' });
+        _this21.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '1' });
 
         //HOME画面のフォローリストを更新する
-        _this17.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
+        _this21.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
       }).catch(function (res) {
         //HOME画面の自動イイネステータスを待機中に変更する
-        _this17.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '1' });
+        _this21.$emit('AJAX_CHANGE_AUTOFOLLOWSTATUS', { response: '1' });
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this17.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: json });
+        _this21.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: json });
       });
     },
 
@@ -36947,7 +37020,7 @@ module.exports = new _vue2.default({
     ============================================================*/
     //キーワードをDBに保存する
     saveKeyword_ajax: function saveKeyword_ajax(id, likeword, option, type) {
-      var _this18 = this;
+      var _this22 = this;
 
       var params = new URLSearchParams();
       params.append('id', id);
@@ -36958,10 +37031,10 @@ module.exports = new _vue2.default({
       return _axios2.default.post(URL_BASE + 'savekeyword', params).then(function (res) {
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this18.$emit('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', { response: res.data });
+          _this22.$emit('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', { response: res.data });
         } else if (type === 1) {
           //イイネキーワード}
-          _this18.$emit('AJAX_COMPLETE_SAVELIKEWORD', { response: res.data });
+          _this22.$emit('AJAX_COMPLETE_SAVELIKEWORD', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -36970,25 +37043,25 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this18.$emit('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', { response: json });
+          _this22.$emit('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', { response: json });
         } else if (type === 1) {
           //イイネキーワード}
-          _this18.$emit('AJAX_COMPLETE_SAVELIKEWORD', { response: json });
+          _this22.$emit('AJAX_COMPLETE_SAVELIKEWORD', { response: json });
         }
       });
     },
 
     //DBからキーワードを取得する
     getKeyword_ajax: function getKeyword_ajax(type) {
-      var _this19 = this;
+      var _this23 = this;
 
       return _axios2.default.get(URL_BASE + 'getkeyword?type=' + type).then(function (res) {
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this19.$emit('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', { response: res.data });
+          _this23.$emit('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', { response: res.data });
         } else if (type === 1) {
           //イイネキーワード}
-          _this19.$emit('AJAX_COMPLETE_GETLIKEWORD', { response: res.data });
+          _this23.$emit('AJAX_COMPLETE_GETLIKEWORD', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -36997,25 +37070,25 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this19.$emit('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', { response: json });
+          _this23.$emit('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', { response: json });
         } else if (type === 1) {
           //イイネキーワード}
-          _this19.$emit('AJAX_COMPLETE_GETLIKEWORD', { response: json });
+          _this23.$emit('AJAX_COMPLETE_GETLIKEWORD', { response: json });
         }
       });
     },
 
     //DBからキーワードを論理削除する
     deleteKeyword_ajax: function deleteKeyword_ajax(word_id, type) {
-      var _this20 = this;
+      var _this24 = this;
 
       return _axios2.default.get(URL_BASE + 'deletekeyword?word_id=' + word_id).then(function (res) {
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this20.$emit('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', { response: res.data });
+          _this24.$emit('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', { response: res.data });
         } else if (type === 1) {
           //イイネキーワード}
-          _this20.$emit('AJAX_COMPLETE_DELETELIKEWORD', { response: res.data });
+          _this24.$emit('AJAX_COMPLETE_DELETELIKEWORD', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -37024,10 +37097,10 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //フォロワーサーチキーワード
-          _this20.$emit('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', { response: json });
+          _this24.$emit('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', { response: json });
         } else if (type === 1) {
           //イイネキーワード}
-          _this20.$emit('AJAX_COMPLETE_DELETELIKEWORD', { response: json });
+          _this24.$emit('AJAX_COMPLETE_DELETELIKEWORD', { response: json });
         }
       });
     },
@@ -37038,7 +37111,7 @@ module.exports = new _vue2.default({
     =================================*/
     //ユーザーアカウントをDBに保存する　type: 0:ターゲットアカウント 1:フォロー済アカウント 2:アンフォローアカウント
     saveUserAccount_ajax: function saveUserAccount_ajax(id, screen_name, type) {
-      var _this21 = this;
+      var _this25 = this;
 
       var params = new URLSearchParams();
       params.append('id', id);
@@ -37048,13 +37121,13 @@ module.exports = new _vue2.default({
       return _axios2.default.post(URL_BASE + 'saveuseraccount', params).then(function (res) {
         if (type === 0) {
           //ターゲットアカウント
-          _this21.$emit('AJAX_COMPLETE_SAVETARGETACCOUNT', { response: res.data });
+          _this25.$emit('AJAX_COMPLETE_SAVETARGETACCOUNT', { response: res.data });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this21.$emit('AJAX_COMPLETE_SAVEFOLLOWDONEACCOUNT', { response: res.data });
+          _this25.$emit('AJAX_COMPLETE_SAVEFOLLOWDONEACCOUNT', { response: res.data });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this21.$emit('AJAX_COMPLETE_SAVEUNFOLLOWACCOUNT', { response: res.data });
+          _this25.$emit('AJAX_COMPLETE_SAVEUNFOLLOWACCOUNT', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -37063,31 +37136,31 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //ターゲットアカウント
-          _this21.$emit('AJAX_COMPLETE_SAVETARGETACCOUNT', { response: json });
+          _this25.$emit('AJAX_COMPLETE_SAVETARGETACCOUNT', { response: json });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this21.$emit('AJAX_COMPLETE_SAVEFOLLOWDONEACCOUNT', { response: json });
+          _this25.$emit('AJAX_COMPLETE_SAVEFOLLOWDONEACCOUNT', { response: json });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this21.$emit('AJAX_COMPLETE_SAVEUNFOLLOWACCOUNT', { response: json });
+          _this25.$emit('AJAX_COMPLETE_SAVEUNFOLLOWACCOUNT', { response: json });
         }
       });
     },
 
     //DBからユーザーアカウントを取得する
     getUserAccount_ajax: function getUserAccount_ajax(type) {
-      var _this22 = this;
+      var _this26 = this;
 
       return _axios2.default.get(URL_BASE + 'getuseraccount?type=' + type).then(function (res) {
         if (type === 0) {
           //ターゲットアカウント
-          _this22.$emit('AJAX_COMPLETE_GETTARGETACCOUNT', { response: res.data });
+          _this26.$emit('AJAX_COMPLETE_GETTARGETACCOUNT', { response: res.data });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this22.$emit('AJAX_COMPLETE_GETFOLLOWDONEACCOUNT', { response: res.data });
+          _this26.$emit('AJAX_COMPLETE_GETFOLLOWDONEACCOUNT', { response: res.data });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this22.$emit('AJAX_COMPLETE_GETUNFOLLOWACCOUNT', { response: res.data });
+          _this26.$emit('AJAX_COMPLETE_GETUNFOLLOWACCOUNT', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -37096,31 +37169,31 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //ターゲットアカウント
-          _this22.$emit('AJAX_COMPLETE_GETTARGETACCOUNT', { response: json });
+          _this26.$emit('AJAX_COMPLETE_GETTARGETACCOUNT', { response: json });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this22.$emit('AJAX_COMPLETE_GETFOLLOWDONEACCOUNT', { response: json });
+          _this26.$emit('AJAX_COMPLETE_GETFOLLOWDONEACCOUNT', { response: json });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this22.$emit('AJAX_COMPLETE_GETUNFOLLOWACCOUNT', { response: json });
+          _this26.$emit('AJAX_COMPLETE_GETUNFOLLOWACCOUNT', { response: json });
         }
       });
     },
 
     //DBからユーザーアカウントを論理削除する
     deleteUserAccount_ajax: function deleteUserAccount_ajax(word_id, type) {
-      var _this23 = this;
+      var _this27 = this;
 
       return _axios2.default.get(URL_BASE + 'deleteuseraccount?word_id=' + word_id).then(function (res) {
         if (type === 0) {
           //ターゲットアカウント
-          _this23.$emit('AJAX_COMPLETE_DELETETARGETACCOUNT', { response: res.data });
+          _this27.$emit('AJAX_COMPLETE_DELETETARGETACCOUNT', { response: res.data });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this23.$emit('AJAX_COMPLETE_DELETEFOLLOWDONEACCOUNT', { response: res.data });
+          _this27.$emit('AJAX_COMPLETE_DELETEFOLLOWDONEACCOUNT', { response: res.data });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this23.$emit('AJAX_COMPLETE_DELETEUNFOLLOWACCOUNT', { response: res.data });
+          _this27.$emit('AJAX_COMPLETE_DELETEUNFOLLOWACCOUNT', { response: res.data });
         }
       }).catch(function (res) {
         var json = {
@@ -37129,29 +37202,29 @@ module.exports = new _vue2.default({
         };
         if (type === 0) {
           //ターゲットアカウント
-          _this23.$emit('AJAX_COMPLETE_DELETETARGETACCOUNT', { response: json });
+          _this27.$emit('AJAX_COMPLETE_DELETETARGETACCOUNT', { response: json });
         } else if (type === 1) {
           //フォロー済アカウント
-          _this23.$emit('AJAX_COMPLETE_DELETEFOLLOWDONEACCOUNT', { response: json });
+          _this27.$emit('AJAX_COMPLETE_DELETEFOLLOWDONEACCOUNT', { response: json });
         } else if (type === 2) {
           //アンフォローアカウント
-          _this23.$emit('AJAX_COMPLETE_DELETEUNFOLLOWACCOUNT', { response: json });
+          _this27.$emit('AJAX_COMPLETE_DELETEUNFOLLOWACCOUNT', { response: json });
         }
       });
     },
 
     //Twitterのアカウントが存在するか確認する
     CheckUserAccountExist_ajax: function CheckUserAccountExist_ajax(screen_name) {
-      var _this24 = this;
+      var _this28 = this;
 
       return _axios2.default.get(URL_BASE + 'checkuseraccountexist?screen_name=' + screen_name).then(function (res) {
-        _this24.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: res.data });
+        _this28.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this24.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: json });
+        _this28.$emit('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', { response: json });
       });
     },
 
@@ -37159,26 +37232,26 @@ module.exports = new _vue2.default({
     /* =========================================================
     # 自動アンフォロー
     ============================================================*/
-    //自動フォローを開始
+    //自動アンフォローを開始
     startAutoUnFollow_ajax: function startAutoUnFollow_ajax() {
-      var _this25 = this;
+      var _this29 = this;
 
       //HOME画面の自動イイネステータスを実行中に変更する
       this.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '2' });
       return _axios2.default.get(URL_BASE + 'startautounfollow').then(function (res) {
         //HOME画面のフォローステータスを待機中に変更する
-        _this25.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
+        _this29.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
 
         //HOME画面のフォローリストを更新する
-        _this25.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: res.data });
+        _this29.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: res.data });
       }).catch(function (res) {
         //HOME画面の自動イイネステータスを待機中に変更する
-        _this25.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
+        _this29.$emit('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', { response: '1' });
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this25.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: json });
+        _this29.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: json });
       });
     },
 
@@ -37187,18 +37260,18 @@ module.exports = new _vue2.default({
     # ログアウト
     ============================================================*/
     logout_ajax: function logout_ajax() {
-      var _this26 = this;
+      var _this30 = this;
 
       return _axios2.default.get(URL_BASE + 'logout').then(function (res) {
         //HOME画面にログアウトを知らせる
         console.log('返ってきた');
-        _this26.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: res.data });
+        _this30.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'ログアウトに失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this26.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: json });
+        _this30.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: json });
       });
     }
   }, 'emit_message', function emit_message(msg) {
@@ -37211,7 +37284,7 @@ module.exports = new _vue2.default({
 /* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(180);
+module.exports = __webpack_require__(182);
 
 /***/ }),
 /* 18 */
@@ -37238,7 +37311,7 @@ module.exports = function bind(fn, thisArg) {
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 
 function encode(val) {
   return encodeURIComponent(val).
@@ -37328,8 +37401,8 @@ module.exports = function isCancel(value) {
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
-var utils = __webpack_require__(4);
-var normalizeHeaderName = __webpack_require__(186);
+var utils = __webpack_require__(5);
+var normalizeHeaderName = __webpack_require__(188);
 
 var DEFAULT_CONTENT_TYPE = {
   'Content-Type': 'application/x-www-form-urlencoded'
@@ -37425,7 +37498,7 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
 /* 22 */
@@ -37434,11 +37507,11 @@ module.exports = defaults;
 "use strict";
 
 
-var utils = __webpack_require__(4);
-var settle = __webpack_require__(187);
+var utils = __webpack_require__(5);
+var settle = __webpack_require__(189);
 var buildURL = __webpack_require__(19);
-var parseHeaders = __webpack_require__(189);
-var isURLSameOrigin = __webpack_require__(190);
+var parseHeaders = __webpack_require__(191);
+var isURLSameOrigin = __webpack_require__(192);
 var createError = __webpack_require__(23);
 
 module.exports = function xhrAdapter(config) {
@@ -37531,7 +37604,7 @@ module.exports = function xhrAdapter(config) {
     // This is only done if running in a standard browser environment.
     // Specifically not if we're in a web worker, or react-native.
     if (utils.isStandardBrowserEnv()) {
-      var cookies = __webpack_require__(191);
+      var cookies = __webpack_require__(193);
 
       // Add xsrf header
       var xsrfValue = (config.withCredentials || isURLSameOrigin(config.url)) && config.xsrfCookieName ?
@@ -37615,7 +37688,7 @@ module.exports = function xhrAdapter(config) {
 "use strict";
 
 
-var enhanceError = __webpack_require__(188);
+var enhanceError = __webpack_require__(190);
 
 /**
  * Create an Error with the specified message, config, error code, request and response.
@@ -37640,7 +37713,7 @@ module.exports = function createError(message, config, code, request, response) 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 
 /**
  * Config-specific merge-function which creates a new config-object
@@ -37728,7 +37801,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _path = __webpack_require__(13);
+var _path = __webpack_require__(10);
 
 var _path2 = _interopRequireDefault(_path);
 
@@ -37875,7 +37948,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _path = __webpack_require__(13);
+var _path = __webpack_require__(10);
 
 var _path2 = _interopRequireDefault(_path);
 
@@ -37891,11 +37964,11 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
-var _message = __webpack_require__(9);
+var _message = __webpack_require__(8);
 
 var _message2 = _interopRequireDefault(_message);
 
@@ -48724,35 +48797,35 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _path = __webpack_require__(13);
+var _path = __webpack_require__(10);
 
 var _path2 = _interopRequireDefault(_path);
 
-var _UserInfo = __webpack_require__(205);
+var _UserInfo = __webpack_require__(207);
 
 var _UserInfo2 = _interopRequireDefault(_UserInfo);
 
-var _KeywordList = __webpack_require__(11);
+var _KeywordList = __webpack_require__(12);
 
 var _KeywordList2 = _interopRequireDefault(_KeywordList);
 
-var _Listitem = __webpack_require__(210);
+var _Listitem = __webpack_require__(212);
 
 var _Listitem2 = _interopRequireDefault(_Listitem);
 
-var _AuthAccount = __webpack_require__(214);
+var _AuthAccount = __webpack_require__(216);
 
 var _AuthAccount2 = _interopRequireDefault(_AuthAccount);
 
-var _message10 = __webpack_require__(9);
+var _message11 = __webpack_require__(8);
 
-var _message11 = _interopRequireDefault(_message10);
+var _message12 = _interopRequireDefault(_message11);
 
 var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -48815,16 +48888,18 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 
 exports.default = {
     components: {
         UserInfo: _UserInfo2.default,
         ListItem: _Listitem2.default,
         AuthAccount: _AuthAccount2.default,
-        Message: _message11.default
+        Message: _message12.default
     },
     data: function data() {
         return {
+            show: false,
             follower: 0,
             friends: 0,
             account_name: '',
@@ -48851,9 +48926,27 @@ exports.default = {
             }
         };
     },
+    created: function created() {
+        var _this = this;
+
+        //ログインチェック結果
+        _Controller2.default.checkLogin_ajax();
+        _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
+            console.log($event.response.res);
+            if ($event.response.res === 'NOTLOGIN') {
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。');
+                _this.$router.push('/');
+            } else {
+                console.log('ログインユーザーです。');
+                _this.show = true;
+            }
+        });
+    },
 
     mounted: function mounted() {
-        var _this = this;
+        var _this2 = this;
 
         var that = this;
 
@@ -48868,12 +48961,6 @@ exports.default = {
             }
         });
 
-        //メッセージがセットされていれば表示する
-        var message = _Store2.default.getMessage();
-        if (message.msg !== '') {
-            _Controller2.default.emit_message(message);
-        }
-
         //ログインチェック結果
         _Controller2.default.checkLogin_ajax();
         _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
@@ -48882,9 +48969,18 @@ exports.default = {
             if ($event.response.res === 'NOTLOGIN') {
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。');
-                _this.$router.push('/');
+                _this2.$router.push('/');
+            } else {
+                console.log('ログインユーザーです。');
+                _this2.show = true;
             }
         });
+
+        //メッセージがセットされていれば表示する
+        var message = _Store2.default.getMessage();
+        if (message.msg !== '') {
+            _Controller2.default.emit_message(message);
+        }
 
         //いいねの処理が完了したときにここにくる
         //いいねしたツイートの一覧を表示する
@@ -48892,7 +48988,7 @@ exports.default = {
         _Controller2.default.$on('AJAX_DISPLAY_AUTOLIKE_RESULT', function ($event) {
             console.log('DEBUG -- Home.vue --> いいね！をしたリストを更新します');
             console.dir($event.response.rst);
-            if ($event.response.rst) {
+            if ($event.response.res === 'OK') {
 
                 console.dir($event.response.rst.length);
                 var result = $event.response.rst;
@@ -48911,10 +49007,10 @@ exports.default = {
                 console.log('DEBUG -- Home.vue --> APIのリクエスト上限に達した可能性があります');
 
                 //自動いいねを停止状態にする
-                _this.AutoLikeCronStatus = '0';
+                _this2.AutoLikeCronStatus = '0';
                 _Store2.default.setAutoLikeCronStatus('0');
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', false);
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', false);
+                _this2.$set(_this2.p_status_toggle, 'p-btn_home-like--exec', false);
+                _this2.$set(_this2.p_status_toggle, 'p-btn_home-like--stay', false);
 
                 //メッセージ表示
                 _Store2.default.setMessage('いいね制限、あるいは通信環境に問題がある可能性あります。いいねを一時停止します。', false);
@@ -48936,6 +49032,7 @@ exports.default = {
         //自動フォローが完了したときにここにくる
         //正常にすべてのフォローが完了した⇒フォローしたアカウントのリストを更新する
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
+        _Controller2.default.getFollowedList_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', function ($event) {
             console.log('フォローリスト取得がかえててきた');
             console.dir($event.response.rst);
@@ -48950,7 +49047,7 @@ exports.default = {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: result[i]['id'], name: result[i]['name'], text: rst[i]['text'], created_at: result[i]['created_at'] });
+                    that.listItems_follow.unshift({ id: result[i]['id'], name: result[i]['name'], text: result[i]['text'], created_at: result[i]['created_at'] });
                 }
 
                 //自動フォローを停止中にする
@@ -48967,6 +49064,9 @@ exports.default = {
 
                 //自動フォローを再開関数を開始する
                 that.$crontab.enableJob('reStartAutoFollow');
+
+                //フォロー数を更新する
+                _this2.updateUserInfo();
 
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, false);
@@ -48993,15 +49093,18 @@ exports.default = {
                 //リストを更新する
                 console.dir($event.response.rst);
                 console.dir($event.response.rst.length);
-                var _rst = $event.response.rst;
+                var rst = $event.response.rst;
                 var _length = $event.response.rst.length;
                 that.listItems_follow = []; //listを初期化
                 for (var _i = 0; _i < _length; _i++) {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: _rst[_i]['id'], name: _rst[_i]['name'], text: _rst[_i]['text'], created_at: _rst[_i]['created_at'] });
+                    that.listItems_follow.unshift({ id: rst[_i]['id'], name: rst[_i]['name'], text: rst[_i]['text'], created_at: rst[_i]['created_at'] });
                 }
+
+                //フォロー数を更新する
+                _this2.updateUserInfo();
 
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, false);
@@ -49009,7 +49112,7 @@ exports.default = {
                 if (_message4.msg !== '') {
                     _Controller2.default.emit_message(_message4);
                 }
-            } else if ($event.response.res === 'UPDATE') {
+            } else if ($event.response.res === 'UPDATED') {
                 //画面更新の場合に、すでにフォロー済リストを表示する
                 console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
                 console.dir($event.response.rst);
@@ -49021,7 +49124,7 @@ exports.default = {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_follow.unshift({ id: _result2[_i2]['id'], name: _result2[_i2]['name'], text: '', created_at: _result2[_i2]['created_at'] });
+                    that.listItems_follow.push({ id: _result2[_i2]['id'], name: _result2[_i2]['name'], text: _result2[_i2]['text'], created_at: _result2[_i2]['created_at'] });
                 }
             } else {
                 //メッセージ表示
@@ -49033,9 +49136,9 @@ exports.default = {
 
                 //自動フォローを停止中にする
                 _Store2.default.setAutoFollowCronStatus('0');
-                _this.AutoFollowCronStatus = '0';
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+                _this2.AutoFollowCronStatus = '0';
+                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
 
                 //自動フォローが実行中の場合は実行する
                 that.$crontab.enableJob('startAutoFollow');
@@ -49052,6 +49155,7 @@ exports.default = {
         //正常にすべてのアンフォローが完了した⇒フォローしたアカウントのリストを更新する
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
         //controller.startAutoUnFollow_ajax()
+        _Controller2.default.getUnFollowedList_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', function ($event) {
             console.log('アンフォロー完了しました');
             console.dir($event.response.rst);
@@ -49069,6 +49173,9 @@ exports.default = {
                     that.listItems_unfollow.unshift({ id: result[i]['id'], name: result[i]['name'], text: result[i]['text'], created_at: result[i]['created_at'] });
                 }
 
+                //フォロワー数を更新する
+                _this2.updateUserInfo();
+
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, false);
                 var _message6 = _Store2.default.getMessage();
@@ -49083,34 +49190,27 @@ exports.default = {
 
                 //自動アンフォローを再開関数を開始する
                 that.$crontab.enableJob('startAutoUnFollow');
-            } else if ($event.response.res === 'LIMIT' || $event.response.res === 'FOLLOWLIMIT') {
+            } else if ($event.response.res === 'LIMIT' || $event.response.res === 'UNFOLLOWLIMIT') {
                 //'LIMIT':       ターゲットアカウントからのフォロワー取得制限に引っかかった場合
                 //'FOLLOWLIMIT': フォロー上限に引っかかった場合
                 //crontabで15分後にフォローを再開する
                 //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
 
-                //次のフォロー開始時間を15分後に設定する
-                var _now4 = new Date();
-                var _now_ms4 = _now4.getTime();
-                _Store2.default.setNextFollowTime(_now_ms4 + 905000, _now_ms4); //15分後に設定　5秒は気持ち
-
-                // console.log('自動フォロー再開ジョブをスタートします')
-                //自動フォローを再開関数を開始する
-                // const result = that.$crontab.enableJob('reStartAutoFollow')
-                // console.log("enableJob('reStartAutoFollow'):"+result)
-
                 //リストを更新する
                 console.dir($event.response.rst);
                 console.dir($event.response.rst.length);
-                var _rst2 = $event.response.rst;
+                var rst = $event.response.rst;
                 var _length3 = $event.response.rst.length;
                 that.listItems_unfollow = []; //listを初期化
                 for (var _i3 = 0; _i3 < _length3; _i3++) {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_unfollow.unshift({ id: _rst2[_i3]['id'], name: _rst2[_i3]['name'], text: _rst2[_i3]['text'], created_at: _rst2[_i3]['created_at'] });
+                    that.listItems_unfollow.unshift({ id: rst[_i3]['id'], name: rst[_i3]['name'], text: rst[_i3]['text'], created_at: rst[_i3]['created_at'] });
                 }
+
+                //フォロワー数を更新する
+                _this2.updateUserInfo();
 
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, false);
@@ -49119,8 +49219,27 @@ exports.default = {
                     _Controller2.default.emit_message(_message7);
                 }
 
+                //次のフォロー開始時間を15分後に設定する
+                var _now4 = new Date();
+                var _now_ms4 = _now4.getTime();
+                _Store2.default.setNextUnFollowTime(_now_ms4 + 905000, _now_ms4); //15分後に設定　5秒は気持ち
+
                 //自動アンフォローを再開関数を開始する
                 that.$crontab.enableJob('startAutoUnFollow');
+            } else if ($event.response.res === 'UPDATED') {
+                //画面更新の場合に、すでにフォロー済リストを表示する
+                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var _result3 = $event.response.rst;
+                var _length4 = $event.response.rst.length;
+                that.listItems_unfollow = []; //listを初期化
+                for (var _i4 = 0; _i4 < _length4; _i4++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_unfollow.push({ id: _result3[_i4]['id'], name: _result3[_i4]['name'], text: _result3[_i4]['text'], created_at: _result3[_i4]['created_at'] });
+                }
             } else {
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, false);
@@ -49131,10 +49250,14 @@ exports.default = {
 
                 //自動アンフォローを停止中にする
                 _Store2.default.setAutoUnFollowCronStatus('0');
-                _this.AutoUnFollowCronStatus = '0';
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+                _this2.AutoUnFollowCronStatus = '0';
+                _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+                _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
 
+                //次のフォロー開始時間を15分後に設定する
+                var _now5 = new Date();
+                var _now_ms5 = _now5.getTime();
+                _Store2.default.setNextUnFollowTime(_now_ms5 + 905000, _now_ms5); //15分後に設定　5秒は気持ち
                 //自動アンフォローが実行中の場合は実行する
                 that.$crontab.enableJob('startAutoUnFollow');
             }
@@ -49165,42 +49288,42 @@ exports.default = {
         //自動いいねのステータスを変更する
         _Controller2.default.$on('AJAX_CHANGE_AUTOLIKESTATUS', function ($event) {
             console.log('DEBUG -- Home.vue --> 自動いいねステータスを変更します');
-            _this.AutoLikeCronStatus = $event.response;
+            _this2.AutoLikeCronStatus = $event.response;
             _Store2.default.setAutoLikeCronStatus($event.response);
             if ($event.response === '1') {
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', false);
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', true);
+                _this2.$set(_this2.p_status_toggle, 'p-btn_home-like--exec', false);
+                _this2.$set(_this2.p_status_toggle, 'p-btn_home-like--stay', true);
             } else {
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--exec', true);
-                _this.$set(_this.p_status_toggle, 'p-btn_home-like--stay', false);
+                _this2.$set(_this2.p_status_toggle, 'p-btn_home-like--exec', true);
+                _this2.$set(_this2.p_status_toggle, 'p-btn_home-like--stay', false);
             }
         });
 
         //自動フォローのステータスを変更する
         _Controller2.default.$on('AJAX_CHANGE_AUTOFOLLOWSTATUS', function ($event) {
             console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
-            _this.AutoFollowCronStatus = $event.response;
+            _this2.AutoFollowCronStatus = $event.response;
             _Store2.default.setAutoFollowCronStatus($event.response);
             if ($event.response === '1') {
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
+                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--stay', true);
             } else {
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--exec', true);
-                _this.$set(_this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--exec', true);
+                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
             }
         });
 
         //自動アンフォローのステータスを変更する
         _Controller2.default.$on('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', function ($event) {
             console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
-            _this.AutoUnFollowCronStatus = $event.response;
+            _this2.AutoUnFollowCronStatus = $event.response;
             _Store2.default.setAutoUnFollowCronStatus($event.response);
             if ($event.response === '1') {
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
+                _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+                _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', true);
             } else {
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
-                _this.$set(_this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+                _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
+                _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
             }
         });
 
@@ -49246,7 +49369,7 @@ exports.default = {
     },
     methods: {
         changeActiveUser: function changeActiveUser($event) {
-            var _this2 = this;
+            var _this3 = this;
 
             console.log($event.active_user);
             var screen_name = $event.active_user;
@@ -49257,17 +49380,26 @@ exports.default = {
                 console.dir($event.response.rst);
                 if ($event.response.res === 'OK') {
                     //取得成功時はUser領域更新
-                    _this2.follower = $event.response.rst.followers_count; //フォロワー数
-                    _this2.friends = $event.response.rst.friends_count; //フォロー数
-                    _this2.account_name = $event.response.rst.name; //アカウント名
-                    _this2.description = $event.response.rst.description; //プロフィール文   
-                    _this2.img_url = $event.response.rst.profile_image_url_https; //画像URL
+                    _this3.follower = $event.response.rst.followers_count; //フォロワー数
+                    _this3.friends = $event.response.rst.friends_count; //フォロー数
+                    _this3.account_name = $event.response.rst.name; //アカウント名
+                    _this3.description = $event.response.rst.description; //プロフィール文   
+                    _this3.img_url = $event.response.rst.profile_image_url_https; //画像URL
 
                     //フォロー数をstoreに格納
                     _Store2.default.setFriendsCount($event.response.rst.friends_count);
+
+                    //followList更新
+                    _Controller2.default.getFollowedList_ajax();
+                    //unfollowList更新
+                    _Controller2.default.getUnFollowedList_ajax();
+                    //予約ツイートを更新する
+                    _Controller2.default.getTweetSchedule_ajax();
+                    //いいねリストを更新する
+                    _Controller2.default.getLikedListSession_ajax();
                 } else if ($event.response.res === 'NOTLOGIN') {
                     console.log('ログインユーザーでないためログイン画面に飛ばします');
-                    _this2.$router.push('/');
+                    _this3.$router.push('/');
                 } else {
                     //失敗したときはメッセージ表示
                     //メッセージ表示
@@ -49324,6 +49456,38 @@ exports.default = {
             } else if (this.AutoUnFollowCronStatus === '2') {
                 //実行中の場合はステータスを変更できないようにする
             }
+        },
+        updateUserInfo: function updateUserInfo() {
+            var _this4 = this;
+
+            _Controller2.default.getTwitterProfile_ajax('screen_name');
+            _Controller2.default.$once('AJAX_COMPLETE_GETTWITTERPROFILE', function ($event) {
+                console.log('フロントに帰ってきたデータ↓ プロフィール');
+                console.dir($event.response.rst);
+                if ($event.response.res === 'OK') {
+                    //取得成功時はUser領域更新
+                    _this4.follower = $event.response.rst.followers_count; //フォロワー数
+                    _this4.friends = $event.response.rst.friends_count; //フォロー数
+                    _this4.account_name = $event.response.rst.name; //アカウント名
+                    _this4.description = $event.response.rst.description; //プロフィール文   
+                    _this4.img_url = $event.response.rst.profile_image_url_https; //画像URL
+
+                    //フォロー数をstoreに格納
+                    _Store2.default.setFriendsCount($event.response.rst.friends_count);
+                } else if ($event.response.res === 'NOTLOGIN') {
+                    console.log('ログインユーザーでないためログイン画面に飛ばします');
+                    _this4.$router.push('/');
+                } else {
+                    //失敗したときはメッセージ表示
+                    //メッセージ表示
+
+                    _Store2.default.setMessage('プロフィールの取得に失敗。アクセス制限orネット環境が悪い可能性があります', false);
+                    var _message10 = _Store2.default.getMessage();
+                    if (_message10.msg !== '') {
+                        _Controller2.default.emit_message(_message10);
+                    }
+                }
+            });
         }
     }
 
@@ -49356,7 +49520,7 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -49436,7 +49600,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _KeywordItem = __webpack_require__(207);
+var _KeywordItem = __webpack_require__(209);
 
 var _KeywordItem2 = _interopRequireDefault(_KeywordItem);
 
@@ -49492,7 +49656,7 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -49559,7 +49723,7 @@ var _vue = __webpack_require__(2);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _ListRecord = __webpack_require__(211);
+var _ListRecord = __webpack_require__(213);
 
 var _ListRecord2 = _interopRequireDefault(_ListRecord);
 
@@ -49634,7 +49798,7 @@ exports.default = {
     },
     methods: {
         onMoveTwitter: function onMoveTwitter() {
-            if (this.heading === 'follow') {
+            if (this.heading === 'follow' || this.heading === 'unFollow') {
                 //ユーザーのページを表示
                 window.open("https://twitter.com/" + this.data.name, '_blank'); // 新しいタブを開き、ページを表示
             } else {
@@ -49665,7 +49829,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _AccountList = __webpack_require__(215);
+var _AccountList = __webpack_require__(217);
 
 var _AccountList2 = _interopRequireDefault(_AccountList);
 
@@ -49677,7 +49841,7 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -49714,12 +49878,12 @@ exports.default = {
         // view が作られた時にデータを取得し、
         // そのデータは既に監視されている
         this.fetchData();
-        this.updateAccount();
+        //this.updateAccount()
     },
 
     watch: {
         // ルートが変更されたらこのメソッドを再び呼び出します
-        '$route': 'fetchData'
+        //'$route': 'fetchData'
     },
     methods: {
         makeDatas: function makeDatas() {
@@ -49797,7 +49961,7 @@ exports.default = {
                     var url = $event.response.url;
                     console.log('リダイレクトします->' + url);
                     // this.$router.push(url)
-                    window.open(url, "_blank");
+                    window.location.href = url;
                 } else {
                     _this2.loading = false;
                     console.log('リクエストに失敗しました');
@@ -49813,6 +49977,9 @@ exports.default = {
             });
         },
         fetchData: function fetchData() {
+            var _this3 = this;
+
+            console.log('fetchdataに来たよ！');
             this.loading = false;
             this.error = this.post = null;
 
@@ -49832,6 +49999,9 @@ exports.default = {
                     console.log('フロントに帰ってきたデータ↓');
                     console.dir($event.response);
 
+                    //認証したアカウントのリストを更新する
+                    _this3.updateAccount();
+
                     // メッセージ表示
                     _Store2.default.setMessage('認証に成功しました', true);
 
@@ -49840,10 +50010,14 @@ exports.default = {
                         _Controller2.default.emit_message(message);
                     }
                 });
+            } else {
+                //HOME画面に遷移したとき、HOME画面を更新したときにここにはいる
+                //このときはupdateAccountをする
+                this.updateAccount();
             }
         },
         updateAccount: function updateAccount() {
-            var _this3 = this;
+            var _this4 = this;
 
             //thisを退避
             var that = this;
@@ -49860,7 +50034,7 @@ exports.default = {
                     console.log('取得したスクリーンネーム');
 
                     for (var i = 0; i < $event.response.screen_name.length; i++) {
-                        _this3.addItem($event.response.screen_name[i]);
+                        _this4.addItem($event.response.screen_name[i]);
                     }
                 } else {}
             });
@@ -49901,7 +50075,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _Task = __webpack_require__(216);
+var _Task = __webpack_require__(218);
 
 var _Task2 = _interopRequireDefault(_Task);
 
@@ -49975,7 +50149,7 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -50117,7 +50291,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _KeywordList = __webpack_require__(11);
+var _KeywordList = __webpack_require__(12);
 
 var _KeywordList2 = _interopRequireDefault(_KeywordList);
 
@@ -50125,7 +50299,7 @@ var _InputForm = __webpack_require__(7);
 
 var _InputForm2 = _interopRequireDefault(_InputForm);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -50133,7 +50307,7 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _message7 = __webpack_require__(9);
+var _message7 = __webpack_require__(8);
 
 var _message8 = _interopRequireDefault(_message7);
 
@@ -50178,8 +50352,27 @@ exports.default = {
             datas: [],
             likeWord: '',
             option_num: '0',
-            option_text: 'AND'
+            option_text: 'AND',
+            show: false
         };
+    },
+    created: function created() {
+        var _this = this;
+
+        //ログインチェック結果
+        _Controller2.default.checkLogin_ajax();
+        _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
+            console.log($event.response.res);
+            if ($event.response.res === 'NOTLOGIN') {
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。');
+                _this.$router.push('/');
+            } else {
+                console.log('ログインユーザーです。');
+                _this.show = true;
+            }
+        });
     },
     mounted: function mounted() {
         this.updateDatas();
@@ -50199,7 +50392,7 @@ exports.default = {
             this.likeWord = event.input.value;
         },
         addItem: function addItem() {
-            var _this = this;
+            var _this2 = this;
 
             //キーワード未入力の場合
             if (this.likeWord === '') {
@@ -50221,7 +50414,7 @@ exports.default = {
                     console.dir($event.response.rst);
 
                     //Listに追加する
-                    _this.datas.push({ id: word_id, text: '[' + _this.option_text + ']  ' + _this.likeWord, option: _this.option_num });
+                    _this2.datas.push({ id: word_id, text: '[' + _this2.option_text + ']  ' + _this2.likeWord, option: _this2.option_num });
 
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
@@ -50244,7 +50437,7 @@ exports.default = {
 
         },
         updateDatas: function updateDatas() {
-            var _this2 = this;
+            var _this3 = this;
 
             var that = this;
             _Controller2.default.getKeyword_ajax(1); //引数(キーワードタイプ（0:フォロワーサーチ 1:いいねキーワード）)
@@ -50276,7 +50469,7 @@ exports.default = {
 
                     //this.datas.push({id: this.getId(), date:this.yourValue, text:this.text, isDone:false})                 
                 } else {
-                    _this2.loading = false;
+                    _this3.loading = false;
                     console.log('リクエストに失敗しました');
 
                     //メッセージ表示
@@ -50289,7 +50482,7 @@ exports.default = {
             });
         },
         deleteItem: function deleteItem(id) {
-            var _this3 = this;
+            var _this4 = this;
 
             console.log('delete-btn clicked!!' + id.listId);
 
@@ -50305,9 +50498,9 @@ exports.default = {
                         _Controller2.default.emit_message(_message5);
                     }
 
-                    _this3.datas = _lodash2.default.reject(_this3.datas, { 'id': id.listId });
+                    _this4.datas = _lodash2.default.reject(_this4.datas, { 'id': id.listId });
                 } else {
-                    _this3.loading = false;
+                    _this4.loading = false;
                     console.log('リクエストに失敗しました');
 
                     //メッセージ表示
@@ -50339,7 +50532,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _KeywordList = __webpack_require__(11);
+var _KeywordList = __webpack_require__(12);
 
 var _KeywordList2 = _interopRequireDefault(_KeywordList);
 
@@ -50347,7 +50540,7 @@ var _InputForm = __webpack_require__(7);
 
 var _InputForm2 = _interopRequireDefault(_InputForm);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -50355,7 +50548,7 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _message7 = __webpack_require__(9);
+var _message7 = __webpack_require__(8);
 
 var _message8 = _interopRequireDefault(_message7);
 
@@ -50397,8 +50590,27 @@ exports.default = {
             datas: [],
             searchText: '',
             option_num: '0',
-            option_text: 'AND'
+            option_text: 'AND',
+            show: false
         };
+    },
+    created: function created() {
+        var _this = this;
+
+        //ログインチェック結果
+        _Controller2.default.checkLogin_ajax();
+        _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
+            console.log($event.response.res);
+            if ($event.response.res === 'NOTLOGIN') {
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。');
+                _this.$router.push('/');
+            } else {
+                console.log('ログインユーザーです。');
+                _this.show = true;
+            }
+        });
     },
     mounted: function mounted() {
         this.updateDatas();
@@ -50418,7 +50630,7 @@ exports.default = {
             this.searchText = event.input.value;
         },
         addItem: function addItem(event) {
-            var _this = this;
+            var _this2 = this;
 
             //キーワード未入力の場合
             if (this.searchText === '') {
@@ -50440,7 +50652,7 @@ exports.default = {
                     console.dir($event.response.rst);
 
                     //Listに追加する
-                    _this.datas.push({ id: word_id, text: '[' + _this.option_text + ']  ' + _this.searchText, option: _this.option_num });
+                    _this2.datas.push({ id: word_id, text: '[' + _this2.option_text + ']  ' + _this2.searchText, option: _this2.option_num });
 
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
@@ -50460,7 +50672,7 @@ exports.default = {
             });
         },
         updateDatas: function updateDatas() {
-            var _this2 = this;
+            var _this3 = this;
 
             var that = this;
             _Controller2.default.getKeyword_ajax(0); //引数(キーワードタイプ（0:フォロワーサーチ 1:いいねキーワード）)
@@ -50492,7 +50704,7 @@ exports.default = {
 
                     //this.datas.push({id: this.getId(), date:this.yourValue, text:this.text, isDone:false})                 
                 } else {
-                    _this2.loading = false;
+                    _this3.loading = false;
                     console.log('リクエストに失敗しました');
 
                     //メッセージ表示
@@ -50505,7 +50717,7 @@ exports.default = {
             });
         },
         deleteItem: function deleteItem(id) {
-            var _this3 = this;
+            var _this4 = this;
 
             console.log('delete-btn clicked!!' + id.listId);
 
@@ -50521,9 +50733,9 @@ exports.default = {
                         _Controller2.default.emit_message(_message5);
                     }
 
-                    _this3.datas = _lodash2.default.reject(_this3.datas, { 'id': id.listId });
+                    _this4.datas = _lodash2.default.reject(_this4.datas, { 'id': id.listId });
                 } else {
-                    _this3.loading = false;
+                    _this4.loading = false;
                     console.log('リクエストに失敗しました');
 
                     //メッセージ表示
@@ -50555,7 +50767,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _KeywordList = __webpack_require__(11);
+var _KeywordList = __webpack_require__(12);
 
 var _KeywordList2 = _interopRequireDefault(_KeywordList);
 
@@ -50563,7 +50775,7 @@ var _InputForm = __webpack_require__(7);
 
 var _InputForm2 = _interopRequireDefault(_InputForm);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -50571,7 +50783,7 @@ var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _message10 = __webpack_require__(9);
+var _message10 = __webpack_require__(8);
 
 var _message11 = _interopRequireDefault(_message10);
 
@@ -50605,9 +50817,28 @@ exports.default = {
         return {
             datas: [],
             screen_name: '',
-            IsExist: false //アカウントが存在しているかどうか
+            IsExist: false, //アカウントが存在しているかどうか
+            show: false
 
         };
+    },
+    created: function created() {
+        var _this = this;
+
+        //ログインチェック結果
+        _Controller2.default.checkLogin_ajax();
+        _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
+            console.log($event.response.res);
+            if ($event.response.res === 'NOTLOGIN') {
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。');
+                _this.$router.push('/');
+            } else {
+                console.log('ログインユーザーです。');
+                _this.show = true;
+            }
+        });
     },
     mounted: function mounted() {
         this.updateDatas();
@@ -50622,7 +50853,7 @@ exports.default = {
             this.screen_name = event.input.value;
         },
         deleteItem: function deleteItem(id) {
-            var _this = this;
+            var _this2 = this;
 
             _Controller2.default.deleteUserAccount_ajax(id.listId, 0); //引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
             _Controller2.default.$once('AJAX_COMPLETE_DELETETARGETACCOUNT', function ($event) {
@@ -50636,9 +50867,9 @@ exports.default = {
                         _Controller2.default.emit_message(_message);
                     }
 
-                    _this.datas = _lodash2.default.reject(_this.datas, { 'id': id.listId });
+                    _this2.datas = _lodash2.default.reject(_this2.datas, { 'id': id.listId });
                 } else {
-                    _this.loading = false;
+                    _this2.loading = false;
                     console.log('リクエストに失敗しました');
 
                     //メッセージ表示
@@ -50651,7 +50882,7 @@ exports.default = {
             });
         },
         addItem: function addItem(event) {
-            var _this2 = this;
+            var _this3 = this;
 
             //キーワード未入力の場合
             if (this.screen_name === '') {
@@ -50672,7 +50903,7 @@ exports.default = {
                     console.log('リクエストに成功しました. AJAX_COMPLETE_CHECKUSERACCOUNTEXIST');
                     console.log('取得に成功：アカウント存在or存在しない');
                     console.dir($event.response.rst);
-                    _this2.IsExist = true;
+                    _this3.IsExist = true;
                     if (!$event.response.rst) {
                         console.log('存在しないルートに来ているよ');
                         //rstがfalseのとき（アカウントが存在しないとき）
@@ -50681,13 +50912,13 @@ exports.default = {
                         if (_message4.msg !== '') {
                             _Controller2.default.emit_message(_message4);
                         }
-                        _this2.IsExist = false;
+                        _this3.IsExist = false;
                     } else {
                         console.log('アカウント存在します');
-                        console.log('this.IsExist：' + _this2.IsExist);
-                        if (_this2.IsExist) {
-                            var word_id = _this2.getId();
-                            _Controller2.default.saveUserAccount_ajax(word_id, _this2.screen_name, 0); //引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
+                        console.log('this.IsExist：' + _this3.IsExist);
+                        if (_this3.IsExist) {
+                            var word_id = _this3.getId();
+                            _Controller2.default.saveUserAccount_ajax(word_id, _this3.screen_name, 0); //引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
                             _Controller2.default.$once('AJAX_COMPLETE_SAVETARGETACCOUNT', function ($event) {
 
                                 if ($event.response.res === 'OK') {
@@ -50695,7 +50926,7 @@ exports.default = {
                                     console.dir($event.response.rst);
 
                                     //Listに追加する
-                                    _this2.datas.push({ id: word_id, text: _this2.screen_name });
+                                    _this3.datas.push({ id: word_id, text: _this3.screen_name });
 
                                     //メッセージ表示
                                     _Store2.default.setMessage($event.response.msg, true);
@@ -50717,7 +50948,7 @@ exports.default = {
                     }
                 } else {
                     console.log('非公開のアカウントですよ');
-                    _this2.IsExist = false;
+                    _this3.IsExist = false;
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
                     var _message7 = _Store2.default.getMessage();
@@ -50728,7 +50959,7 @@ exports.default = {
             });
         },
         updateDatas: function updateDatas() {
-            var _this3 = this;
+            var _this4 = this;
 
             var that = this;
             _Controller2.default.getUserAccount_ajax(0); //引数(キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント 2:アンフォローアカウント）)
@@ -50755,7 +50986,7 @@ exports.default = {
                         }
                     }
                 } else {
-                    _this3.loading = false;
+                    _this4.loading = false;
                     console.log('リクエストに失敗しました');
 
                     //メッセージ表示
@@ -50793,7 +51024,7 @@ var _moment = __webpack_require__(0);
 
 var _moment2 = _interopRequireDefault(_moment);
 
-var _ScheduleList = __webpack_require__(229);
+var _ScheduleList = __webpack_require__(231);
 
 var _ScheduleList2 = _interopRequireDefault(_ScheduleList);
 
@@ -50801,15 +51032,15 @@ var _InputForm = __webpack_require__(7);
 
 var _InputForm2 = _interopRequireDefault(_InputForm);
 
-var _message6 = __webpack_require__(9);
+var _message8 = __webpack_require__(8);
 
-var _message7 = _interopRequireDefault(_message6);
+var _message9 = _interopRequireDefault(_message8);
 
 var _Controller = __webpack_require__(3);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
-var _Store = __webpack_require__(5);
+var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
@@ -50817,7 +51048,7 @@ var _lodash = __webpack_require__(6);
 
 var _lodash2 = _interopRequireDefault(_lodash);
 
-var _vueCtkDateTimePicker = __webpack_require__(233);
+var _vueCtkDateTimePicker = __webpack_require__(235);
 
 var _vueCtkDateTimePicker2 = _interopRequireDefault(_vueCtkDateTimePicker);
 
@@ -50849,7 +51080,7 @@ exports.default = {
     components: (_components = {
         ScheduleListComponent: _ScheduleList2.default,
         InputForm: _InputForm2.default,
-        VueCtkDateTimePicker: _vueCtkDateTimePicker2.default }, _defineProperty(_components, 'VueCtkDateTimePicker', _vueCtkDateTimePicker2.default), _defineProperty(_components, 'Message', _message7.default), _components),
+        VueCtkDateTimePicker: _vueCtkDateTimePicker2.default }, _defineProperty(_components, 'VueCtkDateTimePicker', _vueCtkDateTimePicker2.default), _defineProperty(_components, 'Message', _message9.default), _components),
     data: function data() {
         return {
             datas: [],
@@ -50857,10 +51088,28 @@ exports.default = {
             text: '',
             yourValue: null,
             toggle: '1',
-            registernum: 0
+            registernum: 0,
+            show: false
         };
     },
+    created: function created() {
+        var _this = this;
 
+        //ログインチェック結果
+        _Controller2.default.checkLogin_ajax();
+        _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
+            console.log($event.response.res);
+            if ($event.response.res === 'NOTLOGIN') {
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。');
+                _this.$router.push('/');
+            } else {
+                console.log('ログインユーザーです。');
+                _this.show = true;
+            }
+        });
+    },
     mounted: function mounted() {
         //Listの表示を更新
         this.updateDatas();
@@ -50894,7 +51143,7 @@ exports.default = {
             }
         },
         updateDatas: function updateDatas() {
-            var _this = this;
+            var _this2 = this;
 
             var that = this;
             _Controller2.default.getTweetSchedule_ajax();
@@ -50906,7 +51155,7 @@ exports.default = {
                     console.dir($event.response.rst.length);
                     var result = $event.response.rst;
                     var length = $event.response.rst.length;
-                    _this.datas = [];
+                    _this2.datas = [];
                     for (var i = 0; i < length; i++) {
                         //DBから取得したList情報をdatasに格納する
                         that.datas.push({ id: result[i]['id'], date: result[i]['date'], text: result[i]['text'], isDone: result[i]['done_flg'] });
@@ -50917,7 +51166,7 @@ exports.default = {
 
                     //this.datas.push({id: this.getId(), date:this.yourValue, text:this.text, isDone:false})                 
                 } else {
-                    _this.loading = false;
+                    _this2.loading = false;
                     console.log('リクエストに失敗しました');
 
                     //メッセージ表示
@@ -50936,19 +51185,45 @@ exports.default = {
             return this.datas;
         },
         deleteItem: function deleteItem(id) {
+            var _this3 = this;
+
             console.log('delete-btn clicked!!' + id.listId);
-            this.datas = _lodash2.default.reject(this.datas, { 'id': id.listId });
+
+            _Controller2.default.deleteTweetSchedule_ajax(id.listId);
+            _Controller2.default.$once('AJAX_COMPLETE_DELETETWEETSCHEDULE', function ($event) {
+
+                if ($event.response.res === 'OK') {
+                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETWEETSCHEDULE');
+                    //メッセージ表示
+                    _Store2.default.setMessage($event.response.msg, true);
+                    var _message2 = _Store2.default.getMessage();
+                    if (_message2.msg !== '') {
+                        _Controller2.default.emit_message(_message2);
+                    }
+
+                    _this3.datas = _lodash2.default.reject(_this3.datas, { 'id': id.listId });
+                } else {
+                    console.log('リクエストに失敗しました');
+
+                    //メッセージ表示
+                    _Store2.default.setMessage($event.response.msg, false);
+                    var _message3 = _Store2.default.getMessage();
+                    if (_message3.msg !== '') {
+                        _Controller2.default.emit_message(_message3);
+                    }
+                }
+            });
         },
         addItem: function addItem(event) {
-            var _this2 = this;
+            var _this4 = this;
 
             var that = this;
             //日付、ツイート内容が空の場合
             if (this.yourValue === null || this.text === '') {
                 _Store2.default.setMessage('ツイート時刻と内容を記入してください', false);
-                var _message2 = _Store2.default.getMessage();
-                if (_message2.msg !== '') {
-                    _Controller2.default.emit_message(_message2);
+                var _message4 = _Store2.default.getMessage();
+                if (_message4.msg !== '') {
+                    _Controller2.default.emit_message(_message4);
                 }
                 return;
             }
@@ -50967,9 +51242,9 @@ exports.default = {
             //過去の時間を指定していた場合
             if (dif_time <= 0) {
                 _Store2.default.setMessage('過去の時間は設定することができません', false);
-                var _message3 = _Store2.default.getMessage();
-                if (_message3.msg !== '') {
-                    _Controller2.default.emit_message(_message3);
+                var _message5 = _Store2.default.getMessage();
+                if (_message5.msg !== '') {
+                    _Controller2.default.emit_message(_message5);
                 }
                 return;
             }
@@ -50987,27 +51262,27 @@ exports.default = {
                     console.dir($event.response);
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
-                    var _message4 = _Store2.default.getMessage();
-                    if (_message4.msg !== '') {
-                        _Controller2.default.emit_message(_message4);
+                    var _message6 = _Store2.default.getMessage();
+                    if (_message6.msg !== '') {
+                        _Controller2.default.emit_message(_message6);
                     }
 
                     //watchを開始 
-                    _this2.$crontab.enableJob('tweetwatch');
+                    _this4.$crontab.enableJob('tweetwatch');
                     _Store2.default.setCronStatus(true); //watch開始
 
                     //Listに追加
                     that.datas.push({ id: id, date: that.yourValue, text: that.text, isDone: false });
                 } else {
-                    _this2.loading = false;
+                    _this4.loading = false;
                     console.log('リクエストに失敗しました');
                     // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
 
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
-                    var _message5 = _Store2.default.getMessage();
-                    if (_message5.msg !== '') {
-                        _Controller2.default.emit_message(_message5);
+                    var _message7 = _Store2.default.getMessage();
+                    if (_message7.msg !== '') {
+                        _Controller2.default.emit_message(_message7);
                     }
                 }
             });
@@ -63238,7 +63513,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _TweetTask = __webpack_require__(230);
+var _TweetTask = __webpack_require__(232);
 
 var _TweetTask2 = _interopRequireDefault(_TweetTask);
 
@@ -63351,6 +63626,284 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
+var _path = __webpack_require__(10);
+
+var _path2 = _interopRequireDefault(_path);
+
+var _vue = __webpack_require__(2);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _InputForm = __webpack_require__(7);
+
+var _InputForm2 = _interopRequireDefault(_InputForm);
+
+var _Controller = __webpack_require__(3);
+
+var _Controller2 = _interopRequireDefault(_Controller);
+
+var _Store = __webpack_require__(4);
+
+var _Store2 = _interopRequireDefault(_Store);
+
+var _message5 = __webpack_require__(8);
+
+var _message6 = _interopRequireDefault(_message5);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    components: {
+        InputForm: _InputForm2.default,
+        Message: _message6.default
+    },
+    data: function data() {
+        return {
+            username: '',
+            email: ''
+        };
+    },
+    mounted: function mounted() {},
+    methods: {
+        onChange: function onChange($event) {
+            console.log('event@PassRemindSend');
+            console.dir($event.input.value);
+            console.dir($event.input);
+            var name = $event.input.name;
+            if (name === "username") {
+                this.username = $event.input.value;
+            } else if (name === "email") {
+                this.email = $event.input.value;
+            }
+        },
+        makeRePassword: function makeRePassword() {
+            var _this = this;
+
+            if (this.email === '' || this.username === '') {
+                //メッセージ表示
+                _Store2.default.setMessage('未入力の項目があります', false);
+                var _message = _Store2.default.getMessage();
+                if (_message.msg !== '') {
+                    _Controller2.default.emit_message(_message);
+                }
+                return;
+            }
+
+            var chkemail = this.validEmail();
+            if (!chkemail) {
+                //emailの形式でなかった場合
+                //メッセージ表示
+                _Store2.default.setMessage('Emailの形式で入力してください', false);
+                var _message2 = _Store2.default.getMessage();
+                if (_message2.msg !== '') {
+                    _Controller2.default.emit_message(_message2);
+                }
+                return;
+            }
+
+            //usernameの半角英数字チェック
+            var chkname = this.validhalf();
+            if (!chkname) {
+                //emailの形式でなかった場合
+                //メッセージ表示
+                _Store2.default.setMessage('半角英数字で入力してください', false);
+                var _message3 = _Store2.default.getMessage();
+                if (_message3.msg !== '') {
+                    _Controller2.default.emit_message(_message3);
+                }
+                return;
+            }
+
+            _Controller2.default.passRemindSend_ajax(this.username, this.email);
+            _Controller2.default.$once('AJAX_COMPLETE_PASSREMINDSEND', function ($event) {
+                console.log('フロントに帰ってきたデータ↓');
+                console.dir($event.response);
+                if ($event.response.res === 'OK') {
+                    //メッセージ表示
+                    _Store2.default.setMessage($event.response.msg, true);
+                    _this.$router.push('/remindrecieve');
+                } else {
+                    //メッセージ表示
+                    _Store2.default.setMessage($event.response.msg, false);
+                    var _message4 = _Store2.default.getMessage();
+                    if (_message4.msg !== '') {
+                        _Controller2.default.emit_message(_message4);
+                    }
+                }
+            });
+        },
+        validEmail: function validEmail() {
+            var regexp = new RegExp(/^[A-Za-z0-9]{1}[A-Za-z0-9_.-]*@{1}[A-Za-z0-9_.-]{1,}\.[A-Za-z0-9]{1,}$/);
+            if (this.email.match(regexp)) {
+                return true;
+            } else {
+                return false;
+            }
+        },
+        validhalf: function validhalf() {
+            var regexp = new RegExp(/^[A-Za-z0-9]*$/);
+            if (this.code.match(regexp)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+};
+
+/***/ }),
+/* 175 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _path = __webpack_require__(10);
+
+var _path2 = _interopRequireDefault(_path);
+
+var _vue = __webpack_require__(2);
+
+var _vue2 = _interopRequireDefault(_vue);
+
+var _InputForm = __webpack_require__(7);
+
+var _InputForm2 = _interopRequireDefault(_InputForm);
+
+var _Controller = __webpack_require__(3);
+
+var _Controller2 = _interopRequireDefault(_Controller);
+
+var _Store = __webpack_require__(4);
+
+var _Store2 = _interopRequireDefault(_Store);
+
+var _message3 = __webpack_require__(8);
+
+var _message4 = _interopRequireDefault(_message3);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+exports.default = {
+    components: {
+        InputForm: _InputForm2.default,
+        Message: _message4.default
+    },
+    data: function data() {
+        return {
+            code: ''
+        };
+    },
+    mounted: function mounted() {
+        //メッセージがセットされていれば表示する
+        var message = _Store2.default.getMessage();
+        if (message.msg !== '') {
+            _Controller2.default.emit_message(message);
+        }
+    },
+    methods: {
+        onChange: function onChange($event) {
+            console.log('event@PassRemindSend');
+            console.dir($event.input.value);
+            console.dir($event.input);
+            this.code = $event.input.value;
+        },
+        makeRePassword: function makeRePassword() {
+            var _this = this;
+
+            if (this.code === '') {
+                //メッセージ表示
+                _Store2.default.setMessage('未入力です', false);
+                var _message = _Store2.default.getMessage();
+                if (_message.msg !== '') {
+                    _Controller2.default.emit_message(_message);
+                }
+                return;
+            }
+
+            var chkcode = this.validhalf();
+            if (!chkcode) {
+                //emailの形式でなかった場合
+                //メッセージ表示
+                _Store2.default.setMessage('半角英数字を入力してください', false);
+                var _message2 = _Store2.default.getMessage();
+                if (_message2.msg !== '') {
+                    _Controller2.default.emit_message(_message2);
+                }
+                return;
+            }
+            _Controller2.default.passRemindRecieve_ajax(this.code);
+            _Controller2.default.$once('AJAX_COMPLETE_PASSREMINDRECIEVE', function ($event) {
+                console.log('フロントに帰ってきたデータ↓');
+                console.dir($event.response);
+                if ($event.response.res === 'OK') {
+                    _Store2.default.setMessage('ログインに成功しました', true);
+                    _this.$router.push('/home');
+                } else {
+                    _this.errors = $event.response;
+                    console.log(_this.errors);
+                }
+            });
+        },
+        validhalf: function validhalf() {
+            var regexp = new RegExp(/^[A-Za-z0-9]*$/);
+            if (this.code.match(regexp)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    }
+
+};
+
+/***/ }),
+/* 176 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
 function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
 
 //
@@ -63391,7 +63944,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 175 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63401,19 +63954,19 @@ var _vue = __webpack_require__(2);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueCrontab = __webpack_require__(12);
+var _vueCrontab = __webpack_require__(13);
 
 var _vueCrontab2 = _interopRequireDefault(_vueCrontab);
 
-var _crontab = __webpack_require__(178);
+var _crontab = __webpack_require__(180);
 
 var _crontab2 = _interopRequireDefault(_crontab);
 
-var _router = __webpack_require__(196);
+var _router = __webpack_require__(198);
 
 var _router2 = _interopRequireDefault(_router);
 
-var _mainView = __webpack_require__(235);
+var _mainView = __webpack_require__(241);
 
 var _mainView2 = _interopRequireDefault(_mainView);
 
@@ -63434,7 +63987,7 @@ new _vue2.default({
 (0, _crontab2.default)();
 
 /***/ }),
-/* 176 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -63490,7 +64043,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(177);
+__webpack_require__(179);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -63501,10 +64054,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
                          (typeof global !== "undefined" && global.clearImmediate) ||
                          (this && this.clearImmediate);
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 177 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -63694,10 +64247,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10), __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11), __webpack_require__(9)))
 
 /***/ }),
-/* 178 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -63711,11 +64264,11 @@ var _vue = __webpack_require__(2);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueCrontab = __webpack_require__(12);
+var _vueCrontab = __webpack_require__(13);
 
 var _vueCrontab2 = _interopRequireDefault(_vueCrontab);
 
-var _crontabfunc = __webpack_require__(179);
+var _crontabfunc = __webpack_require__(181);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63774,7 +64327,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 179 */
+/* 181 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -63829,15 +64382,15 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 180 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 var bind = __webpack_require__(18);
-var Axios = __webpack_require__(182);
+var Axios = __webpack_require__(184);
 var mergeConfig = __webpack_require__(24);
 var defaults = __webpack_require__(21);
 
@@ -63873,14 +64426,14 @@ axios.create = function create(instanceConfig) {
 
 // Expose Cancel & CancelToken
 axios.Cancel = __webpack_require__(25);
-axios.CancelToken = __webpack_require__(194);
+axios.CancelToken = __webpack_require__(196);
 axios.isCancel = __webpack_require__(20);
 
 // Expose all/spread
 axios.all = function all(promises) {
   return Promise.all(promises);
 };
-axios.spread = __webpack_require__(195);
+axios.spread = __webpack_require__(197);
 
 module.exports = axios;
 
@@ -63889,7 +64442,7 @@ module.exports.default = axios;
 
 
 /***/ }),
-/* 181 */
+/* 183 */
 /***/ (function(module, exports) {
 
 /*!
@@ -63906,16 +64459,16 @@ module.exports = function isBuffer (obj) {
 
 
 /***/ }),
-/* 182 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 var buildURL = __webpack_require__(19);
-var InterceptorManager = __webpack_require__(183);
-var dispatchRequest = __webpack_require__(184);
+var InterceptorManager = __webpack_require__(185);
+var dispatchRequest = __webpack_require__(186);
 var mergeConfig = __webpack_require__(24);
 
 /**
@@ -63999,13 +64552,13 @@ module.exports = Axios;
 
 
 /***/ }),
-/* 183 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 
 function InterceptorManager() {
   this.handlers = [];
@@ -64058,18 +64611,18 @@ module.exports = InterceptorManager;
 
 
 /***/ }),
-/* 184 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
-var transformData = __webpack_require__(185);
+var utils = __webpack_require__(5);
+var transformData = __webpack_require__(187);
 var isCancel = __webpack_require__(20);
 var defaults = __webpack_require__(21);
-var isAbsoluteURL = __webpack_require__(192);
-var combineURLs = __webpack_require__(193);
+var isAbsoluteURL = __webpack_require__(194);
+var combineURLs = __webpack_require__(195);
 
 /**
  * Throws a `Cancel` if cancellation has been requested.
@@ -64151,13 +64704,13 @@ module.exports = function dispatchRequest(config) {
 
 
 /***/ }),
-/* 185 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 
 /**
  * Transform the data for a request or a response
@@ -64178,13 +64731,13 @@ module.exports = function transformData(data, headers, fns) {
 
 
 /***/ }),
-/* 186 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 
 module.exports = function normalizeHeaderName(headers, normalizedName) {
   utils.forEach(headers, function processHeader(value, name) {
@@ -64197,7 +64750,7 @@ module.exports = function normalizeHeaderName(headers, normalizedName) {
 
 
 /***/ }),
-/* 187 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64229,7 +64782,7 @@ module.exports = function settle(resolve, reject, response) {
 
 
 /***/ }),
-/* 188 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64278,13 +64831,13 @@ module.exports = function enhanceError(error, config, code, request, response) {
 
 
 /***/ }),
-/* 189 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 
 // Headers whose duplicates are ignored by node
 // c.f. https://nodejs.org/api/http.html#http_message_headers
@@ -64338,13 +64891,13 @@ module.exports = function parseHeaders(headers) {
 
 
 /***/ }),
-/* 190 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -64413,13 +64966,13 @@ module.exports = (
 
 
 /***/ }),
-/* 191 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var utils = __webpack_require__(4);
+var utils = __webpack_require__(5);
 
 module.exports = (
   utils.isStandardBrowserEnv() ?
@@ -64473,7 +65026,7 @@ module.exports = (
 
 
 /***/ }),
-/* 192 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64494,7 +65047,7 @@ module.exports = function isAbsoluteURL(url) {
 
 
 /***/ }),
-/* 193 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64515,7 +65068,7 @@ module.exports = function combineURLs(baseURL, relativeURL) {
 
 
 /***/ }),
-/* 194 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64579,7 +65132,7 @@ module.exports = CancelToken;
 
 
 /***/ }),
-/* 195 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64613,7 +65166,7 @@ module.exports = function spread(callback) {
 
 
 /***/ }),
-/* 196 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -64627,37 +65180,45 @@ var _vue = __webpack_require__(2);
 
 var _vue2 = _interopRequireDefault(_vue);
 
-var _vueRouter = __webpack_require__(197);
+var _vueRouter = __webpack_require__(199);
 
 var _vueRouter2 = _interopRequireDefault(_vueRouter);
 
-var _SignUp = __webpack_require__(198);
+var _SignUp = __webpack_require__(200);
 
 var _SignUp2 = _interopRequireDefault(_SignUp);
 
-var _SignIn = __webpack_require__(201);
+var _SignIn = __webpack_require__(203);
 
 var _SignIn2 = _interopRequireDefault(_SignIn);
 
-var _Home = __webpack_require__(204);
+var _Home = __webpack_require__(206);
 
 var _Home2 = _interopRequireDefault(_Home);
 
-var _RegisterLikeWord = __webpack_require__(221);
+var _RegisterLikeWord = __webpack_require__(223);
 
 var _RegisterLikeWord2 = _interopRequireDefault(_RegisterLikeWord);
 
-var _RegisterFollowerSearchKeyword = __webpack_require__(223);
+var _RegisterFollowerSearchKeyword = __webpack_require__(225);
 
 var _RegisterFollowerSearchKeyword2 = _interopRequireDefault(_RegisterFollowerSearchKeyword);
 
-var _RegisterTargetAccount = __webpack_require__(225);
+var _RegisterTargetAccount = __webpack_require__(227);
 
 var _RegisterTargetAccount2 = _interopRequireDefault(_RegisterTargetAccount);
 
-var _RegisterTweetSchedule = __webpack_require__(227);
+var _RegisterTweetSchedule = __webpack_require__(229);
 
 var _RegisterTweetSchedule2 = _interopRequireDefault(_RegisterTweetSchedule);
+
+var _passRemindSend = __webpack_require__(237);
+
+var _passRemindSend2 = _interopRequireDefault(_passRemindSend);
+
+var _passRemindRecieve = __webpack_require__(239);
+
+var _passRemindRecieve2 = _interopRequireDefault(_passRemindRecieve);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -64694,12 +65255,23 @@ exports.default = new _vueRouter2.default({
         path: '/target',
         name: 'target',
         component: _RegisterTargetAccount2.default
+    }, {
+        path: '/remindsend',
+        name: 'remindsend',
+        component: _passRemindSend2.default
+    }, {
+        path: '/remindrecieve',
+        name: 'remindrecieve',
+        component: _passRemindRecieve2.default
+    }, {
+        path: '*',
+        component: _SignIn2.default
     }]
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(9)))
 
 /***/ }),
-/* 197 */
+/* 199 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67587,10 +68159,10 @@ if (inBrowser && window.Vue) {
 
 /* harmony default export */ __webpack_exports__["default"] = (VueRouter);
 
-/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(8)))
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(9)))
 
 /***/ }),
-/* 198 */
+/* 200 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67598,7 +68170,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignUp_vue__ = __webpack_require__(26);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignUp_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignUp_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignUp_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignUp_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37d0ed98_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SignUp_vue__ = __webpack_require__(200);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37d0ed98_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SignUp_vue__ = __webpack_require__(202);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -67646,7 +68218,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 199 */
+/* 201 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67686,7 +68258,7 @@ if (false) {
 }
 
 /***/ }),
-/* 200 */
+/* 202 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67812,7 +68384,7 @@ if (false) {
 }
 
 /***/ }),
-/* 201 */
+/* 203 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67820,7 +68392,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SignIn_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_60fd9a84_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SignIn_vue__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_60fd9a84_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SignIn_vue__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -67868,7 +68440,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 202 */
+/* 204 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -67921,7 +68493,7 @@ if (false) {
 }
 
 /***/ }),
-/* 203 */
+/* 205 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68013,7 +68585,7 @@ if (false) {
 }
 
 /***/ }),
-/* 204 */
+/* 206 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68021,7 +68593,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Home_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_66ba234a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(220);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_66ba234a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Home_vue__ = __webpack_require__(222);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68069,7 +68641,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 205 */
+/* 207 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68077,7 +68649,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_UserInfo_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c8453cd6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_UserInfo_vue__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_c8453cd6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_UserInfo_vue__ = __webpack_require__(208);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68125,7 +68697,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 206 */
+/* 208 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68195,7 +68767,7 @@ if (false) {
 }
 
 /***/ }),
-/* 207 */
+/* 209 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68203,7 +68775,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_KeywordItem_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78262360_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_KeywordItem_vue__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78262360_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_KeywordItem_vue__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68251,7 +68823,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 208 */
+/* 210 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68304,7 +68876,7 @@ if (false) {
 }
 
 /***/ }),
-/* 209 */
+/* 211 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68341,7 +68913,7 @@ if (false) {
 }
 
 /***/ }),
-/* 210 */
+/* 212 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68349,7 +68921,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__ = __webpack_require__(36);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Listitem_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41f69b2d_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Listitem_vue__ = __webpack_require__(213);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_41f69b2d_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Listitem_vue__ = __webpack_require__(215);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68397,7 +68969,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 211 */
+/* 213 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68405,7 +68977,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__ = __webpack_require__(37);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ListRecord_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0916e10b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ListRecord_vue__ = __webpack_require__(212);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0916e10b_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ListRecord_vue__ = __webpack_require__(214);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68453,7 +69025,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 212 */
+/* 214 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68488,7 +69060,7 @@ if (false) {
 }
 
 /***/ }),
-/* 213 */
+/* 215 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68550,7 +69122,7 @@ if (false) {
 }
 
 /***/ }),
-/* 214 */
+/* 216 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68558,7 +69130,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__ = __webpack_require__(38);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AuthAccount_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4da68899_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AuthAccount_vue__ = __webpack_require__(219);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_4da68899_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AuthAccount_vue__ = __webpack_require__(221);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68606,7 +69178,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 215 */
+/* 217 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68614,7 +69186,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__ = __webpack_require__(39);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_AccountList_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_895b62c2_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AccountList_vue__ = __webpack_require__(218);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_895b62c2_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_AccountList_vue__ = __webpack_require__(220);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68662,7 +69234,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 216 */
+/* 218 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68670,7 +69242,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Task_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5da927fe_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Task_vue__ = __webpack_require__(217);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5da927fe_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Task_vue__ = __webpack_require__(219);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -68718,7 +69290,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 217 */
+/* 219 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68762,7 +69334,7 @@ if (false) {
 }
 
 /***/ }),
-/* 218 */
+/* 220 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68808,7 +69380,7 @@ if (false) {
 }
 
 /***/ }),
-/* 219 */
+/* 221 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68864,7 +69436,7 @@ if (false) {
 }
 
 /***/ }),
-/* 220 */
+/* 222 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -68897,124 +69469,130 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("UserInfo", {
-        attrs: {
-          follower: _vm.follower,
-          friends: _vm.friends,
-          account_name: _vm.account_name,
-          description: _vm.description,
-          img_url: _vm.img_url
-        }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "p-status-wrap" }, [
-        _c("ul", [
-          _c(
-            "li",
-            {
-              staticClass: "c-btn p-status__item",
-              class: _vm.p_follow_status_toggle,
-              on: { click: _vm.changeFollowCronStatus }
-            },
-            [
-              _vm._m(1),
-              _vm._v(" "),
-              _c("p", [
-                _vm.AutoFollowCronStatus === "0"
-                  ? _c("span", [_vm._v("一時停止中...")])
-                  : _vm.AutoFollowCronStatus === "1"
-                  ? _c("span", [_vm._v("待機中...")])
-                  : _vm.AutoFollowCronStatus === "2"
-                  ? _c("span", [_vm._v("実行中...")])
-                  : _vm._e()
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "li",
-            {
-              staticClass: "c-btn p-status__item",
-              class: _vm.p_status_toggle,
-              on: { click: _vm.changeLikeCronStatus }
-            },
-            [
-              _vm._m(2),
-              _vm._v(" "),
-              _c("p", [
-                _vm.AutoLikeCronStatus === "0"
-                  ? _c("span", [_vm._v("一時停止中...")])
-                  : _vm.AutoLikeCronStatus === "1"
-                  ? _c("span", [_vm._v("待機中...")])
-                  : _vm.AutoLikeCronStatus === "2"
-                  ? _c("span", [_vm._v("実行中...")])
-                  : _vm._e()
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "li",
-            {
-              staticClass: "c-btn p-status__item",
-              class: _vm.p_unfollow_status_toggle,
-              on: { click: _vm.changeUnFollowCronStatus }
-            },
-            [
-              _vm._m(3),
-              _vm._v(" "),
-              _c("p", [
-                _vm.AutoUnFollowCronStatus === "0"
-                  ? _c("span", [_vm._v("一時停止中...")])
-                  : _vm.AutoUnFollowCronStatus === "1"
-                  ? _c("span", [_vm._v("待機中...")])
-                  : _vm.AutoUnFollowCronStatus === "2"
-                  ? _c("span", [_vm._v("実行中...")])
-                  : _vm._e()
-              ])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "p-main-area" },
-        [
-          _c("ListItem", {
+      _vm.show === true
+        ? _c("UserInfo", {
             attrs: {
-              heading: "follow",
-              classname: "p-heading__follow",
-              listItems: _vm.listItems_follow
-            }
-          }),
-          _vm._v(" "),
-          _c("ListItem", {
-            attrs: {
-              heading: "like",
-              classname: "p-heading__like",
-              listItems: _vm.listItems_like
-            }
-          }),
-          _vm._v(" "),
-          _c("ListItem", {
-            attrs: {
-              heading: "unFollow",
-              classname: "p-heading__unfollow",
-              listItems: _vm.listItems_unfollow
-            }
-          }),
-          _vm._v(" "),
-          _c("ListItem", {
-            attrs: {
-              heading: "tweetschedule",
-              classname: "p-heading__twtschedule",
-              listItems: _vm.listItems_schedule
+              follower: _vm.follower,
+              friends: _vm.friends,
+              account_name: _vm.account_name,
+              description: _vm.description,
+              img_url: _vm.img_url
             }
           })
-        ],
-        1
-      )
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.show === true
+        ? _c("div", [
+            _c("div", { staticClass: "p-status-wrap" }, [
+              _c("ul", [
+                _c(
+                  "li",
+                  {
+                    staticClass: "c-btn p-status__item",
+                    class: _vm.p_follow_status_toggle,
+                    on: { click: _vm.changeFollowCronStatus }
+                  },
+                  [
+                    _vm._m(1),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm.AutoFollowCronStatus === "0"
+                        ? _c("span", [_vm._v("一時停止中...")])
+                        : _vm.AutoFollowCronStatus === "1"
+                        ? _c("span", [_vm._v("待機中...")])
+                        : _vm.AutoFollowCronStatus === "2"
+                        ? _c("span", [_vm._v("実行中...")])
+                        : _vm._e()
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "c-btn p-status__item",
+                    class: _vm.p_status_toggle,
+                    on: { click: _vm.changeLikeCronStatus }
+                  },
+                  [
+                    _vm._m(2),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm.AutoLikeCronStatus === "0"
+                        ? _c("span", [_vm._v("一時停止中...")])
+                        : _vm.AutoLikeCronStatus === "1"
+                        ? _c("span", [_vm._v("待機中...")])
+                        : _vm.AutoLikeCronStatus === "2"
+                        ? _c("span", [_vm._v("実行中...")])
+                        : _vm._e()
+                    ])
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "c-btn p-status__item",
+                    class: _vm.p_unfollow_status_toggle,
+                    on: { click: _vm.changeUnFollowCronStatus }
+                  },
+                  [
+                    _vm._m(3),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm.AutoUnFollowCronStatus === "0"
+                        ? _c("span", [_vm._v("一時停止中...")])
+                        : _vm.AutoUnFollowCronStatus === "1"
+                        ? _c("span", [_vm._v("待機中...")])
+                        : _vm.AutoUnFollowCronStatus === "2"
+                        ? _c("span", [_vm._v("実行中...")])
+                        : _vm._e()
+                    ])
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "p-main-area" },
+              [
+                _c("ListItem", {
+                  attrs: {
+                    heading: "follow",
+                    classname: "p-heading__follow",
+                    listItems: _vm.listItems_follow
+                  }
+                }),
+                _vm._v(" "),
+                _c("ListItem", {
+                  attrs: {
+                    heading: "like",
+                    classname: "p-heading__like",
+                    listItems: _vm.listItems_like
+                  }
+                }),
+                _vm._v(" "),
+                _c("ListItem", {
+                  attrs: {
+                    heading: "unFollow",
+                    classname: "p-heading__unfollow",
+                    listItems: _vm.listItems_unfollow
+                  }
+                }),
+                _vm._v(" "),
+                _c("ListItem", {
+                  attrs: {
+                    heading: "tweetschedule",
+                    classname: "p-heading__twtschedule",
+                    listItems: _vm.listItems_schedule
+                  }
+                })
+              ],
+              1
+            )
+          ])
+        : _vm._e()
     ],
     1
   )
@@ -69065,7 +69643,7 @@ if (false) {
 }
 
 /***/ }),
-/* 221 */
+/* 223 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69073,7 +69651,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterLikeWord_vue__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterLikeWord_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterLikeWord_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterLikeWord_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterLikeWord_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e437000_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_RegisterLikeWord_vue__ = __webpack_require__(222);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e437000_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_RegisterLikeWord_vue__ = __webpack_require__(224);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -69121,7 +69699,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 222 */
+/* 224 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69131,79 +69709,84 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "l-subPage l-likePage" },
-    [
-      _c("Message"),
-      _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
-        _c(
-          "button",
-          { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
-          [_c("i", { staticClass: "fas fa-home c-icon-home" }), _vm._v("HOME")]
-        ),
-        _c("span", { staticClass: "c-title p-heading__like" }, [
-          _vm._v("自動いいねキーワード登録")
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
+  return _vm.show === true
+    ? _c(
         "div",
+        { staticClass: "l-subPage l-likePage" },
         [
+          _c("Message"),
+          _vm._v(" "),
+          _c("div", { staticClass: "txt_center" }, [
+            _c(
+              "button",
+              { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
+              [
+                _c("i", { staticClass: "fas fa-home c-icon-home" }),
+                _vm._v("HOME")
+              ]
+            ),
+            _c("span", { staticClass: "c-title p-heading__like" }, [
+              _vm._v("自動いいねキーワード登録")
+            ])
+          ]),
+          _vm._v(" "),
           _c(
-            "select",
-            {
-              staticClass: "select-init c-logicOption",
-              on: {
-                change: function($event) {
-                  return _vm.onChangeOption($event)
-                }
-              }
-            },
+            "div",
             [
-              _c("option", { attrs: { selected: "" } }, [_vm._v("AND")]),
+              _c(
+                "select",
+                {
+                  staticClass: "select-init c-logicOption",
+                  on: {
+                    change: function($event) {
+                      return _vm.onChangeOption($event)
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { selected: "" } }, [_vm._v("AND")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("OR")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("NOT")])
+                ]
+              ),
               _vm._v(" "),
-              _c("option", [_vm._v("OR")]),
-              _vm._v(" "),
-              _c("option", [_vm._v("NOT")])
-            ]
+              _c("InputForm", {
+                attrs: {
+                  type: "text",
+                  label: "",
+                  name: "text",
+                  placeholder: "いいねキーワード"
+                },
+                on: {
+                  onChange: function($event) {
+                    return _vm.onChange($event)
+                  }
+                }
+              })
+            ],
+            1
           ),
           _vm._v(" "),
-          _c("InputForm", {
-            attrs: {
-              type: "text",
-              label: "",
-              name: "text",
-              placeholder: "いいねキーワード"
-            },
+          _c("div", { staticClass: "txt_right" }, [
+            _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
+              _vm._v("追加")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("KeywordListComponent", {
+            attrs: { listItems: _vm.datas, type: "like" },
             on: {
-              onChange: function($event) {
-                return _vm.onChange($event)
+              "delete-item": function($event) {
+                return _vm.deleteItem($event)
               }
             }
           })
         ],
         1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "txt_right" }, [
-        _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
-          _vm._v("追加")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("KeywordListComponent", {
-        attrs: { listItems: _vm.datas, type: "like" },
-        on: {
-          "delete-item": function($event) {
-            return _vm.deleteItem($event)
-          }
-        }
-      })
-    ],
-    1
-  )
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -69216,7 +69799,7 @@ if (false) {
 }
 
 /***/ }),
-/* 223 */
+/* 225 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69224,7 +69807,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterFollowerSearchKeyword_vue__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterFollowerSearchKeyword_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterFollowerSearchKeyword_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterFollowerSearchKeyword_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterFollowerSearchKeyword_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_63124574_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_RegisterFollowerSearchKeyword_vue__ = __webpack_require__(224);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_63124574_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_RegisterFollowerSearchKeyword_vue__ = __webpack_require__(226);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -69272,7 +69855,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 224 */
+/* 226 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69282,79 +69865,84 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "l-subPage l-searchKeyPage" },
-    [
-      _c("Message"),
-      _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
-        _c(
-          "button",
-          { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
-          [_c("i", { staticClass: "fas fa-home c-icon-home" }), _vm._v("HOME")]
-        ),
-        _c("span", { staticClass: "c-title p-heading__follow" }, [
-          _vm._v("フォロワーサーチキーワード登録")
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
+  return _vm.show === true
+    ? _c(
         "div",
+        { staticClass: "l-subPage l-searchKeyPage" },
         [
+          _c("Message"),
+          _vm._v(" "),
+          _c("div", { staticClass: "txt_center" }, [
+            _c(
+              "button",
+              { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
+              [
+                _c("i", { staticClass: "fas fa-home c-icon-home" }),
+                _vm._v("HOME")
+              ]
+            ),
+            _c("span", { staticClass: "c-title p-heading__follow" }, [
+              _vm._v("フォロワーサーチキーワード登録")
+            ])
+          ]),
+          _vm._v(" "),
           _c(
-            "select",
-            {
-              staticClass: "select-init c-logicOption",
-              on: {
-                change: function($event) {
-                  return _vm.onChangeOption($event)
-                }
-              }
-            },
+            "div",
             [
-              _c("option", { attrs: { selected: "" } }, [_vm._v("AND")]),
+              _c(
+                "select",
+                {
+                  staticClass: "select-init c-logicOption",
+                  on: {
+                    change: function($event) {
+                      return _vm.onChangeOption($event)
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { selected: "" } }, [_vm._v("AND")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("OR")]),
+                  _vm._v(" "),
+                  _c("option", [_vm._v("NOT")])
+                ]
+              ),
               _vm._v(" "),
-              _c("option", [_vm._v("OR")]),
-              _vm._v(" "),
-              _c("option", [_vm._v("NOT")])
-            ]
+              _c("InputForm", {
+                attrs: {
+                  type: "text",
+                  label: "",
+                  name: "text",
+                  placeholder: "フォロワーサーチキーワード"
+                },
+                on: {
+                  onChange: function($event) {
+                    return _vm.onChange($event)
+                  }
+                }
+              })
+            ],
+            1
           ),
           _vm._v(" "),
-          _c("InputForm", {
-            attrs: {
-              type: "text",
-              label: "",
-              name: "text",
-              placeholder: "フォロワーサーチキーワード"
-            },
+          _c("div", { staticClass: "txt_right" }, [
+            _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
+              _vm._v("追加")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("KeywordListComponent", {
+            attrs: { listItems: _vm.datas, type: "followersearch" },
             on: {
-              onChange: function($event) {
-                return _vm.onChange($event)
+              "delete-item": function($event) {
+                return _vm.deleteItem($event)
               }
             }
           })
         ],
         1
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "txt_right" }, [
-        _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
-          _vm._v("追加")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("KeywordListComponent", {
-        attrs: { listItems: _vm.datas, type: "followersearch" },
-        on: {
-          "delete-item": function($event) {
-            return _vm.deleteItem($event)
-          }
-        }
-      })
-    ],
-    1
-  )
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -69367,7 +69955,7 @@ if (false) {
 }
 
 /***/ }),
-/* 225 */
+/* 227 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69375,7 +69963,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTargetAccount_vue__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTargetAccount_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTargetAccount_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTargetAccount_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTargetAccount_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_9b6e9ca6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_RegisterTargetAccount_vue__ = __webpack_require__(226);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_9b6e9ca6_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_RegisterTargetAccount_vue__ = __webpack_require__(228);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -69423,7 +70011,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 226 */
+/* 228 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69433,54 +70021,59 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "l-subPage p-targetacnt-wrap" },
-    [
-      _c("Message"),
-      _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
-        _c(
-          "button",
-          { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
-          [_c("i", { staticClass: "fas fa-home c-icon-home" }), _vm._v("HOME")]
-        ),
-        _c("span", { staticClass: "c-title p-heading__follow" }, [
-          _vm._v("ターゲットアカウント登録")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("InputForm", {
-        attrs: {
-          type: "text",
-          label: "",
-          name: "text",
-          placeholder: "@のあとのアカウントIDを入力(例. kazukichi3110)"
-        },
-        on: {
-          onChange: function($event) {
-            return _vm.onChange($event)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "txt_right" }, [
-        _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
-          _vm._v("追加")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("KeywordListComponent", {
-        attrs: { listItems: _vm.datas, type: "target" },
-        on: {
-          "delete-item": function($event) {
-            return _vm.deleteItem($event)
-          }
-        }
-      })
-    ],
-    1
-  )
+  return _vm.show === true
+    ? _c(
+        "div",
+        { staticClass: "l-subPage p-targetacnt-wrap" },
+        [
+          _c("Message"),
+          _vm._v(" "),
+          _c("div", { staticClass: "txt_center" }, [
+            _c(
+              "button",
+              { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
+              [
+                _c("i", { staticClass: "fas fa-home c-icon-home" }),
+                _vm._v("HOME")
+              ]
+            ),
+            _c("span", { staticClass: "c-title p-heading__follow" }, [
+              _vm._v("ターゲットアカウント登録")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("InputForm", {
+            attrs: {
+              type: "text",
+              label: "",
+              name: "text",
+              placeholder: "@のあとのアカウントIDを入力(例. kazukichi3110)"
+            },
+            on: {
+              onChange: function($event) {
+                return _vm.onChange($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "txt_right" }, [
+            _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
+              _vm._v("追加")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("KeywordListComponent", {
+            attrs: { listItems: _vm.datas, type: "target" },
+            on: {
+              "delete-item": function($event) {
+                return _vm.deleteItem($event)
+              }
+            }
+          })
+        ],
+        1
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -69493,7 +70086,7 @@ if (false) {
 }
 
 /***/ }),
-/* 227 */
+/* 229 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69501,7 +70094,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTweetSchedule_vue__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTweetSchedule_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTweetSchedule_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTweetSchedule_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_RegisterTweetSchedule_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_13b2a70e_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_RegisterTweetSchedule_vue__ = __webpack_require__(234);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_13b2a70e_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_RegisterTweetSchedule_vue__ = __webpack_require__(236);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -69549,7 +70142,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 228 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -69822,10 +70415,10 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 228;
+webpackContext.id = 230;
 
 /***/ }),
-/* 229 */
+/* 231 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69833,7 +70426,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ScheduleList_vue__ = __webpack_require__(172);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ScheduleList_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ScheduleList_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ScheduleList_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_ScheduleList_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37cc7e51_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ScheduleList_vue__ = __webpack_require__(232);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_37cc7e51_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_ScheduleList_vue__ = __webpack_require__(234);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -69881,7 +70474,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 230 */
+/* 232 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69889,7 +70482,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_TweetTask_vue__ = __webpack_require__(173);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_TweetTask_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_TweetTask_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_TweetTask_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_TweetTask_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0486d74a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_TweetTask_vue__ = __webpack_require__(231);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0486d74a_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_TweetTask_vue__ = __webpack_require__(233);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -69937,7 +70530,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 231 */
+/* 233 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -69977,16 +70570,14 @@ var render = function() {
         ])
       ]),
       _vm._v(" "),
-      _vm.data.isDone === "1"
-        ? _c("i", {
-            staticClass: "fa fa-trash c-garbage",
-            on: {
-              click: function($event) {
-                return _vm.$emit("delete-item", { item_id: _vm.data.id })
-              }
-            }
-          })
-        : _vm._e()
+      _c("i", {
+        staticClass: "fa fa-trash c-garbage",
+        on: {
+          click: function($event) {
+            return _vm.$emit("delete-item", { item_id: _vm.data.id })
+          }
+        }
+      })
     ])
   ])
 }
@@ -70001,7 +70592,7 @@ if (false) {
 }
 
 /***/ }),
-/* 232 */
+/* 234 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -70040,7 +70631,7 @@ if (false) {
 }
 
 /***/ }),
-/* 233 */
+/* 235 */
 /***/ (function(module, exports) {
 
 module.exports =
@@ -94187,7 +94778,7 @@ module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u20
 //# sourceMappingURL=vue-ctk-date-time-picker.common.js.map
 
 /***/ }),
-/* 234 */
+/* 236 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -94197,71 +94788,76 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "l-subPage p-autotwt-wrap" },
-    [
-      _c("Message"),
-      _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
-        _c(
-          "button",
-          { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
-          [_c("i", { staticClass: "fas fa-home c-icon-home" }), _vm._v("HOME")]
-        ),
-        _c("span", { staticClass: "c-title p-heading__twtschedule" }, [
-          _vm._v("自動ツイート設定")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("VueCtkDateTimePicker", {
-        attrs: {
-          "minute-interval": 1,
-          format: "YYYY-MM-DD HH:mm",
-          overlay: true,
-          "min-date": _vm.start,
-          "max-date": _vm.end
-        },
-        model: {
-          value: _vm.yourValue,
-          callback: function($$v) {
-            _vm.yourValue = $$v
-          },
-          expression: "yourValue"
-        }
-      }),
-      _vm._v(" "),
-      _c("InputForm", {
-        attrs: {
-          type: "text",
-          label: "内容",
-          name: "text",
-          placeholder: "この内容をツイートします"
-        },
-        on: {
-          onChange: function($event) {
-            return _vm.onChange($event)
-          }
-        }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "txt_right" }, [
-        _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
-          _vm._v("追加")
-        ])
-      ]),
-      _vm._v(" "),
-      _c("ScheduleListComponent", {
-        attrs: { listItems: _vm.datas },
-        on: {
-          "delete-item": function($event) {
-            return _vm.deleteItem($event)
-          }
-        }
-      })
-    ],
-    1
-  )
+  return _vm.show === true
+    ? _c(
+        "div",
+        { staticClass: "l-subPage p-autotwt-wrap" },
+        [
+          _c("Message"),
+          _vm._v(" "),
+          _c("div", { staticClass: "txt_center" }, [
+            _c(
+              "button",
+              { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
+              [
+                _c("i", { staticClass: "fas fa-home c-icon-home" }),
+                _vm._v("HOME")
+              ]
+            ),
+            _c("span", { staticClass: "c-title p-heading__twtschedule" }, [
+              _vm._v("自動ツイート設定")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("VueCtkDateTimePicker", {
+            attrs: {
+              "minute-interval": 1,
+              format: "YYYY-MM-DD HH:mm",
+              overlay: true,
+              "min-date": _vm.start,
+              "max-date": _vm.end
+            },
+            model: {
+              value: _vm.yourValue,
+              callback: function($$v) {
+                _vm.yourValue = $$v
+              },
+              expression: "yourValue"
+            }
+          }),
+          _vm._v(" "),
+          _c("InputForm", {
+            attrs: {
+              type: "text",
+              label: "内容",
+              name: "text",
+              placeholder: "この内容をツイートします"
+            },
+            on: {
+              onChange: function($event) {
+                return _vm.onChange($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "txt_right" }, [
+            _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
+              _vm._v("追加")
+            ])
+          ]),
+          _vm._v(" "),
+          _c("ScheduleListComponent", {
+            attrs: { listItems: _vm.datas },
+            on: {
+              "delete-item": function($event) {
+                return _vm.deleteItem($event)
+              }
+            }
+          })
+        ],
+        1
+      )
+    : _vm._e()
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -94274,15 +94870,254 @@ if (false) {
 }
 
 /***/ }),
-/* 235 */
+/* 237 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_mainView_vue__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindSend_vue__ = __webpack_require__(174);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindSend_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindSend_vue__);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindSend_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindSend_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_297991fa_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_passRemindSend_vue__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
+var disposed = false
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindSend_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_297991fa_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_passRemindSend_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_297991fa_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_passRemindSend_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\js\\component\\passRemindSend.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-297991fa", Component.options)
+  } else {
+    hotAPI.reload("data-v-297991fa", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 238 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "l-subPage" },
+    [
+      _c("Message"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "c-form-wrap" },
+        [
+          _c("InputForm", {
+            attrs: {
+              type: "text",
+              label: "ユーザー名*",
+              name: "username",
+              placeholder: "example"
+            },
+            on: {
+              onChange: function($event) {
+                return _vm.onChange($event)
+              }
+            }
+          }),
+          _vm._v(" "),
+          _c("InputForm", {
+            attrs: {
+              type: "text",
+              label: "メールアドレス*",
+              name: "email",
+              placeholder: "example"
+            },
+            on: {
+              onChange: function($event) {
+                return _vm.onChange($event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "txt_center" }, [
+        _c(
+          "button",
+          { staticClass: "c-btn", on: { click: _vm.makeRePassword } },
+          [_vm._v("パスワード再発行")]
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-297991fa", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
+
+/***/ }),
+/* 239 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindRecieve_vue__ = __webpack_require__(175);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindRecieve_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindRecieve_vue__);
+/* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindRecieve_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindRecieve_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b5e2f4e_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_passRemindRecieve_vue__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
+var disposed = false
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+
+var Component = Object(__WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__["a" /* default */])(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_passRemindRecieve_vue___default.a,
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b5e2f4e_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_passRemindRecieve_vue__["a" /* render */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2b5e2f4e_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_passRemindRecieve_vue__["b" /* staticRenderFns */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "src\\js\\component\\passRemindRecieve.vue"
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-2b5e2f4e", Component.options)
+  } else {
+    hotAPI.reload("data-v-2b5e2f4e", Component.options)
+  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+/* harmony default export */ __webpack_exports__["default"] = (Component.exports);
+
+
+/***/ }),
+/* 240 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "l-subPage" },
+    [
+      _c("Message"),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "c-form-wrap" },
+        [
+          _c("InputForm", {
+            attrs: { type: "text", label: "認証コード*", name: "username" },
+            on: {
+              onChange: function($event) {
+                return _vm.onChange($event)
+              }
+            }
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "txt_center" }, [
+        _c(
+          "button",
+          { staticClass: "c-btn", on: { click: _vm.makeRePassword } },
+          [_vm._v("再発行する")]
+        )
+      ])
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-2b5e2f4e", { render: render, staticRenderFns: staticRenderFns })
+  }
+}
+
+/***/ }),
+/* 241 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_mainView_vue__ = __webpack_require__(176);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_mainView_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_mainView_vue__);
 /* harmony namespace reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_mainView_vue__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_mainView_vue__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cd9f484c_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_mainView_vue__ = __webpack_require__(236);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_cd9f484c_hasScoped_false_optionsId_0_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_mainView_vue__ = __webpack_require__(242);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__node_modules_vue_loader_lib_runtime_component_normalizer__ = __webpack_require__(1);
 var disposed = false
 /* script */
@@ -94330,7 +95165,7 @@ if (false) {(function () {
 
 
 /***/ }),
-/* 236 */
+/* 242 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

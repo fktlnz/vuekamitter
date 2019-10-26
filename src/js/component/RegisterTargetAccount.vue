@@ -1,5 +1,5 @@
 <template>    
-    <div class="l-subPage p-targetacnt-wrap">
+    <div v-if=" show===true " class="l-subPage p-targetacnt-wrap">
         <Message></Message>
         <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__follow">ターゲットアカウント登録</span></div>
         <InputForm v-on:onChange="onChange($event)" type="text" label="" name="text" placeholder="@のあとのアカウントIDを入力(例. kazukichi3110)"></InputForm>
@@ -32,9 +32,27 @@ export default {
             datas: [],
             screen_name: '',
             IsExist:false,//アカウントが存在しているかどうか
+            show:false
             
         }
-    },   
+    },  
+    created() {
+        //ログインチェック結果
+        controller.checkLogin_ajax()
+        controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
+            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            console.log($event.response.res)
+            if($event.response.res === 'NOTLOGIN' ){
+                //ログインユーザーでないためログイン画面に飛ばします。
+                console.log('ログインユーザーでありません。')
+                this.$router.push('/')
+            }else{
+                console.log('ログインユーザーです。')
+                this.show = true
+            }
+
+        })
+    }, 
     mounted() {
         this.updateDatas()
     },

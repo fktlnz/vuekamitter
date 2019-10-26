@@ -16,7 +16,7 @@
                 </ul>
             </li>
         </ul>
-        <i v-if="data.isDone === '1'" class="fa fa-trash c-garbage" v-on:click="$emit('delete-item', {item_id:data.id})" ></i>
+        <i class="fa fa-trash c-garbage" v-on:click="$emit('delete-item', {item_id:data.id})" ></i>
     </li>
 </div>
 </template>

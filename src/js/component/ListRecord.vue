@@ -22,7 +22,7 @@ export default {
     },
     methods: {
         onMoveTwitter () {
-            if(this.heading==='follow'){
+            if(this.heading==='follow' || this.heading==='unFollow'){
                 //ユーザーのページを表示
                 window.open("https://twitter.com/" + this.data.name, '_blank'); // 新しいタブを開き、ページを表示
             }else{
