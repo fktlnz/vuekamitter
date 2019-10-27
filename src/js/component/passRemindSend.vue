@@ -114,7 +114,7 @@ export default {
         },
         validhalf(){
             const regexp = new RegExp(/^[A-Za-z0-9]*$/);
-            if(this.code.match(regexp)){
+            if(this.username.match(regexp)){
                 return true
             }else {
                 return false

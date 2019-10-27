@@ -36607,6 +36607,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 // Json取得のベースURL
 var URL_BASE = 'http://localhost:8888/KamitterApp/KamitterAPI/public/api/';
+//const URL_BASE = 'http://service-1.masashisite.com/KamitterAPI/public/api/';
 
 // Vue.js のインスタンス
 module.exports = new _vue2.default({
@@ -49272,16 +49273,18 @@ exports.default = {
         _Controller2.default.getTweetSchedule_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_SCHEDULE_RESULT', function ($event) {
             console.log('DEBUG -- Home.vue --> ツイートスケジュールリストを更新します');
-            console.dir($event.response.rst);
-            console.dir($event.response.rst.length);
-            var result = $event.response.rst;
-            var length = $event.response.rst.length;
-            that.listItems_schedule = []; //listを初期化
-            for (var i = 0; i < length; i++) {
-                //DBから取得したList情報をdatasに格納する
-                //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                //HOME画面で上から時系列順に並ぶようにする
-                that.listItems_schedule.unshift({ id: result[i]['id'], name: 'Schedule', text: result[i]['text'], created_at: result[i]['date'] });
+            if ($event.response.rst !== null) {
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var result = $event.response.rst;
+                var length = $event.response.rst.length;
+                that.listItems_schedule = []; //listを初期化
+                for (var i = 0; i < length; i++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_schedule.unshift({ id: result[i]['id'], name: 'Schedule', text: result[i]['text'], created_at: result[i]['date'] });
+                }
             }
         });
 
@@ -63758,7 +63761,7 @@ exports.default = {
         },
         validhalf: function validhalf() {
             var regexp = new RegExp(/^[A-Za-z0-9]*$/);
-            if (this.code.match(regexp)) {
+            if (this.username.match(regexp)) {
                 return true;
             } else {
                 return false;
@@ -63799,9 +63802,9 @@ var _Store = __webpack_require__(4);
 
 var _Store2 = _interopRequireDefault(_Store);
 
-var _message3 = __webpack_require__(8);
+var _message4 = __webpack_require__(8);
 
-var _message4 = _interopRequireDefault(_message3);
+var _message5 = _interopRequireDefault(_message4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -63823,7 +63826,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
     components: {
         InputForm: _InputForm2.default,
-        Message: _message4.default
+        Message: _message5.default
     },
     data: function data() {
         return {
@@ -63873,11 +63876,16 @@ exports.default = {
                 console.log('フロントに帰ってきたデータ↓');
                 console.dir($event.response);
                 if ($event.response.res === 'OK') {
-                    _Store2.default.setMessage('ログインに成功しました', true);
-                    _this.$router.push('/home');
+                    //メッセージ表示
+                    _Store2.default.setMessage($event.response.msg, true);
+                    _this.$router.push('/');
                 } else {
-                    _this.errors = $event.response;
-                    console.log(_this.errors);
+                    //メッセージ表示
+                    _Store2.default.setMessage($event.response.msg, false);
+                    var _message3 = _Store2.default.getMessage();
+                    if (_message3.msg !== '') {
+                        _Controller2.default.emit_message(_message3);
+                    }
                 }
             });
         },

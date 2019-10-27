@@ -450,17 +450,19 @@ export default {
         controller.getTweetSchedule_ajax()
         controller.$on('AJAX_DISPLAY_SCHEDULE_RESULT', ($event) => {
             console.log('DEBUG -- Home.vue --> ツイートスケジュールリストを更新します')
-            console.dir($event.response.rst)
-            console.dir($event.response.rst.length)
-            const result = $event.response.rst
-            const length = $event.response.rst.length
-            that.listItems_schedule=[] //listを初期化
-            for(let i=0; i<length; i++){
-                //DBから取得したList情報をdatasに格納する
-                //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
-                //HOME画面で上から時系列順に並ぶようにする
-                that.listItems_schedule.unshift({id: result[i]['id'], name:'Schedule', text:result[i]['text'], created_at:result[i]['date']})                          
-            }            
+            if($event.response.rst !== null) {
+                console.dir($event.response.rst)
+                console.dir($event.response.rst.length)
+                const result = $event.response.rst
+                const length = $event.response.rst.length
+                that.listItems_schedule=[] //listを初期化
+                for(let i=0; i<length; i++){
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_schedule.unshift({id: result[i]['id'], name:'Schedule', text:result[i]['text'], created_at:result[i]['date']})                          
+                }            
+            }
         })
 
         //自動いいねのステータスを変更する
