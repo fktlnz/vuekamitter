@@ -1,5 +1,5 @@
 
-import Vue from 'vue'
+// import Vue from 'vue'
 import VueCrontab from 'vue-crontab'
 import { tweetWatch, startAutoLike, startAutoFollow, reStartAutoFollow, startAutoUnFollow} from './crontabfunc.vue'
 

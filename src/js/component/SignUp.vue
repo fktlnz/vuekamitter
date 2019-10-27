@@ -1,9 +1,7 @@
 <template>
     <div class="l-subPage">
-    <div class="txt_center">
-    <span class="c-heading p-heading__title">ユーザー登録</span>
-    </div>
     <div class="c-form-wrap">
+        <p class="c-heading p-heading__title txt_center">ユーザー登録</p>
         <div class="p-error-area">
             <ul>
                 <transition-group name="flip">
@@ -21,7 +19,10 @@
     <div class="txt_center">
         <button class="c-btn" v-on:click="signUp">登録</button>        
     </div>
-    
+    <div class="c-form-wrap">
+        <router-link class="c-link" to="/signin">ログイン画面へ</router-link>
+        <p>パスワードを忘れた方は<router-link class="c-link" to="/remindsend">こちら</router-link></p>
+    </div>
 
     </div>
 </template>

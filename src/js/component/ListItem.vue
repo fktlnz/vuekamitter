@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
+// import Vue from 'vue'
 import listrecord from './ListRecord.vue'
 
 export default {

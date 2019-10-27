@@ -2,6 +2,7 @@
     <div class="l-subPage">
     <Message></Message>    
     <div class="c-form-wrap">
+        <p class="c-heading p-heading__title txt_center">ログイン</p>
         <div class="p-error-area">
             <ul>
                 <transition-group name="flip">
@@ -17,14 +18,17 @@
     <div class="txt_center">
         <button class="c-btn" v-on:click="signIn">ログイン</button>
     </div>
-
+    <div class="c-form-wrap">
+        <router-link class="c-link" to="/signup"><span>ユーザー登録画面へ</span></router-link>
+        <p>パスワードを忘れた方は<router-link class="c-link" to="/remindsend">こちら</router-link></p>
+    </div>
     </div>
 </template>
 
 
 <script>
 import path from 'path';
-import Vue from 'vue'
+// import Vue from 'vue'
 import inputform from './InputForm.vue'
 import controller from './Controller.vue'
 import store from './Store.vue'

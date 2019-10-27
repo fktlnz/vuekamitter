@@ -11,6 +11,7 @@ import axios from 'axios';
 
 // Json取得のベースURL
 const URL_BASE = 'http://localhost:8888/KamitterApp/KamitterAPI/public/api/';
+//const URL_BASE = 'http://service-1.masashisite.com/KamitterAPI/public/api/';
 
 // Vue.js のインスタンス
 module.exports = new Vue({

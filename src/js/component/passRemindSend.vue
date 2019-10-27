@@ -1,21 +1,24 @@
 <template>
     <div class="l-subPage">
     <Message></Message>    
-    <div class="c-form-wrap">   
+    <div class="c-form-wrap">
+        <p class="c-heading p-heading__title txt_center">認証コード生成</p>
         <InputForm v-on:onChange="onChange($event)" type="text" label="ユーザー名*" name="username" placeholder="example"></InputForm>             
         <InputForm v-on:onChange="onChange($event)" type="text" label="メールアドレス*" name="email" placeholder="example"></InputForm>
     </div>
     <div class="txt_center">
-        <button class="c-btn" v-on:click="makeRePassword">パスワード再発行</button>
+        <button class="c-btn" v-on:click="makeRePassword">生成する</button>
     </div>
-
+    <div class="c-form-wrap">
+        <router-link class="c-link" to="/signin">ログイン画面へ</router-link>
+    </div>
     </div>
 </template>
 
 
 <script>
 import path from 'path';
-import Vue from 'vue'
+// import Vue from 'vue'
 import inputform from './InputForm.vue'
 import controller from './Controller.vue'
 import store from './Store.vue'

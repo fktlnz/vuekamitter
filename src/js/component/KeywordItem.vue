@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
+// import Vue from 'vue'
 import controller from './Controller.vue'
 import store from './Store.vue'
 

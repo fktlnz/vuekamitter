@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
+// import Vue from 'vue'
 // import inputform from './InputForm.vue'
 
 export default {

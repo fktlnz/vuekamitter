@@ -17,6 +17,7 @@
   padding: 0px 20px;
   color: white;
   cursor: pointer;
+  margin-bottom: 40px;
 }
 
 .c-heading:hover {
@@ -62,13 +63,12 @@
 
 .c-input__label {
   display: inline-block;
-  width: 160px;
   text-align: right;
   margin-right: 10px;
 }
 
 .c-input__txt {
-  width: calc((100% - 180px));
+  width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.2);
   height: 42px;
   padding: 0 5px;
@@ -125,4 +125,10 @@
   display: inline-block;
   padding: 7px 7px;
   font-size: 18px;
+}
+
+/* ===リンク表示（青色、アンダーライン）=== */
+.c-link {
+  color: #2d2d9e;
+  text-decoration: underline;
 }

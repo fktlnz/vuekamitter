@@ -1,3 +1,18 @@
+//ブレークポイント定義
+$breakpoints: (
+    'sm': 'screen and (max-width: 576px)',
+    'md': 'screen and (max-width: 768px)',
+    'lg': 'screen and (max-width: 1000px)',
+    'xl': 'screen and (max-width: 1200px)',
+) !default;
+
+//メディアクエリ関数
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
 // 色の定義
 $color_garbage:#B56060;
 $color_txt: #262626;
@@ -28,6 +43,7 @@ $color_gray_border: #3f3f3f;
     padding: 0px 20px;
     color: white;
     cursor: pointer;
+    margin-bottom: 40px;
     &:hover {
         opacity: .85;
         -webkit-transition: .3s;
@@ -74,14 +90,14 @@ $color_gray_border: #3f3f3f;
 }
 .c-input__label {
     display: inline-block;
-    width: 160px;
     text-align: right;
     margin-right: 10px;
+
 
 }
 
 .c-input__txt {
-    width: calc((100% - 180px));
+    width: 100%;
     border: 1px solid rgba(0,0,0,.2);
     height: 42px;
     padding: 0 5px;
@@ -139,4 +155,10 @@ $color_gray_border: #3f3f3f;
     display: inline-block;
     padding: 7px 7px;
     font-size: 18px;
+}
+
+/* ===リンク表示（青色、アンダーライン）=== */
+.c-link {
+    color: #2d2d9e;
+    text-decoration: underline;
 }
