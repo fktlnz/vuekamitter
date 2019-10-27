@@ -36618,8 +36618,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 // Json取得のベースURL
-var URL_BASE = 'http://localhost:8888/KamitterApp/KamitterAPI/public/api/';
-//const URL_BASE = 'http://service-1.masashisite.com/KamitterAPI/public/api/';
+//const URL_BASE = 'http://localhost:8888/KamitterApp/KamitterAPI/public/api/';
+var URL_BASE = 'http://service-1.masashisite.com/KamitterAPI/public/api/';
 
 // Vue.js のインスタンス
 module.exports = new _vue2.default({
@@ -49162,6 +49162,47 @@ exports.default = {
                     //HOME画面で上から時系列順に並ぶようにする
                     that.listItems_follow.push({ id: _result2[_i2]['id'], name: _result2[_i2]['name'], text: _result2[_i2]['text'], created_at: _result2[_i2]['created_at'] });
                 }
+            } else if ($event.response.res === 'SPAM') {
+
+                //アカウントが停止された場合にここに来る
+                //リストを更新して、すべての機能をoffにする
+
+                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
+                console.dir($event.response.rst);
+                console.dir($event.response.rst.length);
+                var _result3 = $event.response.rst;
+                var _length3 = $event.response.rst.length;
+                that.listItems_follow = []; //listを初期化
+                for (var _i3 = 0; _i3 < _length3; _i3++) {
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_follow.push({ id: _result3[_i3]['id'], name: _result3[_i3]['name'], text: _result3[_i3]['text'], created_at: _result3[_i3]['created_at'] });
+                }
+
+                //自動フォロー停止
+                _Store2.default.setAutoFollowCronStatus('0');
+                _this2.AutoFollowCronStatus = '0';
+                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
+                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+
+                //自動アンフォロー停止
+                _Store2.default.setAutoUnFollowCronStatus('0');
+                _this2.AutoUnFollowCronStatus = '0';
+                _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
+                _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+
+                //自動いいね停止
+                _Store2.default.setAutoLikeCronStatus('0');
+                _this2.AutoLikeCronStatus = '0';
+                _this2.$set(_this2.p_status_toggle, 'p-btn_home-like--stay', false);
+                _this2.$set(_this2.p_status_toggle, 'p-btn_home-like--exec', false);
+
+                //メール送信停止
+                _Store2.default.setMailStatus('0');
+                _this2.MailStatus = '0';
+                _this2.$set(_this2.p_mail_status_toggle, 'p-btn_home-mail--exec', false);
+                _Controller2.default.changeMailStatus_ajax('0');
             } else {
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, false);
@@ -49170,14 +49211,25 @@ exports.default = {
                     _Controller2.default.emit_message(_message5);
                 }
 
+                //次のフォロー開始時間を15分後に設定する
+                var _now3 = new Date();
+                var _now_ms3 = _now3.getTime();
+                _Store2.default.setNextFollowTime(_now_ms3 + 905000, _now_ms3); //15分後に設定　5秒は気持ち
+
+                console.log('自動フォロー再開ジョブをスタートします');
+                //自動フォローを再開関数を開始する
+                var _result4 = that.$crontab.enableJob('reStartAutoFollow');
+                console.log("enableJob('reStartAutoFollow'):" + _result4);
+
                 //自動フォローを停止中にする
-                _Store2.default.setAutoFollowCronStatus('0');
-                _this2.AutoFollowCronStatus = '0';
-                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
-                _this2.$set(_this2.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
+                // store.setAutoFollowCronStatus('0')
+                // this.AutoFollowCronStatus = '0'
+                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false)
+                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false)
 
                 //自動フォローが実行中の場合は実行する
-                that.$crontab.enableJob('startAutoFollow');
+                //that.$crontab.enableJob('startAutoFollow')
+
             }
         });
 
@@ -49220,9 +49272,9 @@ exports.default = {
                 }
 
                 //アンフォローを15分後に再開する
-                var _now3 = new Date();
-                var _now_ms3 = _now3.getTime();
-                _Store2.default.setNextUnFollowTime(_now_ms3 + 900000); //15分後に設定
+                var _now4 = new Date();
+                var _now_ms4 = _now4.getTime();
+                _Store2.default.setNextUnFollowTime(_now_ms4 + 900000); //15分後に設定
 
                 //自動アンフォローを再開関数を開始する
                 that.$crontab.enableJob('startAutoUnFollow');
@@ -49236,13 +49288,13 @@ exports.default = {
                 console.dir($event.response.rst);
                 console.dir($event.response.rst.length);
                 var rst = $event.response.rst;
-                var _length3 = $event.response.rst.length;
+                var _length4 = $event.response.rst.length;
                 that.listItems_unfollow = []; //listを初期化
-                for (var _i3 = 0; _i3 < _length3; _i3++) {
+                for (var _i4 = 0; _i4 < _length4; _i4++) {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_unfollow.unshift({ id: rst[_i3]['id'], name: rst[_i3]['name'], text: rst[_i3]['text'], created_at: rst[_i3]['created_at'] });
+                    that.listItems_unfollow.unshift({ id: rst[_i4]['id'], name: rst[_i4]['name'], text: rst[_i4]['text'], created_at: rst[_i4]['created_at'] });
                 }
 
                 //フォロワー数を更新する
@@ -49256,9 +49308,9 @@ exports.default = {
                 }
 
                 //次のフォロー開始時間を15分後に設定する
-                var _now4 = new Date();
-                var _now_ms4 = _now4.getTime();
-                _Store2.default.setNextUnFollowTime(_now_ms4 + 905000, _now_ms4); //15分後に設定　5秒は気持ち
+                var _now5 = new Date();
+                var _now_ms5 = _now5.getTime();
+                _Store2.default.setNextUnFollowTime(_now_ms5 + 905000, _now_ms5); //15分後に設定　5秒は気持ち
 
                 //自動アンフォローを再開関数を開始する
                 that.$crontab.enableJob('startAutoUnFollow');
@@ -49267,14 +49319,14 @@ exports.default = {
                 console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
                 console.dir($event.response.rst);
                 console.dir($event.response.rst.length);
-                var _result3 = $event.response.rst;
-                var _length4 = $event.response.rst.length;
+                var _result5 = $event.response.rst;
+                var _length5 = $event.response.rst.length;
                 that.listItems_unfollow = []; //listを初期化
-                for (var _i4 = 0; _i4 < _length4; _i4++) {
+                for (var _i5 = 0; _i5 < _length5; _i5++) {
                     //DBから取得したList情報をdatasに格納する
                     //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
                     //HOME画面で上から時系列順に並ぶようにする
-                    that.listItems_unfollow.push({ id: _result3[_i4]['id'], name: _result3[_i4]['name'], text: _result3[_i4]['text'], created_at: _result3[_i4]['created_at'] });
+                    that.listItems_unfollow.push({ id: _result5[_i5]['id'], name: _result5[_i5]['name'], text: _result5[_i5]['text'], created_at: _result5[_i5]['created_at'] });
                 }
             } else {
                 //メッセージ表示
@@ -49291,9 +49343,9 @@ exports.default = {
                 _this2.$set(_this2.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
 
                 //次のフォロー開始時間を15分後に設定する
-                var _now5 = new Date();
-                var _now_ms5 = _now5.getTime();
-                _Store2.default.setNextUnFollowTime(_now_ms5 + 905000, _now_ms5); //15分後に設定　5秒は気持ち
+                var _now6 = new Date();
+                var _now_ms6 = _now6.getTime();
+                _Store2.default.setNextUnFollowTime(_now_ms6 + 905000, _now_ms6); //15分後に設定　5秒は気持ち
                 //自動アンフォローが実行中の場合は実行する
                 that.$crontab.enableJob('startAutoUnFollow');
             }
@@ -49405,12 +49457,12 @@ exports.default = {
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
         }
         //メールは配信のステータスをセットする
-        console.log('Unfollowステータスは：' + _Store2.default.getMailStatus());
+        console.log('メールステータスは：' + _Store2.default.getMailStatus());
         this.MailStatus = _Store2.default.getMailStatus();
         if (this.MailStatus === '0') {
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+            this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', false);
         } else if (this.MailStatus === '1') {
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
+            this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', true);
         }
     },
     methods: {
@@ -50056,7 +50108,7 @@ exports.default = {
                     console.log('リクエストに失敗しました');
                     // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
 
-                    _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
+                    _Store2.default.setMessage($event.response.msg, false);
 
                     var message = _Store2.default.getMessage();
                     if (message.msg !== '') {

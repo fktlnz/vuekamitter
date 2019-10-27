@@ -309,6 +309,49 @@ export default {
                     //HOME画面で上から時系列順に並ぶようにする
                     that.listItems_follow.push({id: result[i]['id'], name:result[i]['name'], text:result[i]['text'], created_at:result[i]['created_at']})                          
                 }
+            }else if($event.response.res === 'SPAM'){
+
+                //アカウントが停止された場合にここに来る
+                //リストを更新して、すべての機能をoffにする
+
+                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
+                console.dir($event.response.rst)
+                console.dir($event.response.rst.length)
+                const result = $event.response.rst
+                const length = $event.response.rst.length
+                that.listItems_follow=[] //listを初期化
+                for(let i=0; i<length; i++){
+                    //DBから取得したList情報をdatasに格納する
+                    //( 古 ,--,---,--->,新)の順で入っているからunshiftにして( 新 ,--,---,--->,古)として
+                    //HOME画面で上から時系列順に並ぶようにする
+                    that.listItems_follow.push({id: result[i]['id'], name:result[i]['name'], text:result[i]['text'], created_at:result[i]['created_at']})                          
+                }
+
+                //自動フォロー停止
+                store.setAutoFollowCronStatus('0')
+                this.AutoFollowCronStatus = '0'
+                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false)
+                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false)
+
+                //自動アンフォロー停止
+                store.setAutoUnFollowCronStatus('0')
+                this.AutoUnFollowCronStatus = '0'
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false)
+                this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false)
+
+                //自動いいね停止
+                store.setAutoLikeCronStatus('0')
+                this.AutoLikeCronStatus = '0'
+                this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false)
+                this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false)
+
+                //メール送信停止
+                store.setMailStatus('0')
+                this.MailStatus = '0'
+                this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', false)
+                controller.changeMailStatus_ajax('0')
+
+
             }else{
                 //メッセージ表示
                 store.setMessage($event.response.msg, false)
@@ -317,14 +360,25 @@ export default {
                     controller.emit_message(message)  
                 }
 
+                //次のフォロー開始時間を15分後に設定する
+                const now = new Date()
+                const now_ms = now.getTime();
+                store.setNextFollowTime(now_ms + 905000, now_ms)//15分後に設定　5秒は気持ち
+
+                console.log('自動フォロー再開ジョブをスタートします')
+                //自動フォローを再開関数を開始する
+                const result = that.$crontab.enableJob('reStartAutoFollow')
+                console.log("enableJob('reStartAutoFollow'):"+result)
+
+
                 //自動フォローを停止中にする
-                store.setAutoFollowCronStatus('0')
-                this.AutoFollowCronStatus = '0'
-                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false)
-                this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false)
+                // store.setAutoFollowCronStatus('0')
+                // this.AutoFollowCronStatus = '0'
+                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false)
+                // this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false)
 
                 //自動フォローが実行中の場合は実行する
-                that.$crontab.enableJob('startAutoFollow')
+                //that.$crontab.enableJob('startAutoFollow')
                 
                 
             }
@@ -560,12 +614,12 @@ export default {
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false)
         }
         //メールは配信のステータスをセットする
-        console.log('Unfollowステータスは：'+store.getMailStatus())
+        console.log('メールステータスは：'+store.getMailStatus())
         this.MailStatus = store.getMailStatus()
         if(this.MailStatus === '0'){
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false)
+            this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', false)
         }else if(this.MailStatus === '1'){
-            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true)
+            this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', true)
         }
 
     },

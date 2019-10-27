@@ -122,7 +122,7 @@ export default {
                     console.log('リクエストに失敗しました')
                     // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
 
-                    store.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false)
+                    store.setMessage($event.response.msg, false)
 
                     const message = store.getMessage();
                     if(message.msg !== ''){
