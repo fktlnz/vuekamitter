@@ -620,13 +620,27 @@ module.exports = new Vue({
     },
 
     /* =========================================================
+    # メール配信
+    ============================================================*/ 
+    //セッションのメール配信状態をセットする
+    changeMailStatus_ajax(status) {
+      return axios.get(URL_BASE + 'changemailstatus?status='+status)
+      .then((res) => {          
+          this.$emit('AJAX_FINISH_CHANGE_MAILSTATUS', {response: res.data});
+      })
+      .catch((res) => {
+        const rst = res.data
+        this.$emit('AJAX_FINISH_CHANGE_MAILSTATUS', {response: rst});
+      })
+    },
+
+    /* =========================================================
     # ログアウト
     ============================================================*/ 
     logout_ajax() {      
       return axios.get(URL_BASE + 'logout')
       .then((res) => {
           //HOME画面にログアウトを知らせる
-          console.log('返ってきた')
           this.$emit('AJAX_FINISH_LOGOUT_RESULT', {response: res.data});
       })
       .catch((res) => {
@@ -637,9 +651,11 @@ module.exports = new Vue({
         this.$emit('AJAX_FINISH_LOGOUT_RESULT', {response: json});
       })
     },
-
        
-
+    /* =========================================================
+    # メッセージ
+    ============================================================*/ 
+    //メッセージを表示する
     emit_message(msg) {
       console.log('メッセージを受信しました！'+msg)
       this.$emit('DISPLAY_MESSAGE', {message: msg})

@@ -36435,6 +36435,7 @@ module.exports = new _vue2.default({
     IsAutoLikeExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
     IsAutoFollowExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
     IsAutoUnFollowExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
+    IsMailExec: '0', //cronが動作中かどうか 0:配信OFF　1:配信ON
     reservedTime: null,
     reserveItem: {
       id: null,
@@ -36512,6 +36513,17 @@ module.exports = new _vue2.default({
     //自動アンフォロー機能のcron状態をセット
     setAutoUnFollowCronStatus: function setAutoUnFollowCronStatus(status) {
       this.IsAutoUnFollowExec = status;
+    },
+
+
+    //メール配信状態を取得
+    getMailStatus: function getMailStatus() {
+      return this.IsMailExec;
+    },
+
+    //メール配信状態をセット
+    setMailStatus: function setMailStatus(status) {
+      this.IsMailExec = status;
     },
 
 
@@ -37258,21 +37270,36 @@ module.exports = new _vue2.default({
 
 
     /* =========================================================
+    # メール配信
+    ============================================================*/
+    //セッションのメール配信状態をセットする
+    changeMailStatus_ajax: function changeMailStatus_ajax(status) {
+      var _this30 = this;
+
+      return _axios2.default.get(URL_BASE + 'changemailstatus?status=' + status).then(function (res) {
+        _this30.$emit('AJAX_FINISH_CHANGE_MAILSTATUS', { response: res.data });
+      }).catch(function (res) {
+        var rst = res.data;
+        _this30.$emit('AJAX_FINISH_CHANGE_MAILSTATUS', { response: rst });
+      });
+    },
+
+
+    /* =========================================================
     # ログアウト
     ============================================================*/
     logout_ajax: function logout_ajax() {
-      var _this30 = this;
+      var _this31 = this;
 
       return _axios2.default.get(URL_BASE + 'logout').then(function (res) {
         //HOME画面にログアウトを知らせる
-        console.log('返ってきた');
-        _this30.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: res.data });
+        _this31.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'ログアウトに失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        _this30.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: json });
+        _this31.$emit('AJAX_FINISH_LOGOUT_RESULT', { response: json });
       });
     }
   }, 'emit_message', function emit_message(msg) {
@@ -48815,9 +48842,9 @@ var _AuthAccount = __webpack_require__(216);
 
 var _AuthAccount2 = _interopRequireDefault(_AuthAccount);
 
-var _message11 = __webpack_require__(7);
+var _message13 = __webpack_require__(7);
 
-var _message12 = _interopRequireDefault(_message11);
+var _message14 = _interopRequireDefault(_message13);
 
 var _Controller = __webpack_require__(2);
 
@@ -48887,13 +48914,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     components: {
         UserInfo: _UserInfo2.default,
         ListItem: _Listitem2.default,
         AuthAccount: _AuthAccount2.default,
-        Message: _message12.default
+        Message: _message14.default
     },
     data: function data() {
         return {
@@ -48910,6 +48944,7 @@ exports.default = {
             AutoLikeCronStatus: '0', //自動イイネ機能の動作状態　0:停止中　1:待機中　2:実行中
             AutoFollowCronStatus: '0', //自動フォロー機能の動作状態　0:停止中　1:待機中　2:実行中
             AutoUnFollowCronStatus: '0', //自動アンフォロー機能の動作状態　0:停止中　1:待機中　2:実行中
+            MailStatus: '0', //メール配信動作状態　0:配信OFF　1:配信ON
             p_status_toggle: {
                 'p-btn_home-like--exec': false,
                 'p-btn_home-like--stay': false
@@ -48921,6 +48956,9 @@ exports.default = {
             p_unfollow_status_toggle: {
                 'p-btn_home-unfollow--exec': false,
                 'p-btn_home-unfollow--stay': false
+            },
+            p_mail_status_toggle: {
+                'p-btn_home-mail--exec': false
             }
         };
     },
@@ -49366,6 +49404,14 @@ exports.default = {
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
         }
+        //メールは配信のステータスをセットする
+        console.log('Unfollowステータスは：' + _Store2.default.getMailStatus());
+        this.MailStatus = _Store2.default.getMailStatus();
+        if (this.MailStatus === '0') {
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
+        } else if (this.MailStatus === '1') {
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true);
+        }
     },
     methods: {
         changeActiveUser: function changeActiveUser($event) {
@@ -49383,7 +49429,7 @@ exports.default = {
                     _this3.follower = $event.response.rst.followers_count; //フォロワー数
                     _this3.friends = $event.response.rst.friends_count; //フォロー数
                     _this3.account_name = $event.response.rst.name; //アカウント名
-                    _this3.description = $event.response.rst.description; //プロフィール文   
+                    _this3.description = $event.response.rst.description; //プロフィール文
                     _this3.img_url = $event.response.rst.profile_image_url_https; //画像URL
 
                     //フォロー数をstoreに格納
@@ -49412,6 +49458,8 @@ exports.default = {
                 }
             });
         },
+
+        //自動いいねの状態を変更する
         changeLikeCronStatus: function changeLikeCronStatus() {
             if (this.AutoLikeCronStatus === '0') {
                 _Store2.default.setAutoLikeCronStatus('1');
@@ -49427,6 +49475,8 @@ exports.default = {
                 //実行中の場合はステータスを変更できないようにする
             }
         },
+
+        //自動フォローの状態を変更する
         changeFollowCronStatus: function changeFollowCronStatus() {
             if (this.AutoFollowCronStatus === '0') {
                 _Store2.default.setAutoFollowCronStatus('1');
@@ -49442,6 +49492,8 @@ exports.default = {
                 //実行中の場合はステータスを変更できないようにする
             }
         },
+
+        //自動アンフォローの状態を変更する
         changeUnFollowCronStatus: function changeUnFollowCronStatus() {
             if (this.AutoUnFollowCronStatus === '0') {
                 _Store2.default.setAutoUnFollowCronStatus('1');
@@ -49457,8 +49509,52 @@ exports.default = {
                 //実行中の場合はステータスを変更できないようにする
             }
         },
-        updateUserInfo: function updateUserInfo() {
+
+
+        //メール配信状態を変更する
+        changeMailStatus: function changeMailStatus() {
             var _this4 = this;
+
+            if (this.MailStatus === '0') {
+                _Store2.default.setMailStatus('1');
+                this.MailStatus = '1';
+                this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', true);
+                _Controller2.default.changeMailStatus_ajax('1');
+                _Controller2.default.$once('AJAX_FINISH_CHANGE_MAILSTATUS', function ($event) {
+                    if ($event.response === false) {
+                        _Store2.default.setMessage('メール配信状態の変更に失敗しました。', false);
+                        var _message10 = _Store2.default.getMessage();
+                        if (_message10.msg !== '') {
+                            _Controller2.default.emit_message(_message10);
+                        }
+                        //配信状態を停止にする
+                        _Store2.default.setMailStatus('0');
+                        _this4.MailStatus = '0';
+                        _this4.$set(_this4.p_mail_status_toggle, 'p-btn_home-mail--exec', false);
+                    }
+                });
+            } else if (this.MailStatus === '1') {
+                _Store2.default.setMailStatus('0');
+                this.MailStatus = '0';
+                this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', false);
+                _Controller2.default.changeMailStatus_ajax('0');
+                _Controller2.default.$once('AJAX_FINISH_CHANGE_MAILSTATUS', function ($event) {
+                    if ($event.response === false) {
+                        _Store2.default.setMessage('メール配信状態の変更に失敗しました。', false);
+                        var _message11 = _Store2.default.getMessage();
+                        if (_message11.msg !== '') {
+                            _Controller2.default.emit_message(_message11);
+                        }
+                        //配信状態を配信ONにする
+                        _Store2.default.setMailStatus('1');
+                        _this4.MailStatus = '1';
+                        _this4.$set(_this4.p_mail_status_toggle, 'p-btn_home-mail--exec', true);
+                    }
+                });
+            }
+        },
+        updateUserInfo: function updateUserInfo() {
+            var _this5 = this;
 
             _Controller2.default.getTwitterProfile_ajax('screen_name');
             _Controller2.default.$once('AJAX_COMPLETE_GETTWITTERPROFILE', function ($event) {
@@ -49466,25 +49562,25 @@ exports.default = {
                 console.dir($event.response.rst);
                 if ($event.response.res === 'OK') {
                     //取得成功時はUser領域更新
-                    _this4.follower = $event.response.rst.followers_count; //フォロワー数
-                    _this4.friends = $event.response.rst.friends_count; //フォロー数
-                    _this4.account_name = $event.response.rst.name; //アカウント名
-                    _this4.description = $event.response.rst.description; //プロフィール文   
-                    _this4.img_url = $event.response.rst.profile_image_url_https; //画像URL
+                    _this5.follower = $event.response.rst.followers_count; //フォロワー数
+                    _this5.friends = $event.response.rst.friends_count; //フォロー数
+                    _this5.account_name = $event.response.rst.name; //アカウント名
+                    _this5.description = $event.response.rst.description; //プロフィール文   
+                    _this5.img_url = $event.response.rst.profile_image_url_https; //画像URL
 
                     //フォロー数をstoreに格納
                     _Store2.default.setFriendsCount($event.response.rst.friends_count);
                 } else if ($event.response.res === 'NOTLOGIN') {
                     console.log('ログインユーザーでないためログイン画面に飛ばします');
-                    _this4.$router.push('/');
+                    _this5.$router.push('/');
                 } else {
                     //失敗したときはメッセージ表示
                     //メッセージ表示
 
                     _Store2.default.setMessage('プロフィールの取得に失敗。アクセス制限orネット環境が悪い可能性があります', false);
-                    var _message10 = _Store2.default.getMessage();
-                    if (_message10.msg !== '') {
-                        _Controller2.default.emit_message(_message10);
+                    var _message12 = _Store2.default.getMessage();
+                    if (_message12.msg !== '') {
+                        _Controller2.default.emit_message(_message12);
                     }
                 }
             });
@@ -68546,7 +68642,7 @@ var render = function() {
               type: "text",
               label: "ユーザー名*",
               name: "username",
-              placeholder: "example"
+              placeholder: "(例)kazukichi"
             },
             on: {
               onChange: function($event) {
@@ -69582,6 +69678,26 @@ var render = function() {
                         : _vm._e()
                     ])
                   ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "c-btn p-status__item",
+                    class: _vm.p_mail_status_toggle,
+                    on: { click: _vm.changeMailStatus }
+                  },
+                  [
+                    _vm._m(4),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm.MailStatus === "0"
+                        ? _c("span", [_vm._v("配信OFF")])
+                        : _vm.MailStatus === "1"
+                        ? _c("span", [_vm._v("配信ON")])
+                        : _vm._e()
+                    ])
+                  ]
                 )
               ])
             ]),
@@ -69663,6 +69779,15 @@ var staticRenderFns = [
     return _c("p", [
       _c("i", { staticClass: "fas fa-heart-broken" }),
       _vm._v(" Unfollow")
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", [
+      _c("i", { staticClass: "fas fa-paper-plane" }),
+      _vm._v(" Mail")
     ])
   }
 ]
@@ -94984,12 +95109,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("InputForm", {
-            attrs: {
-              type: "text",
-              label: "ユーザー名*",
-              name: "username",
-              placeholder: "example"
-            },
+            attrs: { type: "text", label: "ユーザー名*", name: "username" },
             on: {
               onChange: function($event) {
                 return _vm.onChange($event)
@@ -94998,12 +95118,7 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("InputForm", {
-            attrs: {
-              type: "text",
-              label: "メールアドレス*",
-              name: "email",
-              placeholder: "example"
-            },
+            attrs: { type: "text", label: "メールアドレス*", name: "email" },
             on: {
               onChange: function($event) {
                 return _vm.onChange($event)

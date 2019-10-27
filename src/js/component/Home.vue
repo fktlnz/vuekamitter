@@ -33,6 +33,13 @@
                        <span v-else-if=" AutoUnFollowCronStatus === '1' ">待機中...</span>
                        <span v-else-if=" AutoUnFollowCronStatus === '2' ">実行中...</span>                       
                     </p>
+                </li>
+               <li class="c-btn p-status__item" :class="p_mail_status_toggle" v-on:click="changeMailStatus">
+                    <p><i class="fas fa-paper-plane"></i> Mail</p>
+                    <p>
+                       <span v-if=" MailStatus === '0' ">配信OFF</span>
+                       <span v-else-if=" MailStatus === '1' ">配信ON</span>
+                    </p>
                 </li>               
            </ul>
        </div>       
@@ -83,6 +90,7 @@ export default {
             AutoLikeCronStatus: '0',//自動イイネ機能の動作状態　0:停止中　1:待機中　2:実行中
             AutoFollowCronStatus: '0',//自動フォロー機能の動作状態　0:停止中　1:待機中　2:実行中
             AutoUnFollowCronStatus: '0',//自動アンフォロー機能の動作状態　0:停止中　1:待機中　2:実行中
+            MailStatus: '0',//メール配信動作状態　0:配信OFF　1:配信ON
             p_status_toggle: {
                 'p-btn_home-like--exec' : false,
                 'p-btn_home-like--stay' : false,
@@ -94,6 +102,9 @@ export default {
             p_unfollow_status_toggle: {
                 'p-btn_home-unfollow--exec' : false,
                 'p-btn_home-unfollow--stay' : false,
+            },
+            p_mail_status_toggle: {
+                'p-btn_home-mail--exec' : false,
             },
         }
     }, 
@@ -548,9 +559,15 @@ export default {
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true)
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false)
         }
-        
+        //メールは配信のステータスをセットする
+        console.log('Unfollowステータスは：'+store.getMailStatus())
+        this.MailStatus = store.getMailStatus()
+        if(this.MailStatus === '0'){
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false)
+        }else if(this.MailStatus === '1'){
+            this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', true)
+        }
 
-        
     },
     methods: {
         changeActiveUser($event){
@@ -566,7 +583,7 @@ export default {
                     this.follower = $event.response.rst.followers_count //フォロワー数
                     this.friends = $event.response.rst.friends_count    //フォロー数
                     this.account_name = $event.response.rst.name        //アカウント名
-                    this.description = $event.response.rst.description  //プロフィール文   
+                    this.description = $event.response.rst.description  //プロフィール文
                     this.img_url = $event.response.rst.profile_image_url_https //画像URL
 
                     //フォロー数をstoreに格納
@@ -596,6 +613,7 @@ export default {
                 }
             })
         },
+        //自動いいねの状態を変更する
         changeLikeCronStatus() {            
             if(this.AutoLikeCronStatus === '0'){
                 store.setAutoLikeCronStatus('1')
@@ -612,6 +630,7 @@ export default {
             }
             
         },
+        //自動フォローの状態を変更する
         changeFollowCronStatus() {
             if(this.AutoFollowCronStatus === '0'){
                 store.setAutoFollowCronStatus('1')
@@ -628,6 +647,7 @@ export default {
             }
             
         },
+        //自動アンフォローの状態を変更する
         changeUnFollowCronStatus() {            
             if(this.AutoUnFollowCronStatus === '0'){
                 store.setAutoUnFollowCronStatus('1')
@@ -644,6 +664,51 @@ export default {
             }
             
         },
+
+        //メール配信状態を変更する
+        changeMailStatus() {            
+            if(this.MailStatus === '0'){
+                store.setMailStatus('1')
+                this.MailStatus = '1'
+                this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', true)
+                controller.changeMailStatus_ajax('1')
+                controller.$once('AJAX_FINISH_CHANGE_MAILSTATUS', ($event) => {
+                    if($event.response === false){                        
+                        store.setMessage('メール配信状態の変更に失敗しました。', false)
+                        const message = store.getMessage();
+                        if(message.msg !== ''){
+                            controller.emit_message(message)  
+                        }
+                        //配信状態を停止にする
+                        store.setMailStatus('0')
+                        this.MailStatus = '0'
+                        this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', false)
+                    }
+
+                })
+            }else if(this.MailStatus === '1') {
+                store.setMailStatus('0')
+                this.MailStatus = '0'
+                this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', false)
+                controller.changeMailStatus_ajax('0')
+                controller.$once('AJAX_FINISH_CHANGE_MAILSTATUS', ($event) => {
+                    if($event.response === false){                        
+                        store.setMessage('メール配信状態の変更に失敗しました。', false)
+                        const message = store.getMessage();
+                        if(message.msg !== ''){
+                            controller.emit_message(message)  
+                        }
+                        //配信状態を配信ONにする
+                        store.setMailStatus('1')
+                        this.MailStatus = '1'
+                        this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', true)
+                    }
+
+                })
+            }
+            
+        },
+
         updateUserInfo() {
             controller.getTwitterProfile_ajax('screen_name')
             controller.$once('AJAX_COMPLETE_GETTWITTERPROFILE', ($event) => {

@@ -12,7 +12,7 @@
                 </transition-group>
             </ul>                       
         </div>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="ユーザー名*" name="username" placeholder="example"></InputForm>        
+        <InputForm v-on:onChange="onChange($event)" type="text" label="ユーザー名*" name="username" placeholder="(例)kazukichi"></InputForm>        
         <InputForm v-on:onChange="onChange($event)" type="password" label="パスワード*" name="password" placeholder=""></InputForm>
     </div>
     <div class="txt_center">

@@ -56,6 +56,7 @@ $color_heading_twtschedule: rgb(188, 253, 197);
 }
 .p-heading__title {
     background-color: $color_gray;
+    margin-bottom: 40px;
 }
 
 /* ===スクロールバーカスタム=== */
@@ -269,6 +270,10 @@ $color_heading_twtschedule: rgb(188, 253, 197);
 .p-status-wrap .p-btn_home-unfollow--stay {
     color: white;
     background-color: rgb(235, 188, 253);
+}
+.p-status-wrap .p-btn_home-mail--exec {
+    color: white;
+    background-color: rgb(255, 221, 146);
 }
 
 .p-status-wrap {

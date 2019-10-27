@@ -33,6 +33,7 @@
 
 .p-heading__title {
   background-color: #dcdcdc;
+  margin-bottom: 40px;
 }
 
 /* ===スクロールバーカスタム=== */
@@ -251,6 +252,11 @@
 .p-status-wrap .p-btn_home-unfollow--stay {
   color: white;
   background-color: #ebbcfd;
+}
+
+.p-status-wrap .p-btn_home-mail--exec {
+  color: white;
+  background-color: #ffdd92;
 }
 
 .p-status-wrap {

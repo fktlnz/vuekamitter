@@ -363,7 +363,6 @@ td input {
   padding: 0px 20px;
   color: white;
   cursor: pointer;
-  margin-bottom: 40px;
 }
 
 .c-heading:hover {
@@ -534,6 +533,7 @@ td input {
 
 .p-heading__title {
   background-color: #dcdcdc;
+  margin-bottom: 40px;
 }
 
 /* ===スクロールバーカスタム=== */
@@ -752,6 +752,11 @@ td input {
 .p-status-wrap .p-btn_home-unfollow--stay {
   color: white;
   background-color: #ebbcfd;
+}
+
+.p-status-wrap .p-btn_home-mail--exec {
+  color: white;
+  background-color: #ffdd92;
 }
 
 .p-status-wrap {

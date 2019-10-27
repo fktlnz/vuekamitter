@@ -21,6 +21,7 @@ module.exports = new Vue({
       IsAutoLikeExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
       IsAutoFollowExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
       IsAutoUnFollowExec: '0', //cronが動作中かどうか 0:停止中　1:待機中　2:実行中
+      IsMailExec: '0', //cronが動作中かどうか 0:配信OFF　1:配信ON
       reservedTime: null,
       reserveItem: {
         id: null,
@@ -89,6 +90,15 @@ module.exports = new Vue({
     //自動アンフォロー機能のcron状態をセット
     setAutoUnFollowCronStatus(status) {
       this.IsAutoUnFollowExec = status
+    },
+
+    //メール配信状態を取得
+    getMailStatus() {
+      return this.IsMailExec
+    },
+    //メール配信状態をセット
+    setMailStatus(status) {
+      this.IsMailExec = status
     },
 
     //アクティブユーザーのフォロー数をセットする
