@@ -45,9 +45,7 @@ export default {
     },
     methods: {
         onChange($event){
-            console.log('event@PassRemindSend')
-            console.dir($event.input.value);
-            console.dir($event.input);           
+            // console.log('event@PassRemindSend')
             this.code=$event.input.value            
         },
         makeRePassword(){
@@ -74,8 +72,7 @@ export default {
             }
             controller.passRemindRecieve_ajax(this.code)
             controller.$once('AJAX_COMPLETE_PASSREMINDRECIEVE', ($event) => {
-                console.log('フロントに帰ってきたデータ↓')
-                console.dir($event.response)
+                // console.log('フロントに帰ってきたデータ↓')
                 if($event.response.res === 'OK'){
                     //メッセージ表示
                     store.setMessage($event.response.msg, true)

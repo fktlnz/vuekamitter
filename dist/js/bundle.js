@@ -36396,7 +36396,7 @@ function startAutoUnFollow() {
 
     //5000人以上になったらアンフォローする
     //アンフォローは15分は最低あける（アンフォローをしても5000人をした回らない場合にアンフォローが何度も繰り返されてしまうため）
-    if (_Store2.default.getFriendsCount() > 600 && UnFollowTime < now_ms && _Store2.default.getAutoUnFollowCronStatus() === '1') {
+    if (_Store2.default.getFriendsCount() > 5000 && UnFollowTime < now_ms && _Store2.default.getAutoUnFollowCronStatus() === '1') {
 
         //自動アンフォローを開始する
         _Controller2.default.startAutoUnFollow_ajax();
@@ -36458,15 +36458,11 @@ module.exports = new _vue2.default({
       //message初期化
       this.message = { msg: '', status: false };
       console.dir(msg);
-      console.dir(this.message);
       return msg;
     },
 
     // プロパティ名を指定してデータを取得
     setMessage: function setMessage(msg, status) {
-      console.log('setMessage');
-      console.dir(msg);
-      console.dir(status);
       this.message.msg = msg;
       this.message.status = status;
     },
@@ -36543,16 +36539,16 @@ module.exports = new _vue2.default({
       this.IstweetwatchJobExec = status;
     },
     getReservedTime: function getReservedTime() {
-      console.log('予約時間を取得します：' + this.reservedTime);
+      // console.log('予約時間を取得します：'+this.reservedTime)
       return this.reservedTime;
     },
     setReservedTime: function setReservedTime(time) {
-      console.log('予約時間を設置します：' + time);
+      // console.log('予約時間を設置します：'+time)
       this.reservedTime = time;
     },
     getReservedItem: function getReservedItem() {
-      console.log('予約情報を取得します');
-      console.dir(this.reserveItem);
+      // console.log('予約情報を取得します')
+      // console.dir(this.reserveItem)
       return this.reserveItem;
     },
     setReservedItem: function setReservedItem(id, time, text) {
@@ -36561,23 +36557,23 @@ module.exports = new _vue2.default({
       this.reserveItem.reserveTime = time;
       this.reserveItem.text = text;
 
-      console.log('予約情報　id：' + this.reserveItem.id);
-      console.log('予約情報　reserveTime：' + this.reserveItem.reserveTime);
-      console.log('予約情報　text：' + this.reserveItem.text);
+      // console.log('予約情報　id：'+this.reserveItem.id)
+      // console.log('予約情報　reserveTime：'+this.reserveItem.reserveTime)
+      // console.log('予約情報　text：'+this.reserveItem.text)
     },
     setNextFollowTime: function setNextFollowTime(nexttime, now) {
       this.reFollowTime.next = nexttime;
       this.reFollowTime.now = now;
-      console.log('次のフォロー開始時間：');
-      console.dir(this.reFollowTime);
+      // console.log('次のフォロー開始時間：')
+      // console.dir(this.reFollowTime)
     },
     getNextFollowTime: function getNextFollowTime() {
       return this.reFollowTime;
     },
     setNextUnFollowTime: function setNextUnFollowTime(nexttime) {
       this.UnFollowTime = nexttime;
-      console.log('次のアンフォロー開始時間：');
-      console.dir(this.UnFollowTime);
+      // console.log('次のアンフォロー開始時間：')
+      // console.dir(this.UnFollowTime)
     },
     getNextUnFollowTime: function getNextUnFollowTime() {
       return this.UnFollowTime;
@@ -37895,9 +37891,6 @@ exports.default = {
     },
     methods: {
         onChange: function onChange($event) {
-            console.log('event@SignUp');
-            console.dir($event.input.value);
-            console.dir($event.input);
             var name = $event.input.name;
             if (name === "username") {
                 this.data.username = $event.input.value;
@@ -37912,16 +37905,14 @@ exports.default = {
         signUp: function signUp() {
             var _this = this;
 
-            console.dir(this.data);
             _Controller2.default.signUp_ajax(this.data);
             _Controller2.default.$on('AJAX_COMPLETE_SIGNUP', function ($event) {
-                console.log('処理がフロントに帰ってきました');
-                console.dir($event.response);
+                // console.log('処理がフロントに帰ってきました')
+                //     console.dir($event.response)
                 if ($event.response.res === 'OK') {
                     _this.$router.push('/home');
                 }
                 _this.errors = $event.response;
-                console.log(_this.errors);
             });
         }
     }
@@ -37956,7 +37947,6 @@ exports.default = {
     },
     methods: {
         onChange: function onChange($event) {
-            console.log('text変更@inputForm');
             this.$emit('onChange', { input: $event.target });
         }
     }
@@ -38020,9 +38010,6 @@ exports.default = {
     },
     methods: {
         onChange: function onChange($event) {
-            console.log('event@SignUp');
-            console.dir($event.input.value);
-            console.dir($event.input);
             var name = $event.input.name;
             if (name === "username") {
                 this.data.username = $event.input.value;
@@ -38033,17 +38020,15 @@ exports.default = {
         signIn: function signIn() {
             var _this = this;
 
-            console.dir(this.data);
             _Controller2.default.signIn_ajax(this.data);
             _Controller2.default.$once('AJAX_COMPLETE_SIGNIN', function ($event) {
-                console.log('フロントに帰ってきたデータ↓');
-                console.dir($event.response);
+                // console.log('フロントに帰ってきたデータ↓')
+                // console.dir($event.response)
                 if ($event.response.res === 'OK') {
                     _Store2.default.setMessage('ログインに成功しました', true);
                     _this.$router.push('/home');
                 } else {
                     _this.errors = $event.response;
-                    console.log(_this.errors);
                 }
             });
         }
@@ -38144,7 +38129,7 @@ exports.default = {
             var _this = this;
 
             _Controller2.default.$on('DISPLAY_MESSAGE', function (event) {
-                console.log('メッセージを表示します=>' + event.message.msg);
+                // console.log('メッセージを表示します=>'+event.message.msg)
                 _this.status = event.message.status;
                 _this.msg = event.message.msg;
                 _this.visible = true;
@@ -49713,11 +49698,8 @@ exports.default = {
         logout: function logout() {
             var _this = this;
 
-            console.log('clicked');
             _Controller2.default.logout_ajax();
             _Controller2.default.$once('AJAX_FINISH_LOGOUT_RESULT', function ($event) {
-                console.log('ログアウトします');
-                console.log($event.response);
                 if ($event.response.res === true) {
                     //メッセージ表示
                     _Store2.default.setMessage('ログアウトしました', true);
@@ -49776,7 +49758,6 @@ exports.default = {
     },
     methods: {
         deleteItem: function deleteItem(id) {
-            console.log('delete-btn clicked!!' + id.item_id);
             this.$emit('delete-item', { listId: id.item_id });
             this.datas = _lodash2.default.reject(this.datas, { 'id': id.item_id });
         }
@@ -49909,7 +49890,6 @@ exports.default = (_props$data$component = {
         var route = this.heading;
         if (route === 'unFollow') return;
         if (route === 'follow') route = 'target';
-        console.log('route:' + route);
         this.$router.push('/' + route);
     },
     onClickKeyword: function onClickKeyword() {
@@ -50249,20 +50229,16 @@ exports.default = {
     },
     methods: {
         toggleDone: function toggleDone() {
-            console.log('clicked');
             this.isDone = !this.isDone;
             this.$set(this.classNameLi, 'list__item-done', this.isDone);
             this.$set(this.classNameIcon, 'fa-circle', !this.isDone);
             this.$set(this.classNameIcon, 'fa-check-circle', this.isDone);
         },
         deleteItem: function deleteItem(id) {
-            console.log('delete-btn clicked!!' + id.item_id);
             this.$emit('delete-item', { listId: id.item_id });
             this.datas = _lodash2.default.reject(this.datas, { 'id': id.item_id });
         },
         changeActiveUser: function changeActiveUser($event) {
-            console.log('changeactiveuser');
-            console.log($event.active_user);
             this.activeUser = $event.active_user;
             //親コンポーネントにアクティブユーザーを渡す
             this.$emit('change-active-user', { active_user: $event.active_user });
@@ -50354,18 +50330,15 @@ exports.default = {
             var _this = this;
 
             var that = this; //thisを退避
-            console.log('changeUser clicked!');
-            console.log('アカウント：' + that.data.account);
-
             _Controller2.default.getUserInfo_ajax(this.data.account);
             _Controller2.default.$on('AJAX_COMPLETE_GETUSERINFO', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('getuserinfoが帰ってきたよ');
-                    console.dir($event.response);
+                    // console.log('getuserinfoが帰ってきたよ')
+                    // console.dir($event.response)
                     _this.$set(_this.classNameIconPerson, 'p-user-selected', that.data.account === $event.response.active_user);
                     // this.active_user = $event.response.active_user
-                    console.log('アクティブユーザーはこれです：' + $event.response.active_user);
+                    // console.log('アクティブユーザーはこれです：'+$event.response.active_user)
                     //親コンポーネントにアクティブユーザーを渡す
                     _this.$emit('change-active-user', { active_user: $event.response.active_user });
                     //メッセージを表示する
@@ -50376,12 +50349,7 @@ exports.default = {
                         _Controller2.default.emit_message(message);
                     }
                 } else {
-                    _this.loading = false;
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
                     _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
-
                     var _message = _Store2.default.getMessage();
                     if (_message.msg !== '') {
                         _Controller2.default.emit_message(_message);
@@ -50396,19 +50364,15 @@ exports.default = {
             _Controller2.default.$on('AJAX_COMPLETE_GETACTIVEUSER', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('getactiveuserが帰ってきたよ');
-                    console.dir($event.response);
+                    // console.log('getactiveuserが帰ってきたよ')
+                    // console.dir($event.response)
                     _this2.$set(_this2.classNameIconPerson, 'p-user-selected', _this2.data.account === $event.response.active_user);
                     // this.active_user = $event.response.active_user
-                    console.log('アクティブユーザーはこれです：' + $event.response.active_user);
+                    // console.log('アクティブユーザーはこれです：'+$event.response.active_user)                    
                     //親コンポーネントにアクティブユーザーを渡す
                     _this2.$emit('change-active-user', { active_user: $event.response.active_user });
                 } else {
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
                     _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
-
                     var message = _Store2.default.getMessage();
                     if (message.msg !== '') {
                         _Controller2.default.emit_message(message);
@@ -50502,8 +50466,8 @@ exports.default = {
         //ログインチェック結果
         _Controller2.default.checkLogin_ajax();
         _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
-            console.log($event.response.res);
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if ($event.response.res === 'NOTLOGIN') {
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。');
@@ -50523,12 +50487,10 @@ exports.default = {
             this.$router.push('/home');
         },
         onChangeOption: function onChangeOption(event) {
-            console.log(event.target.value + ':' + event.target.selectedIndex);
             this.option_num = event.target.selectedIndex;
             this.option_text = event.target.value;
         },
         onChange: function onChange(event) {
-            console.log(event.input.value);
             this.likeWord = event.input.value;
         },
         addItem: function addItem() {
@@ -50550,8 +50512,8 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_SAVELIKEWORD', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_SAVELIKEWORD');
-                    console.dir($event.response.rst);
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_SAVELIKEWORD')
+                    // console.dir($event.response.rst)
 
                     //Listに追加する
                     _this2.datas.push({ id: word_id, text: '[' + _this2.option_text + ']  ' + _this2.likeWord, option: _this2.option_num });
@@ -50577,16 +50539,14 @@ exports.default = {
 
         },
         updateDatas: function updateDatas() {
-            var _this3 = this;
-
             var that = this;
             _Controller2.default.getKeyword_ajax(1); //引数(キーワードタイプ（0:フォロワーサーチ 1:いいねキーワード）)
             _Controller2.default.$once('AJAX_COMPLETE_GETLIKEWORD', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_GETLIKEWORD');
-                    console.dir($event.response.rst);
-                    console.dir($event.response.rst.length);
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_GETLIKEWORD')
+                    // console.dir($event.response.rst)
+                    // console.dir($event.response.rst.length)
                     var result = $event.response.rst;
                     var length = $event.response.rst.length;
                     that.datas = [];
@@ -50603,15 +50563,7 @@ exports.default = {
 
                         that.datas.push({ id: result[i]['id'], text: '[' + optionText + ']  ' + result[i]['word'] });
                     }
-
-                    console.log('that.data push後');
-                    console.log(that.datas);
-
-                    //this.datas.push({id: this.getId(), date:this.yourValue, text:this.text, isDone:false})                 
                 } else {
-                    _this3.loading = false;
-                    console.log('リクエストに失敗しました');
-
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
                     var _message4 = _Store2.default.getMessage();
@@ -50622,15 +50574,13 @@ exports.default = {
             });
         },
         deleteItem: function deleteItem(id) {
-            var _this4 = this;
-
-            console.log('delete-btn clicked!!' + id.listId);
+            var _this3 = this;
 
             _Controller2.default.deleteKeyword_ajax(id.listId, 1); //引数(キーワードID, キーワードタイプ（0:フォロワーサーチ 1:いいねキーワード）)
             _Controller2.default.$once('AJAX_COMPLETE_DELETELIKEWORD', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETELIKEWORD');
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_DELETELIKEWORD') 
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
                     var _message5 = _Store2.default.getMessage();
@@ -50638,11 +50588,8 @@ exports.default = {
                         _Controller2.default.emit_message(_message5);
                     }
 
-                    _this4.datas = _lodash2.default.reject(_this4.datas, { 'id': id.listId });
+                    _this3.datas = _lodash2.default.reject(_this3.datas, { 'id': id.listId });
                 } else {
-                    _this4.loading = false;
-                    console.log('リクエストに失敗しました');
-
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
                     var _message6 = _Store2.default.getMessage();
@@ -50741,7 +50688,6 @@ exports.default = {
         _Controller2.default.checkLogin_ajax();
         _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
             console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
-            console.log($event.response.res);
             if ($event.response.res === 'NOTLOGIN') {
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。');
@@ -50761,12 +50707,10 @@ exports.default = {
             this.$router.push('/home');
         },
         onChangeOption: function onChangeOption(event) {
-            console.log(event.target.value + ':' + event.target.selectedIndex);
             this.option_num = event.target.selectedIndex;
             this.option_text = event.target.value;
         },
         onChange: function onChange(event) {
-            console.log(event.input.value);
             this.searchText = event.input.value;
         },
         addItem: function addItem(event) {
@@ -50788,8 +50732,6 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_SAVEFOLLOWERSEARCHWORD');
-                    console.dir($event.response.rst);
 
                     //Listに追加する
                     _this2.datas.push({ id: word_id, text: '[' + _this2.option_text + ']  ' + _this2.searchText, option: _this2.option_num });
@@ -50819,9 +50761,6 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_GETFOLLOWERSEARCHWORD', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_GETFOLLOWERSEARCHWORD');
-                    console.dir($event.response.rst);
-                    console.dir($event.response.rst.length);
                     var result = $event.response.rst;
                     var length = $event.response.rst.length;
                     that.datas = [];
@@ -50838,11 +50777,6 @@ exports.default = {
 
                         that.datas.push({ id: result[i]['id'], text: '[' + optionText + ']  ' + result[i]['word'] });
                     }
-
-                    console.log('that.data push後');
-                    console.log(that.datas);
-
-                    //this.datas.push({id: this.getId(), date:this.yourValue, text:this.text, isDone:false})                 
                 } else {
                     _this3.loading = false;
                     console.log('リクエストに失敗しました');
@@ -50859,13 +50793,11 @@ exports.default = {
         deleteItem: function deleteItem(id) {
             var _this4 = this;
 
-            console.log('delete-btn clicked!!' + id.listId);
-
             _Controller2.default.deleteKeyword_ajax(id.listId, 0); //引数(キーワードID, キーワードタイプ（0:フォロワーサーチ 1:いいねキーワード）)
             _Controller2.default.$once('AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD');
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_DELETEFOLLOWERSEARCHWORD') 
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
                     var _message5 = _Store2.default.getMessage();
@@ -50876,8 +50808,6 @@ exports.default = {
                     _this4.datas = _lodash2.default.reject(_this4.datas, { 'id': id.listId });
                 } else {
                     _this4.loading = false;
-                    console.log('リクエストに失敗しました');
-
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
                     var _message6 = _Store2.default.getMessage();
@@ -50968,8 +50898,8 @@ exports.default = {
         //ログインチェック結果
         _Controller2.default.checkLogin_ajax();
         _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
-            console.log($event.response.res);
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if ($event.response.res === 'NOTLOGIN') {
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。');
@@ -50989,7 +50919,6 @@ exports.default = {
             this.$router.push('/home');
         },
         onChange: function onChange(event) {
-            console.log(event.input.value);
             this.screen_name = event.input.value;
         },
         deleteItem: function deleteItem(id) {
@@ -50999,7 +50928,7 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_DELETETARGETACCOUNT', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETARGETACCOUNT');
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETARGETACCOUNT') 
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
                     var _message = _Store2.default.getMessage();
@@ -51009,9 +50938,6 @@ exports.default = {
 
                     _this2.datas = _lodash2.default.reject(_this2.datas, { 'id': id.listId });
                 } else {
-                    _this2.loading = false;
-                    console.log('リクエストに失敗しました');
-
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
                     var _message2 = _Store2.default.getMessage();
@@ -51040,8 +50966,7 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_CHECKUSERACCOUNTEXIST');
-                    console.log('取得に成功：アカウント存在or存在しない');
+                    // console.log('取得に成功：アカウント存在or存在しない')
                     console.dir($event.response.rst);
                     _this3.IsExist = true;
                     if (!$event.response.rst) {
@@ -51054,8 +50979,8 @@ exports.default = {
                         }
                         _this3.IsExist = false;
                     } else {
-                        console.log('アカウント存在します');
-                        console.log('this.IsExist：' + _this3.IsExist);
+                        // console.log('アカウント存在します')
+                        // console.log('this.IsExist：'+this.IsExist)
                         if (_this3.IsExist) {
                             var word_id = _this3.getId();
                             _Controller2.default.saveUserAccount_ajax(word_id, _this3.screen_name, 0); //引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
@@ -51106,9 +51031,9 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_GETTARGETACCOUNT', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_GETTARGETACCOUNT');
-                    console.dir($event.response.rst);
-                    console.dir($event.response.rst.length);
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_GETTARGETACCOUNT')
+                    // console.dir($event.response.rst)
+                    // console.dir($event.response.rst.length)
                     var result = $event.response.rst;
                     var length = $event.response.rst.length;
                     that.datas = [];
@@ -51238,8 +51163,8 @@ exports.default = {
         //ログインチェック結果
         _Controller2.default.checkLogin_ajax();
         _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
-            console.log($event.response.res);
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if ($event.response.res === 'NOTLOGIN') {
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。');
@@ -51273,9 +51198,6 @@ exports.default = {
             this.$router.push('/home');
         },
         onChange: function onChange(event) {
-            console.log(event.input.name);
-            console.log(event.input.value);
-            console.log(this.yourValue);
             if (event.input.name === 'date') {
                 this.date = event.input.value;
             } else if (event.input.name === 'text') {
@@ -51290,9 +51212,9 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_GETTWEETSCHEDULE', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_GETTWEETSCHEDULE');
-                    console.dir($event.response.rst);
-                    console.dir($event.response.rst.length);
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_GETTWEETSCHEDULE')
+                    // console.dir($event.response.rst)
+                    // console.dir($event.response.rst.length)
                     var result = $event.response.rst;
                     var length = $event.response.rst.length;
                     _this2.datas = [];
@@ -51300,15 +51222,7 @@ exports.default = {
                         //DBから取得したList情報をdatasに格納する
                         that.datas.push({ id: result[i]['id'], date: result[i]['date'], text: result[i]['text'], isDone: result[i]['done_flg'] });
                     }
-
-                    console.log('that.data push後');
-                    console.log(that.datas);
-
-                    //this.datas.push({id: this.getId(), date:this.yourValue, text:this.text, isDone:false})                 
                 } else {
-                    _this2.loading = false;
-                    console.log('リクエストに失敗しました');
-
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
                     var _message = _Store2.default.getMessage();
@@ -51319,21 +51233,16 @@ exports.default = {
             });
         },
         makeDatas: function makeDatas() {
-            // 今のリスト項目を退避
-            // const datas_ = Object.assign([],this.datas)
-            // console.dir(datas_)
             return this.datas;
         },
         deleteItem: function deleteItem(id) {
             var _this3 = this;
 
-            console.log('delete-btn clicked!!' + id.listId);
-
             _Controller2.default.deleteTweetSchedule_ajax(id.listId);
             _Controller2.default.$once('AJAX_COMPLETE_DELETETWEETSCHEDULE', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETWEETSCHEDULE');
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETWEETSCHEDULE') 
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
                     var _message2 = _Store2.default.getMessage();
@@ -51343,8 +51252,7 @@ exports.default = {
 
                     _this3.datas = _lodash2.default.reject(_this3.datas, { 'id': id.listId });
                 } else {
-                    console.log('リクエストに失敗しました');
-
+                    // console.log('リクエストに失敗しました')
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
                     var _message3 = _Store2.default.getMessage();
@@ -51376,9 +51284,9 @@ exports.default = {
             //何ms後にツイートをするのか
             var dif_time = reserveTime - now_ms;
 
-            console.log('reserveTime' + reserveTime);
-            console.log('now_ms' + now_ms);
-            console.log('dif_time:' + dif_time);
+            // console.log('reserveTime'+reserveTime)
+            // console.log('now_ms'+now_ms)
+            // console.log('dif_time:'+dif_time)
             //過去の時間を指定していた場合
             if (dif_time <= 0) {
                 _Store2.default.setMessage('過去の時間は設定することができません', false);
@@ -51398,8 +51306,8 @@ exports.default = {
             _Controller2.default.$once('AJAX_COMPLETE_SAVETWEETSCHEDULE', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_SAVETWEETSCHEDULE');
-                    console.dir($event.response);
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_SAVETWEETSCHEDULE')
+                    // console.dir($event.response)
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
                     var _message6 = _Store2.default.getMessage();
@@ -51414,10 +51322,6 @@ exports.default = {
                     //Listに追加
                     that.datas.push({ id: id, date: that.yourValue, text: that.text, isDone: false });
                 } else {
-                    _this4.loading = false;
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, false);
                     var _message7 = _Store2.default.getMessage();
@@ -51426,14 +51330,6 @@ exports.default = {
                     }
                 }
             });
-        },
-        searchItem: function searchItem(event) {
-            // 今のリスト項目を退避
-            var datas_ = Object.assign([], this.datas);
-            console.dir(datas_);
-            console.dir('検索テキスト：' + event.searchText);
-            this.searchText = event.searchText;
-            this.makeDatas();
         },
 
         getId: function getId() {
@@ -63684,7 +63580,6 @@ exports.default = {
     },
     methods: {
         deleteItem: function deleteItem(id) {
-            console.log('delete-btn clicked!!' + id.item_id);
             this.$emit('delete-item', { listId: id.item_id });
             this.datas = _lodash2.default.reject(this.datas, { 'id': id.item_id });
         }
@@ -63801,9 +63696,6 @@ exports.default = {
     mounted: function mounted() {},
     methods: {
         onChange: function onChange($event) {
-            console.log('event@PassRemindSend');
-            console.dir($event.input.value);
-            console.dir($event.input);
             var name = $event.input.name;
             if (name === "username") {
                 this.username = $event.input.value;
@@ -63851,8 +63743,6 @@ exports.default = {
 
             _Controller2.default.passRemindSend_ajax(this.username, this.email);
             _Controller2.default.$once('AJAX_COMPLETE_PASSREMINDSEND', function ($event) {
-                console.log('フロントに帰ってきたデータ↓');
-                console.dir($event.response);
                 if ($event.response.res === 'OK') {
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
@@ -63957,9 +63847,7 @@ exports.default = {
     },
     methods: {
         onChange: function onChange($event) {
-            console.log('event@PassRemindSend');
-            console.dir($event.input.value);
-            console.dir($event.input);
+            // console.log('event@PassRemindSend')
             this.code = $event.input.value;
         },
         makeRePassword: function makeRePassword() {
@@ -63988,8 +63876,7 @@ exports.default = {
             }
             _Controller2.default.passRemindRecieve_ajax(this.code);
             _Controller2.default.$once('AJAX_COMPLETE_PASSREMINDRECIEVE', function ($event) {
-                console.log('フロントに帰ってきたデータ↓');
-                console.dir($event.response);
+                // console.log('フロントに帰ってきたデータ↓')
                 if ($event.response.res === 'OK') {
                     //メッセージ表示
                     _Store2.default.setMessage($event.response.msg, true);
@@ -64455,11 +64342,6 @@ exports.default = function () {
     }]);
     _vueCrontab2.default.disableJob('tweetwatch');
     _vueCrontab2.default.disableJob('reStartAutoFollow');
-    console.log(result);
-    console.log(result2);
-    console.log(result3);
-    console.log(result4);
-    console.log(result5);
 };
 
 /***/ }),

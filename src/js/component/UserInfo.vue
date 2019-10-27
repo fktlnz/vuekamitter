@@ -45,11 +45,8 @@ export default {
     },    
     methods: {
         logout(){
-            console.log('clicked')
             controller.logout_ajax()
             controller.$once('AJAX_FINISH_LOGOUT_RESULT', ($event) => {
-                console.log('ログアウトします')
-                console.log($event.response)
                 if($event.response.res === true){
                      //メッセージ表示
                     store.setMessage('ログアウトしました', true)

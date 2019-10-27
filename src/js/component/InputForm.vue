@@ -22,7 +22,6 @@ export default {
     },
     methods: {
         onChange($event) {
-            console.log('text変更@inputForm')
             this.$emit('onChange', {input: $event.target})
         }
     }

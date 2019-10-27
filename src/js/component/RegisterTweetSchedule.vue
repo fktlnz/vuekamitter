@@ -51,8 +51,8 @@ export default {
         //ログインチェック結果
         controller.checkLogin_ajax()
         controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
-            console.log($event.response.res)
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
@@ -89,9 +89,6 @@ export default {
             this.$router.push('/home')
         },        
         onChange(event) {
-            console.log(event.input.name);
-            console.log(event.input.value);
-            console.log(this.yourValue)
             if(event.input.name ==='date'){
                 this.date = event.input.value
             }else if(event.input.name ==='text') {
@@ -105,9 +102,9 @@ export default {
             controller.$once('AJAX_COMPLETE_GETTWEETSCHEDULE', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_GETTWEETSCHEDULE')
-                    console.dir($event.response.rst)
-                    console.dir($event.response.rst.length)
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_GETTWEETSCHEDULE')
+                    // console.dir($event.response.rst)
+                    // console.dir($event.response.rst.length)
                     const result = $event.response.rst
                     const length = $event.response.rst.length
                     this.datas = [];
@@ -116,18 +113,7 @@ export default {
                         that.datas.push({id: result[i]['id'], date:result[i]['date'], text:result[i]['text'], isDone:result[i]['done_flg']})                          
                     }
 
-                    console.log('that.data push後')
-                    console.log(that.datas)
-                    
-
-                    
-
-                    //this.datas.push({id: this.getId(), date:this.yourValue, text:this.text, isDone:false})                 
-
                 }else {
-                    this.loading = false
-                    console.log('リクエストに失敗しました')
-
                     //メッセージ表示
                     store.setMessage($event.response.msg, false)
                     const message = store.getMessage();
@@ -140,19 +126,14 @@ export default {
             })
         },
         makeDatas() {
-            // 今のリスト項目を退避
-            // const datas_ = Object.assign([],this.datas)
-            // console.dir(datas_)
             return this.datas
         },
         deleteItem(id) {
-            console.log('delete-btn clicked!!'+id.listId)
-
             controller.deleteTweetSchedule_ajax(id.listId)
             controller.$once('AJAX_COMPLETE_DELETETWEETSCHEDULE', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETWEETSCHEDULE') 
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETWEETSCHEDULE') 
                      //メッセージ表示
                     store.setMessage($event.response.msg, true)
                     const message = store.getMessage();
@@ -163,8 +144,7 @@ export default {
                     this.datas = _.reject(this.datas, { 'id': id.listId });
 
                 }else {
-                    console.log('リクエストに失敗しました')
-
+                    // console.log('リクエストに失敗しました')
                     //メッセージ表示
                     store.setMessage($event.response.msg, false)
                     const message = store.getMessage();
@@ -196,9 +176,9 @@ export default {
             //何ms後にツイートをするのか
             const dif_time = reserveTime - now_ms;
 
-            console.log('reserveTime'+reserveTime)
-            console.log('now_ms'+now_ms)
-            console.log('dif_time:'+dif_time)
+            // console.log('reserveTime'+reserveTime)
+            // console.log('now_ms'+now_ms)
+            // console.log('dif_time:'+dif_time)
             //過去の時間を指定していた場合
             if(dif_time <= 0) {
                 store.setMessage('過去の時間は設定することができません', false)
@@ -218,8 +198,8 @@ export default {
             controller.$once('AJAX_COMPLETE_SAVETWEETSCHEDULE', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_SAVETWEETSCHEDULE')
-                    console.dir($event.response)
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_SAVETWEETSCHEDULE')
+                    // console.dir($event.response)
                     //メッセージ表示
                     store.setMessage($event.response.msg, true)
                     const message = store.getMessage();
@@ -235,10 +215,6 @@ export default {
                     that.datas.push({id: id, date:that.yourValue, text:that.text, isDone:false})                      
 
                 }else {
-                    this.loading = false
-                    console.log('リクエストに失敗しました')
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
                     //メッセージ表示
                     store.setMessage($event.response.msg, false)
                     const message = store.getMessage();
@@ -248,14 +224,6 @@ export default {
                 }                
             })
 
-        },
-        searchItem(event) {
-            // 今のリスト項目を退避
-            const datas_ = Object.assign([],this.datas)
-            console.dir(datas_)
-            console.dir('検索テキスト：'+event.searchText)
-            this.searchText = event.searchText
-            this.makeDatas()
         },
         getId: function() {
             let strong = 1000;

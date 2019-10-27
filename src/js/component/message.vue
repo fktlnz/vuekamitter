@@ -69,7 +69,7 @@ export default {
         },
         fetchData() {
             controller.$on('DISPLAY_MESSAGE', (event) => {
-                console.log('メッセージを表示します=>'+event.message.msg)
+                // console.log('メッセージを表示します=>'+event.message.msg)
                 this.status = event.message.status
                 this.msg = event.message.msg
                 this.visible=true

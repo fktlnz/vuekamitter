@@ -23,7 +23,6 @@ export default {
     },   
     methods: {        
         deleteItem(id) {
-            console.log('delete-btn clicked!!'+id.item_id)
             this.$emit('delete-item', {listId:id.item_id})
             this.datas = _.reject(this.datas, { 'id': id.item_id });        
         }

@@ -40,8 +40,8 @@ export default {
         //ログインチェック結果
         controller.checkLogin_ajax()
         controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
-            console.log($event.response.res)
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
@@ -60,8 +60,7 @@ export default {
         moveTop() {
             this.$router.push('/home')
         },
-        onChange(event) {            
-            console.log(event.input.value);            
+        onChange(event) {
             this.screen_name = event.input.value
         },
         deleteItem(id) {
@@ -69,7 +68,7 @@ export default {
             controller.$once('AJAX_COMPLETE_DELETETARGETACCOUNT', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETARGETACCOUNT') 
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_DELETETARGETACCOUNT') 
                      //メッセージ表示
                     store.setMessage($event.response.msg, true)
                     const message = store.getMessage();
@@ -80,9 +79,6 @@ export default {
                     this.datas = _.reject(this.datas, { 'id': id.listId });
 
                 }else {
-                    this.loading = false
-                    console.log('リクエストに失敗しました')
-
                     //メッセージ表示
                     store.setMessage($event.response.msg, false)
                     const message = store.getMessage();
@@ -111,8 +107,7 @@ export default {
             controller.$once('AJAX_COMPLETE_CHECKUSERACCOUNTEXIST', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_CHECKUSERACCOUNTEXIST')
-                    console.log('取得に成功：アカウント存在or存在しない')
+                    // console.log('取得に成功：アカウント存在or存在しない')
                     console.dir($event.response.rst)  
                     this.IsExist=true
                     if(!$event.response.rst){
@@ -125,8 +120,8 @@ export default {
                         }                        
                         this.IsExist=false
                     }else{
-                        console.log('アカウント存在します')
-                        console.log('this.IsExist：'+this.IsExist)
+                        // console.log('アカウント存在します')
+                        // console.log('this.IsExist：'+this.IsExist)
                         if(this.IsExist){
                             const word_id = this.getId()
                             controller.saveUserAccount_ajax(word_id, this.screen_name, 0)//引数(キーワードID, スクリーンネーム　, キーワードタイプ（0:ターゲットアカウント 1:フォロー済アカウント　2:アンフォローアカウント）)
@@ -181,9 +176,9 @@ export default {
             controller.$once('AJAX_COMPLETE_GETTARGETACCOUNT', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_GETTARGETACCOUNT')
-                    console.dir($event.response.rst)
-                    console.dir($event.response.rst.length)
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_GETTARGETACCOUNT')
+                    // console.dir($event.response.rst)
+                    // console.dir($event.response.rst.length)
                     const result = $event.response.rst
                     const length = $event.response.rst.length
                     that.datas = [];

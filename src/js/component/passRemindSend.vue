@@ -42,9 +42,6 @@ export default {
     },
     methods: {
         onChange($event){
-            console.log('event@PassRemindSend')
-            console.dir($event.input.value);
-            console.dir($event.input);  
             let name = $event.input.name;
             if(name==="username"){
                 this.username=$event.input.value
@@ -90,8 +87,6 @@ export default {
 
             controller.passRemindSend_ajax(this.username, this.email)
             controller.$once('AJAX_COMPLETE_PASSREMINDSEND', ($event) => {
-                console.log('フロントに帰ってきたデータ↓')
-                console.dir($event.response)
                 if($event.response.res === 'OK'){
                     //メッセージ表示
                     store.setMessage($event.response.msg, true)

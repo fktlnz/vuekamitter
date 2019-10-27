@@ -44,14 +44,10 @@ module.exports = new Vue({
         //message初期化
         this.message = {msg: '', status:false}
         console.dir(msg)
-        console.dir(this.message)
         return msg
     },
     // プロパティ名を指定してデータを取得
     setMessage(msg, status) {
-        console.log('setMessage')
-        console.dir(msg)
-        console.dir(status)
         this.message.msg = msg
         this.message.status = status
     },
@@ -117,17 +113,17 @@ module.exports = new Vue({
       this.IstweetwatchJobExec = status
     },
     getReservedTime() {
-      console.log('予約時間を取得します：'+this.reservedTime)
+      // console.log('予約時間を取得します：'+this.reservedTime)
       return this.reservedTime
     },
     setReservedTime(time) {
-      console.log('予約時間を設置します：'+time)
+      // console.log('予約時間を設置します：'+time)
       this.reservedTime = time
     },
 
     getReservedItem() {
-      console.log('予約情報を取得します')
-      console.dir(this.reserveItem)
+      // console.log('予約情報を取得します')
+      // console.dir(this.reserveItem)
       return this.reserveItem
     },
     setReservedItem(id, time, text) {
@@ -136,23 +132,23 @@ module.exports = new Vue({
       this.reserveItem.reserveTime = time
       this.reserveItem.text = text
 
-      console.log('予約情報　id：'+this.reserveItem.id)
-      console.log('予約情報　reserveTime：'+this.reserveItem.reserveTime)
-      console.log('予約情報　text：'+this.reserveItem.text)
+      // console.log('予約情報　id：'+this.reserveItem.id)
+      // console.log('予約情報　reserveTime：'+this.reserveItem.reserveTime)
+      // console.log('予約情報　text：'+this.reserveItem.text)
     },
     setNextFollowTime(nexttime, now) {
       this.reFollowTime.next = nexttime;
       this.reFollowTime.now = now;
-      console.log('次のフォロー開始時間：')
-      console.dir(this.reFollowTime)
+      // console.log('次のフォロー開始時間：')
+      // console.dir(this.reFollowTime)
     },
     getNextFollowTime() {
       return this.reFollowTime;
     },
     setNextUnFollowTime(nexttime) {
       this.UnFollowTime = nexttime;
-      console.log('次のアンフォロー開始時間：')
-      console.dir(this.UnFollowTime)
+      // console.log('次のアンフォロー開始時間：')
+      // console.dir(this.UnFollowTime)
     },
     getNextUnFollowTime() {
       return this.UnFollowTime;

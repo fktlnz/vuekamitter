@@ -60,9 +60,6 @@ export default {
     },
     methods: {
         onChange($event){
-            console.log('event@SignUp')
-            console.dir($event.input.value);
-            console.dir($event.input);
             let name = $event.input.name;
             if(name==="username"){
                 this.data.username=$event.input.value
@@ -70,18 +67,16 @@ export default {
                 this.data.password=$event.input.value
             }
         },
-        signIn(){          
-            console.dir(this.data) 
+        signIn(){   
             controller.signIn_ajax(this.data)
             controller.$once('AJAX_COMPLETE_SIGNIN', ($event) => {
-                console.log('フロントに帰ってきたデータ↓')
-                console.dir($event.response)
+                // console.log('フロントに帰ってきたデータ↓')
+                // console.dir($event.response)
                 if($event.response.res === 'OK'){
                     store.setMessage('ログインに成功しました', true)
                     this.$router.push('/home')
                 }else {
                     this.errors = $event.response
-                    console.log(this.errors)
                 }
                 
             })

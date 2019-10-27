@@ -44,7 +44,6 @@ export default {
             let route = this.heading
             if(route==='unFollow') return
             if(route==='follow') route = 'target'
-            console.log('route:'+route)
             this.$router.push('/'+route)
         },
         onClickKeyword() {

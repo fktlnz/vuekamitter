@@ -61,18 +61,15 @@ export default {
         //ユーザーのアカウント情報を取得してhome画面に返す
         changeUser() {
             let that = this //thisを退避
-            console.log('changeUser clicked!')
-            console.log('アカウント：'+that.data.account)
-
             controller.getUserInfo_ajax(this.data.account)            
             controller.$on('AJAX_COMPLETE_GETUSERINFO', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('getuserinfoが帰ってきたよ')
-                    console.dir($event.response)
+                    // console.log('getuserinfoが帰ってきたよ')
+                    // console.dir($event.response)
                     this.$set(this.classNameIconPerson, 'p-user-selected', that.data.account === $event.response.active_user)
                     // this.active_user = $event.response.active_user
-                    console.log('アクティブユーザーはこれです：'+$event.response.active_user)
+                    // console.log('アクティブユーザーはこれです：'+$event.response.active_user)
                     //親コンポーネントにアクティブユーザーを渡す
                     this.$emit('change-active-user', {active_user:$event.response.active_user})
                     //メッセージを表示する
@@ -84,17 +81,11 @@ export default {
                     }
                     
                 }else {
-                    this.loading = false
-                    console.log('リクエストに失敗しました')
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
                     store.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false)
-
                     const message = store.getMessage();
                     if(message.msg !== ''){
                         controller.emit_message(message)  
                     }
-
                 }
                 
             })
@@ -105,19 +96,15 @@ export default {
             controller.$on('AJAX_COMPLETE_GETACTIVEUSER', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('getactiveuserが帰ってきたよ')
-                    console.dir($event.response)
+                    // console.log('getactiveuserが帰ってきたよ')
+                    // console.dir($event.response)
                     this.$set(this.classNameIconPerson, 'p-user-selected', this.data.account === $event.response.active_user)
                     // this.active_user = $event.response.active_user
-                    console.log('アクティブユーザーはこれです：'+$event.response.active_user)                    
+                    // console.log('アクティブユーザーはこれです：'+$event.response.active_user)                    
                     //親コンポーネントにアクティブユーザーを渡す
                     this.$emit('change-active-user', {active_user:$event.response.active_user})
                 }else {
-                    console.log('リクエストに失敗しました')
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
                     store.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false)
-
                     const message = store.getMessage();
                     if(message.msg !== ''){
                         controller.emit_message(message)  

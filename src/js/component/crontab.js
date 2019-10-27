@@ -60,9 +60,4 @@ export default () => {
   ])
   VueCrontab.disableJob('tweetwatch')
   VueCrontab.disableJob('reStartAutoFollow')
-  console.log(result)
-  console.log(result2)
-  console.log(result3)
-  console.log(result4)
-  console.log(result5)
 }

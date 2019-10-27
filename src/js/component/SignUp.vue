@@ -54,9 +54,6 @@ export default {
     },
     methods: {
         onChange($event){
-            console.log('event@SignUp')
-            console.dir($event.input.value);
-            console.dir($event.input);
             let name = $event.input.name;
             if(name==="username"){
                 this.data.username=$event.input.value
@@ -69,16 +66,14 @@ export default {
             }
         },
         signUp(){          
-            console.dir(this.data) 
             controller.signUp_ajax(this.data)
             controller.$on('AJAX_COMPLETE_SIGNUP', ($event) => {
-            console.log('処理がフロントに帰ってきました')
-                console.dir($event.response)
+            // console.log('処理がフロントに帰ってきました')
+            //     console.dir($event.response)
                 if($event.response.res === 'OK'){
                     this.$router.push('/home')
                 }
                 this.errors = $event.response;
-                console.log(this.errors)
             })
         },
         

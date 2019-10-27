@@ -50,8 +50,8 @@ export default {
         //ログインチェック結果
         controller.checkLogin_ajax()
         controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
-            console.log($event.response.res)
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
@@ -70,13 +70,11 @@ export default {
         moveTop() {
             this.$router.push('/home')
         },
-        onChangeOption(event) {     
-            console.log(event.target.value+':'+event.target.selectedIndex);            
+        onChangeOption(event) {
             this.option_num = event.target.selectedIndex  
             this.option_text = event.target.value 
         },
-        onChange(event) {            
-            console.log(event.input.value);            
+        onChange(event) {   
             this.likeWord = event.input.value
         },
         addItem() {
@@ -96,9 +94,9 @@ export default {
             controller.$once('AJAX_COMPLETE_SAVELIKEWORD', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_SAVELIKEWORD')
-                    console.dir($event.response.rst)                   
-                    
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_SAVELIKEWORD')
+                    // console.dir($event.response.rst)
+
                     //Listに追加する
                     this.datas.push({id: word_id, text:`[${this.option_text}]  `+this.likeWord, option:this.option_num}) 
 
@@ -133,9 +131,9 @@ export default {
             controller.$once('AJAX_COMPLETE_GETLIKEWORD', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_GETLIKEWORD')
-                    console.dir($event.response.rst)
-                    console.dir($event.response.rst.length)
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_GETLIKEWORD')
+                    // console.dir($event.response.rst)
+                    // console.dir($event.response.rst.length)
                     const result = $event.response.rst
                     const length = $event.response.rst.length
                     that.datas = [];
@@ -150,21 +148,10 @@ export default {
                             optionText = 'NOT'
                         }
                          
-                        that.datas.push({id: result[i]['id'], text:`[${optionText}]  `+result[i]['word']})                          
+                        that.datas.push({id: result[i]['id'], text:`[${optionText}]  `+result[i]['word']})
                     }
 
-                    console.log('that.data push後')
-                    console.log(that.datas)
-                    
-
-                    
-
-                    //this.datas.push({id: this.getId(), date:this.yourValue, text:this.text, isDone:false})                 
-
                 }else {
-                    this.loading = false
-                    console.log('リクエストに失敗しました')
-
                     //メッセージ表示
                     store.setMessage($event.response.msg, false)
                     const message = store.getMessage();
@@ -177,13 +164,11 @@ export default {
             })
         },
         deleteItem(id) {
-            console.log('delete-btn clicked!!'+id.listId)
-
             controller.deleteKeyword_ajax(id.listId, 1)//引数(キーワードID, キーワードタイプ（0:フォロワーサーチ 1:いいねキーワード）)
             controller.$once('AJAX_COMPLETE_DELETELIKEWORD', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました. AJAX_COMPLETE_DELETELIKEWORD') 
+                    // console.log('リクエストに成功しました. AJAX_COMPLETE_DELETELIKEWORD') 
                      //メッセージ表示
                     store.setMessage($event.response.msg, true)
                     const message = store.getMessage();
@@ -194,9 +179,6 @@ export default {
                     this.datas = _.reject(this.datas, { 'id': id.listId });
 
                 }else {
-                    this.loading = false
-                    console.log('リクエストに失敗しました')
-
                     //メッセージ表示
                     store.setMessage($event.response.msg, false)
                     const message = store.getMessage();
