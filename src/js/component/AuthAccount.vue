@@ -6,7 +6,8 @@
         <div class="loading" v-if="loading">認証処理中...</div>
         <div v-if="error" class="error">{{ error }}</div>
 
-        <AccountListComponent v-bind:listItems="makeDatas()" v-on:delete-item="deleteItem($event)" v-on:change-active-user="changeActiveUser($event)"></AccountListComponent>        
+        <AccountListComponent v-bind:listItems="makeDatas()" v-on:delete-item="deleteItem($event)" v-on:change-active-user="changeActiveUser($event)"></AccountListComponent>
+        
     </div>
 </template>
 
@@ -159,11 +160,13 @@ export default {
                     
                     // メッセージ表示
                     store.setMessage('認証に成功しました',true)
-
                     const message = store.getMessage();
                     if(message.msg !== ''){
                         controller.emit_message(message)  
                     }
+
+                    //URLからGETパラメータを取り除く
+                    history.pushState(null, null, "/")
                 })
             }else{
                 //HOME画面に遷移したとき、HOME画面を更新したときにここにはいる

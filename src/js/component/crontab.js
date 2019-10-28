@@ -23,7 +23,7 @@ export default () => {
     {        
         name: 'startAutoLike',
         interval: {            
-            seconds: '/60',      
+            minutes: '/15',//15分ごとに実行する
         },
         job: startAutoLike,
     },    

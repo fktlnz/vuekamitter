@@ -49980,6 +49980,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
 
 exports.default = {
     components: {
@@ -50125,11 +50126,13 @@ exports.default = {
 
                     // メッセージ表示
                     _Store2.default.setMessage('認証に成功しました', true);
-
                     var message = _Store2.default.getMessage();
                     if (message.msg !== '') {
                         _Controller2.default.emit_message(message);
                     }
+
+                    //URLからGETパラメータを取り除く
+                    history.pushState(null, null, "/");
                 });
             } else {
                 //HOME画面に遷移したとき、HOME画面を更新したときにここにはいる
@@ -64312,7 +64315,7 @@ exports.default = function () {
     var result2 = _vueCrontab2.default.addJob([{
         name: 'startAutoLike',
         interval: {
-            seconds: '/60'
+            minutes: '/15' //15分ごとに実行する
         },
         job: _crontabfunc.startAutoLike
     }]);
