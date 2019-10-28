@@ -112,8 +112,8 @@ export default {
         //ログインチェック結果
         controller.checkLogin_ajax()
         controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
-            console.log($event.response.res)
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
@@ -142,8 +142,8 @@ export default {
         //ログインチェック結果
         controller.checkLogin_ajax()
         controller.$once('AJAX_COMPLETE_CHECKLOGIN', ($event) => {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
-            console.log($event.response.res)
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
@@ -167,11 +167,11 @@ export default {
         //いいねしたツイートの一覧を表示する
         controller.getLikedListSession_ajax()
         controller.$on('AJAX_DISPLAY_AUTOLIKE_RESULT', ($event) => {
-            console.log('DEBUG -- Home.vue --> いいね！をしたリストを更新します')
-            console.dir($event.response.rst)
+            // console.log('DEBUG -- Home.vue --> いいね！をしたリストを更新します')
+            // console.dir($event.response.rst)
             if($event.response.res === 'OK'){
 
-                console.dir($event.response.rst.length)
+                // console.dir($event.response.rst.length)
                 const result = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_like=[] //listを初期化
@@ -185,7 +185,7 @@ export default {
             }else if($event.response.rst == null){//いいねのリクエストがすべて失敗した場合はnullが返る。リクエスト上限の可能性が高い
                 //レスポンスがnullの場合はAPIのリクエスト上限と判断する
                 //自動イイネを一時停止状態にして、メッセージで表示する
-                console.log('DEBUG -- Home.vue --> APIのリクエスト上限に達した可能性があります')
+                // console.log('DEBUG -- Home.vue --> APIのリクエスト上限に達した可能性があります')
 
                 //自動いいねを停止状態にする
                 this.AutoLikeCronStatus =  '0'
@@ -216,12 +216,12 @@ export default {
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
         controller.getFollowedList_ajax()
         controller.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', ($event) => {
-            console.log('フォローリスト取得がかえててきた')
-            console.dir($event.response.rst)
+            // console.log('フォローリスト取得がかえててきた')
+            // console.dir($event.response.rst)
             if($event.response.res === 'OK'){
-                console.log('DEBUG -- Home.vue --> フォローリストを更新します')
-                console.dir($event.response.rst)
-                console.dir($event.response.rst.length)
+                // console.log('DEBUG -- Home.vue --> フォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 const result = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_follow=[] //listを初期化
@@ -268,14 +268,10 @@ export default {
                 const now_ms = now.getTime();
                 store.setNextFollowTime(now_ms + 905000, now_ms)//15分後に設定　5秒は気持ち
 
-                console.log('自動フォロー再開ジョブをスタートします')
                 //自動フォローを再開関数を開始する
                 const result = that.$crontab.enableJob('reStartAutoFollow')
-                console.log("enableJob('reStartAutoFollow'):"+result)
 
                 //リストを更新する
-                console.dir($event.response.rst)
-                console.dir($event.response.rst.length)
                 const rst = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_follow=[] //listを初期化
@@ -297,9 +293,9 @@ export default {
                 }
 
             }else if($event.response.res === 'UPDATED'){ //画面更新の場合に、すでにフォロー済リストを表示する
-                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
-                console.dir($event.response.rst)
-                console.dir($event.response.rst.length)
+                // console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 const result = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_follow=[] //listを初期化
@@ -314,9 +310,9 @@ export default {
                 //アカウントが停止された場合にここに来る
                 //リストを更新して、すべての機能をoffにする
 
-                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
-                console.dir($event.response.rst)
-                console.dir($event.response.rst.length)
+                // console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 const result = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_follow=[] //listを初期化
@@ -365,11 +361,8 @@ export default {
                 const now_ms = now.getTime();
                 store.setNextFollowTime(now_ms + 905000, now_ms)//15分後に設定　5秒は気持ち
 
-                console.log('自動フォロー再開ジョブをスタートします')
                 //自動フォローを再開関数を開始する
                 const result = that.$crontab.enableJob('reStartAutoFollow')
-                console.log("enableJob('reStartAutoFollow'):"+result)
-
 
                 //自動フォローを停止中にする
                 // store.setAutoFollowCronStatus('0')
@@ -397,12 +390,12 @@ export default {
         //controller.startAutoUnFollow_ajax()
         controller.getUnFollowedList_ajax()
         controller.$on('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', ($event) => {
-            console.log('アンフォロー完了しました')
-            console.dir($event.response.rst)
+            // console.log('アンフォロー完了しました')
+            // console.dir($event.response.rst)
             if($event.response.res === 'OK'){
-                console.log('DEBUG -- Home.vue --> アンフォローリストを更新します')
-                console.dir($event.response.rst)
-                console.dir($event.response.rst.length)
+                // console.log('DEBUG -- Home.vue --> アンフォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 const result = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_unfollow=[] //listを初期化
@@ -438,8 +431,8 @@ export default {
                 //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
 
                 //リストを更新する
-                console.dir($event.response.rst)
-                console.dir($event.response.rst.length)
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 const rst = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_unfollow=[] //listを初期化
@@ -469,9 +462,9 @@ export default {
                 that.$crontab.enableJob('startAutoUnFollow')
 
             }else if($event.response.res === 'UPDATED'){ //画面更新の場合に、すでにフォロー済リストを表示する
-                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
-                console.dir($event.response.rst)
-                console.dir($event.response.rst.length)
+                // console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 const result = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_unfollow=[] //listを初期化
@@ -514,10 +507,10 @@ export default {
         //予約ツイートを更新する
         controller.getTweetSchedule_ajax()
         controller.$on('AJAX_DISPLAY_SCHEDULE_RESULT', ($event) => {
-            console.log('DEBUG -- Home.vue --> ツイートスケジュールリストを更新します')
+            // console.log('DEBUG -- Home.vue --> ツイートスケジュールリストを更新します')
             if($event.response.rst !== null) {
-                console.dir($event.response.rst)
-                console.dir($event.response.rst.length)
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 const result = $event.response.rst
                 const length = $event.response.rst.length
                 that.listItems_schedule=[] //listを初期化
@@ -532,7 +525,7 @@ export default {
 
         //自動いいねのステータスを変更する
         controller.$on('AJAX_CHANGE_AUTOLIKESTATUS', ($event) => {
-            console.log('DEBUG -- Home.vue --> 自動いいねステータスを変更します')
+            // console.log('DEBUG -- Home.vue --> 自動いいねステータスを変更します')
             this.AutoLikeCronStatus = $event.response
             store.setAutoLikeCronStatus($event.response)
             if($event.response === '1'){
@@ -546,7 +539,7 @@ export default {
 
         //自動フォローのステータスを変更する
         controller.$on('AJAX_CHANGE_AUTOFOLLOWSTATUS', ($event) => {
-            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します')
+            // console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します')
             this.AutoFollowCronStatus = $event.response
             store.setAutoFollowCronStatus($event.response)
             if($event.response === '1'){
@@ -560,7 +553,7 @@ export default {
         
         //自動アンフォローのステータスを変更する
         controller.$on('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', ($event) => {
-            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します')
+            // console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します')
             this.AutoUnFollowCronStatus = $event.response
             store.setAutoUnFollowCronStatus($event.response)
             if($event.response === '1'){
@@ -574,7 +567,7 @@ export default {
         
 
         //♡likeステータスをセットする
-        console.log('likeステータスは：'+store.getAutoLikeCronStatus())
+        // console.log('likeステータスは：'+store.getAutoLikeCronStatus())
         this.AutoLikeCronStatus = store.getAutoLikeCronStatus()
         if(this.AutoLikeCronStatus === '0'){
             this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false)
@@ -588,7 +581,7 @@ export default {
 
         }        
         //followステータスをセットする
-        console.log('followステータスは：'+store.getAutoFollowCronStatus())
+        // console.log('followステータスは：'+store.getAutoFollowCronStatus())
         this.AutoFollowCronStatus = store.getAutoFollowCronStatus()
         if(this.AutoFollowCronStatus === '0'){
             this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false)
@@ -601,7 +594,7 @@ export default {
             this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false)
         }
         //unfollowステータスをセットする
-        console.log('Unfollowステータスは：'+store.getAutoUnFollowCronStatus())
+        // console.log('Unfollowステータスは：'+store.getAutoUnFollowCronStatus())
         this.AutoUnFollowCronStatus = store.getAutoUnFollowCronStatus()
         if(this.AutoUnFollowCronStatus === '0'){
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false)
@@ -614,7 +607,7 @@ export default {
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false)
         }
         //メールは配信のステータスをセットする
-        console.log('メールステータスは：'+store.getMailStatus())
+        // console.log('メールステータスは：'+store.getMailStatus())
         this.MailStatus = store.getMailStatus()
         if(this.MailStatus === '0'){
             this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', false)
@@ -766,8 +759,8 @@ export default {
         updateUserInfo() {
             controller.getTwitterProfile_ajax('screen_name')
             controller.$once('AJAX_COMPLETE_GETTWITTERPROFILE', ($event) => {
-                console.log('フロントに帰ってきたデータ↓ プロフィール')
-                console.dir($event.response.rst)
+                // console.log('フロントに帰ってきたデータ↓ プロフィール')
+                // console.dir($event.response.rst)
                 if($event.response.res === 'OK'){
                     //取得成功時はUser領域更新
                     this.follower = $event.response.rst.followers_count //フォロワー数

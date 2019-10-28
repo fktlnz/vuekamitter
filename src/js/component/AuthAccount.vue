@@ -46,25 +46,20 @@ export default {
         makeDatas() {
             // 今のリスト項目を退避
             const datas_ = Object.assign([],this.datas)
-            console.dir(datas_)
             return (this.searchText == '') ? this.datas : ''
         },
         deleteItem(id) {
-            console.log('delete-btn clicked!!'+id.listId)
-
             //データベース上のアカウント情報を削除する            
             let delete_data = _.filter(this.datas, {'id': id.listId})
             
-            this.datas = _.reject(this.datas, { 'id': id.listId })             
-            
-            console.dir(delete_data[0].account)
+            this.datas = _.reject(this.datas, { 'id': id.listId })
 
             controller.deleteAccount_ajax(delete_data[0].account)            
             controller.$on('AJAX_COMPLETE_DELETEACCOUNT', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました')
-                    console.dir($event.response)
+                    // console.log('リクエストに成功しました')
+                    // console.dir($event.response)
                     store.setMessage($event.response.msg, true)
 
                     const message = store.getMessage();
@@ -72,12 +67,7 @@ export default {
                         controller.emit_message(message)  
                     }
                 }else {
-                    this.loading = false
-                    console.log('リクエストに失敗しました')
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
                     store.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false)
-
                     const message = store.getMessage();
                     if(message.msg !== ''){
                         controller.emit_message(message)  
@@ -90,41 +80,29 @@ export default {
         },
         addItem(account_list) {
             let that = this
-            console.log('addItem')
-            console.log('length:'+Object.keys(account_list).length)
             Object.keys(account_list).forEach(function(key) {
-                // val => {screen_name: 'xxxxxxxxx'}
-                console.log('index:'+key)
-                console.log('val:'+this['screen_name'])
                 that.datas.push({id: that.getId(),  account:this['screen_name'], isActive: false})
             }, account_list)
             this.makeDatas();
         },
         filterCollection(elm) {
-            console.log('filterCollection')
             const regexp = new RegExp('^' + this.searchText, 'i');
             return (elm.text.match(regexp));
         },
         CertifyAccount() {
             this.loading = true
-            console.log('certify-btn clicked!')
             controller.certify_ajax()            
             controller.$on('AJAX_COMPLETE_GETREQUEST', ($event) => {
 
                 if($event.response.res === 'OK'){
-                    console.log('リクエストに成功しました')
-                    console.dir($event.response)
+                    // console.log('リクエストに成功しました')
+                    // console.dir($event.response)
                     const url = $event.response.url
-                    console.log('リダイレクトします->'+url)
                     // this.$router.push(url)
                     window.location.href = url;
                 }else {
-                    this.loading = false
-                    console.log('リクエストに失敗しました')
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
 
                     store.setMessage($event.response.msg, false)
-
                     const message = store.getMessage();
                     if(message.msg !== ''){
                         controller.emit_message(message)  
@@ -152,8 +130,8 @@ export default {
                 this.loading = false
                 controller.saveToken_ajax(oauth_token, oauth_verifier)
                 controller.$once('AJAX_COMPLETE_CERTIFY', ($event) => {
-                    console.log('フロントに帰ってきたデータ↓')
-                    console.dir($event.response)
+                    // console.log('フロントに帰ってきたデータ↓')
+                    // console.dir($event.response)
 
                     //認証したアカウントのリストを更新する
                     this.updateAccount();
@@ -182,14 +160,11 @@ export default {
             this.loading = false
             controller.updateAccount_ajax()
             controller.$once('AJAX_COMPLETE_GETACCOUNT', ($event) => {
-                console.log('フロントに帰ってきたデータ↓')
-                console.dir($event.response)
+                // console.log('フロントに帰ってきたデータ↓')
+                // console.dir($event.response)
 
                 if($event.response.res === 'OK'){
                     // メッセージ表示
-                    console.log('アカウントのアップデート処理完了')
-                    console.log('取得したスクリーンネーム')
-
                     for(let i=0;i<$event.response.screen_name.length;i++){
                         this.addItem($event.response.screen_name[i])
                     }

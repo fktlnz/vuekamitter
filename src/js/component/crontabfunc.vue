@@ -16,9 +16,9 @@ function tweetWatch() {
 
     let reserveTime = reservedItem.reserveTime
     let dif_time = reserveTime - now_ms    
-    console.log('ツイート予約　待機中')
+    // console.log('ツイート予約　待機中')
     if(reserveTime < now_ms) {
-        console.log('ツイートします')
+        // console.log('ツイートします')
         VueCrontab.disableJob('tweetwatch')
 
         //ツイートをサーバーにリクエストする        
@@ -26,10 +26,10 @@ function tweetWatch() {
         controller.$on('AJAX_COMPLETE_TWEET', ($event) => {
 
             if($event.response.res === 'OK'){
-                console.log('リクエストに成功しました. AJAX_COMPLETE_TWEET')
-                console.dir($event.response)
-                console.log('that.datas update呼ぶ前')
-                console.log(this.datas)
+                // console.log('リクエストに成功しました. AJAX_COMPLETE_TWEET')
+                // console.dir($event.response)
+                // console.log('that.datas update呼ぶ前')
+                // console.log(this.datas)
                 //this.updateDatas()
                 store.setMessage($event.response.msg, true)
 
@@ -38,8 +38,8 @@ function tweetWatch() {
                     controller.emit_message(message)  
                 }
             }else {
-                this.loading = false
-                console.log('リクエストに失敗しました')
+                // this.loading = false
+                // console.log('リクエストに失敗しました')
                 store.setMessage('予約ツイートに失敗しました。ネットワーク管理者に問い合わせてください。', false)
 
                 const message = store.getMessage();
@@ -90,7 +90,6 @@ function reStartAutoFollow() {
     console.log('次の自動フォローまで=>'+dif_time)
 
     if(nextFollowTime < now_ms) {
-        console.log('reStartAutoFollow 始まったよ')
 
         //自動フォロー動作条件
         //１．自動フォローが「待機中」である
@@ -106,14 +105,10 @@ function reStartAutoFollow() {
             store.setRestartAutoFollowCronStatus(false)
     
         }else{
-            console.log('自動フォロー再開監視中です')
+            // console.log('自動フォロー再開監視中です')
         }
     
-    
     }
-
-    
-    
 
 }
 
@@ -124,15 +119,15 @@ function startAutoLike() {
     //２．自動アンフォローが動作していない
     //３．自動いいねが「待機中」である
     if(store.getAutoLikeCronStatus() === '1' && store.getAutoFollowCronStatus() !== '2' && store.getAutoUnFollowCronStatus() !== '2'){        
-        console.log('startAutoLike動作中')
+        // console.log('startAutoLike動作中')
         controller.startAutoLike_ajax()
 
         //以下の動作いる？
         controller.$once('AJAX_COMPLETE_AUTOLIKE', ($event) => {
 
             if($event.response.res === 'OK'){
-                console.log('リクエストに成功しました. AJAX_COMPLETE_AUTOLIKE')
-                console.dir($event.response.rst)                   
+                // console.log('リクエストに成功しました. AJAX_COMPLETE_AUTOLIKE')
+                // console.dir($event.response.rst)                   
                 
                 //メッセージ表示
                 store.setMessage($event.response.msg, true)
@@ -154,7 +149,7 @@ function startAutoLike() {
             
         })
     }else{
-        console.log('自動いいね監視中')
+        // console.log('自動いいね監視中')
     }
 
 }
@@ -181,7 +176,7 @@ function startAutoUnFollow() {
         VueCrontab.disableJob('startAutoUnFollow')  
         
     }else{
-        console.log('自動アンフォロー監視中です =>dif_time:'+dif_time)
+        // console.log('自動アンフォロー監視中です =>dif_time:'+dif_time)
     }
 
 }

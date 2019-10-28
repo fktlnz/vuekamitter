@@ -22,8 +22,8 @@ export default () => {
   let result2 = VueCrontab.addJob([
     {        
         name: 'startAutoLike',
-        interval: {            
-            minutes: '/15',//15分ごとに実行する
+        interval: {
+             seconds: '/60',//1分ごとに実行する
         },
         job: startAutoLike,
     },    

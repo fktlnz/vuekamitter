@@ -34,10 +34,8 @@ module.exports = new Vue({
       return this.$data[name];
     },
     checkLogin_ajax(){
-      console.log('checkLoginUser')
       return axios.get(URL_BASE + 'checkLogin')
       .then((res) => {
-        console.log('checkLoginUser FINISH')
           this.$emit('AJAX_COMPLETE_CHECKLOGIN', {response: res.data});
       })
       .catch((res) => {
@@ -45,7 +43,6 @@ module.exports = new Vue({
           'res' : 'NG',
           'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
         }    
-        console.log(res)
         this.$emit('AJAX_COMPLETE_CHECKLOGIN', {response: json});
       })
     },
@@ -56,9 +53,7 @@ module.exports = new Vue({
         params.append('email',form_data.email);
         params.append('password',form_data.password);
         params.append('re_pass',form_data.re_pass);
-
-        console.log('サーバーにユーザー情報を送信します@controller')
-        console.dir(params)
+        
         return axios.post(URL_BASE + 'signup', params)
         .then((res) => {
             this.$emit('AJAX_COMPLETE_SIGNUP', {response: res.data});
@@ -76,8 +71,6 @@ module.exports = new Vue({
         let params = new URLSearchParams();
         params.append('username',form_data.username);
         params.append('password',form_data.password);
-        console.log('サーバーにユーザー情報を送信します@controller')
-        console.dir(params)
         
         axios.post(URL_BASE + 'signin', params)
         .then((res) => {
@@ -88,8 +81,6 @@ module.exports = new Vue({
             'res' : 'NG',
             'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
           }    
-          console.log('ここに入る？')
-          console.log(res)
             this.$emit('AJAX_COMPLETE_SIGNIN', {response: json});
         })
 
@@ -154,7 +145,6 @@ module.exports = new Vue({
       
       return axios.get(URL_BASE + 'certify?oauth_token='+ oauth_token + '&oauth_verifier=' + oauth_verifier)
         .then((res) => {
-            console.log('saveToken終了')
             this.$emit('AJAX_COMPLETE_CERTIFY', {response: res.data});
         })
         .catch((res) => {
@@ -162,8 +152,6 @@ module.exports = new Vue({
             'res' : 'NG',
             'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
           }    
-          console.log('ここに入る？')
-          console.log(res)
             this.$emit('AJAX_COMPLETE_CERTIFY', {response: json});
         })
     },
@@ -171,8 +159,6 @@ module.exports = new Vue({
     updateAccount_ajax() {
       return axios.get(URL_BASE + 'getaccount')
       .then((res) => {
-          console.log('getaccount終了')
-          console.log('getaccount返ってきた：'+res.data.res)          
           this.$emit('AJAX_COMPLETE_GETACCOUNT', {response: res.data});
       })
       .catch((res) => {
@@ -186,7 +172,6 @@ module.exports = new Vue({
     deleteAccount_ajax(screen_name) {
       return axios.get(URL_BASE + 'deleteaccount?screen_name=' + screen_name)
       .then((res) => {
-          console.log('deleteaccount終了')
           this.$emit('AJAX_COMPLETE_DELETEACCOUNT', {response: res.data});
       })
       .catch((res) => {
@@ -200,8 +185,6 @@ module.exports = new Vue({
     getUserInfo_ajax(screen_name) {
       return axios.get(URL_BASE + 'getuserinfo?screen_name=' + screen_name)
       .then((res) => {
-          console.log('getuserInfo返ってきた：'+res.data.res)
-          console.log('getuserinfo終了')
           this.$emit('AJAX_COMPLETE_GETUSERINFO', {response: res.data});
       })
       .catch((res) => {
@@ -215,7 +198,6 @@ module.exports = new Vue({
     getActiveUser_ajax(screen_name) {
       return axios.get(URL_BASE + 'getactiveuser')
       .then((res) => {
-          console.log('getactiveuser')
           this.$emit('AJAX_COMPLETE_GETACTIVEUSER', {response: res.data});
       })
       .catch((res) => {
@@ -228,9 +210,7 @@ module.exports = new Vue({
     },
     getTwitterProfile_ajax(screen_name) {
       return axios.get(URL_BASE + 'gettwitterprofile?screen_name='+screen_name)
-      .then((res) => {
-          console.log('gettwitterprofile')
-          console.log(res.data.res)          
+      .then((res) => {       
           this.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', {response: res.data});
       })
       .catch((res) => {
@@ -245,7 +225,6 @@ module.exports = new Vue({
     tweet_ajax(id, text) {
       return axios.get(URL_BASE + 'tweet?text='+text+'&id='+id)
       .then((res) => {
-          console.log('tweet')
           this.$emit('AJAX_COMPLETE_TWEET', {response: res.data});
       })
       .catch((res) => {
@@ -261,11 +240,9 @@ module.exports = new Vue({
       let that = this
       return axios.get(URL_BASE + 'savetweetschedule?text='+text+'&time='+time+'&id='+id)
       .then((res) => {
-          console.log('tweet')
           that.$emit('AJAX_COMPLETE_SAVETWEETSCHEDULE', {response: res.data});
       })
       .catch((res) => {
-        console.log('tweet error')
         const json = {
           'res' : 'NG',
           'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
@@ -323,7 +300,6 @@ module.exports = new Vue({
 
     //フォローしたリストをDBから取得する
     getFollowedList_ajax() {
-      console.log('フォロー済リストを取得します')
       return axios.get(URL_BASE + 'getfollowedlist')
       .then((res) => {
           //HOME画面のフォロー済リストを更新する
@@ -342,7 +318,6 @@ module.exports = new Vue({
 
     //アンフォローしたリストをDBから取得する
     getUnFollowedList_ajax() {
-      console.log('アンフォロー済リストを取得します')
       return axios.get(URL_BASE + 'getunfollowedlist')
       .then((res) => {
           //HOME画面のフォロー済リストを更新する
@@ -359,7 +334,7 @@ module.exports = new Vue({
       })
     },
     emit_message(msg) {
-      console.log('メッセージを受信しました！'+msg)
+      // console.log('メッセージを受信しました！'+msg)
       this.$emit('DISPLAY_MESSAGE', {message: msg})
     },
 
@@ -500,7 +475,7 @@ module.exports = new Vue({
       params.append('id',id);
       params.append('username',screen_name);
       params.append('type',type);
-
+      
       return axios.post(URL_BASE + 'saveuseraccount', params)
       .then((res) => {
         if(type===0){//ターゲットアカウント
@@ -657,7 +632,7 @@ module.exports = new Vue({
     ============================================================*/ 
     //メッセージを表示する
     emit_message(msg) {
-      console.log('メッセージを受信しました！'+msg)
+      // console.log('メッセージを受信しました！'+msg)
       this.$emit('DISPLAY_MESSAGE', {message: msg})
     },
   

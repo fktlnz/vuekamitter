@@ -36244,8 +36244,6 @@ exports.startAutoUnFollow = startAutoUnFollow;
 
 
 function tweetWatch() {
-    var _this = this;
-
     var now = new Date();
     var now_ms = now.getTime();
 
@@ -36255,9 +36253,9 @@ function tweetWatch() {
 
     var reserveTime = reservedItem.reserveTime;
     var dif_time = reserveTime - now_ms;
-    console.log('ツイート予約　待機中');
+    // console.log('ツイート予約　待機中')
     if (reserveTime < now_ms) {
-        console.log('ツイートします');
+        // console.log('ツイートします')
         _vueCrontab2.default.disableJob('tweetwatch');
 
         //ツイートをサーバーにリクエストする        
@@ -36265,10 +36263,10 @@ function tweetWatch() {
         _Controller2.default.$on('AJAX_COMPLETE_TWEET', function ($event) {
 
             if ($event.response.res === 'OK') {
-                console.log('リクエストに成功しました. AJAX_COMPLETE_TWEET');
-                console.dir($event.response);
-                console.log('that.datas update呼ぶ前');
-                console.log(_this.datas);
+                // console.log('リクエストに成功しました. AJAX_COMPLETE_TWEET')
+                // console.dir($event.response)
+                // console.log('that.datas update呼ぶ前')
+                // console.log(this.datas)
                 //this.updateDatas()
                 _Store2.default.setMessage($event.response.msg, true);
 
@@ -36277,8 +36275,8 @@ function tweetWatch() {
                     _Controller2.default.emit_message(message);
                 }
             } else {
-                _this.loading = false;
-                console.log('リクエストに失敗しました');
+                // this.loading = false
+                // console.log('リクエストに失敗しました')
                 _Store2.default.setMessage('予約ツイートに失敗しました。ネットワーク管理者に問い合わせてください。', false);
 
                 var _message = _Store2.default.getMessage();
@@ -36325,7 +36323,6 @@ function reStartAutoFollow() {
     console.log('次の自動フォローまで=>' + dif_time);
 
     if (nextFollowTime < now_ms) {
-        console.log('reStartAutoFollow 始まったよ');
 
         //自動フォロー動作条件
         //１．自動フォローが「待機中」である
@@ -36340,7 +36337,7 @@ function reStartAutoFollow() {
             //自動フォロー再開関数を停止状態に設定する
             _Store2.default.setRestartAutoFollowCronStatus(false);
         } else {
-            console.log('自動フォロー再開監視中です');
+            // console.log('自動フォロー再開監視中です')
         }
     }
 }
@@ -36352,15 +36349,15 @@ function startAutoLike() {
     //２．自動アンフォローが動作していない
     //３．自動いいねが「待機中」である
     if (_Store2.default.getAutoLikeCronStatus() === '1' && _Store2.default.getAutoFollowCronStatus() !== '2' && _Store2.default.getAutoUnFollowCronStatus() !== '2') {
-        console.log('startAutoLike動作中');
+        // console.log('startAutoLike動作中')
         _Controller2.default.startAutoLike_ajax();
 
         //以下の動作いる？
         _Controller2.default.$once('AJAX_COMPLETE_AUTOLIKE', function ($event) {
 
             if ($event.response.res === 'OK') {
-                console.log('リクエストに成功しました. AJAX_COMPLETE_AUTOLIKE');
-                console.dir($event.response.rst);
+                // console.log('リクエストに成功しました. AJAX_COMPLETE_AUTOLIKE')
+                // console.dir($event.response.rst)                   
 
                 //メッセージ表示
                 _Store2.default.setMessage($event.response.msg, true);
@@ -36379,7 +36376,7 @@ function startAutoLike() {
             }
         });
     } else {
-        console.log('自動いいね監視中');
+        // console.log('自動いいね監視中')
     }
 }
 
@@ -36404,7 +36401,7 @@ function startAutoUnFollow() {
         //自動アンフォロー実行中は停止する
         _vueCrontab2.default.disableJob('startAutoUnFollow');
     } else {
-        console.log('自動アンフォロー監視中です =>dif_time:' + dif_time);
+        // console.log('自動アンフォロー監視中です =>dif_time:'+dif_time)
     }
 }
 
@@ -36642,16 +36639,13 @@ module.exports = new _vue2.default({
     checkLogin_ajax: function checkLogin_ajax() {
       var _this2 = this;
 
-      console.log('checkLoginUser');
       return _axios2.default.get(URL_BASE + 'checkLogin').then(function (res) {
-        console.log('checkLoginUser FINISH');
         _this2.$emit('AJAX_COMPLETE_CHECKLOGIN', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        console.log(res);
         _this2.$emit('AJAX_COMPLETE_CHECKLOGIN', { response: json });
       });
     },
@@ -36666,8 +36660,6 @@ module.exports = new _vue2.default({
       params.append('password', form_data.password);
       params.append('re_pass', form_data.re_pass);
 
-      console.log('サーバーにユーザー情報を送信します@controller');
-      console.dir(params);
       return _axios2.default.post(URL_BASE + 'signup', params).then(function (res) {
         _this3.$emit('AJAX_COMPLETE_SIGNUP', { response: res.data });
       }).catch(function (res) {
@@ -36686,8 +36678,6 @@ module.exports = new _vue2.default({
       var params = new URLSearchParams();
       params.append('username', form_data.username);
       params.append('password', form_data.password);
-      console.log('サーバーにユーザー情報を送信します@controller');
-      console.dir(params);
 
       _axios2.default.post(URL_BASE + 'signin', params).then(function (res) {
         _this4.$emit('AJAX_COMPLETE_SIGNIN', { response: res.data });
@@ -36696,8 +36686,6 @@ module.exports = new _vue2.default({
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        console.log('ここに入る？');
-        console.log(res);
         _this4.$emit('AJAX_COMPLETE_SIGNIN', { response: json });
       });
     },
@@ -36763,15 +36751,12 @@ module.exports = new _vue2.default({
       var _this8 = this;
 
       return _axios2.default.get(URL_BASE + 'certify?oauth_token=' + oauth_token + '&oauth_verifier=' + oauth_verifier).then(function (res) {
-        console.log('saveToken終了');
         _this8.$emit('AJAX_COMPLETE_CERTIFY', { response: res.data });
       }).catch(function (res) {
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
         };
-        console.log('ここに入る？');
-        console.log(res);
         _this8.$emit('AJAX_COMPLETE_CERTIFY', { response: json });
       });
     },
@@ -36781,8 +36766,6 @@ module.exports = new _vue2.default({
       var _this9 = this;
 
       return _axios2.default.get(URL_BASE + 'getaccount').then(function (res) {
-        console.log('getaccount終了');
-        console.log('getaccount返ってきた：' + res.data.res);
         _this9.$emit('AJAX_COMPLETE_GETACCOUNT', { response: res.data });
       }).catch(function (res) {
         var json = {
@@ -36796,7 +36779,6 @@ module.exports = new _vue2.default({
       var _this10 = this;
 
       return _axios2.default.get(URL_BASE + 'deleteaccount?screen_name=' + screen_name).then(function (res) {
-        console.log('deleteaccount終了');
         _this10.$emit('AJAX_COMPLETE_DELETEACCOUNT', { response: res.data });
       }).catch(function (res) {
         var json = {
@@ -36810,8 +36792,6 @@ module.exports = new _vue2.default({
       var _this11 = this;
 
       return _axios2.default.get(URL_BASE + 'getuserinfo?screen_name=' + screen_name).then(function (res) {
-        console.log('getuserInfo返ってきた：' + res.data.res);
-        console.log('getuserinfo終了');
         _this11.$emit('AJAX_COMPLETE_GETUSERINFO', { response: res.data });
       }).catch(function (res) {
         var json = {
@@ -36825,7 +36805,6 @@ module.exports = new _vue2.default({
       var _this12 = this;
 
       return _axios2.default.get(URL_BASE + 'getactiveuser').then(function (res) {
-        console.log('getactiveuser');
         _this12.$emit('AJAX_COMPLETE_GETACTIVEUSER', { response: res.data });
       }).catch(function (res) {
         var json = {
@@ -36839,8 +36818,6 @@ module.exports = new _vue2.default({
       var _this13 = this;
 
       return _axios2.default.get(URL_BASE + 'gettwitterprofile?screen_name=' + screen_name).then(function (res) {
-        console.log('gettwitterprofile');
-        console.log(res.data.res);
         _this13.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', { response: res.data });
       }).catch(function (res) {
         var json = {
@@ -36856,7 +36833,6 @@ module.exports = new _vue2.default({
       var _this14 = this;
 
       return _axios2.default.get(URL_BASE + 'tweet?text=' + text + '&id=' + id).then(function (res) {
-        console.log('tweet');
         _this14.$emit('AJAX_COMPLETE_TWEET', { response: res.data });
       }).catch(function (res) {
         var json = {
@@ -36871,10 +36847,8 @@ module.exports = new _vue2.default({
     saveTweetSchedule_ajax: function saveTweetSchedule_ajax(id, text, time) {
       var that = this;
       return _axios2.default.get(URL_BASE + 'savetweetschedule?text=' + text + '&time=' + time + '&id=' + id).then(function (res) {
-        console.log('tweet');
         that.$emit('AJAX_COMPLETE_SAVETWEETSCHEDULE', { response: res.data });
       }).catch(function (res) {
-        console.log('tweet error');
         var json = {
           'res': 'NG',
           'msg': 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'
@@ -36936,7 +36910,6 @@ module.exports = new _vue2.default({
     getFollowedList_ajax: function getFollowedList_ajax() {
       var _this18 = this;
 
-      console.log('フォロー済リストを取得します');
       return _axios2.default.get(URL_BASE + 'getfollowedlist').then(function (res) {
         //HOME画面のフォロー済リストを更新する
         _this18.$emit('AJAX_DISPLAY_AUTOFOLLOW_RESULT', { response: res.data });
@@ -36955,7 +36928,6 @@ module.exports = new _vue2.default({
     getUnFollowedList_ajax: function getUnFollowedList_ajax() {
       var _this19 = this;
 
-      console.log('アンフォロー済リストを取得します');
       return _axios2.default.get(URL_BASE + 'getunfollowedlist').then(function (res) {
         //HOME画面のフォロー済リストを更新する
         _this19.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', { response: res.data });
@@ -36969,7 +36941,7 @@ module.exports = new _vue2.default({
       });
     },
     emit_message: function emit_message(msg) {
-      console.log('メッセージを受信しました！' + msg);
+      // console.log('メッセージを受信しました！'+msg)
       this.$emit('DISPLAY_MESSAGE', { message: msg });
     },
 
@@ -37299,7 +37271,7 @@ module.exports = new _vue2.default({
       });
     }
   }, 'emit_message', function emit_message(msg) {
-    console.log('メッセージを受信しました！' + msg);
+    // console.log('メッセージを受信しました！'+msg)
     this.$emit('DISPLAY_MESSAGE', { message: msg });
   })
 });
@@ -48953,8 +48925,8 @@ exports.default = {
         //ログインチェック結果
         _Controller2.default.checkLogin_ajax();
         _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
-            console.log($event.response.res);
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if ($event.response.res === 'NOTLOGIN') {
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。');
@@ -48985,8 +48957,8 @@ exports.default = {
         //ログインチェック結果
         _Controller2.default.checkLogin_ajax();
         _Controller2.default.$once('AJAX_COMPLETE_CHECKLOGIN', function ($event) {
-            console.log('DEBUG -- Home.vue --> ログインチェックが完了しました');
-            console.log($event.response.res);
+            // console.log('DEBUG -- Home.vue --> ログインチェックが完了しました')
+            // console.log($event.response.res)
             if ($event.response.res === 'NOTLOGIN') {
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。');
@@ -49007,11 +48979,11 @@ exports.default = {
         //いいねしたツイートの一覧を表示する
         _Controller2.default.getLikedListSession_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_AUTOLIKE_RESULT', function ($event) {
-            console.log('DEBUG -- Home.vue --> いいね！をしたリストを更新します');
-            console.dir($event.response.rst);
+            // console.log('DEBUG -- Home.vue --> いいね！をしたリストを更新します')
+            // console.dir($event.response.rst)
             if ($event.response.res === 'OK') {
 
-                console.dir($event.response.rst.length);
+                // console.dir($event.response.rst.length)
                 var result = $event.response.rst;
                 var length = $event.response.rst.length;
                 that.listItems_like = []; //listを初期化
@@ -49025,7 +48997,7 @@ exports.default = {
                 //いいねのリクエストがすべて失敗した場合はnullが返る。リクエスト上限の可能性が高い
                 //レスポンスがnullの場合はAPIのリクエスト上限と判断する
                 //自動イイネを一時停止状態にして、メッセージで表示する
-                console.log('DEBUG -- Home.vue --> APIのリクエスト上限に達した可能性があります');
+                // console.log('DEBUG -- Home.vue --> APIのリクエスト上限に達した可能性があります')
 
                 //自動いいねを停止状態にする
                 _this2.AutoLikeCronStatus = '0';
@@ -49055,12 +49027,12 @@ exports.default = {
         //制限にかかった⇒15分後にもう一度自動フォローを再開する
         _Controller2.default.getFollowedList_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_AUTOFOLLOW_RESULT', function ($event) {
-            console.log('フォローリスト取得がかえててきた');
-            console.dir($event.response.rst);
+            // console.log('フォローリスト取得がかえててきた')
+            // console.dir($event.response.rst)
             if ($event.response.res === 'OK') {
-                console.log('DEBUG -- Home.vue --> フォローリストを更新します');
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
+                // console.log('DEBUG -- Home.vue --> フォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 var result = $event.response.rst;
                 var length = $event.response.rst.length;
                 that.listItems_follow = []; //listを初期化
@@ -49106,14 +49078,10 @@ exports.default = {
                 var _now_ms2 = _now2.getTime();
                 _Store2.default.setNextFollowTime(_now_ms2 + 905000, _now_ms2); //15分後に設定　5秒は気持ち
 
-                console.log('自動フォロー再開ジョブをスタートします');
                 //自動フォローを再開関数を開始する
                 var _result = that.$crontab.enableJob('reStartAutoFollow');
-                console.log("enableJob('reStartAutoFollow'):" + _result);
 
                 //リストを更新する
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
                 var rst = $event.response.rst;
                 var _length = $event.response.rst.length;
                 that.listItems_follow = []; //listを初期化
@@ -49135,9 +49103,9 @@ exports.default = {
                 }
             } else if ($event.response.res === 'UPDATED') {
                 //画面更新の場合に、すでにフォロー済リストを表示する
-                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
+                // console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 var _result2 = $event.response.rst;
                 var _length2 = $event.response.rst.length;
                 that.listItems_follow = []; //listを初期化
@@ -49152,9 +49120,9 @@ exports.default = {
                 //アカウントが停止された場合にここに来る
                 //リストを更新して、すべての機能をoffにする
 
-                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
+                // console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 var _result3 = $event.response.rst;
                 var _length3 = $event.response.rst.length;
                 that.listItems_follow = []; //listを初期化
@@ -49201,10 +49169,8 @@ exports.default = {
                 var _now_ms3 = _now3.getTime();
                 _Store2.default.setNextFollowTime(_now_ms3 + 905000, _now_ms3); //15分後に設定　5秒は気持ち
 
-                console.log('自動フォロー再開ジョブをスタートします');
                 //自動フォローを再開関数を開始する
                 var _result4 = that.$crontab.enableJob('reStartAutoFollow');
-                console.log("enableJob('reStartAutoFollow'):" + _result4);
 
                 //自動フォローを停止中にする
                 // store.setAutoFollowCronStatus('0')
@@ -49230,12 +49196,12 @@ exports.default = {
         //controller.startAutoUnFollow_ajax()
         _Controller2.default.getUnFollowedList_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', function ($event) {
-            console.log('アンフォロー完了しました');
-            console.dir($event.response.rst);
+            // console.log('アンフォロー完了しました')
+            // console.dir($event.response.rst)
             if ($event.response.res === 'OK') {
-                console.log('DEBUG -- Home.vue --> アンフォローリストを更新します');
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
+                // console.log('DEBUG -- Home.vue --> アンフォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 var result = $event.response.rst;
                 var length = $event.response.rst.length;
                 that.listItems_unfollow = []; //listを初期化
@@ -49270,8 +49236,8 @@ exports.default = {
                 //'FOLLOWLIMIT'の場合は15分で解除されないが、解除されていないともう一度ここに飛んでくるからとりあえず'LIMIT'と共通化
 
                 //リストを更新する
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 var rst = $event.response.rst;
                 var _length4 = $event.response.rst.length;
                 that.listItems_unfollow = []; //listを初期化
@@ -49301,9 +49267,9 @@ exports.default = {
                 that.$crontab.enableJob('startAutoUnFollow');
             } else if ($event.response.res === 'UPDATED') {
                 //画面更新の場合に、すでにフォロー済リストを表示する
-                console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します');
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
+                // console.log('DEBUG -- Home.vue --> UPDATE フォローリストを更新します')
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 var _result5 = $event.response.rst;
                 var _length5 = $event.response.rst.length;
                 that.listItems_unfollow = []; //listを初期化
@@ -49344,10 +49310,10 @@ exports.default = {
         //予約ツイートを更新する
         _Controller2.default.getTweetSchedule_ajax();
         _Controller2.default.$on('AJAX_DISPLAY_SCHEDULE_RESULT', function ($event) {
-            console.log('DEBUG -- Home.vue --> ツイートスケジュールリストを更新します');
+            // console.log('DEBUG -- Home.vue --> ツイートスケジュールリストを更新します')
             if ($event.response.rst !== null) {
-                console.dir($event.response.rst);
-                console.dir($event.response.rst.length);
+                // console.dir($event.response.rst)
+                // console.dir($event.response.rst.length)
                 var result = $event.response.rst;
                 var length = $event.response.rst.length;
                 that.listItems_schedule = []; //listを初期化
@@ -49362,7 +49328,7 @@ exports.default = {
 
         //自動いいねのステータスを変更する
         _Controller2.default.$on('AJAX_CHANGE_AUTOLIKESTATUS', function ($event) {
-            console.log('DEBUG -- Home.vue --> 自動いいねステータスを変更します');
+            // console.log('DEBUG -- Home.vue --> 自動いいねステータスを変更します')
             _this2.AutoLikeCronStatus = $event.response;
             _Store2.default.setAutoLikeCronStatus($event.response);
             if ($event.response === '1') {
@@ -49376,7 +49342,7 @@ exports.default = {
 
         //自動フォローのステータスを変更する
         _Controller2.default.$on('AJAX_CHANGE_AUTOFOLLOWSTATUS', function ($event) {
-            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
+            // console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します')
             _this2.AutoFollowCronStatus = $event.response;
             _Store2.default.setAutoFollowCronStatus($event.response);
             if ($event.response === '1') {
@@ -49390,7 +49356,7 @@ exports.default = {
 
         //自動アンフォローのステータスを変更する
         _Controller2.default.$on('AJAX_CHANGE_AUTOUNFOLLOWSTATUS', function ($event) {
-            console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します');
+            // console.log('DEBUG -- Home.vue --> 自動フォローステータスを変更します')
             _this2.AutoUnFollowCronStatus = $event.response;
             _Store2.default.setAutoUnFollowCronStatus($event.response);
             if ($event.response === '1') {
@@ -49403,7 +49369,7 @@ exports.default = {
         });
 
         //♡likeステータスをセットする
-        console.log('likeステータスは：' + _Store2.default.getAutoLikeCronStatus());
+        // console.log('likeステータスは：'+store.getAutoLikeCronStatus())
         this.AutoLikeCronStatus = _Store2.default.getAutoLikeCronStatus();
         if (this.AutoLikeCronStatus === '0') {
             this.$set(this.p_status_toggle, 'p-btn_home-like--exec', false);
@@ -49416,7 +49382,7 @@ exports.default = {
             this.$set(this.p_status_toggle, 'p-btn_home-like--stay', false);
         }
         //followステータスをセットする
-        console.log('followステータスは：' + _Store2.default.getAutoFollowCronStatus());
+        // console.log('followステータスは：'+store.getAutoFollowCronStatus())
         this.AutoFollowCronStatus = _Store2.default.getAutoFollowCronStatus();
         if (this.AutoFollowCronStatus === '0') {
             this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--exec', false);
@@ -49429,7 +49395,7 @@ exports.default = {
             this.$set(this.p_follow_status_toggle, 'p-btn_home-follow--stay', false);
         }
         //unfollowステータスをセットする
-        console.log('Unfollowステータスは：' + _Store2.default.getAutoUnFollowCronStatus());
+        // console.log('Unfollowステータスは：'+store.getAutoUnFollowCronStatus())
         this.AutoUnFollowCronStatus = _Store2.default.getAutoUnFollowCronStatus();
         if (this.AutoUnFollowCronStatus === '0') {
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--exec', false);
@@ -49442,7 +49408,7 @@ exports.default = {
             this.$set(this.p_unfollow_status_toggle, 'p-btn_home-unfollow--stay', false);
         }
         //メールは配信のステータスをセットする
-        console.log('メールステータスは：' + _Store2.default.getMailStatus());
+        // console.log('メールステータスは：'+store.getMailStatus())
         this.MailStatus = _Store2.default.getMailStatus();
         if (this.MailStatus === '0') {
             this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', false);
@@ -49595,8 +49561,8 @@ exports.default = {
 
             _Controller2.default.getTwitterProfile_ajax('screen_name');
             _Controller2.default.$once('AJAX_COMPLETE_GETTWITTERPROFILE', function ($event) {
-                console.log('フロントに帰ってきたデータ↓ プロフィール');
-                console.dir($event.response.rst);
+                // console.log('フロントに帰ってきたデータ↓ プロフィール')
+                // console.dir($event.response.rst)
                 if ($event.response.res === 'OK') {
                     //取得成功時はUser領域更新
                     _this5.follower = $event.response.rst.followers_count; //フォロワー数
@@ -50011,27 +49977,20 @@ exports.default = {
         makeDatas: function makeDatas() {
             // 今のリスト項目を退避
             var datas_ = Object.assign([], this.datas);
-            console.dir(datas_);
             return this.searchText == '' ? this.datas : '';
         },
         deleteItem: function deleteItem(id) {
-            var _this = this;
-
-            console.log('delete-btn clicked!!' + id.listId);
-
             //データベース上のアカウント情報を削除する            
             var delete_data = _lodash2.default.filter(this.datas, { 'id': id.listId });
 
             this.datas = _lodash2.default.reject(this.datas, { 'id': id.listId });
 
-            console.dir(delete_data[0].account);
-
             _Controller2.default.deleteAccount_ajax(delete_data[0].account);
             _Controller2.default.$on('AJAX_COMPLETE_DELETEACCOUNT', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました');
-                    console.dir($event.response);
+                    // console.log('リクエストに成功しました')
+                    // console.dir($event.response)
                     _Store2.default.setMessage($event.response.msg, true);
 
                     var message = _Store2.default.getMessage();
@@ -50039,12 +49998,7 @@ exports.default = {
                         _Controller2.default.emit_message(message);
                     }
                 } else {
-                    _this.loading = false;
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
-
                     _Store2.default.setMessage('サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。', false);
-
                     var _message = _Store2.default.getMessage();
                     if (_message.msg !== '') {
                         _Controller2.default.emit_message(_message);
@@ -50054,43 +50008,29 @@ exports.default = {
         },
         addItem: function addItem(account_list) {
             var that = this;
-            console.log('addItem');
-            console.log('length:' + Object.keys(account_list).length);
             Object.keys(account_list).forEach(function (key) {
-                // val => {screen_name: 'xxxxxxxxx'}
-                console.log('index:' + key);
-                console.log('val:' + this['screen_name']);
                 that.datas.push({ id: that.getId(), account: this['screen_name'], isActive: false });
             }, account_list);
             this.makeDatas();
         },
         filterCollection: function filterCollection(elm) {
-            console.log('filterCollection');
             var regexp = new RegExp('^' + this.searchText, 'i');
             return elm.text.match(regexp);
         },
         CertifyAccount: function CertifyAccount() {
-            var _this2 = this;
-
             this.loading = true;
-            console.log('certify-btn clicked!');
             _Controller2.default.certify_ajax();
             _Controller2.default.$on('AJAX_COMPLETE_GETREQUEST', function ($event) {
 
                 if ($event.response.res === 'OK') {
-                    console.log('リクエストに成功しました');
-                    console.dir($event.response);
+                    // console.log('リクエストに成功しました')
+                    // console.dir($event.response)
                     var url = $event.response.url;
-                    console.log('リダイレクトします->' + url);
                     // this.$router.push(url)
                     window.location.href = url;
                 } else {
-                    _this2.loading = false;
-                    console.log('リクエストに失敗しました');
-                    // {'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'}
 
                     _Store2.default.setMessage($event.response.msg, false);
-
                     var message = _Store2.default.getMessage();
                     if (message.msg !== '') {
                         _Controller2.default.emit_message(message);
@@ -50099,7 +50039,7 @@ exports.default = {
             });
         },
         fetchData: function fetchData() {
-            var _this3 = this;
+            var _this = this;
 
             console.log('fetchdataに来たよ！');
             this.loading = false;
@@ -50118,11 +50058,11 @@ exports.default = {
                 this.loading = false;
                 _Controller2.default.saveToken_ajax(oauth_token, oauth_verifier);
                 _Controller2.default.$once('AJAX_COMPLETE_CERTIFY', function ($event) {
-                    console.log('フロントに帰ってきたデータ↓');
-                    console.dir($event.response);
+                    // console.log('フロントに帰ってきたデータ↓')
+                    // console.dir($event.response)
 
                     //認証したアカウントのリストを更新する
-                    _this3.updateAccount();
+                    _this.updateAccount();
 
                     // メッセージ表示
                     _Store2.default.setMessage('認証に成功しました', true);
@@ -50141,7 +50081,7 @@ exports.default = {
             }
         },
         updateAccount: function updateAccount() {
-            var _this4 = this;
+            var _this2 = this;
 
             //thisを退避
             var that = this;
@@ -50149,16 +50089,13 @@ exports.default = {
             this.loading = false;
             _Controller2.default.updateAccount_ajax();
             _Controller2.default.$once('AJAX_COMPLETE_GETACCOUNT', function ($event) {
-                console.log('フロントに帰ってきたデータ↓');
-                console.dir($event.response);
+                // console.log('フロントに帰ってきたデータ↓')
+                // console.dir($event.response)
 
                 if ($event.response.res === 'OK') {
                     // メッセージ表示
-                    console.log('アカウントのアップデート処理完了');
-                    console.log('取得したスクリーンネーム');
-
                     for (var i = 0; i < $event.response.screen_name.length; i++) {
-                        _this4.addItem($event.response.screen_name[i]);
+                        _this2.addItem($event.response.screen_name[i]);
                     }
                 } else {}
             });
@@ -64286,7 +64223,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _vueCrontab = __webpack_require__(13);
@@ -64299,52 +64236,52 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 // import Vue from 'vue'
 exports.default = function () {
-    /* change the value of setInterval inside VueCrontab. */
-    // VueCrontab.setOption({
-    //   interval: 100,
-    //   auto_start : false
-    // })
+  /* change the value of setInterval inside VueCrontab. */
+  // VueCrontab.setOption({
+  //   interval: 100,
+  //   auto_start : false
+  // })
 
-    var result = _vueCrontab2.default.addJob([{
-        name: 'tweetwatch',
-        interval: {
-            seconds: '/1'
-        },
-        job: _crontabfunc.tweetWatch
-    }]);
-    var result2 = _vueCrontab2.default.addJob([{
-        name: 'startAutoLike',
-        interval: {
-            minutes: '/15' //15分ごとに実行する
-        },
-        job: _crontabfunc.startAutoLike
-    }]);
+  var result = _vueCrontab2.default.addJob([{
+    name: 'tweetwatch',
+    interval: {
+      seconds: '/1'
+    },
+    job: _crontabfunc.tweetWatch
+  }]);
+  var result2 = _vueCrontab2.default.addJob([{
+    name: 'startAutoLike',
+    interval: {
+      seconds: '/60' //1分ごとに実行する
+    },
+    job: _crontabfunc.startAutoLike
+  }]);
 
-    var result3 = _vueCrontab2.default.addJob([{
-        name: 'startAutoFollow',
-        interval: {
-            seconds: '/1' //1s毎とするが、初めの一回実行されたあとすぐにdisableJobする      
-        },
-        job: _crontabfunc.startAutoFollow
-    }]);
+  var result3 = _vueCrontab2.default.addJob([{
+    name: 'startAutoFollow',
+    interval: {
+      seconds: '/1' //1s毎とするが、初めの一回実行されたあとすぐにdisableJobする      
+    },
+    job: _crontabfunc.startAutoFollow
+  }]);
 
-    var result4 = _vueCrontab2.default.addJob([{
-        name: 'reStartAutoFollow',
-        interval: {
-            minutes: '/1' //15分後に開始する
-        },
-        job: _crontabfunc.reStartAutoFollow
-    }]);
+  var result4 = _vueCrontab2.default.addJob([{
+    name: 'reStartAutoFollow',
+    interval: {
+      minutes: '/1' //15分後に開始する
+    },
+    job: _crontabfunc.reStartAutoFollow
+  }]);
 
-    var result5 = _vueCrontab2.default.addJob([{
-        name: 'startAutoUnFollow',
-        interval: {
-            seconds: '/1'
-        },
-        job: _crontabfunc.startAutoUnFollow
-    }]);
-    _vueCrontab2.default.disableJob('tweetwatch');
-    _vueCrontab2.default.disableJob('reStartAutoFollow');
+  var result5 = _vueCrontab2.default.addJob([{
+    name: 'startAutoUnFollow',
+    interval: {
+      seconds: '/1'
+    },
+    job: _crontabfunc.startAutoUnFollow
+  }]);
+  _vueCrontab2.default.disableJob('tweetwatch');
+  _vueCrontab2.default.disableJob('reStartAutoFollow');
 };
 
 /***/ }),
