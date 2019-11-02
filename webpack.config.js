@@ -40,4 +40,5 @@ module.exports = {
   ,
   plugins: [],
   externals: [nodeExternals()],
+  devtool: 'inline-cheap-module-source-map'
 };
