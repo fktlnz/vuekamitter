@@ -36611,8 +36611,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 // Json取得のベースURL
-//const URL_BASE = 'http://localhost:8888/KamitterApp/KamitterAPI/public/api/';
-var URL_BASE = 'http://service-1.masashisite.com/KamitterAPI/public/api/';
+var URL_BASE = 'http://localhost:8888/KamitterApp/KamitterAPI/public/api/';
+//const URL_BASE = 'http://service-1.masashisite.com/KamitterAPI/public/api/';
 
 // Vue.js のインスタンス
 module.exports = new _vue2.default({
@@ -38007,6 +38007,8 @@ exports.default = {
     }
 
 }; //
+//
+//
 //
 //
 //
@@ -68554,7 +68556,7 @@ var render = function() {
         [
           _c(
             "router-link",
-            { staticClass: "c-link", attrs: { to: "/signup" } },
+            { staticClass: "c-link", attrs: { to: { name: "signup" } } },
             [_c("span", [_vm._v("ユーザー登録画面へ")])]
           ),
           _vm._v(" "),
@@ -68564,7 +68566,10 @@ var render = function() {
               _vm._v("パスワードを忘れた方は"),
               _c(
                 "router-link",
-                { staticClass: "c-link", attrs: { to: "/remindsend" } },
+                {
+                  staticClass: "c-link",
+                  attrs: { to: { name: "remindsend" } }
+                },
                 [_vm._v("こちら")]
               )
             ],

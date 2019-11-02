@@ -19,8 +19,10 @@
         <button class="c-btn" v-on:click="signIn">ログイン</button>
     </div>
     <div class="c-form-wrap">
-        <router-link class="c-link" to="/signup"><span>ユーザー登録画面へ</span></router-link>
-        <p>パスワードを忘れた方は<router-link class="c-link" to="/remindsend">こちら</router-link></p>
+        <router-link class="c-link" :to="{name:'signup'}" ><span>ユーザー登録画面へ</span></router-link>
+        <p>パスワードを忘れた方は<router-link class="c-link" :to="{name:'remindsend'}">こちら</router-link></p>
+        <!-- <router-link class="c-link" to="/signup"><span>ユーザー登録画面へ</span></router-link>
+        <p>パスワードを忘れた方は<router-link class="c-link" to="/remindsend">こちら</router-link></p> -->
     </div>
     </div>
 </template>
