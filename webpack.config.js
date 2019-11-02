@@ -1,5 +1,8 @@
 const path = require('path');
 
+//mochaで必要
+const nodeExternals = require('webpack-node-externals');
+
 module.exports = {
   entry: path.join(__dirname, 'src/js/app.js'),
   output: {
@@ -36,4 +39,5 @@ module.exports = {
   }
   ,
   plugins: [],
+  externals: [nodeExternals()],
 };
