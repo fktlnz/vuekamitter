@@ -208,7 +208,7 @@ module.exports = new Vue({
         this.$emit('AJAX_COMPLETE_GETACTIVEUSER', {response: json});
       })
     },
-    getTwitterProfile_ajax(screen_name) {
+    getTwitterProfile_ajax(screen_name) {      
       return axios.get(URL_BASE + 'gettwitterprofile?screen_name='+screen_name)
       .then((res) => {       
           this.$emit('AJAX_COMPLETE_GETTWITTERPROFILE', {response: res.data});
