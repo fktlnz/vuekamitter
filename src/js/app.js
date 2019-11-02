@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import VueCrontab from 'vue-crontab'
 import crontab from "./component/crontab.js"
 import router from './router.js'

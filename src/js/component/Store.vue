@@ -5,7 +5,7 @@
 画面からDBへのアクセスはこのクラスを通す
 =================================*/
 
-import Vue from 'vue';
+// import Vue from 'vue';
 
 // Vue.js のインスタンス
 module.exports = new Vue({

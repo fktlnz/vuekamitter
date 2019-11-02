@@ -1,4 +1,4 @@
-import Vue from 'vue'
+// import Vue from 'vue'
 import Router from 'vue-router'
 import SignUp from './component/SignUp.vue'
 import SignIn from './component/SignIn.vue'

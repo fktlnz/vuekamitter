@@ -30,7 +30,7 @@
 
 <script>
 import path from 'path';
-import Vue from 'vue'
+// import Vue from 'vue'
 import inputform from './InputForm.vue'
 import controller from './Controller.vue'
 
