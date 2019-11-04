@@ -4,7 +4,7 @@ import Login from '../src/js/component/SignIn.vue';
 import Signup from '../src/js/component/Signup.vue';
 import flushPromises from 'flush-promises';
 // import jest from 'jest'
-var assert = require('assert');
+// var assert = require('assert');
 // jest.mock('axios')
 import { URLSearchParams } from 'url';
 global.URLSearchParams = URLSearchParams

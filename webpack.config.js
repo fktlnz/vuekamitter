@@ -7,7 +7,10 @@ module.exports = {
   entry: path.join(__dirname, 'src/js/app.js'),
   output: {
     path: path.join(__dirname, 'dist/js'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
+    // ソースマップで絶対パスを使用する（IDE 経由のデバッグで重要）
+    devtoolModuleFilenameTemplate: '[absolute-resource-path]',
+    devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
   },
   module: {
     loaders: [
@@ -40,5 +43,6 @@ module.exports = {
   ,
   plugins: [],
   externals: [nodeExternals()],
-  devtool: 'inline-cheap-module-source-map'
+  devtool: 'inline-cheap-module-source-map',
+  
 };
