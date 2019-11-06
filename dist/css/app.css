@@ -353,6 +353,16 @@ td input {
   top: 10px;
 }
 
+.c-hover {
+  cursor: pointer;
+}
+
+.c-hover:hover {
+  opacity: .85;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
 .c-icon-home {
   display: block !important;
   margin-bottom: 5px;
@@ -362,13 +372,6 @@ td input {
   font-size: 20px;
   padding: 0px 20px;
   color: white;
-  cursor: pointer;
-}
-
-.c-heading:hover {
-  opacity: .85;
-  -webkit-transition: .3s;
-  transition: .3s;
 }
 
 .c-title {
@@ -484,12 +487,12 @@ td input {
 .c-btn {
   border: none;
   padding: 10px 20px;
-  background-color: #dcdcdc;
+  background-color: #262626;
   text-align: center;
   width: 160px;
   margin: 0 auto 30px;
   border-radius: 4px;
-  color: #3f3f3f;
+  color: #dcdcdc;
 }
 
 .c-btn:hover {
@@ -497,6 +500,27 @@ td input {
   -webkit-transition: .3s;
   transition: .3s;
   cursor: pointer;
+}
+
+.c-btn__square-soft {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: #262626;
+  overflow: hidden;
+  background: linear-gradient(#f0f0f0 0%, #dcdcdc 100%);
+  text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+}
+
+.c-btn__square-soft:active {
+  /*押したとき*/
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px);
+  /*沈むように*/
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
+  background-image: linear-gradient(#f0f0f0 0%, #dcdcdc 100%);
+  /*グラデーションを明るく*/
 }
 
 /* ================================
@@ -554,6 +578,20 @@ td input {
 }
 
 /* ================================
+#　メニューバー
+=================================*/
+.p-menu-bar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.p-menu-bar__item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+/* ================================
 #　ユーザー情報
 =================================*/
 .p-userInfo {
@@ -603,17 +641,12 @@ td input {
   text-align: left;
 }
 
-.p-userInfo__logout {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-.p-userInfo__logout:hover {
-  opacity: .50;
-  -webkit-transition: .3s;
-  transition: .3s;
-  cursor: pointer;
+.p-userInfo__key::before {
+  background: #262626;
+  color: #dcdcdc;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 12px;
 }
 
 /* ================================
@@ -726,37 +759,37 @@ td input {
 
 .p-status-wrap .p-btn_home-like--exec {
   color: white;
-  background-color: #FF7081;
+  background: #FF7081;
 }
 
 .p-status-wrap .p-btn_home-like--stay {
   color: white;
-  background-color: #fdbcc3;
+  background: #fdbcc3;
 }
 
 .p-status-wrap .p-btn_home-follow--exec {
   color: white;
-  background-color: #70a2ff;
+  background: #70a2ff;
 }
 
 .p-status-wrap .p-btn_home-follow--stay {
   color: white;
-  background-color: #bcd3fd;
+  background: #bcd3fd;
 }
 
 .p-status-wrap .p-btn_home-unfollow--exec {
   color: white;
-  background-color: #a770ff;
+  background: #a770ff;
 }
 
 .p-status-wrap .p-btn_home-unfollow--stay {
   color: white;
-  background-color: #ebbcfd;
+  background: #ebbcfd;
 }
 
 .p-status-wrap .p-btn_home-mail--exec {
   color: white;
-  background-color: #ffdd92;
+  background: #ffdd92;
 }
 
 .p-status-wrap {
@@ -766,6 +799,11 @@ td input {
 .p-status__item {
   display: inline-block;
   margin: 20px 20px;
+  background-color: #dcdcdc;
+  padding: 10px 20px;
+  text-align: center;
+  width: 160px;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 768px) {

@@ -25795,9 +25795,43 @@ var _Controller = __webpack_require__(2);
 
 var _Controller2 = _interopRequireDefault(_Controller);
 
+var _Store = __webpack_require__(3);
+
+var _Store2 = _interopRequireDefault(_Store);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import Vue from 'vue'
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
 exports.default = {
     components: {
         InputForm: _InputForm2.default
@@ -25834,43 +25868,25 @@ exports.default = {
                 // console.log('処理がフロントに帰ってきました')
                 //     console.dir($event.response)
                 if ($event.response.res === 'OK') {
-                    _this.$router.push('/home');
+                    _Controller2.default.signIn_ajax(_this.data);
+                    _Controller2.default.$once('AJAX_COMPLETE_SIGNIN', function ($event) {
+                        // console.log('フロントに帰ってきたデータ↓')
+                        // console.dir($event.response)
+                        if ($event.response.res === 'OK') {
+                            _Store2.default.setMessage('ユーザー登録完了！アカウント認証から始めよう！', true);
+                            _this.$router.push('/home');
+                        } else {
+                            _this.errors = $event.response;
+                        }
+                    });
                 }
                 _this.errors = $event.response;
             });
         }
     }
 
-}; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+};
+// import Vue from 'vue'
 
 /***/ }),
 /* 25 */
@@ -36782,9 +36798,9 @@ var _AuthAccount = __webpack_require__(213);
 
 var _AuthAccount2 = _interopRequireDefault(_AuthAccount);
 
-var _message13 = __webpack_require__(7);
+var _message14 = __webpack_require__(7);
 
-var _message14 = _interopRequireDefault(_message13);
+var _message15 = _interopRequireDefault(_message14);
 
 var _Controller = __webpack_require__(2);
 
@@ -36861,13 +36877,20 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 exports.default = {
     components: {
         UserInfo: _UserInfo2.default,
         ListItem: _Listitem2.default,
         AuthAccount: _AuthAccount2.default,
-        Message: _message14.default
+        Message: _message15.default
     },
     data: function data() {
         return {
@@ -37570,6 +37593,25 @@ exports.default = {
                     }
                 }
             });
+        },
+        logout: function logout() {
+            var _this6 = this;
+
+            _Controller2.default.logout_ajax();
+            _Controller2.default.$once('AJAX_FINISH_LOGOUT_RESULT', function ($event) {
+                if ($event.response.res === true) {
+                    //メッセージ表示
+                    _Store2.default.setMessage('ログアウトしました', true);
+                    _this6.$router.push('/');
+                } else {
+                    //メッセージ表示
+                    _Store2.default.setMessage('ログアウトに失敗しました', false);
+                    var _message13 = _Store2.default.getMessage();
+                    if (_message13.msg !== '') {
+                        _Controller2.default.emit_message(_message13);
+                    }
+                }
+            });
         }
     }
 
@@ -37633,6 +37675,9 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 //
+//
+//
+//
 
 // import Vue from 'vue'
 exports.default = {
@@ -37643,27 +37688,7 @@ exports.default = {
     data: function data() {
         return {};
     },
-    methods: {
-        logout: function logout() {
-            var _this = this;
-
-            _Controller2.default.logout_ajax();
-            _Controller2.default.$once('AJAX_FINISH_LOGOUT_RESULT', function ($event) {
-                if ($event.response.res === true) {
-                    //メッセージ表示
-                    _Store2.default.setMessage('ログアウトしました', true);
-                    _this.$router.push('/');
-                } else {
-                    //メッセージ表示
-                    _Store2.default.setMessage('ログアウトに失敗しました', false);
-                    var message = _Store2.default.getMessage();
-                    if (message.msg !== '') {
-                        _Controller2.default.emit_message(message);
-                    }
-                }
-            });
-        }
-    }
+    methods: {}
 
 };
 
@@ -55973,7 +55998,7 @@ var render = function() {
         _c("InputForm", {
           attrs: {
             type: "text",
-            label: "ユーザー名*",
+            label: "ユーザー名　(必須)",
             name: "username",
             placeholder: "example"
           },
@@ -55987,7 +56012,7 @@ var render = function() {
         _c("InputForm", {
           attrs: {
             type: "text",
-            label: "Email*",
+            label: "Email　(必須)",
             name: "email",
             placeholder: "example@gmail.com"
           },
@@ -56001,7 +56026,7 @@ var render = function() {
         _c("InputForm", {
           attrs: {
             type: "password",
-            label: "パスワード*",
+            label: "パスワード　(必須)",
             name: "password",
             placeholder: ""
           },
@@ -56015,7 +56040,7 @@ var render = function() {
         _c("InputForm", {
           attrs: {
             type: "password",
-            label: "パスワード再入力*",
+            label: "パスワード再入力　(必須)",
             name: "re_pass",
             placeholder: ""
           },
@@ -56255,7 +56280,7 @@ var render = function() {
           _c("InputForm", {
             attrs: {
               type: "text",
-              label: "ユーザー名*",
+              label: "ユーザー名",
               name: "username",
               placeholder: "(例)kazukichi"
             },
@@ -56269,7 +56294,7 @@ var render = function() {
           _c("InputForm", {
             attrs: {
               type: "password",
-              label: "パスワード*",
+              label: "パスワード",
               name: "password",
               placeholder: ""
             },
@@ -56455,52 +56480,61 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-userInfo mb30" }, [
-    _c("img", {
-      staticClass: "p-userInfo__img",
-      attrs: { src: _vm.img_url, alt: "" }
-    }),
+    _vm.img_url === ""
+      ? _c("img", {
+          staticClass: "p-userInfo__img",
+          attrs: { src: "src/img/noaccount.jpg", alt: "" }
+        })
+      : _c("img", {
+          staticClass: "p-userInfo__img",
+          attrs: { src: _vm.img_url, alt: "" }
+        }),
     _vm._v(" "),
-    _c("p", { staticClass: "p-userInfo__name" }, [
-      _vm._v(_vm._s(_vm.account_name))
-    ]),
+    _vm.account_name === ""
+      ? _c("p", { staticClass: "p-userInfo__name" }, [_vm._v("??????")])
+      : _c("p", { staticClass: "p-userInfo__name" }, [
+          _vm._v(_vm._s(_vm.account_name))
+        ]),
     _vm._v(" "),
     _c("div", { staticClass: "p-userInfo__profile mb10" }, [
-      _c("p", [_vm._v(_vm._s(_vm.description))])
+      _vm.description === ""
+        ? _c("p", [
+            _vm._v("まずはアカウント認証"),
+            _c("i", { staticClass: "fas fa-key p-userInfo__key" }),
+            _vm._v("から始めよう！")
+          ])
+        : _c("p", [_vm._v(_vm._s(_vm.description))])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "p-userInfo__head" }, [
-      _c("ul", [
-        _c("li", { staticClass: "p-userInfo__listitem-wrap" }, [
-          _c("ul", { staticClass: "p-userInfo__list" }, [
-            _c("li", { staticClass: "p-userInfo__listitem" }, [
-              _vm._v(_vm._s(_vm.friends))
+    _vm.account_name !== ""
+      ? _c("div", { staticClass: "p-userInfo__head" }, [
+          _c("ul", [
+            _c("li", { staticClass: "p-userInfo__listitem-wrap" }, [
+              _c("ul", { staticClass: "p-userInfo__list" }, [
+                _c("li", { staticClass: "p-userInfo__listitem" }, [
+                  _vm._v(_vm._s(_vm.friends))
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "p-userInfo__listitem" }, [
+                  _vm._v("フォロー中")
+                ])
+              ])
             ]),
             _vm._v(" "),
-            _c("li", { staticClass: "p-userInfo__listitem" }, [
-              _vm._v("フォロー中")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("li", { staticClass: "p-userInfo__listitem-wrap" }, [
-          _c("ul", { staticClass: "p-userInfo__list" }, [
-            _c("li", { staticClass: "p-userInfo__listitem" }, [
-              _vm._v(_vm._s(_vm.follower))
-            ]),
-            _vm._v(" "),
-            _c("li", { staticClass: "p-userInfo__listitem" }, [
-              _vm._v("フォロワー")
+            _c("li", { staticClass: "p-userInfo__listitem-wrap" }, [
+              _c("ul", { staticClass: "p-userInfo__list" }, [
+                _c("li", { staticClass: "p-userInfo__listitem" }, [
+                  _vm._v(_vm._s(_vm.follower))
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "p-userInfo__listitem" }, [
+                  _vm._v("フォロワー")
+                ])
+              ])
             ])
           ])
         ])
-      ])
-    ]),
-    _vm._v(" "),
-    _c(
-      "span",
-      { staticClass: "p-userInfo__logout", on: { click: _vm.logout } },
-      [_c("i", { staticClass: "fas fa-sign-out-alt" })]
-    )
+      : _vm._e()
   ])
 }
 var staticRenderFns = []
@@ -56822,7 +56856,7 @@ var render = function() {
       _c(
         "p",
         {
-          staticClass: "c-heading",
+          staticClass: "c-heading c-hover",
           class: _vm.classname,
           on: { click: _vm.onClick }
         },
@@ -56839,7 +56873,8 @@ var render = function() {
               _c(
                 "span",
                 {
-                  staticClass: "c-heading p-heading__follow p-list__keywordBtn",
+                  staticClass:
+                    "c-heading p-heading__follow p-list__keywordBtn c-hover",
                   on: { click: _vm.onClickKeyword }
                 },
                 [_vm._v("Keywords")]
@@ -57216,6 +57251,24 @@ var render = function() {
         1
       ),
       _vm._v(" "),
+      _c("div", { staticClass: "p-menu-bar" }, [
+        _c("ul", [
+          _vm._m(1),
+          _vm._v(" "),
+          _c(
+            "li",
+            {
+              staticClass: "c-hover p-menu-bar__item",
+              on: { click: _vm.logout }
+            },
+            [
+              _c("i", { staticClass: "fas fa-sign-out-alt" }),
+              _vm._v("ログアウト")
+            ]
+          )
+        ])
+      ]),
+      _vm._v(" "),
       _vm.show === true
         ? _c("UserInfo", {
             attrs: {
@@ -57235,12 +57288,12 @@ var render = function() {
                 _c(
                   "li",
                   {
-                    staticClass: "c-btn p-status__item",
+                    staticClass: "p-status__item c-hover c-btn__square-soft",
                     class: _vm.p_follow_status_toggle,
                     on: { click: _vm.changeFollowCronStatus }
                   },
                   [
-                    _vm._m(1),
+                    _vm._m(2),
                     _vm._v(" "),
                     _c("p", [
                       _vm.AutoFollowCronStatus === "0"
@@ -57257,12 +57310,12 @@ var render = function() {
                 _c(
                   "li",
                   {
-                    staticClass: "c-btn p-status__item",
+                    staticClass: "p-status__item c-hover c-btn__square-soft",
                     class: _vm.p_status_toggle,
                     on: { click: _vm.changeLikeCronStatus }
                   },
                   [
-                    _vm._m(2),
+                    _vm._m(3),
                     _vm._v(" "),
                     _c("p", [
                       _vm.AutoLikeCronStatus === "0"
@@ -57279,12 +57332,12 @@ var render = function() {
                 _c(
                   "li",
                   {
-                    staticClass: "c-btn p-status__item",
+                    staticClass: "p-status__item c-hover c-btn__square-soft",
                     class: _vm.p_unfollow_status_toggle,
                     on: { click: _vm.changeUnFollowCronStatus }
                   },
                   [
-                    _vm._m(3),
+                    _vm._m(4),
                     _vm._v(" "),
                     _c("p", [
                       _vm.AutoUnFollowCronStatus === "0"
@@ -57301,12 +57354,12 @@ var render = function() {
                 _c(
                   "li",
                   {
-                    staticClass: "c-btn p-status__item",
+                    staticClass: "p-status__item c-hover c-btn__square-soft",
                     class: _vm.p_mail_status_toggle,
                     on: { click: _vm.changeMailStatus }
                   },
                   [
-                    _vm._m(4),
+                    _vm._m(5),
                     _vm._v(" "),
                     _c("p", [
                       _vm.MailStatus === "0"
@@ -57374,6 +57427,15 @@ var staticRenderFns = [
       { staticClass: "c-btn p-sidebar__btn js-toggle-window" },
       [_c("i", { staticClass: "fas fa-key" })]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "c-hover p-menu-bar__item" }, [
+      _c("i", { staticClass: "fas fa-user" }),
+      _vm._v("登録編集")
+    ])
   },
   function() {
     var _vm = this
@@ -82727,7 +82789,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("InputForm", {
-            attrs: { type: "text", label: "ユーザー名*", name: "username" },
+            attrs: { type: "text", label: "ユーザー名", name: "username" },
             on: {
               onChange: function($event) {
                 return _vm.onChange($event)
@@ -82736,7 +82798,7 @@ var render = function() {
           }),
           _vm._v(" "),
           _c("InputForm", {
-            attrs: { type: "text", label: "メールアドレス*", name: "email" },
+            attrs: { type: "text", label: "メールアドレス", name: "email" },
             on: {
               onChange: function($event) {
                 return _vm.onChange($event)

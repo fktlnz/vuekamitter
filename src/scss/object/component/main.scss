@@ -29,6 +29,16 @@ $color_gray_border: #3f3f3f;
     top: 10px;
 }
 
+//hover
+.c-hover {
+    cursor: pointer;
+    &:hover {
+        opacity: .85;
+        -webkit-transition: .3s;
+        transition: .3s;
+    }
+}
+
 //ホームアイコンのcss
 .c-icon-home {
     display: block !important;
@@ -41,13 +51,7 @@ $color_gray_border: #3f3f3f;
     font-size: 20px;
     // border-radius: 20px;
     padding: 0px 20px;
-    color: white;
-    cursor: pointer;
-    &:hover {
-        opacity: .85;
-        -webkit-transition: .3s;
-        transition: .3s;
-    }
+    color: white;    
 }
 
 .c-title {

@@ -5,51 +5,58 @@
             <AuthAccount v-on:change-active-user="changeActiveUser($event)"></AuthAccount>
             <button class="c-btn p-sidebar__btn js-toggle-window"><i class="fas fa-key"></i></button>
         </div>
+        <div class="p-menu-bar">
+            <ul>
+                <li class="c-hover p-menu-bar__item" ><i class="fas fa-user"></i>登録編集</li>
+                <li class="c-hover p-menu-bar__item" v-on:click="logout"><i class="fas fa-sign-out-alt"></i>ログアウト</li>
+            </ul>
+        </div>
         
         <UserInfo v-if="show===true" :follower="follower" :friends="friends" :account_name="account_name" :description="description" :img_url="img_url"></UserInfo>
-    <div v-if=" show===true ">
-       <div class="p-status-wrap">
-           <ul>
-               <li class="c-btn p-status__item" :class="p_follow_status_toggle" v-on:click="changeFollowCronStatus">
-                    <p><i class="far fa-handshake"></i> follow</p>
-                    <p>
-                       <span v-if=" AutoFollowCronStatus === '0' ">一時停止中...</span>
-                       <span v-else-if=" AutoFollowCronStatus === '1' ">待機中...</span>
-                       <span v-else-if=" AutoFollowCronStatus === '2' ">実行中...</span>                       
-                    </p>
-                </li>
-               <li class="c-btn p-status__item" :class="p_status_toggle" v-on:click="changeLikeCronStatus">
-                    <p><i class="fas fa-heart"></i> like</p>
-                    <p>
-                       <span v-if=" AutoLikeCronStatus === '0' ">一時停止中...</span>
-                       <span v-else-if=" AutoLikeCronStatus === '1' ">待機中...</span>
-                       <span v-else-if=" AutoLikeCronStatus === '2' ">実行中...</span>                       
-                    </p>
-                </li>               
-               <li class="c-btn p-status__item" :class="p_unfollow_status_toggle" v-on:click="changeUnFollowCronStatus">
-                    <p><i class="fas fa-heart-broken"></i> Unfollow</p>
-                    <p>
-                       <span v-if=" AutoUnFollowCronStatus === '0' ">一時停止中...</span>
-                       <span v-else-if=" AutoUnFollowCronStatus === '1' ">待機中...</span>
-                       <span v-else-if=" AutoUnFollowCronStatus === '2' ">実行中...</span>                       
-                    </p>
-                </li>
-               <li class="c-btn p-status__item" :class="p_mail_status_toggle" v-on:click="changeMailStatus">
-                    <p><i class="fas fa-paper-plane"></i> Mail</p>
-                    <p>
-                       <span v-if=" MailStatus === '0' ">配信OFF</span>
-                       <span v-else-if=" MailStatus === '1' ">配信ON</span>
-                    </p>
-                </li>               
-           </ul>
-       </div>       
-       <div class="p-main-area">
-        <ListItem heading="follow" classname="p-heading__follow" v-bind:listItems="listItems_follow"></ListItem>
-        <ListItem heading="like"  classname="p-heading__like" v-bind:listItems="listItems_like"></ListItem>
-        <ListItem heading="unFollow"  classname="p-heading__unfollow" v-bind:listItems="listItems_unfollow"></ListItem>
-        <ListItem heading="tweetschedule"  classname="p-heading__twtschedule" v-bind:listItems="listItems_schedule"></ListItem>
-       </div>
-    </div>
+        
+        <div v-if=" show===true ">
+            <div class="p-status-wrap">
+                <ul>
+                    <li class="p-status__item c-hover c-btn__square-soft" :class="p_follow_status_toggle" v-on:click="changeFollowCronStatus">
+                            <p><i class="far fa-handshake"></i> follow</p>
+                            <p>
+                            <span v-if=" AutoFollowCronStatus === '0' ">一時停止中...</span>
+                            <span v-else-if=" AutoFollowCronStatus === '1' ">待機中...</span>
+                            <span v-else-if=" AutoFollowCronStatus === '2' ">実行中...</span>                       
+                            </p>
+                        </li>
+                    <li class="p-status__item c-hover c-btn__square-soft" :class="p_status_toggle" v-on:click="changeLikeCronStatus">
+                            <p><i class="fas fa-heart"></i> like</p>
+                            <p>
+                            <span v-if=" AutoLikeCronStatus === '0' ">一時停止中...</span>
+                            <span v-else-if=" AutoLikeCronStatus === '1' ">待機中...</span>
+                            <span v-else-if=" AutoLikeCronStatus === '2' ">実行中...</span>                       
+                            </p>
+                        </li>               
+                    <li class="p-status__item c-hover c-btn__square-soft" :class="p_unfollow_status_toggle" v-on:click="changeUnFollowCronStatus">
+                            <p><i class="fas fa-heart-broken"></i> Unfollow</p>
+                            <p>
+                            <span v-if=" AutoUnFollowCronStatus === '0' ">一時停止中...</span>
+                            <span v-else-if=" AutoUnFollowCronStatus === '1' ">待機中...</span>
+                            <span v-else-if=" AutoUnFollowCronStatus === '2' ">実行中...</span>                       
+                            </p>
+                        </li>
+                    <li class="p-status__item c-hover c-btn__square-soft" :class="p_mail_status_toggle" v-on:click="changeMailStatus">
+                            <p><i class="fas fa-paper-plane"></i> Mail</p>
+                            <p>
+                            <span v-if=" MailStatus === '0' ">配信OFF</span>
+                            <span v-else-if=" MailStatus === '1' ">配信ON</span>
+                            </p>
+                        </li>               
+                </ul>
+            </div>       
+            <div class="p-main-area">
+                <ListItem heading="follow" classname="p-heading__follow" v-bind:listItems="listItems_follow"></ListItem>
+                <ListItem heading="like"  classname="p-heading__like" v-bind:listItems="listItems_like"></ListItem>
+                <ListItem heading="unFollow"  classname="p-heading__unfollow" v-bind:listItems="listItems_unfollow"></ListItem>
+                <ListItem heading="tweetschedule"  classname="p-heading__twtschedule" v-bind:listItems="listItems_schedule"></ListItem>
+            </div>
+        </div>
 
     </div>
     
@@ -786,6 +793,25 @@ export default {
                     }
                 }
             })
+        },
+
+        logout(){
+            controller.logout_ajax()
+            controller.$once('AJAX_FINISH_LOGOUT_RESULT', ($event) => {
+                if($event.response.res === true){
+                     //メッセージ表示
+                    store.setMessage('ログアウトしました', true)
+                    this.$router.push('/')
+                }else{
+                    //メッセージ表示
+                    store.setMessage('ログアウトに失敗しました', false)
+                    const message = store.getMessage();
+                    if(message.msg !== ''){
+                        controller.emit_message(message)  
+                    }
+                }                
+            })
+
         }
     }
 

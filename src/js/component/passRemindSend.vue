@@ -3,8 +3,8 @@
     <Message></Message>    
     <div class="c-form-wrap">
         <p class="c-heading p-heading__title txt_center">認証コード生成</p>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="ユーザー名*" name="username"></InputForm>             
-        <InputForm v-on:onChange="onChange($event)" type="text" label="メールアドレス*" name="email"></InputForm>
+        <InputForm v-on:onChange="onChange($event)" type="text" label="ユーザー名" name="username"></InputForm>             
+        <InputForm v-on:onChange="onChange($event)" type="text" label="メールアドレス" name="email"></InputForm>
     </div>
     <div class="txt_center">
         <button class="c-btn" v-on:click="makeRePassword">生成する</button>

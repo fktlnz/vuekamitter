@@ -31,7 +31,7 @@ module.exports = {
     modules: [path.join(__dirname, 'src'), 'node_modules'],
     extensions: ['.js', '.vue'],
     alias: {
-      vue: 'vue/dist/vue.esm.js' // npm install したvueはtemplete機能のないランタイム限定ビルドなので、こっちを使うようエイリアスをはる
+      vue: 'vue/dist/vue.esm.js' ,// npm install したvueはtemplete機能のないランタイム限定ビルドなので、こっちを使うようエイリアスをはる
     }
   }
   ,

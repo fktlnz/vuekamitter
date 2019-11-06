@@ -42,7 +42,7 @@ $color_heading_twtschedule: rgb(188, 253, 197);
 #楕円のタイトル
 =================================*/
 .p-heading__follow {
-    background-color: $color_heading_follow;
+    background-color: $color_heading_follow;    
 }
 .p-heading__like {
     background-color: $color_heading_like;
@@ -73,6 +73,20 @@ $color_heading_twtschedule: rgb(188, 253, 197);
   background: #ccc;
   border-radius: 0px;
   box-shadow: none;
+}
+
+/* ================================
+#　メニューバー
+=================================*/
+.p-menu-bar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.p-menu-bar__item {
+    display: inline-block;
+    margin-right: 10px;
 }
 
 /* ================================
@@ -118,16 +132,13 @@ $color_heading_twtschedule: rgb(188, 253, 197);
 .p-userInfo__profile {
     text-align: left;
 }
-.p-userInfo__logout {
-    position: absolute;
-    top: 0;
-    right: 0;
-    &:hover {
-        opacity: .50;
-        -webkit-transition: .3s;
-        transition: .3s;
-        cursor: pointer;
-    }
+.p-userInfo__key::before {
+    background: $color_txt;
+    color: $color_gray;
+    padding: 5px;
+    border-radius: 4px;
+    font-size: 12px;
+
 }
 
 /* ================================
@@ -247,33 +258,33 @@ $color_heading_twtschedule: rgb(188, 253, 197);
 //動作ステータス表示エリア
 .p-status-wrap .p-btn_home-like--exec {
     color: white;
-    background-color: #FF7081;
+    background: #FF7081;
 }
 .p-status-wrap .p-btn_home-like--stay {
     color: white;
-    background-color: rgb(253, 188, 195);
+    background: rgb(253, 188, 195);
 }
 
 .p-status-wrap .p-btn_home-follow--exec {
     color: white;
-    background-color: rgb(112, 162, 255);
+    background: rgb(112, 162, 255);
 }
 .p-status-wrap .p-btn_home-follow--stay {
     color: white;
-    background-color: rgb(188, 211, 253);
+    background: rgb(188, 211, 253);
 }
 
 .p-status-wrap .p-btn_home-unfollow--exec {
     color: white;
-    background-color: rgb(167, 112, 255);
+    background: rgb(167, 112, 255);
 }
 .p-status-wrap .p-btn_home-unfollow--stay {
     color: white;
-    background-color: rgb(235, 188, 253);
+    background: rgb(235, 188, 253);
 }
 .p-status-wrap .p-btn_home-mail--exec {
     color: white;
-    background-color: rgb(255, 221, 146);
+    background: rgb(255, 221, 146);
 }
 
 .p-status-wrap {
@@ -283,6 +294,11 @@ $color_heading_twtschedule: rgb(188, 253, 197);
 .p-status__item {
     display: inline-block;  
     margin: 20px 20px; 
+    background-color: $color_gray;
+    padding: 10px 20px;
+    text-align: center;
+    width: 160px;
+    border-radius: 4px;
     @include mq() {
         display:block;
         margin: 10px 10px;

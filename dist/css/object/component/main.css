@@ -7,6 +7,16 @@
   top: 10px;
 }
 
+.c-hover {
+  cursor: pointer;
+}
+
+.c-hover:hover {
+  opacity: .85;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
 .c-icon-home {
   display: block !important;
   margin-bottom: 5px;
@@ -16,13 +26,6 @@
   font-size: 20px;
   padding: 0px 20px;
   color: white;
-  cursor: pointer;
-}
-
-.c-heading:hover {
-  opacity: .85;
-  -webkit-transition: .3s;
-  transition: .3s;
 }
 
 .c-title {

@@ -2,12 +2,12 @@
     <div class="p-list-area">
 
         <div class="p-heading-area">
-            <p class="c-heading" :class="classname" @click="onClick" >{{heading}}</p>
+            <p class="c-heading c-hover" :class="classname" @click="onClick" >{{heading}}</p>
         </div>
 
         <div class="p-list-wrap">
 
-            <div v-if=" heading==='follow' " class="txt_right"><span v-on:click="onClickKeyword" class="c-heading p-heading__follow p-list__keywordBtn">Keywords</span></div>
+            <div v-if=" heading==='follow' " class="txt_right"><span v-on:click="onClickKeyword" class="c-heading p-heading__follow p-list__keywordBtn c-hover">Keywords</span></div>
             <Record v-for="listItem in listItems" v-bind:key="listItem.id" v-bind:data="listItem" :heading='heading'></Record>
 
         </div>
