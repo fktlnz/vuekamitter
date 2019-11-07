@@ -37844,6 +37844,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 // import Vue from 'vue'
 
@@ -37851,18 +37881,28 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 exports.default = (_props$data$component = {
     props: ['listItems', 'heading', 'classname'],
     data: {
-        class: ''
+        class: '',
+        heading_jp: ''
     },
     components: {
         Record: _ListRecord2.default
     }
 }, _defineProperty(_props$data$component, 'data', function data() {
     return {};
+}), _defineProperty(_props$data$component, 'created', function created() {
+    if (this.heading === 'follow') {
+        this.heading_jp = '自動フォロー';
+    } else if (this.heading === 'like') {
+        this.heading_jp = '自動いいね';
+    } else if (this.heading === 'unFollow') {
+        this.heading_jp = '自動フォロー解除';
+    } else if (this.heading === 'tweetschedule') {
+        this.heading_jp = 'ツイート投稿';
+    }
 }), _defineProperty(_props$data$component, 'methods', {
     onChangeTxt: function onChangeTxt($event) {},
     onClick: function onClick() {
         var route = this.heading;
-        if (route === 'unFollow') return;
         if (route === 'follow') route = 'target';
         this.$router.push('/' + route);
     },
@@ -56852,44 +56892,109 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "p-list-area" }, [
-    _c("div", { staticClass: "p-heading-area" }, [
-      _c(
-        "p",
-        {
-          staticClass: "c-heading c-hover",
-          class: _vm.classname,
-          on: { click: _vm.onClick }
-        },
-        [_vm._v(_vm._s(_vm.heading))]
-      )
+    _c("div", { staticClass: "p-heading-area", class: _vm.classname }, [
+      _c("p", { staticClass: "c-heading" }, [_vm._v(_vm._s(_vm.heading_jp))]),
+      _vm._v(" "),
+      _vm.heading === "follow"
+        ? _c("ul", [
+            _c("li", [
+              _c("ul", { staticClass: "p-list__row" }, [
+                _c("li", { staticClass: "p-list__row-item" }, [
+                  _vm._v("ターゲットにするアカウントを登録しよう！")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "p-list__row-item p-list__btn--follow c-hover",
+                    on: { click: _vm.onClick }
+                  },
+                  [_vm._v("登録")]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c("li", [
+              _c("ul", [
+                _c("li", { staticClass: "p-list__row-item" }, [
+                  _vm._v("キーワードを登録しよう！")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "p-list__row-item p-list__btn--follow c-hover",
+                    on: { click: _vm.onClickKeyword }
+                  },
+                  [_vm._v("登録")]
+                )
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.heading === "like"
+        ? _c("ul", [
+            _c("li", [
+              _c("ul", { staticClass: "p-list__row" }, [
+                _c("li", { staticClass: "p-list__row-item" }, [
+                  _vm._v("いいね対象のキーワードを登録しよう！")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass: "p-list__row-item p-list__btn--like c-hover",
+                    on: { click: _vm.onClick }
+                  },
+                  [_vm._v("登録")]
+                )
+              ])
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.heading === "unFollow"
+        ? _c("ul", [
+            _c("li", { staticClass: "p-list__row-item" }, [
+              _vm._v("稼働していないアカウントを自動でフォロー解除します！")
+            ])
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.heading === "tweetschedule"
+        ? _c("ul", [
+            _c("li", [
+              _c("ul", { staticClass: "p-list__row" }, [
+                _c("li", { staticClass: "p-list__row-item" }, [
+                  _vm._v("予約投稿を登録しよう！")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass:
+                      "p-list__row-item p-list__btn--twtschedule c-hover",
+                    on: { click: _vm.onClick }
+                  },
+                  [_vm._v("登録")]
+                )
+              ])
+            ])
+          ])
+        : _vm._e()
     ]),
     _vm._v(" "),
     _c(
       "div",
       { staticClass: "p-list-wrap" },
-      [
-        _vm.heading === "follow"
-          ? _c("div", { staticClass: "txt_right" }, [
-              _c(
-                "span",
-                {
-                  staticClass:
-                    "c-heading p-heading__follow p-list__keywordBtn c-hover",
-                  on: { click: _vm.onClickKeyword }
-                },
-                [_vm._v("Keywords")]
-              )
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm._l(_vm.listItems, function(listItem) {
-          return _c("Record", {
-            key: listItem.id,
-            attrs: { data: listItem, heading: _vm.heading }
-          })
+      _vm._l(_vm.listItems, function(listItem) {
+        return _c("Record", {
+          key: listItem.id,
+          attrs: { data: listItem, heading: _vm.heading }
         })
-      ],
-      2
+      }),
+      1
     )
   ])
 }
@@ -82643,7 +82748,7 @@ var render = function() {
               ]
             ),
             _c("span", { staticClass: "c-title p-heading__twtschedule" }, [
-              _vm._v("自動ツイート設定")
+              _vm._v("ツイート投稿")
             ])
           ]),
           _vm._v(" "),

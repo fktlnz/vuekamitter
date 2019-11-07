@@ -7,12 +7,12 @@ $color_bg: #3f3f3f;
 .c-btn {
     border: none;  
     padding: 10px 20px;
-    background-color: $color_txt;
+    background: linear-gradient(#7c7c7c 0%, #747474 100%);
     text-align: center;
     width: 160px;
     margin: 0 auto 30px;
     border-radius: 4px;
-    color: $color_gray;
+    color: #f1f1f1;
     &:hover {
     opacity: .85;
     -webkit-transition: .3s;
@@ -33,7 +33,7 @@ $color_bg: #3f3f3f;
   // font-weight: bold;
   background: linear-gradient(#f0f0f0 0%, #dcdcdc 100%);
   text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.66);
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);  
 }
 
 .c-btn__square-soft:active {

@@ -5,12 +5,12 @@
 .c-btn {
   border: none;
   padding: 10px 20px;
-  background-color: #262626;
+  background: linear-gradient(#7c7c7c 0%, #747474 100%);
   text-align: center;
   width: 160px;
   margin: 0 auto 30px;
   border-radius: 4px;
-  color: #dcdcdc;
+  color: #f1f1f1;
 }
 
 .c-btn:hover {

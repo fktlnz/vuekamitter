@@ -23,7 +23,7 @@ $color_link: #4DBFFF;
 $color_heading_follow: rgb(188, 211, 253);
 $color_heading_like: rgb(253, 188, 195);
 $color_heading_unfollow: rgb(235, 188, 253);
-$color_heading_twtschedule: rgb(188, 253, 197);
+$color_heading_twtschedule: rgb(151, 255, 182);
 
 /* ================================
 # タイトル　
@@ -37,6 +37,9 @@ $color_heading_twtschedule: rgb(188, 253, 197);
 //Follow, Like, unFollow
 .p-heading-area {
     margin-bottom: 0px;
+    text-align: center;
+    padding: 10px;
+    height: 151px;
 }
 /* ================================
 #楕円のタイトル
@@ -133,8 +136,8 @@ $color_heading_twtschedule: rgb(188, 253, 197);
     text-align: left;
 }
 .p-userInfo__key::before {
-    background: $color_txt;
-    color: $color_gray;
+    background: linear-gradient(#7c7c7c 0%, #747474 100%);
+    color: #f1f1f1;
     padding: 5px;
     border-radius: 4px;
     font-size: 12px;
@@ -329,6 +332,44 @@ $color_heading_twtschedule: rgb(188, 253, 197);
         width: 95%;
     }
 
+}
+.p-list__row-item {
+    display: inline-block;
+    margin: 10px 0;
+    vertical-align: middle;
+    color: white;
+    &:first-child {
+        width: calc(100% - 80px);
+    }
+}
+.p-list__btn {       
+    &--follow {
+        font-size: 0.8rem; 
+        padding: 0.2rem;
+        width: 70px;    
+        border-radius: 4px;
+        background-color: #70a2ff;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+        background: linear-gradient(#94b9ff 0%, #70a2ff 100%); 
+    }
+    &--like {
+        font-size: 0.8rem; 
+        padding: 0.2rem;
+        width: 70px;    
+        border-radius: 4px;
+        background-color: #FF7081;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28); 
+        background: linear-gradient(#ffa3ae 0%, #FF7081 100%);
+    }
+    &--twtschedule {
+        font-size: 0.8rem; 
+        padding: 0.2rem;
+        width: 70px;    
+        border-radius: 4px;
+        background-color: #63d472;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28); 
+        background: linear-gradient(#adffb8 0%, #69dd69 100%);
+    }
 }
 .p-list-wrap {
     // border-radius: 15px;

@@ -2,7 +2,7 @@
 
     <div v-if=" show===true " class="l-subPage p-autotwt-wrap">
         <Message></Message>
-        <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__twtschedule">自動ツイート設定</span></div>  
+        <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__twtschedule">ツイート投稿</span></div>  
         <VueCtkDateTimePicker
          v-model="yourValue" 
          :minute-interval="1"

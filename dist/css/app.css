@@ -372,6 +372,7 @@ td input {
   font-size: 20px;
   padding: 0px 20px;
   color: white;
+  font-weight: bold;
 }
 
 .c-title {
@@ -487,12 +488,12 @@ td input {
 .c-btn {
   border: none;
   padding: 10px 20px;
-  background-color: #262626;
+  background: linear-gradient(#7c7c7c 0%, #747474 100%);
   text-align: center;
   width: 160px;
   margin: 0 auto 30px;
   border-radius: 4px;
-  color: #dcdcdc;
+  color: #f1f1f1;
 }
 
 .c-btn:hover {
@@ -534,6 +535,9 @@ td input {
 
 .p-heading-area {
   margin-bottom: 0px;
+  text-align: center;
+  padding: 10px;
+  height: 151px;
 }
 
 /* ================================
@@ -552,7 +556,7 @@ td input {
 }
 
 .p-heading__twtschedule {
-  background-color: #bcfdc5;
+  background-color: #97ffb6;
 }
 
 .p-heading__title {
@@ -642,8 +646,8 @@ td input {
 }
 
 .p-userInfo__key::before {
-  background: #262626;
-  color: #dcdcdc;
+  background: linear-gradient(#7c7c7c 0%, #747474 100%);
+  color: #f1f1f1;
   padding: 5px;
   border-radius: 4px;
   font-size: 12px;
@@ -836,6 +840,47 @@ td input {
   .p-list-area {
     width: 95%;
   }
+}
+
+.p-list__row-item {
+  display: inline-block;
+  margin: 10px 0;
+  vertical-align: middle;
+  color: white;
+}
+
+.p-list__row-item:first-child {
+  width: calc(100% - 80px);
+}
+
+.p-list__btn--follow {
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  width: 70px;
+  border-radius: 4px;
+  background-color: #70a2ff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  background: linear-gradient(#94b9ff 0%, #70a2ff 100%);
+}
+
+.p-list__btn--like {
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  width: 70px;
+  border-radius: 4px;
+  background-color: #FF7081;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  background: linear-gradient(#ffa3ae 0%, #FF7081 100%);
+}
+
+.p-list__btn--twtschedule {
+  font-size: 0.8rem;
+  padding: 0.2rem;
+  width: 70px;
+  border-radius: 4px;
+  background-color: #63d472;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.28);
+  background: linear-gradient(#adffb8 0%, #69dd69 100%);
 }
 
 .p-list-wrap {
