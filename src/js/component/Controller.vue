@@ -85,6 +85,20 @@ module.exports = new Vue({
         })
 
     },
+    //ログインしているユーザーの情報を取得する
+    getLoginUserInfo_ajax() {
+      return axios.get(URL_BASE + 'getloginuserinfo')
+      .then((res) => {
+          this.$emit('AJAX_COMPLETE_GETLOGINUSERINFO', {response: res.data});
+      })
+      .catch((res) => {
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        this.$emit('AJAX_COMPLETE_GETLOGINUSERINFO', {response: json});
+      })
+    },
     /* =========================================================
     # パスワードリマインダー
     ============================================================*/ 

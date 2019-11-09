@@ -9,6 +9,7 @@ import Target from './component/RegisterTargetAccount.vue'
 import Twtschedule from './component/RegisterTweetSchedule.vue'
 import PassRemindSend from './component/passRemindSend.vue'
 import PassRemindRecieve from './component/passRemindRecieve.vue'
+import EditUserInfo from './component/EditUserInfo.vue'
 
 Vue.use(Router)
 
@@ -60,6 +61,11 @@ export default new Router({
             path: '/remindrecieve',
             name: 'remindrecieve',
             component: PassRemindRecieve
+        },
+        {
+            path: '/edituser',
+            name: 'edituser',
+            component: EditUserInfo
         },
         {
             path: '*',

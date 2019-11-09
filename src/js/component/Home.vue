@@ -7,7 +7,7 @@
         </div>
         <div class="p-menu-bar">
             <ul>
-                <li class="c-hover p-menu-bar__item" ><i class="fas fa-user"></i>登録編集</li>
+                <li class="c-hover p-menu-bar__item" v-on:click="moveEditUser"><i class="fas fa-user"></i>登録編集</li>
                 <li class="c-hover p-menu-bar__item" v-on:click="logout"><i class="fas fa-sign-out-alt"></i>ログアウト</li>
             </ul>
         </div>
@@ -812,6 +812,9 @@ export default {
                 }                
             })
 
+        },
+        moveEditUser() {
+            this.$router.push('/edituser')
         }
     }
 
