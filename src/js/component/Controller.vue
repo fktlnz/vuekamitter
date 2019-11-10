@@ -99,6 +99,41 @@ module.exports = new Vue({
         this.$emit('AJAX_COMPLETE_GETLOGINUSERINFO', {response: json});
       })
     },
+    //ログインしているユーザーの情報を変更する
+    changeLoginUserInfo_ajax(data) {
+      let params = new URLSearchParams();
+      params.append('email',data.email);
+
+      return axios.post(URL_BASE + 'changeloginuserinfo', params)
+      .then((res) => {
+          this.$emit('AJAX_COMPLETE_CHANGELOGINUSERINFO', {response: res.data});
+      })
+      .catch((res) => {
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        this.$emit('AJAX_COMPLETE_CHANGELOGINUSERINFO', {response: json});
+      })
+    },
+    //パスワードを変更する
+    changePassword_ajax(data) {
+      let params = new URLSearchParams();
+      params.append('password_old',data.password_old);
+      params.append('password_new',data.password_new);
+
+      return axios.post(URL_BASE + 'changepassword', params)
+      .then((res) => {
+          this.$emit('AJAX_COMPLETE_CHANGEPASSWORD', {response: res.data});
+      })
+      .catch((res) => {
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        this.$emit('AJAX_COMPLETE_CHANGEPASSWORD', {response: json});
+      })
+    },
     /* =========================================================
     # パスワードリマインダー
     ============================================================*/ 

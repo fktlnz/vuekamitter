@@ -31,8 +31,6 @@
 
 
 <script>
-// import Vue from 'vue'
-import axios from 'axios'
 import inputform from './InputForm.vue'
 import controller from './Controller.vue'
 import store from './Store.vue'

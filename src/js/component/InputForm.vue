@@ -1,7 +1,7 @@
 <template>
     <div class="c-input p-input__option">
         <label class="c-input__label">{{label}}</label>
-        <input v-on:keyup="onChange($event)" v-bind:type="type" class="c-input__txt p-like-input__txt" v-bind:name="name" v-bind:placeholder="placeholder" autocomplete="off">
+        <input v-on:keyup="onChange($event)" v-bind:value="value" v-bind:type="type" class="c-input__txt p-like-input__txt" v-bind:name="name" v-bind:placeholder="placeholder" autocomplete="off">
     </div>
 </template>
 
@@ -14,6 +14,7 @@ export default {
         'type',
         'label',
         'name',
+        'value',
         'placeholder'
     ],
     data: function(){

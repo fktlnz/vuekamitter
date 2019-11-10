@@ -780,8 +780,8 @@ export default {
                     store.setFriendsCount($event.response.rst.friends_count)
 
                 }else if($event.response.res ==='NOTLOGIN'){
-                        console.log('ログインユーザーでないためログイン画面に飛ばします')          
-                        this.$router.push('/')  
+                    console.log('ログインユーザーでないためログイン画面に飛ばします')          
+                    this.$router.push('/')  
                 }else{
                     //失敗したときはメッセージ表示
                     //メッセージ表示

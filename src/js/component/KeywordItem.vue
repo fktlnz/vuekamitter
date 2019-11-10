@@ -35,7 +35,7 @@ export default {
             },
             TargetIcon: {
                 'fas': true,
-                'fa-bullseye': true,
+                'fa-user': true,
             },
         }
     },
