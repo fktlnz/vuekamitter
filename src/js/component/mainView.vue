@@ -1,19 +1,14 @@
 <template>    
-    <div>
-        
+    <div>        
             <ul>
-                <transition-group name="flip">
+                <transition-group name="p-flip">
                     <template v-for="error in errors" >
-                        <li class="info-area" v-bind:key="error">{{ error }}</li>
+                        <li class="p-info-area" v-bind:key="error">{{ error }}</li>
                     </template>
                 </transition-group>
-            </ul>                       
-        
+            </ul>
 
         <router-view/>
-        <!-- <div class="txt_center">
-        <button class="c-btn" v-on:click="test">click</button>        
-        </div> -->
         
     </div>
 </template>

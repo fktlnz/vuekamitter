@@ -2,10 +2,10 @@
     <div class="l-subPage">
     <Message></Message>    
     <div class="c-form-wrap">
-        <p class="c-heading p-heading__title txt_center">ログイン</p>
+        <p class="c-heading p-heading__title u-txt_center">ログイン</p>
         <div class="p-error-area">
             <ul>
-                <transition-group name="flip">
+                <transition-group name="p-flip">
                     <template v-for="error in errors.error" >
                         <li v-bind:key="error">・{{ error }}</li>
                     </template>
@@ -15,7 +15,7 @@
         <InputForm v-on:onChange="onChange($event)" type="text" label="ユーザー名" name="username" placeholder="(例)kazukichi"></InputForm>        
         <InputForm v-on:onChange="onChange($event)" type="password" label="パスワード" name="password" placeholder=""></InputForm>
     </div>
-    <div class="txt_center">
+    <div class="u-txt_center">
         <button class="c-btn" v-on:click="signIn">ログイン</button>
     </div>
     <div class="c-form-wrap">

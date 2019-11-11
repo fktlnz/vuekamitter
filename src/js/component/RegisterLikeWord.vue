@@ -1,7 +1,7 @@
 <template>    
     <div v-if=" show===true " class="l-subPage l-likePage">
         <Message></Message>
-        <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__like">自動いいねキーワード登録</span></div>
+        <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__like">自動いいねキーワード登録</span></div>
         
         <div>
             <select v-on:change="onChangeOption($event)" class="select-init c-logicOption">
@@ -11,7 +11,7 @@
             </select>
             <InputForm v-on:onChange="onChange($event)" type="text" label="" name="text" placeholder="いいねキーワード"></InputForm>
         </div>
-        <div class="txt_right">
+        <div class="u-txt_right">
             <button v-on:click="addItem"  class="c-btn">追加</button>
         </div> 
         <KeywordListComponent v-bind:listItems="datas" v-on:delete-item="deleteItem($event)" type="like"></KeywordListComponent>

@@ -1,13 +1,13 @@
 <template>  
 <div>
-    <transition name="flip">
+    <transition name="p-flip">
     <div v-if="visible===true" class="p-message-area">
         <ul>
             <li v-if="status===true" class="p-message-area__status">
-                <i class="fas fa-info-circle"></i>
+                <i class="fas fa-info-circle c-color__info"></i>
             </li>
             <li v-if="status===false" class="p-message-area__status">
-                <i class="fas fa-times-circle"></i>
+                <i class="fas fa-times-circle c-color__warning"></i>
             </li>
             <li class="p-message-area__msg">
                 <p class="p-message-area_msg-val">{{msg}}</p>

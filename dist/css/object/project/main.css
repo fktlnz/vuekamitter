@@ -2,7 +2,7 @@
 /* ================================
 # タイトル　
 =================================*/
-.mainTitle {
+.p-mainTitle {
   text-align: center;
   margin-top: 20px;
   margin-bottom: 30px;
@@ -37,23 +37,6 @@
 .p-heading__title {
   background-color: #dcdcdc;
   margin-bottom: 40px;
-}
-
-/* ===スクロールバーカスタム=== */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: #fff;
-  border: none;
-  border-radius: 0px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ccc;
-  border-radius: 0px;
-  box-shadow: none;
 }
 
 /* ================================
@@ -166,22 +149,6 @@
   height: inherit;
 }
 
-.fa-info-circle {
-  color: #1e1eb4;
-}
-
-.fa-times-circle {
-  color: #ff5757;
-}
-
-.fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
-}
-
-.fade-enter, .fade-leave-to {
-  opacity: 0;
-}
-
 /* ================================
 # HOME画面　一覧画面の各リスト
 =================================*/
@@ -225,7 +192,7 @@
 }
 
 /* ===sidebar END=== */
-.info-area {
+.p-info-area {
   position: absolute;
   top: 20px;
   right: 20px;

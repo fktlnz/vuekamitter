@@ -52236,11 +52236,6 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 exports.default = {
@@ -56334,7 +56329,7 @@ var render = function() {
       "div",
       { staticClass: "c-form-wrap" },
       [
-        _c("p", { staticClass: "c-heading p-heading__title txt_center" }, [
+        _c("p", { staticClass: "c-heading p-heading__title u-txt_center" }, [
           _vm._v("ユーザー登録")
         ]),
         _vm._v(" "),
@@ -56344,7 +56339,7 @@ var render = function() {
             [
               _c(
                 "transition-group",
-                { attrs: { name: "flip" } },
+                { attrs: { name: "p-flip" } },
                 [
                   _vm._l(_vm.errors.error, function(error) {
                     return [
@@ -56418,7 +56413,7 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _c("div", { staticClass: "txt_center" }, [
+    _c("div", { staticClass: "u-txt_center" }, [
       _c("button", { staticClass: "c-btn", on: { click: _vm.signUp } }, [
         _vm._v("登録")
       ])
@@ -56556,19 +56551,23 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("transition", { attrs: { name: "flip" } }, [
+      _c("transition", { attrs: { name: "p-flip" } }, [
         _vm.visible === true
           ? _c("div", { staticClass: "p-message-area" }, [
               _c("ul", [
                 _vm.status === true
                   ? _c("li", { staticClass: "p-message-area__status" }, [
-                      _c("i", { staticClass: "fas fa-info-circle" })
+                      _c("i", {
+                        staticClass: "fas fa-info-circle c-color__info"
+                      })
                     ])
                   : _vm._e(),
                 _vm._v(" "),
                 _vm.status === false
                   ? _c("li", { staticClass: "p-message-area__status" }, [
-                      _c("i", { staticClass: "fas fa-times-circle" })
+                      _c("i", {
+                        staticClass: "fas fa-times-circle c-color__warning"
+                      })
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -56616,7 +56615,7 @@ var render = function() {
         "div",
         { staticClass: "c-form-wrap" },
         [
-          _c("p", { staticClass: "c-heading p-heading__title txt_center" }, [
+          _c("p", { staticClass: "c-heading p-heading__title u-txt_center" }, [
             _vm._v("ログイン")
           ]),
           _vm._v(" "),
@@ -56626,7 +56625,7 @@ var render = function() {
               [
                 _c(
                   "transition-group",
-                  { attrs: { name: "flip" } },
+                  { attrs: { name: "p-flip" } },
                   [
                     _vm._l(_vm.errors.error, function(error) {
                       return [
@@ -56672,7 +56671,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
+      _c("div", { staticClass: "u-txt_center" }, [
         _c("button", { staticClass: "c-btn", on: { click: _vm.signIn } }, [
           _vm._v("ログイン")
         ])
@@ -56843,7 +56842,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "p-userInfo mb30" }, [
+  return _c("div", { staticClass: "p-userInfo u-mb30" }, [
     _vm.img_url === ""
       ? _c("img", {
           staticClass: "p-userInfo__img",
@@ -56860,7 +56859,7 @@ var render = function() {
           _vm._v(_vm._s(_vm.account_name))
         ]),
     _vm._v(" "),
-    _c("div", { staticClass: "p-userInfo__profile mb10" }, [
+    _c("div", { staticClass: "p-userInfo__profile u-mb10" }, [
       _vm.description === ""
         ? _c("p", [
             _vm._v("まずはアカウント認証"),
@@ -57605,7 +57604,7 @@ var render = function() {
     "div",
     { staticClass: "l-subPage" },
     [
-      _c("div", { staticClass: "txt_center" }, [
+      _c("div", { staticClass: "u-txt_center" }, [
         _c(
           "button",
           { staticClass: "c-btn", on: { click: _vm.CertifyAccount } },
@@ -57981,7 +57980,7 @@ var render = function() {
         [
           _c("Message"),
           _vm._v(" "),
-          _c("div", { staticClass: "txt_center" }, [
+          _c("div", { staticClass: "u-txt_center" }, [
             _c(
               "button",
               { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
@@ -58034,7 +58033,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "txt_right" }, [
+          _c("div", { staticClass: "u-txt_right" }, [
             _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
               _vm._v("追加")
             ])
@@ -58137,7 +58136,7 @@ var render = function() {
         [
           _c("Message"),
           _vm._v(" "),
-          _c("div", { staticClass: "txt_center" }, [
+          _c("div", { staticClass: "u-txt_center" }, [
             _c(
               "button",
               { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
@@ -58190,7 +58189,7 @@ var render = function() {
             1
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "txt_right" }, [
+          _c("div", { staticClass: "u-txt_right" }, [
             _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
               _vm._v("追加")
             ])
@@ -58293,7 +58292,7 @@ var render = function() {
         [
           _c("Message"),
           _vm._v(" "),
-          _c("div", { staticClass: "txt_center" }, [
+          _c("div", { staticClass: "u-txt_center" }, [
             _c(
               "button",
               { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
@@ -58321,7 +58320,7 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "txt_right" }, [
+          _c("div", { staticClass: "u-txt_right" }, [
             _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
               _vm._v("追加")
             ])
@@ -83060,7 +83059,7 @@ var render = function() {
         [
           _c("Message"),
           _vm._v(" "),
-          _c("div", { staticClass: "txt_center" }, [
+          _c("div", { staticClass: "u-txt_center" }, [
             _c(
               "button",
               { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
@@ -83105,7 +83104,7 @@ var render = function() {
             }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "txt_right" }, [
+          _c("div", { staticClass: "u-txt_right" }, [
             _c("button", { staticClass: "c-btn", on: { click: _vm.addItem } }, [
               _vm._v("追加")
             ])
@@ -83211,7 +83210,7 @@ var render = function() {
         "div",
         { staticClass: "c-form-wrap" },
         [
-          _c("p", { staticClass: "c-heading p-heading__title txt_center" }, [
+          _c("p", { staticClass: "c-heading p-heading__title u-txt_center" }, [
             _vm._v("認証コード生成")
           ]),
           _vm._v(" "),
@@ -83236,7 +83235,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
+      _c("div", { staticClass: "u-txt_center" }, [
         _c(
           "button",
           { staticClass: "c-btn", on: { click: _vm.makeRePassword } },
@@ -83347,7 +83346,7 @@ var render = function() {
         "div",
         { staticClass: "c-form-wrap" },
         [
-          _c("p", { staticClass: "c-heading p-heading__title txt_center" }, [
+          _c("p", { staticClass: "c-heading p-heading__title u-txt_center" }, [
             _vm._v("パスワード再発行")
           ]),
           _vm._v(" "),
@@ -83363,7 +83362,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
+      _c("div", { staticClass: "u-txt_center" }, [
         _c(
           "button",
           { staticClass: "c-btn", on: { click: _vm.makeRePassword } },
@@ -83474,7 +83473,7 @@ var render = function() {
         "div",
         { staticClass: "c-form-wrap" },
         [
-          _c("div", { staticClass: "txt_center" }, [
+          _c("div", { staticClass: "u-txt_center" }, [
             _c(
               "button",
               { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
@@ -83483,9 +83482,11 @@ var render = function() {
                 _vm._v("HOME")
               ]
             ),
-            _c("p", { staticClass: "c-heading p-heading__title txt_center" }, [
-              _vm._v("ユーザー情報")
-            ])
+            _c(
+              "p",
+              { staticClass: "c-heading p-heading__title u-txt_center" },
+              [_vm._v("ユーザー情報")]
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "p-error-area" }, [
@@ -83494,7 +83495,7 @@ var render = function() {
               [
                 _c(
                   "transition-group",
-                  { attrs: { name: "flip" } },
+                  { attrs: { name: "p-flip" } },
                   [
                     _vm._l(_vm.errors.error, function(error) {
                       return [
@@ -83511,7 +83512,9 @@ var render = function() {
           _vm._v(" "),
           _c("p", { staticClass: "c-input__label" }, [_vm._v("ユーザー名")]),
           _vm._v(" "),
-          _c("p", { staticClass: "mb20" }, [_vm._v(_vm._s(_vm.data.username))]),
+          _c("p", { staticClass: "u-mb20" }, [
+            _vm._v(_vm._s(_vm.data.username))
+          ]),
           _vm._v(" "),
           _c("InputForm", {
             attrs: {
@@ -83530,7 +83533,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
+      _c("div", { staticClass: "u-txt_center" }, [
         _c(
           "button",
           { staticClass: "c-btn", on: { click: _vm.changeUserInfo } },
@@ -83643,7 +83646,7 @@ var render = function() {
         "div",
         { staticClass: "c-form-wrap" },
         [
-          _c("div", { staticClass: "txt_center" }, [
+          _c("div", { staticClass: "u-txt_center" }, [
             _c(
               "button",
               { staticClass: "c-btn c-moveTop", on: { click: _vm.moveTop } },
@@ -83652,9 +83655,11 @@ var render = function() {
                 _vm._v("HOME")
               ]
             ),
-            _c("p", { staticClass: "c-heading p-heading__title txt_center" }, [
-              _vm._v("パスワードの変更")
-            ])
+            _c(
+              "p",
+              { staticClass: "c-heading p-heading__title u-txt_center" },
+              [_vm._v("パスワードの変更")]
+            )
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "p-error-area" }, [
@@ -83663,7 +83668,7 @@ var render = function() {
               [
                 _c(
                   "transition-group",
-                  { attrs: { name: "flip" } },
+                  { attrs: { name: "p-flip" } },
                   [
                     _vm._l(_vm.errors.error, function(error) {
                       return [
@@ -83720,7 +83725,7 @@ var render = function() {
         1
       ),
       _vm._v(" "),
-      _c("div", { staticClass: "txt_center" }, [
+      _c("div", { staticClass: "u-txt_center" }, [
         _c(
           "button",
           { staticClass: "c-btn", on: { click: _vm.changePassword } },
@@ -83816,11 +83821,11 @@ var render = function() {
         [
           _c(
             "transition-group",
-            { attrs: { name: "flip" } },
+            { attrs: { name: "p-flip" } },
             [
               _vm._l(_vm.errors, function(error) {
                 return [
-                  _c("li", { key: error, staticClass: "info-area" }, [
+                  _c("li", { key: error, staticClass: "p-info-area" }, [
                     _vm._v(_vm._s(error))
                   ])
                 ]

@@ -1,10 +1,10 @@
 <template>
     <div class="l-subPage">
     <div class="c-form-wrap">
-        <p class="c-heading p-heading__title txt_center">ユーザー登録</p>
+        <p class="c-heading p-heading__title u-txt_center">ユーザー登録</p>
         <div class="p-error-area">
             <ul>
-                <transition-group name="flip">
+                <transition-group name="p-flip">
                     <template v-for="error in errors.error" >
                         <li v-bind:key="error">・{{ error }}</li>
                     </template>
@@ -16,7 +16,7 @@
         <InputForm v-on:onChange="onChange($event)" type="password" label="パスワード　(必須)" name="password" placeholder=""></InputForm>
         <InputForm v-on:onChange="onChange($event)" type="password" label="パスワード再入力　(必須)" name="re_pass" placeholder=""></InputForm>        
     </div>
-    <div class="txt_center">
+    <div class="u-txt_center">
         <button class="c-btn" v-on:click="signUp">登録</button>        
     </div>
     <div class="c-form-wrap">

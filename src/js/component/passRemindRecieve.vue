@@ -2,10 +2,10 @@
     <div class="l-subPage">
     <Message></Message>    
     <div class="c-form-wrap">   
-        <p class="c-heading p-heading__title txt_center">パスワード再発行</p>     
+        <p class="c-heading p-heading__title u-txt_center">パスワード再発行</p>     
         <InputForm v-on:onChange="onChange($event)" type="text" label="認証コード*" name="username"></InputForm>
     </div>
-    <div class="txt_center">
+    <div class="u-txt_center">
         <button class="c-btn" v-on:click="makeRePassword">再発行する</button>
     </div>
     <div class="c-form-wrap">

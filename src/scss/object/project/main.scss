@@ -29,7 +29,7 @@ $color_heading_twtschedule: rgb(151, 255, 182);
 # タイトル　
 =================================*/
 //（神ったー）
-.mainTitle {
+.p-mainTitle {
     text-align: center;
     margin-top: 20px;
     margin-bottom: 30px;
@@ -60,22 +60,6 @@ $color_heading_twtschedule: rgb(151, 255, 182);
 .p-heading__title {
     background-color: $color_gray;
     margin-bottom: 40px;
-}
-
-/* ===スクロールバーカスタム=== */
-::-webkit-scrollbar{
-  width: 6px;
-}
-::-webkit-scrollbar-track{
-  background: #fff;
-  border: none;
-  border-radius: 0px;
-//   box-shadow: inset 0 0 2px #777; 
-}
-::-webkit-scrollbar-thumb{
-  background: #ccc;
-  border-radius: 0px;
-  box-shadow: none;
 }
 
 /* ================================
@@ -179,22 +163,6 @@ $color_heading_twtschedule: rgb(151, 255, 182);
     }
 }
 
-.fa-info-circle {
-    color: #1e1eb4;
-}
-.fa-times-circle {
-    color: #ff5757;
-}
-
-.fade-enter-active, .fade-leave-active {
-    transition: opacity .5s;
-}
-
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
-{
-    opacity: 0;
-}
-
 /* ================================
 # HOME画面　一覧画面の各リスト
 =================================*/
@@ -247,7 +215,7 @@ $color_heading_twtschedule: rgb(151, 255, 182);
 
 
 //メッセージ表示エリア
-.info-area {
+.p-info-area {
     position: absolute;
     top: 20px;
     right: 20px;
@@ -475,9 +443,6 @@ $color_heading_twtschedule: rgb(151, 255, 182);
 
 .l-likePage .p-like-input__txt {
     width: 100%;
-}
-.p-likeKeyWord-btn {
-    
 }
 
 /* ================================

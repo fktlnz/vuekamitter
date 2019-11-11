@@ -2,11 +2,11 @@
     <div class="l-subPage">
     <Message></Message>
     <div class="c-form-wrap">
-        <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><p class="c-heading p-heading__title txt_center">パスワードの変更</p></div>        
+        <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><p class="c-heading p-heading__title u-txt_center">パスワードの変更</p></div>        
         
         <div class="p-error-area">
             <ul>
-                <transition-group name="flip">
+                <transition-group name="p-flip">
                     <template v-for="error in errors.error" >
                         <li v-bind:key="error">・{{ error }}</li>
                     </template>
@@ -17,7 +17,7 @@
         <InputForm v-on:onChange="onChange($event)" type="text" label="新しいパスワード" name="password_new"></InputForm>
         <InputForm v-on:onChange="onChange($event)" type="text" label="新しいパスワード（確認）" name="re_password_new"></InputForm>
     </div>
-    <div class="txt_center">
+    <div class="u-txt_center">
         <button class="c-btn" v-on:click="changePassword">変更する</button>        
     </div>
     

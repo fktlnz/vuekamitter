@@ -1,9 +1,9 @@
 <template>    
     <div v-if=" show===true " class="l-subPage p-targetacnt-wrap">
         <Message></Message>
-        <div class="txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__follow">ターゲットアカウント登録</span></div>
+        <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__follow">ターゲットアカウント登録</span></div>
         <InputForm v-on:onChange="onChange($event)" type="text" label="" name="text" placeholder="@のあとのアカウントIDを入力(例. kazukichi3110)"></InputForm>
-        <div class="txt_right">
+        <div class="u-txt_right">
             <button v-on:click="addItem"  class="c-btn">追加</button>
         </div>
         <KeywordListComponent v-bind:listItems="datas" v-on:delete-item="deleteItem($event)" type="target"></KeywordListComponent>

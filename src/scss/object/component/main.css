@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.c-color__info {
+  color: #1e1eb4;
+}
+
+.c-color__warning {
+  color: #ff5757;
+}
+
 .c-moveTop {
   width: 80px !important;
   padding: 10px 0 !important;

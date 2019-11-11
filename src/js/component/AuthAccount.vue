@@ -1,6 +1,6 @@
 <template>    
     <div class="l-subPage">     
-        <div class="txt_center">
+        <div class="u-txt_center">
         <button v-on:click="CertifyAccount" class="c-btn">アカウント認証する</button>
         </div>
         <div class="loading" v-if="loading">認証処理中...</div>
