@@ -121,6 +121,7 @@ module.exports = new Vue({
       let params = new URLSearchParams();
       params.append('password_old',data.password_old);
       params.append('password_new',data.password_new);
+      params.append('re_password_new',data.re_password_new);
 
       return axios.post(URL_BASE + 'changepassword', params)
       .then((res) => {

@@ -67,30 +67,27 @@ export default {
         },
         changePassword(){
             //新パスワード-新パスワード（確認）が一致しているか
-            if(this.data.password_new !== this.data.re_password_new){
-                store.setMessage('パスワードとパスワード（確認）が一致していません', false)
-                const message = store.getMessage();
-                if(message.msg !== ''){
-                    controller.emit_message(message)  
-                }
-                return
-            }
+            // if(this.data.password_new !== this.data.re_password_new){
+            //     store.setMessage('パスワードとパスワード（確認）が一致していません', false)
+            //     const message = store.getMessage();
+            //     if(message.msg !== ''){
+            //         controller.emit_message(message)  
+            //     }
+            //     return
+            // }
             controller.changePassword_ajax(this.data)
             controller.$on('AJAX_COMPLETE_CHANGEPASSWORD', ($event) => {
             // console.log('処理がフロントに帰ってきました')
-            //     console.dir($event.response)
-                store.setMessage($event.response.msg, true)
-                const message = store.getMessage();
-                if(message.msg !== ''){
-                    controller.emit_message(message)  
+            //     console.dir($event.response)                
+
+                if($event.response.res === 'OK'){
+                    this.errors = ''
+                    store.setMessage($event.response.msg, true)                    
+                    this.$router.push('/edituser')
+                }else{
+                    this.errors = $event.response;
                 }
 
-                // if($event.response.res === 'OK'){
-                    
-                // }else{
-
-                // }
-                
             })
         },
         

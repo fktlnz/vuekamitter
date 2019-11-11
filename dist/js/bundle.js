@@ -24716,6 +24716,7 @@ module.exports = new Vue({
       var params = new URLSearchParams();
       params.append('password_old', data.password_old);
       params.append('password_new', data.password_new);
+      params.append('re_password_new', data.re_password_new);
 
       return _axios2.default.post(URL_BASE + 'changepassword', params).then(function (res) {
         _this7.$emit('AJAX_COMPLETE_CHANGEPASSWORD', { response: res.data });
@@ -51976,9 +51977,9 @@ var _Store = __webpack_require__(3);
 
 var _Store2 = _interopRequireDefault(_Store);
 
-var _message2 = __webpack_require__(6);
+var _message3 = __webpack_require__(6);
 
-var _message3 = _interopRequireDefault(_message2);
+var _message4 = _interopRequireDefault(_message3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -51986,7 +51987,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
     components: {
         InputForm: _InputForm2.default,
-        Message: _message3.default
+        Message: _message4.default
     },
     data: function data() {
         return {
@@ -52013,6 +52014,11 @@ exports.default = {
                 }
             }
         });
+
+        var message = _Store2.default.getMessage();
+        if (message.msg !== '') {
+            _Controller2.default.emit_message(message);
+        }
     },
 
     methods: {
@@ -52026,15 +52032,21 @@ exports.default = {
             }
         },
         changeUserInfo: function changeUserInfo() {
+            var _this2 = this;
+
             _Controller2.default.changeLoginUserInfo_ajax(this.data);
             _Controller2.default.$on('AJAX_COMPLETE_CHANGELOGINUSERINFO', function ($event) {
                 // console.log('処理がフロントに帰ってきました')
                 //     console.dir($event.response)
-                _Store2.default.setMessage($event.response.msg, true);
-                var message = _Store2.default.getMessage();
-                if (message.msg !== '') {
-                    _Controller2.default.emit_message(message);
+                if ($event.response.res === 'OK') {
+                    _Store2.default.setMessage($event.response.msg, true);
+                    var _message2 = _Store2.default.getMessage();
+                    if (_message2.msg !== '') {
+                        _Controller2.default.emit_message(_message2);
+                    }
                 }
+
+                _this2.errors = $event.response;
 
                 // if($event.response.res === 'OK'){
 
@@ -52104,9 +52116,9 @@ var _Store = __webpack_require__(3);
 
 var _Store2 = _interopRequireDefault(_Store);
 
-var _message2 = __webpack_require__(6);
+var _message = __webpack_require__(6);
 
-var _message3 = _interopRequireDefault(_message2);
+var _message2 = _interopRequireDefault(_message);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -52114,7 +52126,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 exports.default = {
     components: {
         InputForm: _InputForm2.default,
-        Message: _message3.default
+        Message: _message2.default
     },
     data: function data() {
         return {
@@ -52141,30 +52153,29 @@ exports.default = {
             }
         },
         changePassword: function changePassword() {
+            var _this = this;
+
             //新パスワード-新パスワード（確認）が一致しているか
-            if (this.data.password_new !== this.data.re_password_new) {
-                _Store2.default.setMessage('パスワードとパスワード（確認）が一致していません', false);
-                var _message = _Store2.default.getMessage();
-                if (_message.msg !== '') {
-                    _Controller2.default.emit_message(_message);
-                }
-                return;
-            }
+            // if(this.data.password_new !== this.data.re_password_new){
+            //     store.setMessage('パスワードとパスワード（確認）が一致していません', false)
+            //     const message = store.getMessage();
+            //     if(message.msg !== ''){
+            //         controller.emit_message(message)  
+            //     }
+            //     return
+            // }
             _Controller2.default.changePassword_ajax(this.data);
             _Controller2.default.$on('AJAX_COMPLETE_CHANGEPASSWORD', function ($event) {
                 // console.log('処理がフロントに帰ってきました')
-                //     console.dir($event.response)
-                _Store2.default.setMessage($event.response.msg, true);
-                var message = _Store2.default.getMessage();
-                if (message.msg !== '') {
-                    _Controller2.default.emit_message(message);
+                //     console.dir($event.response)                
+
+                if ($event.response.res === 'OK') {
+                    _this.errors = '';
+                    _Store2.default.setMessage($event.response.msg, true);
+                    _this.$router.push('/edituser');
+                } else {
+                    _this.errors = $event.response;
                 }
-
-                // if($event.response.res === 'OK'){
-
-                // }else{
-
-                // }
             });
         }
     }

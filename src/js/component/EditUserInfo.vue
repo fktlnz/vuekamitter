@@ -69,6 +69,11 @@ export default {
             }
         })
 
+        const message = store.getMessage();
+        if(message.msg !== ''){
+            controller.emit_message(message)  
+        }
+
     },
     methods: {
         moveTop() {
@@ -85,11 +90,15 @@ export default {
             controller.$on('AJAX_COMPLETE_CHANGELOGINUSERINFO', ($event) => {
             // console.log('処理がフロントに帰ってきました')
             //     console.dir($event.response)
-                store.setMessage($event.response.msg, true)
-                const message = store.getMessage();
-                if(message.msg !== ''){
-                    controller.emit_message(message)  
+                if($event.response.res === 'OK'){
+                    store.setMessage($event.response.msg, true)
+                    const message = store.getMessage();
+                    if(message.msg !== ''){
+                        controller.emit_message(message)  
+                    }
                 }
+
+                this.errors = $event.response;
 
                 // if($event.response.res === 'OK'){
                     
