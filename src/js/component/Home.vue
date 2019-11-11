@@ -15,7 +15,9 @@
         <UserInfo v-if="show===true" :follower="follower" :friends="friends" :account_name="account_name" :description="description" :img_url="img_url"></UserInfo>
         
         <div v-if=" show===true ">
-            <div class="p-status-wrap">
+            <div class="p-status-wrap c-border-updown__desc u-mb50">
+                <h5 class="p-status__title u-mb10">ステータス</h5>
+                <p class="u-mb10">自動フォロー、自動いいね、自動フォロー解除、自動メール配信の状態を変更できます</p>
                 <ul>
                     <li class="p-status__item c-hover c-btn__square-soft" :class="p_follow_status_toggle" v-on:click="changeFollowCronStatus">
                             <p><i class="far fa-handshake"></i> follow</p>
@@ -124,7 +126,7 @@ export default {
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
-                this.$router.push('/')
+                this.$router.push('/signin')
             }else{
                 console.log('ログインユーザーです。')
                 this.show = true
@@ -154,7 +156,7 @@ export default {
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
-                this.$router.push('/')
+                this.$router.push('/signin')
             }else{
                 console.log('ログインユーザーです。')
                 this.show = true
@@ -654,7 +656,7 @@ export default {
 
                 }else if($event.response.res ==='NOTLOGIN'){
                         console.log('ログインユーザーでないためログイン画面に飛ばします')          
-                        this.$router.push('/')  
+                        this.$router.push('/signin')  
                 }else{
                     //失敗したときはメッセージ表示
                     //メッセージ表示
@@ -781,7 +783,7 @@ export default {
 
                 }else if($event.response.res ==='NOTLOGIN'){
                     console.log('ログインユーザーでないためログイン画面に飛ばします')          
-                    this.$router.push('/')  
+                    this.$router.push('/signin')  
                 }else{
                     //失敗したときはメッセージ表示
                     //メッセージ表示
@@ -801,7 +803,7 @@ export default {
                 if($event.response.res === true){
                      //メッセージ表示
                     store.setMessage('ログアウトしました', true)
-                    this.$router.push('/')
+                    this.$router.push('/signin')
                 }else{
                     //メッセージ表示
                     store.setMessage('ログアウトに失敗しました', false)

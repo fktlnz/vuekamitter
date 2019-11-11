@@ -19,6 +19,20 @@ $color_txt: #262626;
 $color_gray: #dcdcdc;
 $color_gray_border: #3f3f3f;
 
+//ボーダーの色
+.c-border-color__follow {
+    border: 5px solid rgb(188, 211, 253);
+}
+.c-border-color__like {
+    border: 5px solid rgb(253, 188, 195);
+}
+.c-border-color__unfollow {
+    border: 5px solid rgb(235, 188, 253);
+}
+.c-border-color__tweetschedule {
+    border: 5px solid rgb(151, 255, 182);
+}
+
 .c-color__info {
     color: #1e1eb4;
 }
@@ -72,6 +86,119 @@ $color_gray_border: #3f3f3f;
     color: white;
 }
 
+//区切りボーダー
+//機能説明用
+.c-border-updown__desc {
+
+    padding: 0 20px;
+    &:before {
+        content: '';
+        width: 70%;
+        height: 2px;
+        display: block;
+        background: linear-gradient(to right,#9c9c9c 6px, transparent 6px, transparent 9px);
+        background-size: 9px 9px;
+        margin: 0 auto 15px;            
+    }
+    &:after {
+        content: '';
+        width: 70%;
+        height: 2px;
+        display: block;
+        background: linear-gradient(to right,#9c9c9c 6px, transparent 6px, transparent 9px);
+        background-size: 9px 9px;
+        margin: 15px auto 0;
+    }
+
+    &--follow {
+        padding: 0 20px;
+        &:before {
+            content: '';
+            width: 70%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right,#375cff 6px, transparent 6px, transparent 9px);
+            background-size: 9px 9px;
+            margin: 0 auto 15px;
+            
+        }
+        &:after {
+            content: '';
+            width: 70%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right,#375cff 6px, transparent 6px, transparent 9px);
+            background-size: 9px 9px;
+            margin: 15px auto 0;
+        }
+    }
+    &--like {
+        padding: 0 20px;
+        &:before {
+            content: '';
+            width: 70%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right,#bd4242 6px, transparent 6px, transparent 9px);
+            background-size: 9px 9px;
+            margin: 0 auto 15px;
+            
+        }
+        &:after {
+            content: '';
+            width: 70%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right,#bd4242 6px, transparent 6px, transparent 9px);
+            background-size: 9px 9px;
+            margin: 15px auto 0;
+        }
+    }
+    &--unfollow {
+        padding: 0 20px;
+        &:before {
+            content: '';
+            width: 70%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right,#a537ff 6px, transparent 6px, transparent 9px);
+            background-size: 9px 9px;
+            margin: 0 auto 15px;
+            
+        }
+        &:after {
+            content: '';
+            width: 70%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right,#a537ff 6px, transparent 6px, transparent 9px);
+            background-size: 9px 9px;
+            margin: 15px auto 0;
+        }
+    }
+    &--tweetschedule {
+        padding: 0 20px;
+        &:before {
+            content: '';
+            width: 70%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right,#4a9c2a 6px, transparent 6px, transparent 9px);
+            background-size: 9px 9px;
+            margin: 0 auto 15px;
+            
+        }
+        &:after {
+            content: '';
+            width: 70%;
+            height: 2px;
+            display: block;
+            background: linear-gradient(to right,#4a9c2a 6px, transparent 6px, transparent 9px);
+            background-size: 9px 9px;
+            margin: 15px auto 0;
+        }
+    }
+}
 
 
 // ゴミ箱

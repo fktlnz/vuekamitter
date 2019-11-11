@@ -1,5 +1,5 @@
 <template>
-    <div class="p-userInfo u-mb30">
+    <div class="p-userInfo u-mb50">
         <img v-if=" img_url === '' " class="p-userInfo__img" src="src/img/noaccount.jpg" alt="">
         <img v-else class="p-userInfo__img" :src="img_url" alt="">
 

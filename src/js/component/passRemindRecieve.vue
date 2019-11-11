@@ -1,16 +1,19 @@
 <template>
     <div class="l-subPage">
-    <Message></Message>    
-    <div class="c-form-wrap">   
-        <p class="c-heading p-heading__title u-txt_center">パスワード再発行</p>     
-        <InputForm v-on:onChange="onChange($event)" type="text" label="認証コード*" name="username"></InputForm>
-    </div>
-    <div class="u-txt_center">
-        <button class="c-btn" v-on:click="makeRePassword">再発行する</button>
-    </div>
-    <div class="c-form-wrap">
-        <router-link class="c-link" to="/signin">ログイン画面へ</router-link>
-    </div>
+    <Message></Message>   
+    <div class="l-subPage__in">
+        
+        <div class="c-form-wrap">   
+            <p class="c-heading p-heading__title u-txt_center">パスワード再発行</p>     
+            <InputForm v-on:onChange="onChange($event)" type="text" label="認証コード*" name="username"></InputForm>
+        </div>
+        <div class="u-txt_center">
+            <button class="c-btn" v-on:click="makeRePassword">再発行する</button>
+        </div>
+        <div class="c-form-wrap">
+            <router-link class="c-link" to="/signin">ログイン画面へ</router-link>
+        </div>
+    </div> 
     </div>
 </template>
 
@@ -76,7 +79,7 @@ export default {
                 if($event.response.res === 'OK'){
                     //メッセージ表示
                     store.setMessage($event.response.msg, true)
-                    this.$router.push('/')
+                    this.$router.push('/signin')
                 }else {
                     //メッセージ表示
                     store.setMessage($event.response.msg, false)

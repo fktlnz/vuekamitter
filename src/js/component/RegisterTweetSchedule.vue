@@ -2,20 +2,22 @@
 
     <div v-if=" show===true " class="l-subPage p-autotwt-wrap">
         <Message></Message>
-        <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__twtschedule">ツイート投稿</span></div>  
-        <VueCtkDateTimePicker
-         v-model="yourValue" 
-         :minute-interval="1"
-         :format="'YYYY-MM-DD HH:mm'"
-         :overlay="true"
-         :min-date="start"
-         :max-date="end"
-         />
-        <InputForm v-on:onChange="onChange($event)" type="text" label="内容" name="text" placeholder="この内容をツイートします"></InputForm>   
-        <div class="u-txt_right">
-            <button v-on:click="addItem"  class="c-btn">追加</button>
-        </div> 
-        <ScheduleListComponent v-bind:listItems="datas" v-on:delete-item="deleteItem($event)"></ScheduleListComponent>
+        <div class="l-subPage__in">
+            <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__twtschedule">ツイート投稿</span></div>  
+            <VueCtkDateTimePicker
+            v-model="yourValue" 
+            :minute-interval="1"
+            :format="'YYYY-MM-DD HH:mm'"
+            :overlay="true"
+            :min-date="start"
+            :max-date="end"
+            />
+            <InputForm v-on:onChange="onChange($event)" type="text" label="内容" name="text" placeholder="この内容をツイートします"></InputForm>   
+            <div class="u-txt_right">
+                <button v-on:click="addItem"  class="c-btn">追加</button>
+            </div> 
+            <ScheduleListComponent v-bind:listItems="datas" v-on:delete-item="deleteItem($event)"></ScheduleListComponent>
+        </div>
     </div>
 </template>
 
@@ -56,7 +58,7 @@ export default {
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
-                this.$router.push('/')
+                this.$router.push('/signin')
             }else{
                 console.log('ログインユーザーです。')
                 this.show = true

@@ -1,26 +1,27 @@
 <template>
     <div class="l-subPage">
-    <Message></Message>
-    <div class="c-form-wrap">
-        <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><p class="c-heading p-heading__title u-txt_center">パスワードの変更</p></div>        
-        
-        <div class="p-error-area">
-            <ul>
-                <transition-group name="p-flip">
-                    <template v-for="error in errors.error" >
-                        <li v-bind:key="error">・{{ error }}</li>
-                    </template>
-                </transition-group>
-            </ul>            
-        </div>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="現在のパスワード" name="password_old"></InputForm>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="新しいパスワード" name="password_new"></InputForm>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="新しいパスワード（確認）" name="re_password_new"></InputForm>
-    </div>
-    <div class="u-txt_center">
-        <button class="c-btn" v-on:click="changePassword">変更する</button>        
-    </div>
-    
+        <div class="l-subPage__in">
+            <Message></Message>
+            <div class="c-form-wrap">
+                <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><p class="c-heading p-heading__title u-txt_center">パスワードの変更</p></div>        
+                
+                <div class="p-error-area">
+                    <ul>
+                        <transition-group name="p-flip">
+                            <template v-for="error in errors.error" >
+                                <li v-bind:key="error">・{{ error }}</li>
+                            </template>
+                        </transition-group>
+                    </ul>            
+                </div>
+                <InputForm v-on:onChange="onChange($event)" type="text" label="現在のパスワード" name="password_old"></InputForm>
+                <InputForm v-on:onChange="onChange($event)" type="text" label="新しいパスワード" name="password_new"></InputForm>
+                <InputForm v-on:onChange="onChange($event)" type="text" label="新しいパスワード（確認）" name="re_password_new"></InputForm>
+            </div>
+            <div class="u-txt_center">
+                <button class="c-btn" v-on:click="changePassword">変更する</button>        
+            </div>
+        </div>    
     </div>
 </template>
 

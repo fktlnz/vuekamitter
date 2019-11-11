@@ -1,12 +1,14 @@
 <template>    
-    <div class="l-subPage">     
-        <div class="u-txt_center">
-        <button v-on:click="CertifyAccount" class="c-btn">アカウント認証する</button>
-        </div>
-        <div class="loading" v-if="loading">認証処理中...</div>
-        <div v-if="error" class="error">{{ error }}</div>
+    <div class="l-subPage"> 
+        <div class="l-subPage__in">        
+            <div class="u-txt_center">
+            <button v-on:click="CertifyAccount" class="c-btn">アカウント認証する</button>
+            </div>
+            <div class="loading" v-if="loading">認証処理中...</div>
+            <div v-if="error" class="error">{{ error }}</div>
 
-        <AccountListComponent v-bind:listItems="makeDatas()" v-on:delete-item="deleteItem($event)" v-on:change-active-user="changeActiveUser($event)"></AccountListComponent>
+            <AccountListComponent v-bind:listItems="makeDatas()" v-on:delete-item="deleteItem($event)" v-on:change-active-user="changeActiveUser($event)"></AccountListComponent>
+        </div>   
         
     </div>
 </template>

@@ -1,20 +1,22 @@
 <template>    
     <div v-if=" show===true " class="l-subPage l-likePage">
         <Message></Message>
-        <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__like">自動いいねキーワード登録</span></div>
-        
-        <div>
-            <select v-on:change="onChangeOption($event)" class="select-init c-logicOption">
-                <option selected>AND</option>
-                <option>OR</option>
-                <option>NOT</option>
-            </select>
-            <InputForm v-on:onChange="onChange($event)" type="text" label="" name="text" placeholder="いいねキーワード"></InputForm>
+        <div class="l-subPage__in">
+            <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__like">自動いいねキーワード登録</span></div>
+            
+            <div>
+                <select v-on:change="onChangeOption($event)" class="select-init c-logicOption">
+                    <option selected>AND</option>
+                    <option>OR</option>
+                    <option>NOT</option>
+                </select>
+                <InputForm v-on:onChange="onChange($event)" type="text" label="" name="text" placeholder="いいねキーワード"></InputForm>
+            </div>
+            <div class="u-txt_right">
+                <button v-on:click="addItem"  class="c-btn">追加</button>
+            </div> 
+            <KeywordListComponent v-bind:listItems="datas" v-on:delete-item="deleteItem($event)" type="like"></KeywordListComponent>
         </div>
-        <div class="u-txt_right">
-            <button v-on:click="addItem"  class="c-btn">追加</button>
-        </div> 
-        <KeywordListComponent v-bind:listItems="datas" v-on:delete-item="deleteItem($event)" type="like"></KeywordListComponent>
         
 
     </div>
@@ -55,7 +57,7 @@ export default {
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
-                this.$router.push('/')
+                this.$router.push('/signin')
             }else{
                 console.log('ログインユーザーです。')
                 this.show = true

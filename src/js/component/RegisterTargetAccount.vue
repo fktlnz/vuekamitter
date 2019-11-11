@@ -1,13 +1,14 @@
 <template>    
     <div v-if=" show===true " class="l-subPage p-targetacnt-wrap">
         <Message></Message>
-        <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__follow">ターゲットアカウント登録</span></div>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="" name="text" placeholder="@のあとのアカウントIDを入力(例. kazukichi3110)"></InputForm>
-        <div class="u-txt_right">
-            <button v-on:click="addItem"  class="c-btn">追加</button>
-        </div>
-        <KeywordListComponent v-bind:listItems="datas" v-on:delete-item="deleteItem($event)" type="target"></KeywordListComponent>
-        
+        <div class="l-subPage__in">
+            <div class="u-txt_center"><button v-on:click="moveTop" class="c-btn c-moveTop"><i class="fas fa-home c-icon-home"></i>HOME</button><span class="c-title p-heading__follow">ターゲットアカウント登録</span></div>
+            <InputForm v-on:onChange="onChange($event)" type="text" label="" name="text" placeholder="@のあとのアカウントIDを入力(例. kazukichi3110)"></InputForm>
+            <div class="u-txt_right">
+                <button v-on:click="addItem"  class="c-btn">追加</button>
+            </div>
+            <KeywordListComponent v-bind:listItems="datas" v-on:delete-item="deleteItem($event)" type="target"></KeywordListComponent>
+        </div>        
     </div>
 </template>
 
@@ -45,7 +46,7 @@ export default {
             if($event.response.res === 'NOTLOGIN' ){
                 //ログインユーザーでないためログイン画面に飛ばします。
                 console.log('ログインユーザーでありません。')
-                this.$router.push('/')
+                this.$router.push('/signin')
             }else{
                 console.log('ログインユーザーです。')
                 this.show = true
