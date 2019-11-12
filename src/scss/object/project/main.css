@@ -246,6 +246,9 @@
 
 .p-status-wrap {
   text-align: center;
+  width: 1200px;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
 .p-status__item {
@@ -272,6 +275,9 @@
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  width: 1200px;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
 .p-list-area {
@@ -472,4 +478,11 @@
 =================================*/
 .p-targetacnt-wrap .c-input__txt {
   width: 100%;
+}
+
+/* ================================
+# フォロー解除設定画面  
+=================================*/
+.p-config-wrap .c-input__txt {
+  width: auto;
 }

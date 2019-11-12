@@ -265,6 +265,9 @@ $color_heading_twtschedule: rgb(151, 255, 182);
 
 .p-status-wrap {
     text-align: center;
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
 }
 
 .p-status__item {
@@ -291,6 +294,9 @@ $color_heading_twtschedule: rgb(151, 255, 182);
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
+    width: 1200px;
+    max-width: 95%;
+    margin: 0 auto;
 }
 
 .p-list-area {
@@ -474,4 +480,11 @@ $color_heading_twtschedule: rgb(151, 255, 182);
 =================================*/
 .p-targetacnt-wrap .c-input__txt {
     width: 100%;
+}
+
+/* ================================
+# フォロー解除設定画面  
+=================================*/
+.p-config-wrap .c-input__txt {
+    width: auto;
 }

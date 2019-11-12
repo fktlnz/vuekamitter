@@ -43,3 +43,35 @@ $color_bg: #3f3f3f;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   background-image: linear-gradient(#f0f0f0 0%, #dcdcdc 100%);/*グラデーションを明るく*/
 }
+
+/* ================================
+# ボタンアニメーション  
+=================================*/
+
+//光るアニメ
+.c-shiny-btn1 {
+    position: relative;    
+    text-decoration: none;
+    overflow: hidden;
+}
+.c-shiny-btn1:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.c-shiny-btn1::before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn 3s ease-in-out infinite;
+}
+@keyframes shiny-btn {
+    0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+    80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+    81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+    100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}

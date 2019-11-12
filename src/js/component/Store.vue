@@ -34,6 +34,10 @@ module.exports = new Vue({
       },
       friends_count:0,
       UnFollowTime:null,
+      ConfigValue: {
+        friends_unfollow: 5000,
+        day_unfollow: 7
+      }
   },
   methods: {
     // Ajax通信でJsonを取得し、特定のプロパティに格納する
@@ -153,6 +157,13 @@ module.exports = new Vue({
     getNextUnFollowTime() {
       return this.UnFollowTime;
     },
+    getConfigValue(){
+      return this.ConfigValue;
+    },
+    setConfigValue(day, friends){
+      this.ConfigValue.friends_unfollow = friends
+      this.ConfigValue.day_unfollow = day
+    }
     
     
   }

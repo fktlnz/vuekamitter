@@ -162,12 +162,18 @@ function startAutoUnFollow() {
 
     //storeから次のフォロー開始時間を取得する
     const UnFollowTime = store.getNextUnFollowTime()
+
+    //storeからフォロー解除設定を読み込む
+    const cfg = store.getConfigValue();
+    //フォロー解除を開始するフォロー数を取得する
+    const start_friends = cfg.friends_unfollow;
+    console.log('フォロー解除開始人数：'+start_friends)
     
     let dif_time = UnFollowTime - now_ms    
     
     //5000人以上になったらアンフォローする
-    //アンフォローは15分は最低あける（アンフォローをしても5000人をした回らない場合にアンフォローが何度も繰り返されてしまうため）
-    if(store.getFriendsCount() > 5000 && (UnFollowTime < now_ms) && store.getAutoUnFollowCronStatus() === '1'){
+    //アンフォローは15分は最低あける
+    if(store.getFriendsCount() > start_friends && (UnFollowTime < now_ms) && store.getAutoUnFollowCronStatus() === '1'){
 
         //自動アンフォローを開始する
         controller.startAutoUnFollow_ajax() 

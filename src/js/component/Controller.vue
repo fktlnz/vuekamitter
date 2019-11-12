@@ -643,6 +643,40 @@ module.exports = new Vue({
         this.$emit('AJAX_DISPLAY_AUTOUNFOLLOW_RESULT', {response: json});
       })
     },
+    //自動アンフォローの設定を変更する
+    changeAccountUnfollowConfig_ajax(data) {
+      let params = new URLSearchParams();
+      params.append('nonactiveday_unfollow',data.nonactiveday);
+      params.append('dayafterfollow_unfollow',data.dayafterfollow);
+      params.append('friends_unfollow',data.friends);
+
+      return axios.post(URL_BASE + 'changeaccountconfig', params)
+      .then((res) => {          
+          this.$emit('AJAX_FINISH_CHANGECONFIG_UNFOLLOW', {response: res.data});
+      })
+      .catch((res) => {        
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        this.$emit('AJAX_FINISH_CHANGECONFIG_UNFOLLOW', {response: json});
+      })
+    },
+    //自動アンフォローの設定を取得する
+    getAccountUnfollowConfig_ajax() {      
+
+      return axios.get(URL_BASE + 'getaccountconfig')
+      .then((res) => {          
+          this.$emit('AJAX_FINISH_GETCONFIG_UNFOLLOW', {response: res.data});
+      })
+      .catch((res) => {        
+        const json = {
+          'res' : 'NG',
+          'msg' : 'サーバーの接続に失敗しました。ネットワーク管理者に問い合わせてください。'   
+        }    
+        this.$emit('AJAX_FINISH_GETCONFIG_UNFOLLOW', {response: json});
+      })
+    },
 
     /* =========================================================
     # メール配信

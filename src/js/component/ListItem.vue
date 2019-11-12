@@ -123,6 +123,7 @@ export default {
         onClick(){
             let route = this.heading
             if(route==='follow') route='target'
+            else if(route==='unFollow') route='config'
             this.$router.push('/'+route)
         },
         onClickKeyword() {

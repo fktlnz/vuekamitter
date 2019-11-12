@@ -12,6 +12,7 @@ import PassRemindSend from './component/passRemindSend.vue'
 import PassRemindRecieve from './component/passRemindRecieve.vue'
 import EditUserInfo from './component/EditUserInfo.vue'
 import ChangePassword from './component/ChangePassword.vue'
+import Config from './component/Config.vue'
 
 Vue.use(Router)
 
@@ -78,6 +79,11 @@ export default new Router({
             path: '/changepass',
             name: 'changepass',
             component: ChangePassword
+        },
+        {
+            path: '/config',
+            name: 'config',
+            component: Config
         },
         {
             path: '*',

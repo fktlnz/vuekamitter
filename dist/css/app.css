@@ -350,22 +350,22 @@ td input {
 =================================*/
 .l-home {
   margin: 0 auto;
-  padding: 50px 0 0;
+  padding: 50px 0 50px;
   background: url("../img/bg-top.jpg");
   background-size: cover;
 }
 
 .l-subPage {
-  padding: 50px 0 0;
+  padding: 80px 0 0;
   background: url("../img/bg-top.jpg");
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   background-position: right bottom;
 }
 
 .l-subPage__in {
   width: 800px;
-  max-width: 100%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -592,7 +592,7 @@ td input {
 
 .c-input__label {
   display: inline-block;
-  text-align: right;
+  text-align: left;
   margin-right: 10px;
 }
 
@@ -702,6 +702,51 @@ td input {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.15);
   background-image: linear-gradient(#f0f0f0 0%, #dcdcdc 100%);
   /*グラデーションを明るく*/
+}
+
+/* ================================
+# ボタンアニメーション  
+=================================*/
+.c-shiny-btn1 {
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.c-shiny-btn1:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.c-shiny-btn1::before {
+  position: absolute;
+  content: '';
+  display: inline-block;
+  top: -180px;
+  left: 0;
+  width: 30px;
+  height: 100%;
+  background-color: #fff;
+  animation: shiny-btn 3s ease-in-out infinite;
+}
+
+@keyframes shiny-btn {
+  0% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+  80% {
+    -webkit-transform: scale(0) rotate(45deg);
+    opacity: 0.5;
+  }
+  81% {
+    -webkit-transform: scale(4) rotate(45deg);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(50) rotate(45deg);
+    opacity: 0;
+  }
 }
 
 /* ================================
@@ -951,6 +996,9 @@ td input {
 
 .p-status-wrap {
   text-align: center;
+  width: 1200px;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
 .p-status__item {
@@ -977,6 +1025,9 @@ td input {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
+  width: 1200px;
+  max-width: 95%;
+  margin: 0 auto;
 }
 
 .p-list-area {
@@ -1177,6 +1228,13 @@ td input {
 =================================*/
 .p-targetacnt-wrap .c-input__txt {
   width: 100%;
+}
+
+/* ================================
+# フォロー解除設定画面  
+=================================*/
+.p-config-wrap .c-input__txt {
+  width: auto;
 }
 
 /* ================================

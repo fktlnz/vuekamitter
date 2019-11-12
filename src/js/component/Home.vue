@@ -624,6 +624,25 @@ export default {
             this.$set(this.p_mail_status_toggle, 'p-btn_home-mail--exec', true)
         }
 
+        //設定値を読み込む
+        controller.getAccountUnfollowConfig_ajax()
+        controller.$on('AJAX_FINISH_GETCONFIG_UNFOLLOW', ($event) => {
+            console.log('フォロー解除設定値：')
+            console.dir($event.response)                
+
+            if($event.response.res === 'OK'){
+                //設定値をstoreに格納しておく（非アクティブ日数, 動作開始フォロー数）
+                store.setConfigValue($event.response.rst.day_unfollow, $event.response.rst.friends_unfollow)                
+            }else{
+                store.setMessage($event.response.msg, true)                    
+                const message = store.getMessage();
+                if(message.msg !== ''){
+                    controller.emit_message(message)  
+                } 
+            }
+
+        })
+
     },
     methods: {
         changeActiveUser($event){

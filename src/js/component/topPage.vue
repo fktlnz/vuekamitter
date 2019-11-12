@@ -15,7 +15,7 @@
                 
                 
             </p>
-            <button class="c-btn" @click="moveRegister">さっそく使ってみる</button>
+            <button class="c-btn c-shiny-btn1" @click="moveRegister">さっそく使ってみる</button>
         </div>
         
         
