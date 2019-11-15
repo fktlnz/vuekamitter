@@ -24614,8 +24614,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 // Json取得のベースURL
-var URL_BASE = 'http://localhost:8888/KamitterApp/KamitterAPI/public/api/';
-//const URL_BASE = 'http://service-1.masashisite.com/KamitterAPI/public/api/';
+//const URL_BASE = 'http://localhost:8888/KamitterApp/KamitterAPI/public/api/';
+var URL_BASE = 'https://service-1.masashisite.com/KamitterAPI/public/api/';
 
 // Vue.js のインスタンス
 module.exports = new Vue({
@@ -25936,6 +25936,16 @@ exports.default = {
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /***/ }),
 /* 24 */
@@ -26169,6 +26179,8 @@ exports.default = {
     }
 
 }; //
+//
+//
 //
 //
 //
@@ -56642,9 +56654,20 @@ var render = function() {
       },
       domProps: { value: _vm.value },
       on: {
-        keyup: function($event) {
-          return _vm.onChange($event)
-        }
+        keyup: [
+          function($event) {
+            if (
+              !$event.type.indexOf("key") &&
+              _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")
+            ) {
+              return null
+            }
+            return _vm.$emit("enter-key")
+          },
+          function($event) {
+            return _vm.onChange($event)
+          }
+        ]
       }
     })
   ])
@@ -56674,13 +56697,9 @@ var render = function() {
     _c("div", { staticClass: "l-topPage__in" }, [
       _c("h1", { staticClass: "u-mb30" }, [_vm._v("『神ったー』へようこそ！")]),
       _vm._v(" "),
-      _c("h3", [_vm._v("『神ったー』とは...")]),
-      _vm._v(" "),
-      _c("p", { staticClass: "u-mb30" }, [
-        _vm._v("Twitterの自動集客システムです。")
-      ]),
-      _vm._v(" "),
       _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1),
       _vm._v(" "),
       _c(
         "button",
@@ -56695,21 +56714,67 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "u-mb30" }, [
-      _c("span", [_vm._v("このシステムができること")]),
-      _vm._v(" "),
+    return _c("h3", { staticClass: "u-mb50" }, [
+      _vm._v("『神ったー』とは... \n            "),
+      _c("br"),
+      _vm._v("\n            Twitterの自動集客システムです。\n            "),
       _c("br"),
       _vm._v(
-        "\n            ・あなたがフォローしたい相手を自動でフォローします\n            "
-      ),
-      _c("br"),
-      _vm._v(
-        "\n            ・あなたがイイネしたいツイートを自動でいいねします\n            "
-      ),
-      _c("br"),
-      _vm._v(
-        "\n            ・フォローしてほしい人からフォローしてもらえます\n            \n            \n        "
+        "\n            繋がりたい人にすばやくリーチして世界を広げてみよう！\n        "
       )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "p-topPage-descarea u-mb50" }, [
+      _c("div", { staticClass: "p-topPage-descItem" }, [
+        _c("img", {
+          staticClass: "p-topPage-descItem__img u-mb15",
+          attrs: { src: "dist/img/follow.png", alt: "握手" }
+        }),
+        _vm._v(" "),
+        _c("h5", { staticClass: "p-topPage-descItem__heading u-mb15" }, [
+          _vm._v("自動フォロー機能")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-topPage-descItem__txt" }, [
+          _vm._v(
+            "あなたがフォローしたいユーザーを探して自動でフォローします。フォローすることで相手からのフォローバックが期待できます"
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-topPage-descItem" }, [
+        _c("img", {
+          staticClass: "p-topPage-descItem__img u-mb15",
+          attrs: { src: "dist/img/like.png", alt: "いいね！" }
+        }),
+        _vm._v(" "),
+        _c("h5", { staticClass: "p-topPage-descItem__heading u-mb15" }, [
+          _vm._v("自動いいね機能")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-topPage-descItem__txt" }, [
+          _vm._v("あなたがいいねしたいツイートに対して自動でいいねをします。")
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "p-topPage-descItem" }, [
+        _c("img", {
+          staticClass: "p-topPage-descItem__img u-mb25",
+          attrs: { src: "dist/img/tweet.png", alt: "ツイート" }
+        }),
+        _vm._v(" "),
+        _c("h5", { staticClass: "p-topPage-descItem__heading u-mb15" }, [
+          _vm._v("自動ツイート機能")
+        ]),
+        _vm._v(" "),
+        _c("p", { staticClass: "p-topPage-descItem__txt" }, [
+          _vm._v("好きな日時に好きな内容を投稿することができます。")
+        ])
+      ])
     ])
   }
 ]
@@ -56827,6 +56892,7 @@ var render = function() {
             placeholder: "example"
           },
           on: {
+            "enter-key": _vm.signUp,
             onChange: function($event) {
               return _vm.onChange($event)
             }
@@ -56841,6 +56907,7 @@ var render = function() {
             placeholder: "example@gmail.com"
           },
           on: {
+            "enter-key": _vm.signUp,
             onChange: function($event) {
               return _vm.onChange($event)
             }
@@ -56855,6 +56922,7 @@ var render = function() {
             placeholder: ""
           },
           on: {
+            "enter-key": _vm.signUp,
             onChange: function($event) {
               return _vm.onChange($event)
             }
@@ -56869,6 +56937,7 @@ var render = function() {
             placeholder: ""
           },
           on: {
+            "enter-key": _vm.signUp,
             onChange: function($event) {
               return _vm.onChange($event)
             }
@@ -57113,6 +57182,7 @@ var render = function() {
               placeholder: "(例)kazukichi"
             },
             on: {
+              "enter-key": _vm.signIn,
               onChange: function($event) {
                 return _vm.onChange($event)
               }
@@ -57127,6 +57197,7 @@ var render = function() {
               placeholder: ""
             },
             on: {
+              "enter-key": _vm.signIn,
               onChange: function($event) {
                 return _vm.onChange($event)
               }
@@ -57311,7 +57382,7 @@ var render = function() {
     _vm.img_url === ""
       ? _c("img", {
           staticClass: "p-userInfo__img",
-          attrs: { src: "src/img/noaccount.jpg", alt: "" }
+          attrs: { src: "dist/img/noaccount.jpg", alt: "" }
         })
       : _c("img", {
           staticClass: "p-userInfo__img",

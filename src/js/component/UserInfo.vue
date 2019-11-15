@@ -1,6 +1,6 @@
 <template>
     <div class="p-userInfo u-mb50">
-        <img v-if=" img_url === '' " class="p-userInfo__img" src="src/img/noaccount.jpg" alt="">
+        <img v-if=" img_url === '' " class="p-userInfo__img" src="dist/img/noaccount.jpg" alt="">
         <img v-else class="p-userInfo__img" :src="img_url" alt="">
 
         <p v-if=" account_name === '' " class="p-userInfo__name">??????</p>

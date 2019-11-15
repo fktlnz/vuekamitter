@@ -1,5 +1,6 @@
 <template>
-    <div class="l-subPage">
+
+    <div class="l-subPage">    
     <Message></Message>    
     <div class="c-form-wrap">
         <p class="c-heading p-heading__title u-txt_center">ログイン</p>
@@ -12,8 +13,8 @@
                 </transition-group>
             </ul>                       
         </div>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="ユーザー名" name="username" placeholder="(例)kazukichi"></InputForm>        
-        <InputForm v-on:onChange="onChange($event)" type="password" label="パスワード" name="password" placeholder=""></InputForm>
+        <InputForm v-on:enter-key="signIn" v-on:onChange="onChange($event)" type="text" label="ユーザー名" name="username" placeholder="(例)kazukichi"></InputForm>        
+        <InputForm v-on:enter-key="signIn" v-on:onChange="onChange($event)" type="password" label="パスワード" name="password" placeholder=""></InputForm>
     </div>
     <div class="u-txt_center">
         <button class="c-btn" v-on:click="signIn">ログイン</button>
@@ -25,6 +26,7 @@
         <p>パスワードを忘れた方は<router-link class="c-link" to="/remindsend">こちら</router-link></p> -->
     </div>
     </div>
+
 </template>
 
 

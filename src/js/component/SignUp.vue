@@ -11,13 +11,13 @@
                 </transition-group>
             </ul>            
         </div>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="ユーザー名　(必須)" name="username" placeholder="example"></InputForm>
-        <InputForm v-on:onChange="onChange($event)" type="text" label="Email　(必須)" name="email" placeholder="example@gmail.com"></InputForm>
-        <InputForm v-on:onChange="onChange($event)" type="password" label="パスワード　(必須)" name="password" placeholder=""></InputForm>
-        <InputForm v-on:onChange="onChange($event)" type="password" label="パスワード再入力　(必須)" name="re_pass" placeholder=""></InputForm>        
+        <InputForm v-on:enter-key="signUp" v-on:onChange="onChange($event)" type="text" label="ユーザー名　(必須)" name="username" placeholder="example"></InputForm>
+        <InputForm v-on:enter-key="signUp" v-on:onChange="onChange($event)" type="text" label="Email　(必須)" name="email" placeholder="example@gmail.com"></InputForm>
+        <InputForm v-on:enter-key="signUp" v-on:onChange="onChange($event)" type="password" label="パスワード　(必須)" name="password" placeholder=""></InputForm>
+        <InputForm v-on:enter-key="signUp" v-on:onChange="onChange($event)" type="password" label="パスワード再入力　(必須)" name="re_pass" placeholder=""></InputForm>        
     </div>
     <div class="u-txt_center">
-        <button class="c-btn" v-on:click="signUp">登録</button>        
+        <button class="c-btn"  v-on:click="signUp">登録</button>        
     </div>
     <div class="c-form-wrap">
         <router-link class="c-link" to="/signin">ログイン画面へ</router-link>
